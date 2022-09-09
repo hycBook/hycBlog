@@ -30,7 +30,7 @@ jobs:
       - name: configue hexo env
         run: |
           echo 开始拉取nodejs插件
-          sudo install --save hexo-deployer-git
+          npm install hexo-deployer-git --save
           npm install hexo-cli -g
           npm install
           npm install hexo-renderer-pug hexo-renderer-stylus --save
