@@ -29,19 +29,6 @@ jobs:
         hexo clean
         hexo g
 
-    # - name: Deploy to Github Pages
-    #   env:
-    #     GIT_NAME: narutohyc
-    #     GIT_EMAIL: 1832044043@qq.com
-    #     REPO: github.com/narutohyc/narutohyc.github.io
-    #     GH_TOKEN: ${{ secrets.TOKEN }}
-    #   run: |
-    #     cd ./public && git init && git add .
-    #     git config --global user.name $GIT_NAME
-    #     git config --global user.email $GIT_EMAIL
-    #     git commit -m "Site deployed by GitHub Actions"
-    #     git push --force --quiet "$GH_TOKEN@$REPO" master:gh-pages
-
     - name: Deploy #步骤4：把编译好的静态目录上传到gh-pages分支上
       uses: JamesIves/github-pages-deploy-action@3.1.5 #这里调用第三方依赖，用于上传代码到指定分支上
       with:
