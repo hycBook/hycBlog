@@ -41,6 +41,7 @@ jobs:
         run: |
           hexo clean
           sudo mkdir -p ~/.ssh
+          sudo chmod 600 ~/.ssh/id_rsa
           sudo echo "$secrets.TOKEN" > ~/.ssh/id_rsa
           hexo d
           echo 生成静态文件完成
