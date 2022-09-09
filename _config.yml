@@ -103,6 +103,6 @@ theme: butterfly # landscape
 ## Docs: https://hexo.io/docs/one-command-deployment
 deploy:
   type: git
-  repo: https://github.com/narutohyc/narutohyc.github.io
+  repo: git@github.com:narutohyc/narutohyc.github.io.git
   # example, https://github.com/hexojs/hexojs.github.io
   branch: gh-pages
