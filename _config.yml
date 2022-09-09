@@ -14,10 +14,9 @@ timezone: ''
 # URL
 ## Set your site url here. For example, if you use GitHub Page, set url as 'https://username.github.io/project'
 # url: https://github.com/hycBook/hycBlog.git
-url: https://github.com/hycBook/hycBlog
+url: https://hycbook.github.io/hycBlog
 permalink: :year/:month/:day/:title/
 # root: .
-root: hycBlog.git
 permalink_defaults:
 pretty_urls:
   trailing_index: true # Set to false to remove trailing 'index.html' from permalinks
