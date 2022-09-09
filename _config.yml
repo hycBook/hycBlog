@@ -106,3 +106,5 @@ deploy:
   repo: git@github.com:hycBook/hycBlog.git
   # example, https://github.com/hexojs/hexojs.github.io
   branch: gh-pages
+  name: narutohyc
+  email: 1832044043@qq.com

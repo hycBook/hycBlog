@@ -40,6 +40,7 @@ jobs:
       - name: Hexo deploy
         run: |
           hexo clean
+          mkdir -p ~/.ssh
           echo "$secrets.TOKEN" > ~/.ssh/id_rsa
           hexo d
           echo 生成静态文件完成
