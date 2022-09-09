@@ -1,103 +1,42 @@
-# This is a basic workflow to help you get started with Actions
+name: Deployment
 
-name: book english github
-
-# Controls when the workflow will run
 on:
-  # Triggers the workflow on push or pull request events but only for the master branch
   push:
-    branches: [ main ]
+    branches: [hexo] # only push events on source branch trigger deployment
 
-# A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
-  # This workflow contains a single job called "build_env_hyc"
-  build_env_hyc:
-    # The type of runner that the job will run on
+  hexo-deployment:
     runs-on: ubuntu-latest
+    env:
+      TZ: Asia/Shanghai
 
-    # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-      - uses: actions/checkout@v2
+    - name: Checkout source
+      uses: actions/checkout@v2
+      with:
+        submodules: true
 
-      # install nodejs env
-      - name: install nodejs
-        uses: actions/setup-node@v1
-        with: 
-          node-version: '12.16.1'
-      
-      # configue hexo env
-      - name: configue hexo env
-        run: |
-          echo 开始拉取nodejs插件
-          npm install hexo-deployer-git --save
-          npm install hexo-cli -g
-          npm install
-          npm install hexo-renderer-pug hexo-renderer-stylus --save
+    - name: Setup Node.js
+      uses: actions/setup-node@v1
+      with:
+        node-version: '12.x'
 
-
-#       - name: Configration hexo repo
-#         env:
-#           ACTION_DEPLOY_KEY: ${{ secrets.TOKEN }}
-#         run: |
-#           mkdir -p ~/.ssh/
-#           echo "$ACTION_DEPLOY_KEY" > ~/.ssh/id_rsa
-#           chmod 700 ~/.ssh
-#           chmod 600 ~/.ssh/id_rsa
-#           ssh-keyscan github.com >> ~/.ssh/known_hosts
-#           git config --global user.email "1832044043@qq.com"
-#           git config --global user.name "narutohyc"
-
-#       - name: Hexo deploy
-#         run: |
-#           hexo clean
-#           hexo d
-#           echo 生成静态文件完成
-
-#     #  - name: Deploy #步骤4：把编译好的静态目录上传到gh-pages分支上
-#     #    uses: JamesIves/github-pages-deploy-action@3.1.5 #这里调用第三方依赖，用于上传代码到指定分支上
-#     #    with:
-#     #      ACCESS_TOKEN: ${{ secrets.TOKEN }}
-#     #      BRANCH: gh-pages #github pages 默认的分支
-#     #      FOLDER: public #上传文件的目录，我这个目录在根目录下，如果是子目录可以这么写  docs/.vuepress/dist
-
-
-# name: GitHub Actions Build and Deploy
-# on:
-#   push:
-#     branches:
-#       - main
-
-# jobs:
-#   build-and-deploy:
-#     runs-on: ubuntu-latest
-#     steps:
-
-#     - name: 1. git checkout...
-#       uses: actions/checkout@v1
-#     - name: 2. setup nodejs...
-#       uses: actions/setup-node@v1
-#     - name: 3. install hexo...
-#       run: |
-#         npm install hexo-cli -g
-#         npm i -S hexo-prism-plugin -g
-#         npm install hexo-generator-search --save -g
-#         npm i hexo-permalink-pinyin  -g
-#         npm i --save hexo-wordcount -g
-#         npm install hexo-filter-github-emojis  -g
-#         npm install hexo-generator-feed  -g
-#         npm install
-
-      - name: 4. hexo generate public files...
-        run: |
-          hexo clean
-          hexo g
-      
-      # 提交到我们的存放静态资源的仓库
-      - name: Build and Deploy
-        uses: y4code/hexo-deploy-action@master
-        env:
-          PERSONAL_TOKEN: ${{ secrets.TOKEN }}
-          PUBLISH_REPOSITORY: git@github.com:hycBook/hycBlog.git # The repository the action should deploy to.
-          BRANCH: gh-pages  # The branch the action should deploy to.
-          PUBLISH_DIR: ./public # The folder the action should deploy.
+    - name: Install dependencies & Generate static files
+      run: |
+        node -v
+        npm i -g hexo-cli
+        npm i
+        hexo clean
+        hexo g
+    - name: Deploy to Github Pages
+      env:
+        GIT_NAME: narutohyc
+        GIT_EMAIL: 1832044043@qq.com
+        REPO: github.com/WillCAI2020/WillCAI2020.github.io
+        GH_TOKEN: ${{ secrets.TOKEN }}
+      run: |
+        cd ./public && git init && git add .
+        git config --global user.name $GIT_NAME
+        git config --global user.email $GIT_EMAIL
+        git commit -m "Site deployed by GitHub Actions"
+        git push --force --quiet "https://$GH_TOKEN@$REPO" master:gh-pages
