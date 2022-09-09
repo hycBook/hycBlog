@@ -5,7 +5,7 @@ Welcome to [Hexo](https://hexo.io/)! This is your very first post. Check [docume
 
 
 
-![img](./res/eng-hello-world/hello.png)
+![img](./res/eng-hello-world/eng-hello.png)
 
 ## Quick Start
 
