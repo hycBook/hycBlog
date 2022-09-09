@@ -119,7 +119,7 @@ class Renderer extends MarkedRenderer {
     console.log('红红火火恍恍惚惚');
     console.log(0, href);
     if(href.indexOf('/')>-1){
-      href.split('/')[href.split('/').length-1];
+      href = href.split('/')[href.split('/').length-1];
     }
 
     console.log(1, href);
