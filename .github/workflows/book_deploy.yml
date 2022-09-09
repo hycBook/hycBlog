@@ -27,7 +27,7 @@ jobs:
         npm i -g hexo-cli
         npm i
         npm install hexo-renderer-marked --save
-        
+
         cp nodejs/hexo-renderer-marked/lib/renderer.js node_modules/hexo-renderer-marked/lib/
         hexo clean
         hexo g
@@ -38,3 +38,4 @@ jobs:
         ACCESS_TOKEN: ${{ secrets.TOKEN }}
         BRANCH: gh-pages #github pages 默认的分支
         FOLDER: public #上传文件的目录，我这个目录在根目录下，如果是子目录可以这么写  docs/.vuepress/dist
+        clean: true
