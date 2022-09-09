@@ -28,7 +28,7 @@ jobs:
         npm i
         hexo clean
         hexo g
-        
+
     # - name: Deploy to Github Pages
     #   env:
     #     GIT_NAME: narutohyc
@@ -47,4 +47,4 @@ jobs:
       with:
         ACCESS_TOKEN: ${{ secrets.TOKEN }}
         BRANCH: gh-pages #github pages 默认的分支
-        FOLDER: ./public/ #上传文件的目录，我这个目录在根目录下，如果是子目录可以这么写  docs/.vuepress/dist
+        FOLDER: public #上传文件的目录，我这个目录在根目录下，如果是子目录可以这么写  docs/.vuepress/dist
