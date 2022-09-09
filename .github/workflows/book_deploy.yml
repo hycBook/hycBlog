@@ -88,16 +88,16 @@ jobs:
 #         npm install hexo-generator-feed  -g
 #         npm install
 
-    - name: 4. hexo generate public files...
-      run: |
-        hexo clean
-        hexo g
-    
-    # 提交到我们的存放静态资源的仓库
-    - name: Build and Deploy
-      uses: y4code/hexo-deploy-action@master
-      env:
-        PERSONAL_TOKEN: ${{ secrets.TOKEN }}
-        PUBLISH_REPOSITORY: git@github.com:hycBook/hycBlog.git # The repository the action should deploy to.
-        BRANCH: gh-pages  # The branch the action should deploy to.
-        PUBLISH_DIR: ./public # The folder the action should deploy.
+      - name: 4. hexo generate public files...
+        run: |
+          hexo clean
+          hexo g
+      
+      # 提交到我们的存放静态资源的仓库
+      - name: Build and Deploy
+        uses: y4code/hexo-deploy-action@master
+        env:
+          PERSONAL_TOKEN: ${{ secrets.TOKEN }}
+          PUBLISH_REPOSITORY: git@github.com:hycBook/hycBlog.git # The repository the action should deploy to.
+          BRANCH: gh-pages  # The branch the action should deploy to.
+          PUBLISH_DIR: ./public # The folder the action should deploy.
