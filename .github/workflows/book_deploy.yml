@@ -27,8 +27,8 @@ jobs:
         npm i -g hexo-cli
         npm i
         npm install hexo-renderer-marked --save
+      # cp nodejs/hexo-renderer-marked/lib/renderer.js node_modules/hexo-renderer-marked/lib/
         hexo clean
-        cp nodejs/hexo-renderer-marked/lib/renderer.js node_modules/hexo-renderer-marked/lib/
         hexo g
 
     - name: Deploy #步骤4：把编译好的静态目录上传到gh-pages分支上
