@@ -1,0 +1,48 @@
+# This is a basic workflow to help you get started with Actions
+
+name: book english github
+
+# Controls when the workflow will run
+on:
+  # Triggers the workflow on push or pull request events but only for the master branch
+  push:
+    branches: [ main ]
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  # This workflow contains a single job called "build_env_hyc"
+  build_env_hyc:
+    # The type of runner that the job will run on
+    runs-on: ubuntu-latest
+
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - uses: actions/checkout@v2
+
+      # install nodejs env
+      - name: install nodejs
+        uses: actions/setup-node@v1
+        with: 
+          node-version: '12.16.1'
+      
+      # configue hexo env
+      - name: configue hexo env
+        run: |
+          echo 开始拉取nodejs插件
+          npm install hexo-cli -g
+          npm install
+          npm install hexo-renderer-pug hexo-renderer-stylus --save
+
+      - name: Hexo deploy
+        run: |
+          hexo clean
+          hexo g
+          echo 生成静态文件完成
+
+      - name: Deploy #步骤4：把编译好的静态目录上传到gh-pages分支上
+        uses: JamesIves/github-pages-deploy-action@3.1.5 #这里调用第三方依赖，用于上传代码到指定分支上
+        with:
+          ACCESS_TOKEN: ${{ secrets.TOKEN }}
+          BRANCH: gh-pages #github pages 默认的分支
+          FOLDER: public #上传文件的目录，我这个目录在根目录下，如果是子目录可以这么写  docs/.vuepress/dist
