@@ -32,7 +32,7 @@ jobs:
       env:
         GIT_NAME: narutohyc
         GIT_EMAIL: 1832044043@qq.com
-        REPO: github.com/WillCAI2020/WillCAI2020.github.io
+        REPO: git@github.com:hycBook/hycBlog.git
         GH_TOKEN: ${{ secrets.TOKEN }}
       run: |
         cd ./public && git init && git add .
