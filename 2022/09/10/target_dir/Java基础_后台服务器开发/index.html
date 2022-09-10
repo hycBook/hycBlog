@@ -1,0 +1,254 @@
+<!DOCTYPE html><html lang="en" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>兼一书虫 | 兼一书虫</title><meta name="keywords" content="努力"><meta name="author" content="narutohyc"><meta name="copyright" content="narutohyc"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="[TOC]  后台服务器开发远程通信方式WebService平台技术 XML+XSD,SOAP和WSDL就是构成WebService平台的三大技术 XML+XSD  WebService采用HTTP协议传输数据，采用XML格式封装数据（即XML中说明调用远程服务对象的哪个方法，传递的参数是什么，以及服务对象的返回结果是什么）。XML是WebService平台中表示数据的格式。除了易于建立和易于分析">
+<meta property="og:type" content="article">
+<meta property="og:title" content="兼一书虫">
+<meta property="og:url" content="https://hycbook.github.io/hycBlog/2022/09/10/target_dir/Java%E5%9F%BA%E7%A1%80_%E5%90%8E%E5%8F%B0%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%BC%80%E5%8F%91/index.html">
+<meta property="og:site_name" content="兼一书虫">
+<meta property="og:description" content="[TOC]  后台服务器开发远程通信方式WebService平台技术 XML+XSD,SOAP和WSDL就是构成WebService平台的三大技术 XML+XSD  WebService采用HTTP协议传输数据，采用XML格式封装数据（即XML中说明调用远程服务对象的哪个方法，传递的参数是什么，以及服务对象的返回结果是什么）。XML是WebService平台中表示数据的格式。除了易于建立和易于分析">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2022-09-10T04:32:14.887Z">
+<meta property="article:modified_time" content="2022-09-10T04:32:14.887Z">
+<meta property="article:author" content="narutohyc">
+<meta property="article:tag" content="努力">
+<meta name="twitter:card" content="summary"><link rel="shortcut icon" href="../../../../../img/favicon.png"><link rel="canonical" href="https://hycbook.github.io/hycBlog/2022/09/10/target_dir/Java%E5%9F%BA%E7%A1%80_%E5%90%8E%E5%8F%B0%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%BC%80%E5%8F%91/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="../../../../../css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/hycBlog/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":400},
+  copy: {
+    success: 'Copy successfully',
+    error: 'Copy error',
+    noSupport: 'The browser does not support'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  date_suffix: {
+    just: 'Just',
+    min: 'minutes ago',
+    hour: 'hours ago',
+    day: 'days ago',
+    month: 'months ago'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '兼一书虫',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2022-09-10 12:32:14'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 6.3.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="archives/"><div class="headline">Articles</div><div class="length-num">30</div></a><a href="tags/"><div class="headline">Tags</div><div class="length-num">0</div></a><a href="categories/"><div class="headline">Categories</div><div class="length-num">0</div></a></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="index.html"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时光机</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 清单</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 电影</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('../../../../../data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP/yH5BAEAAAAALAAAAAABAAEAAAIBRAA7')"><nav id="nav"><span id="blog_name"><a id="site-name" href="index.html">兼一书虫</a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="index.html"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时光机</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 清单</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 电影</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">No title</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">Created</span><time class="post-meta-date-created" datetime="2022-09-10T04:32:14.887Z" title="Created 2022-09-10 12:32:14">2022-09-10</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">Updated</span><time class="post-meta-date-updated" datetime="2022-09-10T04:32:14.887Z" title="Updated 2022-09-10 12:32:14">2022-09-10</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title=""><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">Post View:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><p><img src="%E5%BC%82%E4%B8%96%E7%95%8C%E8%95%BE%E5%A7%86_0.jpg" alt="img"><br>[TOC]</p>
+<hr>
+<h1 id="后台服务器开发"><a href="#后台服务器开发" class="headerlink" title="后台服务器开发"></a>后台服务器开发</h1><h1 id="远程通信方式"><a href="#远程通信方式" class="headerlink" title="远程通信方式"></a>远程通信方式</h1><h2 id="WebService平台技术"><a href="#WebService平台技术" class="headerlink" title="WebService平台技术"></a>WebService平台技术</h2><blockquote>
+<p><a target="_blank" rel="noopener" href="https://www.jianshu.com/p/49d7997ad3b7">XML+XSD,SOAP和WSDL就是构成WebService平台的三大技术</a></p>
+<p><code>XML+XSD</code></p>
+<ul>
+<li>WebService采用HTTP协议传输数据，采用XML格式封装数据（即XML中说明调用远程服务对象的哪个方法，传递的参数是什么，以及服务对象的返回结果是什么）。XML是WebService平台中表示数据的格式。除了易于建立和易于分析外，XML主要的优点在于它既是平台无关的，又是厂商无关的。无关性是比技术优越性更重要的：软件厂商是不会选择一个由竞争对手所发明的技术的。</li>
+<li>XML解决了数据表示的问题，但它没有定义一套标准的数据类型，更没有说怎么去扩展这套数据类型。例如，整形数到底代表什么？16位，32位，64位？这些细节对实现互操作性很重要。XML Schema(XSD)就是专门解决这个问题的一套标准。它定义了一套标准的数据类型，并给出了一种语言来扩展这套数据类型。WebService平台就是用XSD来作为其数据类型系统的。当你用某种语言(如VB.NET或C#)来构造一个Web service时，为了符合WebService标准，所有你使用的数据类型都必须被转换为XSD类型。你用的工具可能已经自动帮你完成了这个转换，但你很可能会根据你的需要修改一下转换过程。</li>
+</ul>
+<p><code>SOAP</code></p>
+<ul>
+<li><p>WebService通过HTTP协议发送请求和接收结果时，发送的请求内容和结果内容都采用XML格式封装，并增加了一些特定的HTTP消息头，以说明HTTP消息的内容格式，这些特定的HTTP消息头和XML内容格式就是SOAP协议。SOAP提供了标准的RPC方法来调用Web Service。</p>
+</li>
+<li><p>SOAP协议 &#x3D; HTTP协议 + XML数据格式</p>
+</li>
+<li><p>SOAP协议定义了SOAP消息的格式，SOAP协议是基于HTTP协议的，SOAP也是基于XML和XSD的，XML是SOAP的数据编码方式。打个比喻：HTTP就是普通公路，XML就是中间的绿色隔离带和两边的防护栏，SOAP就是普通公路经过加隔离带和防护栏改造过的高速公路。</p>
+</li>
+</ul>
+<p><code>WSDL</code></p>
+<ul>
+<li><p>好比我们去商店买东西，首先要知道商店里有什么东西可买，然后再来购买，商家的做法就是张贴广告海报。 WebService也一样，WebService客户端要调用一个WebService服务，首先要有知道这个服务的地址在哪，以及这个服务里有什么方法可以调用，所以，WebService务器端首先要通过一个WSDL文件来说明自己家里有啥服务可以对外调用，服务是什么（服务中有哪些方法，方法接受的参数是什么，返回值是什么），服务的网络地址用哪个url地址表示，服务通过什么方式来调用。</p>
+</li>
+<li><p>WSDL(Web Services Description Language)就是这样一个基于XML的语言，用于描述Web Service及其函数、参数和返回值。它是WebService客户端和服务器端都能理解的标准格式。因为是基于XML的，所以WSDL既是机器可阅读的，又是人可阅读的，这将是一个很大的好处。一些最新的开发工具既能根据你的Web service生成WSDL文档，又能导入WSDL文档，生成调用相应WebService的代理类代码。</p>
+</li>
+<li><p>WSDL文件保存在Web服务器上，通过一个url地址就可以访问到它。客户端要调用一个WebService服务之前，要知道该服务的WSDL文件的地址。WebService服务提供商可以通过两种方式来暴露它的WSDL文件地址：1.注册到UDDI服务器，以便被人查找；2.直接告诉给客户端调用者。</p>
+</li>
+</ul>
+</blockquote>
+<h2 id="常见通信协议"><a href="#常见通信协议" class="headerlink" title="常见通信协议"></a>常见通信协议</h2><blockquote>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_34646231/article/details/84395460">浅谈几种通信方式(dubbo,webservice,restful)</a></p>
+<p><strong>TCP&#x2F;IP</strong></p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">TCP/IP 协议是一个协议族。里面包括很多协议。UDP 只是其中的一个。因为TCP/IP比较重要所以用他两命名。</span><br></pre></td></tr></table></figure>
+
+<p><strong>TCP和UDP</strong></p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">tcp和udp都是传输协议，主要区别是tcp协议连接需要3次握手，断开需要四次握手，是通过流来传输的，就是确定连接后，一直发送信息，传完后断开。</span><br><span class="line">udp不需要进行连接，直接把信息封装成多个报文，直接发送。所以udp的速度更快写，但是不保证数据的完整性和数据顺序(这个是可以在实现时通过验证手段来手动确定完整性)。</span><br></pre></td></tr></table></figure>
+
+<p><strong>HTTP</strong></p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">http协议是建立在TCP协议之上的一种应用，是Web联网的基础，最显著的特点是客户端发送的每次请求都需要服务器回送响应，在请求结束后，会主动释放连接。</span><br><span class="line">从建立连接到关闭连接的过程称为“一次连接”。</span><br></pre></td></tr></table></figure>
+
+<p><strong>SOCKET</strong></p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">socket并不是一种协议，是在程序员层面上对TCP/IP协议的封装和应用。其实是一个调用接口，方便程序员使用TCP/IP协议栈而已。程序员通过socket来使用tcp/ip协议。</span><br><span class="line">但是socket并不是一定要使用tcp/ip协议，Socket编程接口在设计的时候，就希望也能适应其他的网络协议。</span><br></pre></td></tr></table></figure>
+
+<p><strong>RPC</strong></p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">RPC(Remote Procedure Call)—远程过程调用，它是一种通过网络从远程计算机程序上请求服务，而不需要了解底层网络技术的协议。RPC协议假定某些传输协议的存在，如TCP或UDP，为通信程序之间携带信息数据。</span><br><span class="line">在OSI网络通信模型中，RPC跨越了传输层和应用层。RPC使得开发包括网络分布式多程序在内的应用程序更加容易。</span><br></pre></td></tr></table></figure>
+
+<p><strong>SOAP</strong></p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">简单对象访问协议是交换数据的一种协议规范，是一种轻量的、简单的、基于XML（标准通用标记语言下的一个子集）的协议，它被设计成在WEB上交换结构化的和固化的信息。</span><br></pre></td></tr></table></figure>
+
+
+</blockquote>
+<h2 id="常见通信方式"><a href="#常见通信方式" class="headerlink" title="常见通信方式"></a>常见通信方式</h2><blockquote>
+<p><code>Webservice</code></p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt;效率不高基于soap协议，其主要的特点是跨语言、跨平台的。项目中不推荐使用，可用于不同公司间接口的调用。</span><br></pre></td></tr></table></figure>
+
+<p><code>restful</code></p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt;http+json。很多项目中应用。如果服务太多，服务之间调用关系混乱，需要治疗服务。</span><br></pre></td></tr></table></figure>
+
+<p><code>dubbo</code></p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt;使用rpc协议进行远程调用，直接使用socket通信。传输效率高，并且可以统计出系统之间的调用关系、调用次数。使用Java语言开发，只能用于Java语言开发的项目间的通信，不具备跨语言，跨平台的特点！</span><br></pre></td></tr></table></figure>
+
+<p><code>webservice之Restful风格</code></p>
+<p><a target="_blank" rel="noopener" href="https://www.jianshu.com/p/c8ec2f0526fc">webservice之Restful风格</a></p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&gt;使用restful风格的webservice 也就是cxf发布的webservice的地址是restful风格的</span><br><span class="line">&gt;使用restful风格发布的webservice不采用soap协议 ，轻量级 速度快，采用http传输协议。</span><br></pre></td></tr></table></figure>
+
+
+</blockquote>
+<blockquote>
+<p><a target="_blank" rel="noopener" href="http://www.sohu.com/a/142276140_355142">SOAP webserivce 和 RESTful webservice 对比及区别 </a></p>
+<p><a target="_blank" rel="noopener" href="https://www.jianshu.com/p/cd7bfa8d51b7">RESTful跟WebService的区别</a></p>
+</blockquote>
+<h1 id="webserver-x2F-servlet容器"><a href="#webserver-x2F-servlet容器" class="headerlink" title="webserver&#x2F;servlet容器"></a>webserver&#x2F;servlet容器</h1><blockquote>
+<p><a target="_blank" rel="noopener" href="https://yq.aliyun.com/articles/553292">关于tomcat和jetty对比(不喜欢jetty的勿看)</a></p>
+<p><a target="_blank" rel="noopener" href="https://www.cnblogs.com/study-makes-me-happy/p/9606238.html">tomcat与jetty的区别</a></p>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_36522306/article/details/80699391">Jetty篇一之初识Jetty</a></p>
+<p><code>相同点</code></p>
+<ul>
+<li>Tomcat和Jetty都是一种Servlet引擎，他们都支持标准的servlet规范和JavaEE的规范。</li>
+</ul>
+<p><code>架构比较</code></p>
+<ul>
+<li>Jetty的架构比Tomcat的更为简单。</li>
+<li>Jetty的架构是基于Handler来实现的，主要的扩展功能都可以用Handler来实现，扩展简单。</li>
+<li>Tomcat的架构是基于容器设计的，进行扩展是需要了解Tomcat的整体设计结构，不易扩展。</li>
+</ul>
+<p><code>性能比较</code></p>
+<ul>
+<li>Jetty和Tomcat性能方面差异不大。</li>
+<li>Jetty可以同时处理大量连接而且可以长时间保持连接，适合于web聊天应用等等。</li>
+<li>Jetty的架构简单，因此作为服务器，Jetty可以按需加载组件，减少不需要的组件，减少了服务器内存开销，从而提高服务器性能。</li>
+<li>Jetty默认采用NIO结束在处理I&#x2F;O请求上更占优势，在处理静态资源时，性能较高。</li>
+<li>Tomcat适合处理少数非常繁忙的链接，也就是说链接生命周期短的话，Tomcat的总体性能更高。</li>
+<li>Tomcat默认采用BIO处理I&#x2F;O请求，在处理静态资源时，性能较差。</li>
+</ul>
+<p><code>其它比较</code></p>
+<ul>
+<li>Jetty的应用更加快速，修改简单，对新的Servlet规范的支持较好。</li>
+<li>Tomcat目前应用比较广泛，对JavaEE和Servlet的支持更加全面，很多特性会直接集成进来。</li>
+<li><a target="_blank" rel="noopener" href="https://yq.aliyun.com/go/articleRenderRedirect?url=http://blog.csdn.net/liguohuaty/article/details/8053147">Google 选择 Jetty, 放弃 Tomcat</a></li>
+</ul>
+<p><code>Jetty的基本架构</code></p>
+</blockquote>
+<p><img src="20180614230109366.png" alt="img">&gt;</p>
+<blockquote>
+<p><code>Tomcat的基本架构</code></p>
+</blockquote>
+<p><img src="20180616093348674.gif" alt="img"></p>
+<h1 id="不同开发实现"><a href="#不同开发实现" class="headerlink" title="不同开发实现"></a>不同开发实现</h1><blockquote>
+</blockquote>
+<blockquote>
+<p><a target="_blank" rel="noopener" href="https://www.jianshu.com/p/be45f7f06988">花了近十年的时间，整理出史上最全面Java面试题</a></p>
+</blockquote>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">Author: </span><span class="post-copyright-info"><a href="https://hycbook.github.io/hycBlog">narutohyc</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">Link: </span><span class="post-copyright-info"><a href="https://hycbook.github.io/hycBlog/2022/09/10/target_dir/Java%E5%9F%BA%E7%A1%80_%E5%90%8E%E5%8F%B0%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%BC%80%E5%8F%91/">https://hycbook.github.io/hycBlog/2022/09/10/target_dir/Java%E5%9F%BA%E7%A1%80_%E5%90%8E%E5%8F%B0%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%BC%80%E5%8F%91/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">Copyright Notice: </span><span class="post-copyright-info">All articles in this blog are licensed under <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> unless stating additionally.</span></div></div><div class="tag_share"><div class="post-meta__tag-list"></div><div class="post_share"><div class="social-share" data-image="../../../../../data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP/yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="../Spring%E6%B3%A8%E8%A7%A3_%E5%B8%B8%E7%94%A8%E6%B3%A8%E8%A7%A3/"><img class="prev-cover" src="../../../../../data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP/yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="onerror=null;src='../../../../../img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">Previous Post</div><div class="prev_info"></div></div></a></div><div class="next-post pull-right"><a href="../Java%E8%BF%9B%E9%98%B6_%E5%8F%8D%E5%B0%84/"><img class="next-cover" src="../../../../../data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP/yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="onerror=null;src='../../../../../img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">Next Post</div><div class="next_info"></div></div></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png" onerror="this.onerror=null;this.src='../img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">narutohyc</div><div class="author-info__description">希望未来有好运气</div></div><div class="card-info-data site-data is-center"><a href="../archives/"><div class="headline">Articles</div><div class="length-num">30</div></a><a href="../tags/"><div class="headline">Tags</div><div class="length-num">0</div></a><a href="/"><div class="headline">Categories</div><div class="length-num">0</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/narutohyc" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="../1832044043@qq.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>Announcement</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>Catalog</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%90%8E%E5%8F%B0%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%BC%80%E5%8F%91"><span class="toc-number">1.</span> <span class="toc-text">后台服务器开发</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%BF%9C%E7%A8%8B%E9%80%9A%E4%BF%A1%E6%96%B9%E5%BC%8F"><span class="toc-number">2.</span> <span class="toc-text">远程通信方式</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#WebService%E5%B9%B3%E5%8F%B0%E6%8A%80%E6%9C%AF"><span class="toc-number">2.1.</span> <span class="toc-text">WebService平台技术</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B8%B8%E8%A7%81%E9%80%9A%E4%BF%A1%E5%8D%8F%E8%AE%AE"><span class="toc-number">2.2.</span> <span class="toc-text">常见通信协议</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B8%B8%E8%A7%81%E9%80%9A%E4%BF%A1%E6%96%B9%E5%BC%8F"><span class="toc-number">2.3.</span> <span class="toc-text">常见通信方式</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#webserver-x2F-servlet%E5%AE%B9%E5%99%A8"><span class="toc-number">3.</span> <span class="toc-text">webserver&#x2F;servlet容器</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%8D%E5%90%8C%E5%BC%80%E5%8F%91%E5%AE%9E%E7%8E%B0"><span class="toc-number">4.</span> <span class="toc-text">不同开发实现</span></a></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>Recent Post</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="../2022/09/10/target_dir/JDBC/" title="No title"><img src="../data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP/yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null;this.src='../img/404.jpg'" alt="No title"/></a><div class="content"><a class="title" href="../2022/09/10/target_dir/JDBC/" title="No title">No title</a><time datetime="2022-09-10T04:32:14.927Z" title="Created 2022-09-10 12:32:14">2022-09-10</time></div></div><div class="aside-list-item"><a class="thumbnail" href="../2022/09/10/target_dir/Java%E8%BF%9B%E9%98%B6_%E6%B3%A8%E8%A7%A3/" title="No title"><img src="../data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP/yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null;this.src='../img/404.jpg'" alt="No title"/></a><div class="content"><a class="title" href="../2022/09/10/target_dir/Java%E8%BF%9B%E9%98%B6_%E6%B3%A8%E8%A7%A3/" title="No title">No title</a><time datetime="2022-09-10T04:32:14.927Z" title="Created 2022-09-10 12:32:14">2022-09-10</time></div></div><div class="aside-list-item"><a class="thumbnail" href="../2022/09/10/target_dir/Java%20core%20programming/" title="No title"><img src="../data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP/yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null;this.src='../img/404.jpg'" alt="No title"/></a><div class="content"><a class="title" href="../2022/09/10/target_dir/Java%20core%20programming/" title="No title">No title</a><time datetime="2022-09-10T04:32:14.923Z" title="Created 2022-09-10 12:32:14">2022-09-10</time></div></div><div class="aside-list-item"><a class="thumbnail" href="../2022/09/10/target_dir/Java%E5%9F%BA%E7%A1%80_%E8%AF%BB%E5%8F%96%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6/" title="No title"><img src="../data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP/yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null;this.src='../img/404.jpg'" alt="No title"/></a><div class="content"><a class="title" href="../2022/09/10/target_dir/Java%E5%9F%BA%E7%A1%80_%E8%AF%BB%E5%8F%96%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6/" title="No title">No title</a><time datetime="2022-09-10T04:32:14.923Z" title="Created 2022-09-10 12:32:14">2022-09-10</time></div></div><div class="aside-list-item"><a class="thumbnail" href="../2022/09/10/target_dir/Java%E5%9F%BA%E7%A1%80_%E6%89%93jar%E5%8C%85/" title="No title"><img src="../data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP/yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null;this.src='../img/404.jpg'" alt="No title"/></a><div class="content"><a class="title" href="../2022/09/10/target_dir/Java%E5%9F%BA%E7%A1%80_%E6%89%93jar%E5%8C%85/" title="No title">No title</a><time datetime="2022-09-10T04:32:14.919Z" title="Created 2022-09-10 12:32:14">2022-09-10</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2022 By narutohyc</div><div class="framework-info"><span>Framework </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>Theme </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="Read Mode"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="Switch Between Light And Dark Mode"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="Toggle between single-column and double-column"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="Setting"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="Table Of Contents"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="Back To Top"><i class="fas fa-arrow-up"></i></button></div></div><div><script src="../../../../../js/utils.js"></script><script src="../../../../../js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.min.js"></script><div class="js-pjax"></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
