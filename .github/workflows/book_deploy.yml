@@ -27,7 +27,10 @@ jobs:
         npm i -g hexo-cli
         npm i
         npm install hexo-renderer-marked --save
-
+        cd source/_posts
+        python dir_change.py
+        rm -rf java
+        cd ../..
         cp nodejs/hexo-renderer-marked/lib/renderer.js node_modules/hexo-renderer-marked/lib/
         hexo clean
         hexo g
