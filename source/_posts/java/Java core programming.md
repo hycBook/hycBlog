@@ -1,3 +1,8 @@
+---
+title: Java core programming
+date: 2022/9/10 20:46:25
+---
+
 ![img](res/other/异世界蕾姆_0.jpg)
 
 ## Java 核心编程技术干货
