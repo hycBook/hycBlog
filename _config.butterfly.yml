@@ -44,9 +44,15 @@ social:
 
 # Algolia search
 algolia_search:
-  enable: false
+  enable: true
   hits:
     per_page: 6
+# algolia搜索插件
+algolia:
+  applicationID: 'IMKX0J251S'
+  apiKey: '92de3dc43df2b8318c81df68e94d2221'
+  indexName: 'hexo_book'
+
 
 # Local search
 local_search:

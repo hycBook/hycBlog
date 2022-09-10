@@ -120,3 +120,9 @@ deploy:
   branch: gh-pages
   name: narutohyc
   email: 1832044043@qq.com
+
+# algolia搜索插件
+algolia:
+  applicationID: 'IMKX0J251S'
+  apiKey: '92de3dc43df2b8318c81df68e94d2221'
+  indexName: 'hexo_book'

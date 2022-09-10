@@ -26,8 +26,11 @@ jobs:
         node -v
         npm i -g hexo-cli
         npm i
+
         npm install hexo-renderer-marked --save
-        
+        echo 安装algolia搜索库
+        npm install hexo-algolia --save
+
         echo 开始修改文件资源路径
         cd source/_posts
         python dir_change.py
@@ -40,6 +43,7 @@ jobs:
         cp nodejs/hexo-renderer-marked/lib/renderer.js node_modules/hexo-renderer-marked/lib/
         hexo clean
         hexo g
+        hexo algolia
 
     - name: Deploy #步骤4：把编译好的静态目录上传到gh-pages分支上
       uses: JamesIves/github-pages-deploy-action@3.1.5 #这里调用第三方依赖，用于上传代码到指定分支上
