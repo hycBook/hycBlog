@@ -260,7 +260,7 @@ addtoany:
 comments:
   # Up to two comments system, the first will be shown as default
   # Choose: Disqus/Disqusjs/Livere/Gitalk/Valine/Waline/Utterances/Facebook Comments/Twikoo/Giscus/Remark42/Artalk
-  use: # Valine,Disqus
+  use: Twikoo,Valine # Valine,Disqus
   text: true # Display the comment name next to the button
   # lazyload: The comment system will be load when comment element enters the browser's viewport.
   # If you set it to true, the comment count will be invalid
@@ -300,12 +300,12 @@ gitalk:
 # valine
 # https://valine.js.org
 valine:
-  appId: # leancloud application app id
-  appKey: # leancloud application app key
+  appId: ncn88uooQf0IO2rrGE7Vniwp-gzGzoHsz # leancloud application app id
+  appKey: Yghpzg1QfBMFJ0MxxHubVzKL # leancloud application app key
   avatar: monsterid # gravatar style https://valine.js.org/#/avatar
   serverURLs: # This configuration is suitable for domestic custom domain name users, overseas version will be automatically detected (no need to manually fill in)
   bg: # valine background
-  visitor: false
+  visitor: true
   option:
 
 # waline - A simple comment system with backend support fork from Valine
@@ -338,9 +338,9 @@ facebook_comments:
 # Twikoo
 # https://github.com/imaegoo/twikoo
 twikoo:
-  envId:
-  region:
-  visitor: false
+  envId: https://vercel.hycbook.com
+  region: 
+  visitor: true
   option:
 
 # Giscus
@@ -406,8 +406,8 @@ gitter:
 # crisp
 # https://crisp.chat/en/
 crisp:
-  enable: false
-  website_id:
+  enable: true
+  website_id: 561b80db-3f0f-45cb-b3b1-aae7355939e6
 
 # messenger
 # https://developers.facebook.com/docs/messenger-platform/discovery/facebook-chat-plugin/
