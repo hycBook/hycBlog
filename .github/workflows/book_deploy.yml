@@ -30,6 +30,7 @@ jobs:
         cd source/_posts
         python dir_change.py
         rm -rf java
+        mv target_dir/* .
         cd ../..
         cp nodejs/hexo-renderer-marked/lib/renderer.js node_modules/hexo-renderer-marked/lib/
         hexo clean
