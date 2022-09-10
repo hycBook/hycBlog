@@ -60,6 +60,50 @@ def write_to_target(target_path: str, file_path, file_name):
         for line in lines:
             f.write(line)
 
+
+#使用Python实现从各个子文件夹中复制指定文件的方法
+# 递归复制文件夹内的文件
+def CopyFiles(sourceDir, targetDir):
+    for file in os.listdir(sourceDir):
+        try:
+
+            sourceDir1 = os.path.join(sourceDir, file)  # 路径名拼接
+            targetDir1 = os.path.join(targetDir, file)
+
+            print("sourceDir1" + sourceDir1)
+            print("targetDir1" + targetDir1)
+
+            for file in os.listdir(sourceDir1):
+                sourceDir2 = os.path.join(sourceDir1, file)
+                print(sourceDir2 + "__sourceDir2")
+
+                if re.search('.*(icon).+', file ,re.I):
+                    sourceFile =  sourceDir2
+                    print(file)
+                    print("sourceFile__" + sourceFile)
+                    targetFile = os.path.join(targetDir1, file)
+                    print("目标文件路径__" + targetFile)
+                    if os.path.isfile(sourceFile):
+                        if not os.path.exists(targetDir1):
+                            os.makedirs(targetDir1)
+                            print("文件夹已创建")
+                        else:
+                            print("文件夹已存在")
+                        if not os.path.exists(targetFile) or (os.path.exists(targetFile) and (os.path.getsize(targetFile) != os.path.getsize(sourceFile))):
+                            open(targetFile, "wb").write(open(sourceFile, "rb").read())
+                            print(targetFile + " copy succeeded")
+                        else:
+                            print("复制失败")
+                    else:
+                        print("文件不存在")
+
+                else:
+                    print("没有找到icon")
+        except OSError:
+            pass
+        continue
+    print('end')
+
 # line= r'>![image-20200322202245440](res/JDBC_JDBC基础/image-20200322202245440.png)\n'
 
 def deal_res(target_path: str, file_path, listdir):
@@ -76,12 +120,12 @@ def deal_res(target_path: str, file_path, listdir):
         if dir not in true_listdir:
             for target in lod_:
                 cur = os.path.join(file_path, dir)
-                # shutil.copy(cur, target)
+                CopyFiles(cur, target)
 
 
 def start():
     base_path = r'H:\github\bks\hexo_books\测试\_posts'
-    base_path = os.getcwd()
+    # base_path = os.getcwd()
 
     target_path = os.path.join(base_path, 'target_dir')
     if os.path.exists(target_path):
