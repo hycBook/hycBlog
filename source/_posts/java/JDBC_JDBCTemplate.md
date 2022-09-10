@@ -1,6 +1,8 @@
 ---
 title: JDBC_JDBCTemplate
 date: 2022/9/10 20:46:25
+categories: 
+- java
 ---
 
 

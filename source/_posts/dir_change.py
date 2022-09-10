@@ -14,7 +14,7 @@ from urllib.parse import unquote
 import os
 
 pat_img = re.compile('src=\"[/.]{0,1}[//]{0,1}(res.*?)\"')
-pat_md = re.compile('!\[img\]\([/.]{0,1}[//]{0,1}(res.*?)\)')
+pat_img = re.compile('src=\"[/.]{0,1}[\\\\//]{0,1}(res.*?)\\"')
 pat_md = re.compile('!\[.*?\]\([/.]{0,1}[//]{0,1}(res.*?)\)')
 
 
@@ -142,8 +142,15 @@ def deal_res(target_path: str, file_path, listdir):
 
 
 def start():
-    base_path = r'H:\github\bks\hexo_books\测试\_posts'
-    base_path = os.getcwd()
+    def platform():
+        """ 获取当前操作系统类型 """
+        import platform
+        return platform.system().lower()
+
+    if platform() == 'linux':
+        base_path = os.getcwd()
+    else:
+        base_path = r'H:\github\bks\hexo_books\测试\_posts'
 
     target_path = os.path.join(base_path, 'target_dir')
     if os.path.exists(target_path):
