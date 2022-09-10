@@ -27,11 +27,16 @@ jobs:
         npm i -g hexo-cli
         npm i
         npm install hexo-renderer-marked --save
+        
+        echo 开始修改文件资源路径
         cd source/_posts
         python dir_change.py
         rm -rf java
+        rm -rf python
+        rm -rf english
         mv target_dir/* .
         cd ../..
+        echo 修改文件资源路径完成
         cp nodejs/hexo-renderer-marked/lib/renderer.js node_modules/hexo-renderer-marked/lib/
         hexo clean
         hexo g
