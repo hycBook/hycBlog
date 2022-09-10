@@ -61,12 +61,11 @@ def write_to_target(target_path: str, file_path, file_name):
             f.write(line)
 
 
-#使用Python实现从各个子文件夹中复制指定文件的方法
+# 使用Python实现从各个子文件夹中复制指定文件的方法
 # 递归复制文件夹内的文件
-def CopyFiles(sourceDir, targetDir):
+def copy_files(sourceDir, targetDir):
     for file in os.listdir(sourceDir):
         try:
-
             sourceDir1 = os.path.join(sourceDir, file)  # 路径名拼接
             targetDir1 = os.path.join(targetDir, file)
 
@@ -77,8 +76,8 @@ def CopyFiles(sourceDir, targetDir):
                 sourceDir2 = os.path.join(sourceDir1, file)
                 print(sourceDir2 + "__sourceDir2")
 
-                if re.search('.*(icon).+', file ,re.I):
-                    sourceFile =  sourceDir2
+                if re.search('.*(icon).+', file, re.I):
+                    sourceFile = sourceDir2
                     print(file)
                     print("sourceFile__" + sourceFile)
                     targetFile = os.path.join(targetDir1, file)
@@ -89,7 +88,8 @@ def CopyFiles(sourceDir, targetDir):
                             print("文件夹已创建")
                         else:
                             print("文件夹已存在")
-                        if not os.path.exists(targetFile) or (os.path.exists(targetFile) and (os.path.getsize(targetFile) != os.path.getsize(sourceFile))):
+                        if not os.path.exists(targetFile) or (os.path.exists(targetFile) and (
+                                os.path.getsize(targetFile) != os.path.getsize(sourceFile))):
                             open(targetFile, "wb").write(open(sourceFile, "rb").read())
                             print(targetFile + " copy succeeded")
                         else:
@@ -104,23 +104,41 @@ def CopyFiles(sourceDir, targetDir):
         continue
     print('end')
 
+
 # line= r'>![image-20200322202245440](res/JDBC_JDBC基础/image-20200322202245440.png)\n'
+
+
+def my_copy_files(cur, target):
+    for dir in os.listdir(cur):
+        s = os.path.join(cur, dir)
+        t = os.path.join(target, dir)
+        if os.path.isdir(s):
+            shutil.copytree(s, t)
+        elif os.path.isfile(s):
+            shutil.copy(s, t)
+
 
 def deal_res(target_path: str, file_path, listdir):
     lod_ = []
-    true_listdir = [os.path.splitext(file_name)[0] for file_name in listdir]
+    true_listdir = [os.path.splitext(file_name)[0] for file_name in listdir if 'res' != file_name]
     for dir in os.listdir(file_path):
         if dir in true_listdir:
             target = os.path.join(target_path, dir)
             cur = os.path.join(file_path, dir)
-            lod_.append(cur)
+            lod_.append(target)
             shutil.copytree(cur, target)
+
+    for tl in true_listdir:
+        p = os.path.join(target_path, tl)
+        if not os.path.exists(p):
+            os.mkdir(p)
+            lod_.append(p)
 
     for dir in os.listdir(file_path):
         if dir not in true_listdir:
             for target in lod_:
                 cur = os.path.join(file_path, dir)
-                CopyFiles(cur, target)
+                my_copy_files(cur, target)
 
 
 def start():
