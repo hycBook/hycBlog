@@ -125,7 +125,7 @@ def deal_res(target_path: str, file_path, listdir):
 
 def start():
     base_path = r'H:\github\bks\hexo_books\测试\_posts'
-    # base_path = os.getcwd()
+    base_path = os.getcwd()
 
     target_path = os.path.join(base_path, 'target_dir')
     if os.path.exists(target_path):
