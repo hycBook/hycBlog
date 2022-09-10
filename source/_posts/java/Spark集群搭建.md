@@ -1,4 +1,4 @@
-![img](res/other/异世界蕾姆_1.png)
+![img](res/other/异世界蕾姆_0.jpg)
 
 [TOC]
 
