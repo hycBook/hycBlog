@@ -127,7 +127,6 @@ deploy:
 algolia:
   applicationID: 'IMKX0J251S'
   apiKey: '92de3dc43df2b8318c81df68e94d2221'
-  adminApiKey: 1981da031c9547f201aa1622c2e3aaf1
   indexName: 'hexo_book'
   chunkSize: 5000
   fields:

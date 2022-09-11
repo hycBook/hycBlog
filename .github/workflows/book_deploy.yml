@@ -33,7 +33,7 @@ jobs:
         echo 安装algolia搜索库
         # 配置algolia环境参数
         export HEXO_ALGOLIA_INDEXING_KEY=${{ secrets.ALGOLIA_TOKEN }}
-        npm install hexo-algoliasearch --save
+        npm install hexo-algolia --save
 
         echo 开始修改文件资源路径
         cd source/_posts
