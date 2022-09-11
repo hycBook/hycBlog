@@ -26,9 +26,15 @@ jobs:
         node -v
         npm i -g hexo-cli
         npm i
-        echo 使用 Hexo-abbrlink生成唯一文章链接
-        npm install hexo-abbrlink --save
+        
+        
+        # echo 使用 Hexo-abbrlink生成唯一文章链接
+        # npm install hexo-abbrlink --save
+        
         npm install hexo-renderer-marked --save
+
+        # 添加字数统计
+        npm install hexo-wordcount --save
 
         echo 安装algolia搜索库
         # 配置algolia环境参数
