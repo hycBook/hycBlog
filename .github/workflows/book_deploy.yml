@@ -41,6 +41,9 @@ jobs:
         export HEXO_ALGOLIA_INDEXING_KEY=${{ secrets.ALGOLIA_TOKEN }}
         npm install hexo-algolia --save
 
+        # 給 hexo-theme-butterfly 添加 Artitalk 説説
+        npm install hexo-butterfly-artitalk
+
         echo 开始修改文件资源路径
         cd source/_posts
         python dir_change.py
