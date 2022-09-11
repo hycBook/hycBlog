@@ -11,7 +11,7 @@ menu:
     音乐: /music/|| fas fa-music
     电影: /movies/|| fas fa-video
   生活||fa fa-diamond:
-    - 说说 || /artitalk/ || fa fa-comments-o
+    说说: /artitalk/ || fa fa-comments-o
   友链: /link/|| fas fa-link
   关于: /about/|| fas fa-heart
 
