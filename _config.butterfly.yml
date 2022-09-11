@@ -10,7 +10,7 @@ menu:
   清单 || fa fa-list:
     音乐: /music/ || fa fa-music
     电影: /movies/ || fa fa-video
-  生活 || fa fadiamond:
+  生活 || fa fa-diamond:
     微言: /artitalk/ || fa fa-comments-o
   友链: /link/ || fa fa-link
   关于: /about/ || fa fa-heart
@@ -79,7 +79,7 @@ katex:
 # --------------------------------------
 
 # Favicon（網站圖標）
-favicon: /img/favicon.png
+favicon: /img/网站图标.ico
 
 # Avatar (頭像)
 avatar:
