@@ -2,23 +2,43 @@
 # see https://butterfly.js.org/posts/4aa8abbe/#導航菜單
 # --------------------------------------
 
+# menu:
+#   首页: / || fa fa-home
+#   时光机: /archives/ || fa fa-archive
+#   标签: /tags/ || fa fa-tags
+#   分类: /categories/ || fa fa-folder-open
+#   清单 || fa fa-list:
+#     音乐: /music/ || fa fa-music
+#     电影: /movies/ || fa fa-video
+#   生活 || fa fadiamond:
+#     微言: /artitalk/ || fa fa-comments-o
+#   友链: /link/ || fa fa-link
+#   关于: /about/ || fa fa-heart
+
 menu:
-  首页: / || fa fa-home
-  时光机: /archives/ || fa fa-archive
-  标签: /tags/ || fa fa-tags
-  分类: /categories/ || fa fa-folder-open
-  清单 || fa fa-list:
-    音乐: /music/ || fa fa-music
-    电影: /movies/ || fa fa-video
-  生活 || fa fadiamond:
-    微言: /artitalk/ || fa fa-comments-o
-  友链: /link/ || fa fa-link
-  关于: /about/ || fa fa-heart
+  - title: 首页
+    ico: fa-home
+    url: /
+  - title: 时光机
+    ico: fa-archive
+    url: archives/
+  - title: 标签
+    ico: fa-tags
+    url: tags/
+  - title: 分类
+    ico: fa-folder-open
+    url: categories/
+  - title: 友链
+    ico: fa-link
+    url: link/
+  - title: 关于
+    ico: fa-heart
+    url: about/
 
 # Code Blocks (代碼相關)
 # --------------------------------------
 
-highlight_theme: mac light #  darker / pale night / light / ocean / mac / mac light / false
+highlight_theme: mac light #  darker / pale night / light / ocean / mac / mac light / 
 highlight_copy: true # copy button
 highlight_lang: true # show the code language
 highlight_shrink: false # true: shrink the code blocks / false: expand the code blocks | none: expand code blocks and hide the button
