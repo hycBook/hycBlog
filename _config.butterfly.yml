@@ -54,7 +54,7 @@ algolia:
   indexName: 'hexo_book'
   chunkSize: 5000
   fields:
-    - content
+    - content:strip
     - gallery
     - permalink
     - photos
