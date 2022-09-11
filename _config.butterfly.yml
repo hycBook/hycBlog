@@ -80,7 +80,7 @@ favicon: /img/favicon.png
 
 # Avatar (頭像)
 avatar:
-  img: https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png
+  img: /img/兼一头像.jpg
   effect: false
 
 # Disable all banner image
@@ -304,7 +304,7 @@ gitalk:
 valine:
   appId: ncn88uooQf0IO2rrGE7Vniwp-gzGzoHsz # leancloud application app id
   appKey: Yghpzg1QfBMFJ0MxxHubVzKL # leancloud application app key
-  avatar: /img/兼一头像.jpg # gravatar style https://valine.js.org/#/avatar
+  avatar: monsterid # gravatar style https://valine.js.org/#/avatar
   serverURLs: # This configuration is suitable for domestic custom domain name users, overseas version will be automatically detected (no need to manually fill in)
   bg: # valine background
   visitor: true
