@@ -26,7 +26,7 @@ jobs:
         node -v
         npm i -g hexo-cli
         npm i
-        exho 使用 Hexo-abbrlink生成唯一文章链接
+        echo 使用 Hexo-abbrlink生成唯一文章链接
         npm install hexo-abbrlink --save
         npm install hexo-renderer-marked --save
 
