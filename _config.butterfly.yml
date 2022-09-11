@@ -3,13 +3,15 @@
 # --------------------------------------
 
 menu:
-  时光机: /archives/|| fas fa-archive
   首页: / || fas fa-home
+  时光机: /archives/|| fas fa-archive
   标签: /tags/|| fas fa-tags
   分类: /categories/|| fas fa-folder-open
   清单||fas fa-list:
     音乐: /music/|| fas fa-music
     电影: /movies/|| fas fa-video
+  生活||fa fa-diamond:
+    - 说说 || /artitalk/ || fa fa-comments-o
   友链: /link/|| fas fa-link
   关于: /about/|| fas fa-heart
 
