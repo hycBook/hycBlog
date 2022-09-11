@@ -10,7 +10,7 @@ date: 2022-09-12 06:28:47
 <div id="artitalk_main"></div>
 <script>
 new Artitalk({
-    appId: 'EWOLWeLEd9hBgZXcrZD78dAQ-gzGzoHsz', // Your LeanCloud appId
-    appKey: 'KO29ZWINLoiFuKLq85iG7G9T' // Your LeanCloud appKey
+    appId: 'aroKa0A3PwpreaqyXmS9yyeI-MdYXbMMI', // Your LeanCloud appId
+    appKey: 'x0g7bGyOE09UnktsOzMjFv8w' // Your LeanCloud appKey
 })
 </script>
