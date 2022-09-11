@@ -28,7 +28,7 @@ code_word_wrap: true
 copy:
   enable: true
   copyright:
-    enable: false
+    enable: true
     limit_count: 50
 
 # social settings (社交圖標設置)
@@ -123,6 +123,8 @@ cover:
   position: both
   # When cover is not set, the default cover is displayed (當沒有設置cover時，默認的封面顯示)
   default_cover:
+    - https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fi0.hdslb.com%2Fbfs%2Farticle%2Fad8dfca38695fb8379563a774aec6aed23812e7f.jpg&refer=http%3A%2F%2Fi0.hdslb.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=auto?sec=1665457697&t=3e031800b51542f79595c10fc9a33c5c
+    - https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fi0.hdslb.com%2Fbfs%2Farticle%2F9cd46ecdd850e95c831828c8c73b02f3220ea379.jpg&refer=http%3A%2F%2Fi0.hdslb.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=auto?sec=1665457698&t=dc647c116b68c71aa359742005b8e056
     # - https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg
 
 # Replace Broken Images (替換無法顯示的圖片)
@@ -138,10 +140,10 @@ error_404:
 
 post_meta:
   page: # Home Page
-    date_type: created # created or updated or both 主頁文章日期是創建日或者更新日或都顯示
+    date_type: both  # created or updated or both 主頁文章日期是創建日或者更新日或都顯示
     date_format: date # date/relative 顯示日期還是相對日期
     categories: true # true or false 主頁是否顯示分類
-    tags: false # true or false 主頁是否顯示標籤
+    tags: true # true or false 主頁是否顯示標籤
     label: true # true or false 顯示描述性文字
   post:
     date_type: both # created or updated or both 文章頁日期是創建日或者更新日或都顯示
@@ -180,25 +182,25 @@ toc:
   page: false
   number: true
   expand: false
-  style_simple: false # for post
+  style_simple: true # for post
 
 post_copyright:
   enable: true
-  decode: false
-  author_href:
+  decode: true
+  author_href: https://github.com/narutohyc
   license: CC BY-NC-SA 4.0
   license_url: https://creativecommons.org/licenses/by-nc-sa/4.0/
 
 # Sponsor/reward
 reward:
-  enable: false
+  enable: true
   QR_code:
-    # - img: /img/wechat.jpg
-    #   link:
-    #   text: wechat
-    # - img: /img/alipay.jpg
-    #   link:
-    #   text: alipay
+    - img: /img/hyc_wechat_收款码.png
+      link:
+      text: wechat
+    - img: /img/hyc_alipay_收款码.png
+      link:
+      text: alipay
 
 # Post edit
 # Easily browse and edit blog source code online.
@@ -302,7 +304,7 @@ gitalk:
 valine:
   appId: ncn88uooQf0IO2rrGE7Vniwp-gzGzoHsz # leancloud application app id
   appKey: Yghpzg1QfBMFJ0MxxHubVzKL # leancloud application app key
-  avatar: monsterid # gravatar style https://valine.js.org/#/avatar
+  avatar: /img/兼一头像.jpg # gravatar style https://valine.js.org/#/avatar
   serverURLs: # This configuration is suitable for domestic custom domain name users, overseas version will be automatically detected (no need to manually fill in)
   bg: # valine background
   visitor: true
@@ -421,8 +423,8 @@ messenger:
 footer:
   owner:
     enable: true
-    since: 2020
-  custom_text:
+    since: 2022
+  custom_text: Hi, welcome to my <a href="https://butterfly.js.org/">blog</a>!
   copyright: true # Copyright of theme and framework
 
 # Analysis
@@ -665,7 +667,7 @@ aside:
     enable: true
     content: This is my Blog
   card_recent_post:
-    enable: true
+    enable: false
     limit: 5 # if set 0 will show all
     sort: date # date or updated
     sort_order: # Don't modify the setting unless you know how it works
@@ -702,12 +704,12 @@ busuanzi:
 # Time difference between publish date and now (網頁運行時間)
 # Formal: Month/Day/Year Time or Year/Month/Day Time
 runtimeshow:
-  enable: false
-  publish_date:
+  enable: true
+  publish_date: 2022/9/9 00:00:00
 
 # Aside widget - Newest Comments
 newest_comments:
-  enable: false
+  enable: true
   sort_order: # Don't modify the setting unless you know how it works
   limit: 6
   storage: 10 # unit: mins, save data to localStorage
@@ -718,11 +720,11 @@ newest_comments:
 
 # Conversion between Traditional and Simplified Chinese (簡繁轉換)
 translate:
-  enable: false
+  enable: true
   # The text of a button
-  default: 繁
+  default: 简
   # the language of website (1 - Traditional Chinese/ 2 - Simplified Chinese）
-  defaultEncoding: 2
+  defaultEncoding: 1
   # Time delay
   translateDelay: 0
   # The text of the button when the language is Simplified Chinese
@@ -770,7 +772,7 @@ fancybox: true
 # mermaid
 # see https://github.com/mermaid-js/mermaid
 mermaid:
-  enable: false
+  enable: true
   # built-in themes: default/forest/dark/neutral
   theme:
     light: default
