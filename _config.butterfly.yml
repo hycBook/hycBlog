@@ -66,13 +66,13 @@ local_search:
 
 # MathJax
 mathjax:
-  enable: false
-  per_page: false
+  enable: true
+  per_page: true
 
 # KaTeX
 katex:
   enable: true
-  per_page: false
+  per_page: true
   hide_scrollbar: true
 
 # Image (圖片設置)

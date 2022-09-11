@@ -55,8 +55,8 @@ post_asset_folder: true
 marked:
   prependRoot: false
   postAsset: false
-
 relative_link: false
+
 future: true
 highlight:
   enable: true
