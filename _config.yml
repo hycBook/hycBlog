@@ -129,12 +129,3 @@ algolia:
   apiKey: '92de3dc43df2b8318c81df68e94d2221'
   indexName: 'hexo_book'
   chunkSize: 5000
-  fields:
-    - content:strip:truncate,0,500
-    - excerpt:strip
-    - gallery
-    - permalink
-    - photos
-    - slug
-    - tags
-    - title

@@ -116,8 +116,8 @@ class Renderer extends MarkedRenderer {
 
   // Prepend root to image path
   image(href, title, text) {
-    console.log('红红火火恍恍惚惚');
-    console.log(0, href);
+    // console.log('红红火火恍恍惚惚');
+    // console.log(0, href);
     if(href.indexOf('/')>-1){
       href = href.split('/')[href.split('/').length-1];
     }
@@ -126,10 +126,10 @@ class Renderer extends MarkedRenderer {
     const { hexo, options } = this;
     const { relative_link } = hexo.config;
     const { lazyload, prependRoot, postPath } = options;
-    console.log(2, relative_link);
-    console.log(3, hexo.root);
-    console.log(4, prependRoot);
-    console.log(5, postPath);
+    // console.log(2, relative_link);
+    // console.log(3, hexo.root);
+    // console.log(4, prependRoot);
+    // console.log(5, postPath);
 
     if (!/^(#|\/\/|http(s)?:)/.test(href) && !relative_link && prependRoot) {
       if (!href.startsWith('/') && !href.startsWith('\\') && postPath) {
