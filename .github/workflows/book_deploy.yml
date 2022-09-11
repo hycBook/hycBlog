@@ -42,11 +42,10 @@ jobs:
         echo 修改文件资源路径完成
         cp nodejs/hexo-renderer-marked/lib/renderer.js node_modules/hexo-renderer-marked/lib/
         hexo clean
-        hexo g
-
         # 配置algolia环境参数
         export HEXO_ALGOLIA_INDEXING_KEY=${{ secrets.ALGOLIA_TOKEN }}
-        hexo algolia
+        hexo algolia        
+        hexo g
 
     - name: Deploy #步骤4：把编译好的静态目录上传到gh-pages分支上
       uses: JamesIves/github-pages-deploy-action@3.1.5 #这里调用第三方依赖，用于上传代码到指定分支上
