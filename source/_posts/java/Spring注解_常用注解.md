@@ -1,8 +1,9 @@
 ---
 title: Spring注解_常用注解
-date: 2022/9/10 20:46:25
-categories: 
-- java
+date: '2022/9/10 20:46:25'
+categories:
+  - java
+abbrlink: a0f3b9ff
 ---
 
 ![img](res/other/异世界蕾姆_1.png)

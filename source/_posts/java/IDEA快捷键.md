@@ -1,8 +1,9 @@
 ---
 title: IDE快捷键
-date: 2022/9/10 20:46:25
-categories: 
-- java
+date: '2022/9/10 20:46:25'
+categories:
+  - java
+abbrlink: 7978bafd
 ---
 
 ![img](res/other/异世界蕾姆_0.jpg)

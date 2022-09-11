@@ -1,8 +1,9 @@
 ---
 title: Java基础_集合
-date: 2022/9/10 20:46:25
-categories: 
-- java
+date: '2022/9/10 20:46:25'
+categories:
+  - java
+abbrlink: d6e2fafb
 ---
 
 ![img](res/other/异世界蕾姆_0.jpg)

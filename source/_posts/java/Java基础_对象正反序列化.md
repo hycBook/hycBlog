@@ -1,8 +1,9 @@
 ---
 title: Java基础_对象正反序列化
-date: 2022/9/10 20:46:25
-categories: 
-- java
+date: '2022/9/10 20:46:25'
+categories:
+  - java
+abbrlink: 336a2a82
 ---
 
 ![img](res/other/异世界蕾姆_0.jpg)

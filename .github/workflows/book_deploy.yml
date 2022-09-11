@@ -26,9 +26,10 @@ jobs:
         node -v
         npm i -g hexo-cli
         npm i
-
+        exho 使用 Hexo-abbrlink生成唯一文章链接
+        npm install hexo-abbrlink --save
         npm install hexo-renderer-marked --save
-        
+
         echo 安装algolia搜索库
         # 配置algolia环境参数
         export HEXO_ALGOLIA_INDEXING_KEY=${{ secrets.ALGOLIA_TOKEN }}
