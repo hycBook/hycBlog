@@ -58,6 +58,7 @@ jobs:
         # 执行编译
         hexo clean
         hexo g
+        hexo s
         hexo algolia
 
     - name: Deploy #步骤4：把编译好的静态目录上传到gh-pages分支上
