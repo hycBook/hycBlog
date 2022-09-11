@@ -616,9 +616,9 @@ hr_icon:
 
 # the subtitle on homepage (主頁subtitle)
 subtitle:
-  enable: false
+  enable: true
   # Typewriter Effect (打字效果)
-  effect: true
+  effect: false
   # Effect Speed Options (打字效果速度參數)
   startDelay: 300 # time before typing starts in milliseconds
   typeSpeed: 150 # type speed in milliseconds
@@ -634,6 +634,8 @@ subtitle:
   source: false
   # 如果關閉打字效果，subtitle 只會顯示 sub 的第一行文字
   sub:
+    - 努力是不会骗人的
+    - 认识自己的无知，就是最大的智慧
 
 # Loading Animation (加載動畫)
 preloader: true
