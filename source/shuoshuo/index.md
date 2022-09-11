@@ -1,12 +1,7 @@
 ---
-title: artitalk
-type: artitalk
-noDate: 'true'
-comments: 'false'
-top_img: https://cdn.jsdelivr.net/gh/cungudafa/img/images/food.jpg
+title: shuoshuo
+date: 2022-09-12 06:28:47
 ---
-
-
 
 
 <!-- 引用 artitalk -->
