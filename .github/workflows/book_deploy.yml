@@ -28,8 +28,11 @@ jobs:
         npm i
 
         npm install hexo-renderer-marked --save
+        
         echo 安装algolia搜索库
-        npm install hexo-algolia --save
+        # 配置algolia环境参数
+        export HEXO_ALGOLIA_INDEXING_KEY=${{ secrets.ALGOLIA_TOKEN }}
+        npm install hexo-algoliasearch --save
 
         echo 开始修改文件资源路径
         cd source/_posts
@@ -42,8 +45,6 @@ jobs:
         echo 修改文件资源路径完成
         cp nodejs/hexo-renderer-marked/lib/renderer.js node_modules/hexo-renderer-marked/lib/
         hexo clean
-        # 配置algolia环境参数
-        export HEXO_ALGOLIA_INDEXING_KEY=${{ secrets.ALGOLIA_TOKEN }}
         hexo algolia        
         hexo g
 
