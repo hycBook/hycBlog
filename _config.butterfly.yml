@@ -488,6 +488,7 @@ site_verification:
 # Theme color for customize
 # Notice: color value must in double quotes like "#000" or may cause error!
 
+# 自定义主题色
 # theme_color:
 #   enable: true
 #   main: "#49B1F5"
@@ -953,11 +954,11 @@ artitalk:
 
 
 # Math 数学
-kramed:
-  gfm: true
-  pedantic: false
-  sanitize: false
-  tables: true
-  breaks: true
-  smartLists: true
-  smartypants: true    
+# kramed:
+#   gfm: true
+#   pedantic: false
+#   sanitize: false
+#   tables: true
+#   breaks: true
+#   smartLists: true
+#   smartypants: true    

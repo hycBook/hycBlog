@@ -32,9 +32,9 @@ jobs:
         # npm install hexo-abbrlink --save
         
         # Math 数学
-        # npm install hexo-renderer-marked --save
-        npm uninstall hexo-renderer-marked --save
-        npm install hexo-renderer-kramed --save
+        npm install hexo-renderer-marked --save
+        # npm uninstall hexo-renderer-marked --save
+        # npm install hexo-renderer-kramed --save
 
         # 添加字数统计
         npm install hexo-wordcount --save
@@ -56,7 +56,7 @@ jobs:
         mv target_dir/* .
         cd ../..
         echo 修改文件资源路径完成
-        # cp nodejs/hexo-renderer-marked/lib/renderer.js node_modules/hexo-renderer-marked/lib/
+        cp nodejs/hexo-renderer-marked/lib/renderer.js node_modules/hexo-renderer-marked/lib/
 
         # 执行编译
         hexo clean
