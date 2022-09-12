@@ -27,7 +27,6 @@ jobs:
         npm i -g hexo-cli
         npm i
         
-        
         # echo 使用 Hexo-abbrlink生成唯一文章链接
         # npm install hexo-abbrlink --save
         
@@ -46,6 +45,9 @@ jobs:
 
         # 給 hexo-theme-butterfly 添加 Artitalk 説説
         npm install hexo-butterfly-artitalk
+
+        # Hexo哔哩哔哩番剧页面插件
+        npm install hexo-bilibili-bangumi --save
 
         echo 开始修改文件资源路径
         cd source/_posts
