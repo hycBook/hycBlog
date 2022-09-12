@@ -68,12 +68,12 @@ local_search:
 # MathJax
 mathjax:
   enable: true
-  per_page: true
+  per_page: false
 
 # KaTeX
 katex:
   enable: true
-  per_page: true
+  per_page: false
   hide_scrollbar: true
 
 # Image (圖片設置)
@@ -438,7 +438,7 @@ footer:
 
 # Baidu Analytics
 # https://tongji.baidu.com/web/welcome/login
-baidu_analytics:
+baidu_analytics: https://hm.baidu.com/hm.js?68340394dfd808cea9826e8a57f87aa6
 
 # Google Analytics
 # https://analytics.google.com/analytics/web/
@@ -950,3 +950,14 @@ artitalk:
   js:
   option:
   front_matter:    
+
+
+# Math 数学
+kramed:
+  gfm: true
+  pedantic: false
+  sanitize: false
+  tables: true
+  breaks: true
+  smartLists: true
+  smartypants: true    
