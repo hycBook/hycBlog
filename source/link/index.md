@@ -16,7 +16,6 @@ type: "link"
       link: https://hexo.io/zh-tw/
       avatar: https://d33wubrfki0l68.cloudfront.net/6657ba50e702d84afb32fe846bed54fba1a77add/827ae/logo.svg
       descr: 快速、简单且强大的网誌框架
-
 - class_name: hexo相关网站
   class_desc: 用于构建hexo博客后台支持的一些网站
   link_list:
@@ -40,10 +39,14 @@ type: "link"
       link: https://sm.ms/home/
       avatar: https://sm.ms/favicon-32x32.png
       descr: 免费稳定图床工具
-    - name: leancloud
-      link: https://console.leancloud.cn/
-      avatar: https://cn-n1.console-static.lncld.cn/favicon.ico
-      descr: 后端云服务
+    - name: artitalk
+      link: https://artitalk.js.org/
+      avatar: https://cdn.jsdelivr.net/gh/drew233/cdn/logol.png
+      descr: 实时发布说说/微语
+    - name: crisp
+      link: https://crisp.chat/zh/livechat/
+      avatar: https://crisp.chat/favicon-512x512.png
+      descr: jishi聊天软件
 
 
 - class_name: 网站

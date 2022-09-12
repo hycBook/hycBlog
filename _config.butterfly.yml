@@ -4,9 +4,10 @@
 
 menu:
   首页: / || fa fa-home
-  时光机: /archives/ || fa fa-archive
-  标签: /tags/ || fa fa-tags
-  分类: /categories/ || fa fa-folder-open
+  文章 || fa fa-compass:
+    归档: /archives/ || fa fa-archive
+    分类: /categories/ || fa fa-folder-open
+    标签: /tags/ || fa fa-tags
   娱乐 || fa fa-list:
     音乐: /music/ || fa fa-music
     追番: /bangumis/ || fa fa-video
