@@ -17,6 +17,35 @@ type: "link"
       avatar: https://d33wubrfki0l68.cloudfront.net/6657ba50e702d84afb32fe846bed54fba1a77add/827ae/logo.svg
       descr: 快速、简单且强大的网誌框架
 
+- class_name: hexo相关网站
+  class_desc: 用于构建hexo博客后台支持的一些网站
+  link_list:
+    - name: vercel
+      link: https://vercel.com/
+      avatar: https://assets.vercel.com/image/upload/front/favicon/vercel/57x57.png
+      descr: 网站托管平台
+    - name: mongodb
+      link: https://account.mongodb.com/
+      avatar: https://www.mongodb.com/assets/images/global/favicon.ico
+      descr: 在线数据库服务
+    - name: algolia
+      link: https://www.algolia.com/
+      avatar: https://www.algolia.com/algoliaweb-static-favicons/apple-touch-icon.png
+      descr: 提供托管式搜索API
+    - name: addthis
+      link: https://www.addthis.com/
+      avatar: https://www.addthis.com/images/addthis_57x57.png
+      descr: 分享按钮
+    - name: sm图床
+      link: https://sm.ms/home/
+      avatar: https://sm.ms/favicon-32x32.png
+      descr: 免费稳定图床工具
+    - name: leancloud
+      link: https://console.leancloud.cn/
+      avatar: https://cn-n1.console-static.lncld.cn/favicon.ico
+      descr: 后端云服务
+
+
 - class_name: 网站
   class_desc: 值得推荐的网站
   link_list:
