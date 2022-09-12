@@ -247,8 +247,8 @@ noticeOutdate:
 # AddThis
 # https://www.addthis.com/
 addThis:
-  enable: false
-  pubid:
+  enable: true
+  pubid: ra-631e81537c7ff17a
 
 # Share.js
 # https://github.com/overtrue/share.js
