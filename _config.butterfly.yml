@@ -97,7 +97,8 @@ index_img: /img/异世界蕾姆_1.png
 default_top_img: https://pica.zhimg.com/v2-7d1069f8beeeae09f0d26812941cebe0_1440w.jpg?source=172ae18b
 
 # The banner image of archive page
-archive_img: https://i0.hdslb.com/bfs/article/457bcdf4a30dbb298ffe65cb26c4ea49d8974bf1.jpg@942w_531h_progressive.webp
+# archive_img: https://i0.hdslb.com/bfs/article/457bcdf4a30dbb298ffe65cb26c4ea49d8974bf1.jpg@942w_531h_progressive.webp
+archives_img: https://pic4.zhimg.com/v2-7b31e5e4441fe0802b125d9688acc11f_r.jpg
 
 # If the banner of tag page not setting, it will show the top_img
 # note: tag page, not tags page (子標籤頁面的 top_img)
