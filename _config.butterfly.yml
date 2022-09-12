@@ -965,3 +965,13 @@ artitalk:
 #   breaks: true
 #   smartLists: true
 #   smartypants: true    
+
+
+# 自定义右键菜单
+inject:
+  head:
+    - <link rel="stylesheet" href="/css/rightMenu.css">
+  bottom:
+    - <script defer src="https://npm.elemecdn.com/jquery@latest/dist/jquery.min.js"></script>
+    - <script defer data-pjax src="/js/rightMenu.js"></script>
+
