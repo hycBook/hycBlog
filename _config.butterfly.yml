@@ -438,7 +438,8 @@ footer:
 
 # Baidu Analytics
 # https://tongji.baidu.com/web/welcome/login
-baidu_analytics: https://hm.baidu.com/hm.js?68340394dfd808cea9826e8a57f87aa6
+# https://hm.baidu.com/hm.js?68340394dfd808cea9826e8a57f87aa6
+baidu_analytics:
 
 # Google Analytics
 # https://analytics.google.com/analytics/web/
@@ -819,7 +820,7 @@ aplayerInject:
 # position 彈窗位置
 # 可選 top-left / top-center / top-right / bottom-left / bottom-center / bottom-right
 snackbar:
-  enable: false
+  enable: true
   position: bottom-left
   bg_light: '#49b1f5' # The background color of Toast Notification in light mode
   bg_dark: '#1f1f1f' # The background color of Toast Notification in dark mode
