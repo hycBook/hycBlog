@@ -10,7 +10,7 @@ menu:
   清单 || fa fa-list:
     音乐: /music/ || fa fa-music
     电影: /movies/ || fa fa-video
-    相册: /gallery/ || fa fa-gallery
+    相册: /gallery/ || fa fa-image
   生活 || fa fa-diamond:
     微言: /shuoshuo/ || fas fa-comments
   友链: /link/ || fa fa-link
