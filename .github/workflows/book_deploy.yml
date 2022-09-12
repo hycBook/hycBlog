@@ -63,6 +63,7 @@ jobs:
 
         # 执行编译
         hexo clean
+        hexo bangumi -u # 更新番剧数据
         hexo g
         # hexo s
         hexo algolia
