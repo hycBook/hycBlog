@@ -4,7 +4,7 @@
 
 menu:
   首页: / || fa fa-home
-  时光机: /archive/ || fa fa-archive
+  时光机: /archives/ || fa fa-archive
   标签: /tags/ || fa fa-tags
   分类: /categories/ || fa fa-folder-open
   清单 || fa fa-list:
@@ -672,7 +672,7 @@ aside:
       link: https://github.com/narutohyc
   card_announcement:
     enable: true
-    content: This is my Blog
+    content: 兼一书虫博客成功上线啦~ 中秋国庆折腾了好几天，为了解决typora和hexo的资源路径问题，写了python去做路径的转换，好在最后成功处理，接下来可以专注写博客啦~
   card_recent_post:
     enable: true
     limit: 5 # if set 0 will show all
