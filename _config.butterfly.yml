@@ -94,28 +94,28 @@ disable_top_img: false
 index_img: /img/异世界蕾姆_1.png
 
 # If the banner of page not setting, it will show the top_img
-default_top_img:
+default_top_img: https://pica.zhimg.com/v2-7d1069f8beeeae09f0d26812941cebe0_1440w.jpg?source=172ae18b
 
 # The banner image of archive page
-archive_img:
+archive_img: https://i0.hdslb.com/bfs/article/457bcdf4a30dbb298ffe65cb26c4ea49d8974bf1.jpg@942w_531h_progressive.webp
 
 # If the banner of tag page not setting, it will show the top_img
 # note: tag page, not tags page (子標籤頁面的 top_img)
-tag_img:
+tag_img: https://i0.hdslb.com/bfs/article/bf5fd49ce7f748849ee7f90c06001111103d7706.jpg@942w_531h_progressive.webp
 
 # The banner image of tag page
 # format:
 #  - tag name: xxxxx
-tag_per_img:
+tag_per_img: https://pic4.zhimg.com/v2-dcdb9c774f245868ce8df71ed4febb2b_r.jpg
 
 # If the banner of category page not setting, it will show the top_img
 # note: category page, not categories page (子分類頁面的 top_img)
-category_img:
+category_img: https://i0.hdslb.com/bfs/article/66b76ab7f21bd764d1a8b41a9d6caadf3976ff3b.jpg@942w_531h_progressive.webp
 
 # The banner image of category page
 # format:
 #  - category name: xxxxx
-category_per_img:
+category_per_img: https://pic3.zhimg.com/v2-5c0ec8ae8f670831c97b849c0bd04046_r.jpg
 
 # 文章封面
 cover:
@@ -141,7 +141,7 @@ error_img:
 error_404:
   enable: true
   subtitle: 'Page Not Found'
-  background: https://i.loli.net/2020/05/19/aKOcLiyPl2JQdFD.png
+  background: https://pic3.zhimg.com/v2-4f91ab97030f9b966e521faf42fe1c4e_r.jpg # https://i.loli.net/2020/05/19/aKOcLiyPl2JQdFD.png
 
 post_meta:
   page: # Home Page
