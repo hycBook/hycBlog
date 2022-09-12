@@ -869,8 +869,11 @@ css_prefix: true
 inject:
   head:
     # - <link rel="stylesheet" href="/xxx.css">
+    - <link rel="stylesheet" href="/css/rightMenu.css">  # 自定义右键菜单  https://tzy1997.com/articles/hexo1608/
   bottom:
     # - <script src="xxxx"></script>
+    - <script defer src="https://npm.elemecdn.com/jquery@latest/dist/jquery.min.js"></script>
+    - <script defer data-pjax src="/js/rightMenu.js"></script>
 
 # CDN
 # Don't modify the following settings unless you know how they work
@@ -967,11 +970,5 @@ artitalk:
 #   smartypants: true    
 
 
-# 自定义右键菜单
-inject:
-  head:
-    - <link rel="stylesheet" href="/css/rightMenu.css">
-  bottom:
-    - <script defer src="https://npm.elemecdn.com/jquery@latest/dist/jquery.min.js"></script>
-    - <script defer data-pjax src="/js/rightMenu.js"></script>
+
 
