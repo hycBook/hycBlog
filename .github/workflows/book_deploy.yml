@@ -51,6 +51,7 @@ jobs:
         cd source/_posts
         python dir_change.py
         rm -rf java
+        rm -rf common
         rm -rf python
         rm -rf english
         mv target_dir/* .
