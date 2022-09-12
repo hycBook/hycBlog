@@ -651,13 +651,13 @@ pip install graphframes==0.6
 
 > 选择远程的解释器
 
-<center><img src="res/Spark%E9%9B%86%E7%BE%A4%E6%90%AD%E5%BB%BA/image-20220127143544475.png" width=600></center>
+![img](res/Spark集群搭建/image-20220127143544475.png)
 
 > 点击move即可next
 > 配置路径，远程的选择自己之前新建的`/home/huangyc/hyc_test`
 > `Automatically upload ...`表示会自动上传项目到服务器中
 
-<center><img src="res/Spark%E9%9B%86%E7%BE%A4%E6%90%AD%E5%BB%BA/image-20220127143940559.png" width=600></center>
+![img](res/Spark集群搭建/image-20220127143940559.png)
 
 
 
