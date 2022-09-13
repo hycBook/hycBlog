@@ -46,7 +46,7 @@ type: "link"
     - name: crisp
       link: https://crisp.chat/zh/livechat/
       avatar: https://crisp.chat/favicon-512x512.png
-      descr: jishi聊天软件
+      descr: 即时聊天软件
 
 
 - class_name: 网站
