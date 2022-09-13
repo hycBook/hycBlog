@@ -131,6 +131,12 @@ cover:
   default_cover:
     - https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fi0.hdslb.com%2Fbfs%2Farticle%2Fad8dfca38695fb8379563a774aec6aed23812e7f.jpg&refer=http%3A%2F%2Fi0.hdslb.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=auto?sec=1665457697&t=3e031800b51542f79595c10fc9a33c5c
     - https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fi0.hdslb.com%2Fbfs%2Farticle%2F9cd46ecdd850e95c831828c8c73b02f3220ea379.jpg&refer=http%3A%2F%2Fi0.hdslb.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=auto?sec=1665457698&t=dc647c116b68c71aa359742005b8e056
+    - https://pic4.zhimg.com/v2-eac3c34b781fd26f52fd9dd4f37d9ba3_r.jpg
+    - https://pic4.zhimg.com/v2-177d137cb3266e217cc0bb45c2e5b1ef_r.jpg
+    - https://pic3.zhimg.com/v2-a447e7198d8e141291d42df236e12c0e_r.jpg
+    - https://pic2.zhimg.com/v2-49fc2761978919dfc0c15437fa0dd5d1_r.jpg
+    - https://pic4.zhimg.com/v2-3edaaf2bf23987e3f42ab5b513a62817_r.jpg
+    - https://pic4.zhimg.com/v2-2adecb33537373ce350fc8edfbbd6413_r.jpg
     # - https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg
 
 # Replace Broken Images (替換無法顯示的圖片)
@@ -843,7 +849,7 @@ pangu:
 lazyload:
   enable: false
   field: site # site/post
-  placeholder:
+  placeholder: 1.昵称输入QQ号码，可自动识别头像和QQ邮箱\n2.博客留言要求填写昵称、邮箱\n3.留下网址以方便回访,网页配备在线客服,博主可收到消息
   blur: false
 
 # PWA
