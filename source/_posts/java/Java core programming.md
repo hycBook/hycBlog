@@ -8,7 +8,15 @@ abbrlink: d13ef431
 
 ![img](res/other/异世界蕾姆_0.jpg)
 
-## Java 核心编程技术干货
+
+
+---
+
+
+
+
+
+# Java 核心编程技术干货
 
 [TOC]
 
@@ -18,5 +26,5 @@ abbrlink: d13ef431
 
 ***
 
-## 1. 自动代码
+1. 自动代码
 
