@@ -49,6 +49,10 @@ jobs:
         # Hexo哔哩哔哩番剧页面插件
         npm install hexo-bilibili-bangumi --save
 
+        # 开启看板娘
+        npm install --save hexo-helper-live2d
+        npm install live2d-widget-model-nico
+
         echo 开始修改文件资源路径
         cd source/_posts
         python dir_change.py
