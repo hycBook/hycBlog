@@ -877,6 +877,7 @@ inject:
   head:
     # - <link rel="stylesheet" href="/xxx.css">
     - <link rel="stylesheet" href="/css/rightMenu.css">  # 自定义右键菜单  https://tzy1997.com/articles/hexo1608/
+    - <link rel="stylesheet" href="/css/mouse.css"> # 修改鼠标样式   https://www.cnblogs.com/JanYork/p/16259336.html
   bottom:
     # - <script src="xxxx"></script>
     - <script defer src="https://npm.elemecdn.com/jquery@latest/dist/jquery.min.js"></script>
