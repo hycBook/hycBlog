@@ -357,7 +357,6 @@ twikoo:
   region: 
   visitor: true
   option:
-    - placeholder: 1.昵称输入QQ号码，可自动识别头像和QQ邮箱\n2.博客留言要求填写昵称、邮箱\n3.留下网址以方便回访,网页配备在线客服,博主可收到消息
 
 # Giscus
 # https://giscus.app/
