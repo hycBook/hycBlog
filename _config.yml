@@ -144,7 +144,7 @@ bangumi:
 
 #看板娘
 live2d:
-  enable: true
+  enable: false
   pluginModelPath: assets/
   model:
     use: live2d-widget-model-shizuku    #模板目录，在node_modules里,自己选择
