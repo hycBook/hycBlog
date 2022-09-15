@@ -64,5 +64,13 @@ type: "link"
       link: https://twitter.com/
       avatar: https://i.loli.net/2020/05/14/5VyHPQqR6LWF39a.png
       descr: 社交分享平台
-  
+
+- class_name: hexo网站
+  class_desc: 基于hexo搭建的优秀网站
+  link_list:
+    - name: 唐志远の博客
+      link: https://tzy1997.com/
+      avatar: https://bu.dusays.com/2022/05/02/626f92e193879.jpg
+      descr: 唐志远の博客
+    
   {% endflink %}
