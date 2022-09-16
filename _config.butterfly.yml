@@ -34,7 +34,7 @@ copy:
   enable: true
   copyright:
     enable: true
-    limit_count: 25
+    limit_count: 120
 
 # social settings (社交圖標設置)
 # formal:
@@ -125,7 +125,7 @@ cover:
   # display the cover or not (是否顯示文章封面)
   index_enable: true
   aside_enable: true
-  archives_enable: true
+  archives_enable: false
   # the position of cover in home page (封面顯示的位置)
   # left/right/both
   position: both
@@ -536,7 +536,7 @@ tag_ui: # 留空或 index
 background:
 
 # Footer Background
-footer_bg: /img/页脚00.jpg
+footer_bg: /img/页脚02.jpg
 
 # the position of bottom right button/default unit: px (右下角按鈕距離底部的距離/默認單位為px)
 rightside-bottom:
