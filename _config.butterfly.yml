@@ -282,8 +282,8 @@ comments:
   # lazyload: The comment system will be load when comment element enters the browser's viewport.
   # If you set it to true, the comment count will be invalid
   lazyload: false
-  count: false # Display comment count in post's top_img
-  card_post_count: false # Display comment count in Home Page
+  count: true # Display comment count in post's top_img
+  card_post_count: true # Display comment count in Home Page
 
 # disqus
 # https://disqus.com/
@@ -657,7 +657,7 @@ subtitle:
     - Effort will not deceive others. To know one's ignorance is the greatest wisdom
 
 # Loading Animation (加載動畫)
-preloader: true
+preloader: false
 
 # aside (側邊欄)
 # --------------------------------------
