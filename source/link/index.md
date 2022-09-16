@@ -72,5 +72,9 @@ type: "link"
       link: https://tzy1997.com/
       avatar: https://bu.dusays.com/2022/05/02/626f92e193879.jpg
       descr: 唐志远の博客
-    
+    - name: justlovesmile
+      link: https://blog.justlovesmile.top/
+      avatar: https://npm.elemecdn.com/justlovesmile-static/img/avatar.jpg
+      descr: justlovesmile的博客
+  
   {% endflink %}

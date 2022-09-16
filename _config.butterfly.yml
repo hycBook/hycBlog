@@ -11,10 +11,8 @@ menu:
   娱乐 || fa fa-list:
     音乐: /music/ || fa fa-music
     追番: /bangumis/ || fa fa-video
-    视频: /video/ || fa fa-video
     相册: /gallery/ || fa fa-image
-  生活 || fa fa-diamond:
-    微言: /shuoshuo/ || fas fa-comments
+  微言: /shuoshuo/ || fa fa-comments
   友链: /link/ || fa fa-link
   关于: /about/ || fa fa-heart
 
@@ -540,7 +538,7 @@ background:
 footer_bg: /img/页脚02.jpg
 
 # the position of bottom right button/default unit: px (右下角按鈕距離底部的距離/默認單位為px)
-rightside-bottom:
+rightside-bottom: 20
 
 # Enter transitions (開啓網頁進入效果)
 enter_transitions: true
@@ -609,7 +607,7 @@ display_mode: light
 
 # Beautify (美化頁面顯示)
 beautify:
-  enable: false
+  enable: true
   field: post # site/post
   title-prefix-icon: # '\f0c1'
   title-prefix-icon-color: # '#F47466'
@@ -959,14 +957,14 @@ CDN:
     # artalk_js:
     # artalk_css:
 
-artitalk:
-  enable: true
-  appId: aroKa0A3PwpreaqyXmS9yyeI-MdYXbMMI
-  appKey: x0g7bGyOE09UnktsOzMjFv8w
-  path:
-  js:
-  option:
-  front_matter:    
+# artitalk:
+#   enable: true
+#   appId: aroKa0A3PwpreaqyXmS9yyeI-MdYXbMMI
+#   appKey: x0g7bGyOE09UnktsOzMjFv8w
+#   path:
+#   js:
+#   option:
+#   front_matter:    
 
 
 # Math 数学
