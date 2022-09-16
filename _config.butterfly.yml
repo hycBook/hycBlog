@@ -94,10 +94,10 @@ disable_top_img: false
 # The banner image of home page   https://zhuanlan.zhihu.com/p/506008307
 # https://pic2.zhimg.com/v2-25b296eb772ad9c6c15448ce32fccd8d_r.jpg
 # https://pic2.zhimg.com/v2-549cf12ea9bfe56d9b50f2107e82d159_r.jpg
-index_img: https://pic4.zhimg.com/v2-09b7a5ab472331a66ee0e65baa00b907_r.jpg
+index_img: https://images5.alphacoders.com/700/700733.png
 
 # If the banner of page not setting, it will show the top_img
-default_top_img: https://pica.zhimg.com/v2-7d1069f8beeeae09f0d26812941cebe0_1440w.jpg?source=172ae18b
+default_top_img: https://images8.alphacoders.com/631/631739.jpg
 
 # The banner image of archive page
 archive_img: https://pic4.zhimg.com/v2-7b31e5e4441fe0802b125d9688acc11f_r.jpg
@@ -113,12 +113,12 @@ tag_per_img: https://pic4.zhimg.com/v2-dcdb9c774f245868ce8df71ed4febb2b_r.jpg
 
 # If the banner of category page not setting, it will show the top_img
 # note: category page, not categories page (子分類頁面的 top_img)
-category_img: https://i0.hdslb.com/bfs/article/66b76ab7f21bd764d1a8b41a9d6caadf3976ff3b.jpg@942w_531h_progressive.webp
+category_img: https://wall.alphacoders.com/big.php?i=737770&lang=Chinese
 
 # The banner image of category page
 # format:
 #  - category name: xxxxx
-category_per_img: https://pic3.zhimg.com/v2-5c0ec8ae8f670831c97b849c0bd04046_r.jpg
+category_per_img: https://wall.alphacoders.com/big.php?i=729952&lang=Chinese
 
 # 文章封面
 cover:
