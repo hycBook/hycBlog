@@ -11,6 +11,7 @@ menu:
   娱乐 || fa fa-list:
     音乐: /music/ || fa fa-music
     追番: /bangumis/ || fa fa-video
+    追番: /video/ || fa fa-video
     相册: /gallery/ || fa fa-image
   生活 || fa fa-diamond:
     微言: /shuoshuo/ || fas fa-comments
@@ -618,7 +619,7 @@ beautify:
 font:
   global-font-size:
   code-font-size:
-  font-family:
+  font-family: 
   code-font-family:
 
 # Font settings for the site title and site subtitle
