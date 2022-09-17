@@ -70,11 +70,11 @@ jobs:
         hexo bangumi -u # 更新番剧数据
         hexo g
         # 修改非首页的top图片的高度
-        cat public/css/index.css > public/css/index_new.css
-        echo '#page-header.post-bg {  height: 600px; }' >> public/css/index_new.css
-        echo '#page-header.not-home-page {  height: 400px;}' >> public/css/index_new.css
-        rm -rf public/css/index.css
-        mv public/css/index_new.css public/css/index.css
+        # cat public/css/index.css > public/css/index_new.css
+        # echo '#page-header.post-bg {  height: 600px; }' >> public/css/index_new.css
+        # echo '#page-header.not-home-page {  height: 400px;}' >> public/css/index_new.css
+        # rm -rf public/css/index.css
+        # mv public/css/index_new.css public/css/index.css
         hexo algolia
 
     - name: Deploy #步骤4：把编译好的静态目录上传到gh-pages分支上
