@@ -5,7 +5,7 @@
 # Site
 title: 兼一书虫
 subtitle: '一日千里'
-description: '希望未来有好运气'
+description: '挑战时没有失败，放弃时才是失败。'
 keywords: 努力
 author: narutohyc
 language: en
@@ -127,10 +127,20 @@ deploy:
 
 # algolia搜索插件
 algolia:
-  applicationID: 'IMKX0J251S'
-  apiKey: '92de3dc43df2b8318c81df68e94d2221'
-  indexName: 'hexo_book'
+  appId: "IMKX0J251S"
+  apiKey: "92de3dc43df2b8318c81df68e94d2221"
+  adminApiKey: "1981da031c9547f201aa1622c2e3aaf1"
   chunkSize: 5000
+  indexName: hexo_book"
+  fields:
+    - content:strip:truncate,0,500
+    - excerpt:strip
+    - gallery
+    - permalink
+    - photos
+    - slug
+    - tags
+    - title
 
 
 bangumi:
