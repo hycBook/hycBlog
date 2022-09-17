@@ -5948,3 +5948,5 @@ blockquote.pullquote.right {
     height: calc(90vh - 260px);
   }
 }
+#page-header.post-bg {  height: 600px; }
+#page-header.not-home-page {  height: 400px;}
