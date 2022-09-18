@@ -77,7 +77,7 @@ mathjax:
 
 # KaTeX
 katex:
-  enable: true
+  enable: false
   per_page: false
   hide_scrollbar: true
 
@@ -990,13 +990,13 @@ CDN:
 
 
 # Math 数学
-# kramed:
-#   gfm: true
-#   pedantic: false
-#   sanitize: false
-#   tables: true
-#   breaks: true
-#   smartLists: true
-#   smartypants: true    
+kramed:
+  gfm: true
+  pedantic: false
+  sanitize: false
+  tables: true
+  breaks: true
+  smartLists: true
+  smartypants: true    
 
 
