@@ -66,7 +66,7 @@ jobs:
         mv target_dir/* .
         cd ../..
         echo 修改文件资源路径完成
-        cp nodejs/hexo-renderer-marked/lib/renderer.js node_modules/hexo-renderer-marked/lib/
+        # cp nodejs/hexo-renderer-marked/lib/renderer.js node_modules/hexo-renderer-marked/lib/
 
         # 执行编译
         hexo clean
