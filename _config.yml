@@ -53,9 +53,9 @@ render_drafts: false
 # 资源路径问题
 post_asset_folder: true
 marked:
-  prependRoot: true
-  postAsset: true
-relative_link: true
+  prependRoot: false
+  postAsset: false
+relative_link: false
 
 future: true
 highlight:
