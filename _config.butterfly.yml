@@ -260,7 +260,7 @@ noticeOutdate:
 # AddThis
 # https://www.addthis.com/
 addThis:
-  enable: true
+  enable: false
   pubid: ra-631e81537c7ff17a
 
 # Share.js
