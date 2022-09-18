@@ -49,9 +49,8 @@ jobs:
         # Hexo哔哩哔哩番剧页面插件
         npm install hexo-bilibili-bangumi --save
 
-        # 开启看板娘
-        # npm install --save hexo-helper-live2d
-        # npm install live2d-widget-model-nico
+        # 双栏布局插件引入
+        npm i hexo-butterfly-article-double-row --save
 
         echo 开始修改文件资源路径
         cd source/_posts
