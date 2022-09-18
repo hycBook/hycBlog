@@ -31,12 +31,12 @@ jobs:
         # npm install hexo-abbrlink --save
         
         # Math 数学
-        # npm uninstall hexo-renderer-marked --save
-        # npm install hexo-renderer-kramed --save
-        npm un hexo-renderer-marked --save # 如果有安裝這個的話，卸載
-        npm un hexo-renderer-kramed --save # 如果有安裝這個的話，卸載
-        npm i hexo-renderer-markdown-it --save # 需要安裝這個渲染插件
-        npm install @neilsustc/markdown-it-katex --save #需要安裝這個katex插件
+        npm uninstall hexo-renderer-marked --save
+        npm install hexo-renderer-kramed --save
+        # npm un hexo-renderer-marked --save # 如果有安裝這個的話，卸載
+        # npm un hexo-renderer-kramed --save # 如果有安裝這個的話，卸載
+        # npm i hexo-renderer-markdown-it --save # 需要安裝這個渲染插件
+        # npm install @neilsustc/markdown-it-katex --save #需要安裝這個katex插件
 
         # 添加字数统计
         npm install hexo-wordcount --save
