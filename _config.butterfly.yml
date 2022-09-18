@@ -72,7 +72,7 @@ local_search:
 
 # MathJax
 mathjax:
-  enable: false
+  enable: true
   per_page: false
 
 # KaTeX
@@ -987,16 +987,4 @@ CDN:
 #   js:
 #   option:
 #   front_matter:    
-
-
-# Math 数学
-kramed:
-  gfm: true
-  pedantic: false
-  sanitize: false
-  tables: true
-  breaks: true
-  smartLists: true
-  smartypants: true    
-
 
