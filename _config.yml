@@ -158,22 +158,22 @@ butterfly_article_double_row:
   enable: true
 
 # Math 數學
-# markdown:
-#   plugins:
-#     - plugin:
-#       name: '@neilsustc/markdown-it-katex'
-#       options:
-#         strict: false
+markdown:
+  plugins:
+    - plugin:
+      name: '@neilsustc/markdown-it-katex'
+      options:
+        strict: false
 #         
 
 # Math 数学
-kramed:
-  gfm: true
-  pedantic: false
-  sanitize: false
-  tables: true
-  breaks: true
-  smartLists: true
-  smartypants: true    
+# kramed:
+#   gfm: true
+#   pedantic: false
+#   sanitize: false
+#   tables: true
+#   breaks: true
+#   smartLists: true
+#   smartypants: true    
 
 
