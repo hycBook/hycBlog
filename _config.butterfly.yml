@@ -108,7 +108,7 @@ archive_img: https://pic4.zhimg.com/v2-7b31e5e4441fe0802b125d9688acc11f_r.jpg
 
 # If the banner of tag page not setting, it will show the top_img
 # note: tag page, not tags page (子標籤頁面的 top_img)
-tag_img: https://i0.hdslb.com/bfs/article/bf5fd49ce7f748849ee7f90c06001111103d7706.jpg@942w_531h_progressive.webp
+tag_img: https://initiate.alphacoders.com/images/702/cropped-1600-900-702274.png?9402
 
 # The banner image of tag page
 # format:
@@ -117,12 +117,12 @@ tag_per_img: https://pic4.zhimg.com/v2-dcdb9c774f245868ce8df71ed4febb2b_r.jpg
 
 # If the banner of category page not setting, it will show the top_img
 # note: category page, not categories page (子分類頁面的 top_img)
-category_img: https://wall.alphacoders.com/big.php?i=737770&lang=Chinese
+category_img: https://images.alphacoders.com/737/737770.png
 
 # The banner image of category page
 # format:
 #  - category name: xxxxx
-category_per_img: https://wall.alphacoders.com/big.php?i=729952&lang=Chinese
+category_per_img: https://images5.alphacoders.com/729/729952.png
 
 # 文章封面
 cover:
@@ -197,7 +197,7 @@ anchor: false
 # toc (目錄)
 toc:
   post: true
-  page: true
+  page: false
   number: true
   expand: true
   style_simple: false # for post 简洁模式
@@ -205,7 +205,7 @@ toc:
 # 文章版权
 post_copyright:
   enable: true
-  decode: true
+  decode: false
   author_href: https://github.com/narutohyc
   license: CC BY-NC-SA 4.0
   license_url: https://creativecommons.org/licenses/by-nc-sa/4.0/
