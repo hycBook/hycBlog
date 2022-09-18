@@ -197,7 +197,7 @@ anchor: false
 # toc (目錄)
 toc:
   post: true
-  page: false
+  page: true
   number: true
   expand: true
   style_simple: false # for post 简洁模式
