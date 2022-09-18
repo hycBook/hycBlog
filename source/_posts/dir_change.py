@@ -53,6 +53,8 @@ def write_to_target(target_path: str, file_path, file_name):
             line = unquote(line, 'utf-8')
             line = re.sub(pat_img, inner_deal_img, line)
             line = deal_md(file_name, line)
+            if line.strip()=='[TOC]':
+                continue
             lines.append(line)
 
     target_file = os.path.join(target_path, file_name)
