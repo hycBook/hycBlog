@@ -620,7 +620,7 @@ beautify:
 # Global font settings
 # Don't modify the following settings unless you know how they work (非必要不要修改)
 font:
-  global-font-size:
+  global-font-size: 16px
   code-font-size:
   font-family: 
   code-font-family:
