@@ -6,7 +6,7 @@
 title: 兼一书虫
 subtitle: '一日千里'
 description: '挑战时没有失败，放弃时才是失败。'
-keywords: 努力
+keywords: server,frontend,backend,hexo
 author: narutohyc
 language: en
 timezone: ''
@@ -156,3 +156,11 @@ bangumi:
 # 双栏布局插件引入
 butterfly_article_double_row:
   enable: true
+
+# Math 數學
+markdown:
+  plugins:
+    - plugin:
+      name: '@neilsustc/markdown-it-katex'
+      options:
+        strict: false
