@@ -13,6 +13,28 @@ import shutil
 from urllib.parse import unquote
 import os
 
+
+def platform():
+    """ 获取当前操作系统类型 """
+    import platform
+    return platform.system().lower()
+
+
+if platform() == 'linux':
+    base_path = os.getcwd()
+else:
+    base_path = r'H:\github\bks\hexo_books\测试\_posts'
+
+target_path = os.path.join(base_path, 'target_dir')
+if os.path.exists(target_path):
+    shutil.rmtree(target_path)
+os.mkdir(target_path)
+
+target_img_path = os.path.join(base_path, 'target_dir_img')
+if os.path.exists(target_img_path):
+    shutil.rmtree(target_img_path)
+os.mkdir(target_img_path)
+
 pat_img = re.compile('src=\"[/.]{0,1}[//]{0,1}(res.*?)\"')
 pat_img = re.compile('src=\"[/.]{0,1}[\\\\//]{0,1}(res.*?)\\"')
 pat_md = re.compile('!\[.*?\]\([/.]{0,1}[//]{0,1}(res.*?)\)')
@@ -40,7 +62,7 @@ def deal_md(file_name, sp: str):
             print("匹配不上:", true_file_name, sp)
         # print("匹配不上:", true_file_name, sp)
         name = res[0].split('/')[-1]
-        return f'![img]({true_file_name}/{name})'
+        return f'![img](../../../../img/{true_file_name}/{name})'
     return sp
 
 
@@ -53,7 +75,7 @@ def write_to_target(target_path: str, file_path, file_name):
             line = unquote(line, 'utf-8')
             line = re.sub(pat_img, inner_deal_img, line)
             line = deal_md(file_name, line)
-            if line.strip()=='[TOC]':
+            if line.strip() == '[TOC]':
                 continue
             lines.append(line)
 
@@ -121,6 +143,7 @@ def my_copy_files(cur, target):
 
 
 def deal_res(target_path: str, file_path, listdir):
+    """ 资源处理 """
     lod_ = []
     true_listdir = [os.path.splitext(file_name)[0] for file_name in listdir if 'res' != file_name]
     for dir in os.listdir(file_path):
@@ -144,21 +167,6 @@ def deal_res(target_path: str, file_path, listdir):
 
 
 def start():
-    def platform():
-        """ 获取当前操作系统类型 """
-        import platform
-        return platform.system().lower()
-
-    if platform() == 'linux':
-        base_path = os.getcwd()
-    else:
-        base_path = r'H:\github\bks\hexo_books\测试\_posts'
-
-    target_path = os.path.join(base_path, 'target_dir')
-    if os.path.exists(target_path):
-        shutil.rmtree(target_path)
-    os.mkdir(target_path)
-
     for dir in os.listdir(base_path):
         inner_dir = os.path.join(base_path, dir)
         if os.path.isdir(os.path.join(inner_dir, 'res')):
@@ -169,7 +177,8 @@ def start():
                 if os.path.isfile(file_path):
                     write_to_target(target_path=target_path, file_path=file_path, file_name=file_name)
                 elif file_name == 'res' and os.path.isdir(file_path):
-                    deal_res(target_path=target_path, file_path=file_path, listdir=listdir)
+                    # deal_res(target_path=target_path, file_path=file_path, listdir=listdir)
+                    deal_res(target_path=target_img_path, file_path=file_path, listdir=listdir)
 
 
 if __name__ == '__main__':
