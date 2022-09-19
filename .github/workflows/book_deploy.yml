@@ -26,7 +26,7 @@ jobs:
         node -v
         npm i -g hexo-cli
         npm i
-        
+
         # echo 使用 Hexo-abbrlink生成唯一文章链接
         npm install hexo-abbrlink --save
         
@@ -50,6 +50,9 @@ jobs:
 
         # 双栏布局插件引入
         npm i hexo-butterfly-article-double-row --save
+        
+        # 插入b站的视频卡片
+        npm i hexo-bilibili-card --save
 
         echo 开始修改文件资源路径
         cd source/_posts
