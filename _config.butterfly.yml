@@ -11,7 +11,8 @@ menu:
   娱乐 || fa fa-list:
     音乐: /music/ || fa fa-music
     追番: /bangumis/ || fa fa-video
-    相册: /gallery/ || fa fa-image  
+    相册: /gallery/ || fa fa-image
+    视频: /video/ || fa fa-image
   微言: /shuoshuo/ || fa fa-comments
   友链: /link/ || fa fa-link
   关于: /about/ || fa fa-heart
