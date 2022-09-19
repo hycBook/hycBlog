@@ -685,7 +685,7 @@ aside:
       link: https://github.com/narutohyc
   card_announcement:
     enable: true
-    content: &nbsp;&nbsp;兼一书虫博客成功上线啦~ 中秋折腾了三天，为了解决typora和hexo的资源路径问题，写了python去做路径的转换，好在最后成功处理，接下来可以专注写博客啦~
+    content: 兼一书虫博客成功上线啦~ 中秋折腾了三天，为了解决typora和hexo的资源路径问题，写了python去做路径的转换，好在最后成功处理，接下来可以专注写博客啦~
   card_recent_post:
     enable: true
     limit: 5 # if set 0 will show all
