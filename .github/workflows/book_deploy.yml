@@ -87,7 +87,7 @@ jobs:
 
     - name: Push to Coding
       run: |
-      hexo d
+        hexo d
     #     remote_repo="https://${CODING_USERNAME}:${CODING_PASSWORD}@e.coding.net/${CODING_REPOSITORY}.git"
 
     #     git remote add coding "${remote_repo}"
