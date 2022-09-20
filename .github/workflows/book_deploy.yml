@@ -87,7 +87,10 @@ jobs:
 
     - name: Push to Coding
       run: |
+        echo ${{ secrets.CODING_RSA }} ~/.ssh/id_rsa.pub
+        echo 写入秘钥成功
         hexo d
+        echo 部署到coding成功
     #     remote_repo="https://${CODING_USERNAME}:${CODING_PASSWORD}@e.coding.net/${CODING_REPOSITORY}.git"
 
     #     git remote add coding "${remote_repo}"
