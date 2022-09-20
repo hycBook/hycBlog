@@ -26,6 +26,7 @@ jobs:
         node -v
         npm i -g hexo-cli
         npm i
+        npm install hexo-deployer-git --save
 
         # echo 使用 Hexo-abbrlink生成唯一文章链接
         npm install hexo-abbrlink --save
