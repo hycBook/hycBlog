@@ -87,16 +87,17 @@ jobs:
 
     - name: Push to Coding
       run: |
-        remote_repo="https://${CODING_USERNAME}:${CODING_PASSWORD}@e.coding.net/${CODING_REPOSITORY}.git"
+      hexo d
+    #     remote_repo="https://${CODING_USERNAME}:${CODING_PASSWORD}@e.coding.net/${CODING_REPOSITORY}.git"
 
-        git remote add coding "${remote_repo}"
-        git show-ref # useful for debugging
-        git branch --verbose
+    #     git remote add coding "${remote_repo}"
+    #     git show-ref # useful for debugging
+    #     git branch --verbose
 
-        # publish all
-        git push --all --force coding
-        git push --tags --force coding
-      env:
-        CODING_REPOSITORY: narutohyc/hexo/hycblog
-        CODING_USERNAME: ${{ secrets.CODING_USERNAME }}
-        CODING_PASSWORD: ${{ secrets.CODING_PASSWORD }}
+    #     # publish all
+    #     git push --all --force coding
+    #     git push --tags --force coding
+    #   env:
+    #     CODING_REPOSITORY: narutohyc/hexo/hycblog
+    #     CODING_USERNAME: ${{ secrets.CODING_USERNAME }}
+    #     CODING_PASSWORD: ${{ secrets.CODING_PASSWORD }}
