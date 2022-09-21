@@ -91,10 +91,18 @@ jobs:
         FOLDER: public #上传文件的目录，我这个目录在根目录下，如果是子目录可以这么写  docs/.vuepress/dist
         clean: true
 
-    - name: Github Sync to Coding
-      uses: wearerequired/git-mirror-action@master
-      with:
-        # 注意替换为你的 GitHub 源仓库地址
-        source-repo: git@github.com:hycBook/hycBlog.git
-        # 注意替换为你的 Gitee 目标仓库地址
-        destination-repo: git@e.coding.net:narutohyc/hexo/hycblog.git
+    - name: Push to Coding
+      run: |
+        # https://用户名:token@e.coding.net/团队名/项目名/仓库名.git
+        remote_repo="https://${CODING_USERNAME}:${CODING_PASSWORD}@e.coding.net/narutohyc/hexo/hycblog.git"
+        git remote add coding "${remote_repo}"
+        git show-ref # useful for debugging
+        git branch --verbose
+
+        # publish all
+        git push -f coding main:gh-pages
+        # git push origin main
+        # git push origin gh-pages
+
+        # git push --all --force coding
+        # git push --tags --force coding
