@@ -11,6 +11,8 @@ jobs:
       TZ: Asia/Shanghai
       CODING_USERNAME: ${{ secrets.CODING_USERNAME }}
       CODING_PASSWORD: ${{ secrets.CODING_PASSWORD }}
+      # 注意在 Settings->Secrets 配置 GITEE_RSA_PRIVATE_KEY
+      SSH_PRIVATE_KEY: ${{ secrets.CODING_PASSWORD }}
 
     steps:
     - name: Checkout source
@@ -79,7 +81,6 @@ jobs:
         echo '#page-header.post-bg {  height: 600px; }' >> public/css/index.css
         echo '#page-header.not-home-page {  height: 600px;}' >> public/css/index.css
         hexo algolia
-        echo ${ SSH_PRIVATE_KEY } >> /root/.ssh/id_rsa
 
     - name: Deploy #步骤4：把编译好的静态目录上传到gh-pages分支上  https://cloud.tencent.com/developer/article/1917861
       uses: JamesIves/github-pages-deploy-action@3.1.5 #这里调用第三方依赖，用于上传代码到指定分支上
