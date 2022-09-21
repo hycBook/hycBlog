@@ -97,8 +97,8 @@ jobs:
         git branch --verbose
 
         # publish all
-        git push main:main
-        git push gh-pages:gh-pages
-        
+        git push origin main
+        git push origin gh-pages
+
         # git push --all --force coding
         # git push --tags --force coding
