@@ -9,6 +9,8 @@ jobs:
     runs-on: ubuntu-latest
     env:
       TZ: Asia/Shanghai
+      CODING_USERNAME: ${{ secrets.CODING_USERNAME }}
+      CODING_PASSWORD: ${{ secrets.CODING_PASSWORD }}
 
     steps:
     - name: Checkout source
@@ -97,6 +99,4 @@ jobs:
         # publish all
         git push --all --force coding
         git push --tags --force coding
-      with: 
-        CODING_USERNAME: ${{ secrets.CODING_USERNAME }}
-        CODING_PASSWORD: ${{ secrets.CODING_PASSWORD }}
+        
