@@ -11,8 +11,6 @@ jobs:
       TZ: Asia/Shanghai
       CODING_USERNAME: ${{ secrets.CODING_USERNAME }}
       CODING_PASSWORD: ${{ secrets.CODING_PASSWORD }}
-      # 注意在 Settings->Secrets 配置 GITEE_RSA_PRIVATE_KEY
-      SSH_PRIVATE_KEY: ${{ secrets.CODING_PASSWORD }}
 
     steps:
     - name: Checkout source
