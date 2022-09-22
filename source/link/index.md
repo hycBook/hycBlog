@@ -76,5 +76,9 @@ type: "link"
       link: https://blog.justlovesmile.top/
       avatar: https://npm.elemecdn.com/justlovesmile-static/img/avatar.jpg
       descr: justlovesmile的博客
+    - name: laijiahao
+      link: https://www.laijiahao.cn/
+      avatar: https://s1.vika.cn/space/2022/09/08/d9fef370605a4500907cd05eaa2a05cd
+      descr: Huanhao's blog
   
   {% endflink %}

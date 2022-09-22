@@ -128,22 +128,22 @@ category_per_img: https://images5.alphacoders.com/729/729952.png
 # 文章封面
 cover:
   # display the cover or not (是否顯示文章封面)
-  index_enable: false
-  aside_enable: false
+  index_enable: true
+  aside_enable: true
   archives_enable: false
   # the position of cover in home page (封面顯示的位置)
   # left/right/both
   position: both
   # When cover is not set, the default cover is displayed (當沒有設置cover時，默認的封面顯示)
   default_cover:
-    - https://images5.alphacoders.com/729/729952.png
-    - https://images.alphacoders.com/737/737770.png
-    - https://images2.alphacoders.com/711/711907.png
-    - https://images7.alphacoders.com/729/729168.jpg
-    - https://images7.alphacoders.com/729/729309.png
-    - https://images5.alphacoders.com/731/731791.png
-    - https://images2.alphacoders.com/735/735320.png
-    - https://images6.alphacoders.com/735/735380.png
+    - https://s1.vika.cn/space/2022/09/22/f363eb7949254625873e22b7cf5cd067
+    - https://s1.vika.cn/space/2022/09/22/c76ed8d1d283460db4eeaaa21eb45043
+    - https://s1.vika.cn/space/2022/09/22/1fbde1548a37413cb8c82decb862f0d7
+    - https://s1.vika.cn/space/2022/09/22/950ef42ce99f47fcafbeb6ef156c1fba
+    - https://s1.vika.cn/space/2022/09/22/ea8edebda5f74fa4bdb07f806e3d2d80
+    - https://s1.vika.cn/space/2022/09/22/6fe2bc2ec4684a4392298a0d52370f6a
+    - https://s1.vika.cn/space/2022/09/22/6512bad071974299b0878cdb4196ffb7
+    - https://s1.vika.cn/space/2022/09/22/8e594ab489f64e32944cef9e75dc105c
     # - https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg
 
 # Replace Broken Images (替換無法顯示的圖片)
