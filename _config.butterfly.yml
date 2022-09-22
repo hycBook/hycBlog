@@ -128,8 +128,8 @@ category_per_img: https://images5.alphacoders.com/729/729952.png
 # 文章封面
 cover:
   # display the cover or not (是否顯示文章封面)
-  index_enable: true
-  aside_enable: true
+  index_enable: false
+  aside_enable: false
   archives_enable: false
   # the position of cover in home page (封面顯示的位置)
   # left/right/both

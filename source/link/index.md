@@ -9,7 +9,7 @@ type: "link"
   class_desc: 那些人，那些事
   link_list:
     - name: JerryC
-      link: https://jerryc.me/
+      link: https://butterfly.js.org/
       avatar: https://jerryc.me/img/avatar.png
       descr: 今日事,今日毕
     - name: Hexo
