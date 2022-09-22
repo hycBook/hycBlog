@@ -541,7 +541,7 @@ tag_ui: # 留空或 index
 background:
 
 # Footer Background
-footer_bg: /img/页脚01.jpg
+footer_bg: 
 
 # the position of bottom right button/default unit: px (右下角按鈕距離底部的距離/默認單位為px)
 rightside-bottom: 80px
@@ -853,7 +853,7 @@ pangu:
 # Lazyload (圖片懶加載)
 # https://github.com/verlok/vanilla-lazyload
 lazyload:
-  enable: false
+  enable: true
   field: site # site/post
   placeholder: 1.昵称输入QQ号码，可自动识别头像和QQ邮箱\n2.博客留言要求填写昵称、邮箱\n3.留下网址以方便回访,网页配备在线客服,博主可收到消息
   blur: false
