@@ -99,13 +99,13 @@ disable_top_img: false
 # The banner image of home page   https://zhuanlan.zhihu.com/p/506008307
 # https://pic2.zhimg.com/v2-25b296eb772ad9c6c15448ce32fccd8d_r.jpg
 # https://pic2.zhimg.com/v2-549cf12ea9bfe56d9b50f2107e82d159_r.jpg
-index_img: https://images5.alphacoders.com/700/700733.png
+index_img: https://r906.com/7634/i/2022/09/23/10xrz8y.png
 
 # If the banner of page not setting, it will show the top_img
-default_top_img: https://images8.alphacoders.com/631/631739.jpg
+default_top_img: https://r906.com/7634/i/2022/09/23/631739.jpg
 
 # The banner image of archive page
-archive_img: https://pic4.zhimg.com/v2-7b31e5e4441fe0802b125d9688acc11f_r.jpg
+archive_img: https://r906.com/7634/i/2022/09/23/v2-7b31e5e4441fe0802b125d9688acc11f_r.jpg
 
 # If the banner of tag page not setting, it will show the top_img
 # note: tag page, not tags page (子標籤頁面的 top_img)
@@ -114,7 +114,8 @@ tag_img: https://initiate.alphacoders.com/images/702/cropped-1600-900-702274.png
 # The banner image of tag page
 # format:
 #  - tag name: xxxxx
-tag_per_img: https://pic4.zhimg.com/v2-dcdb9c774f245868ce8df71ed4febb2b_r.jpg
+tag_per_img: https://r906.com/7634/i/2022/09/23/5635_v2-dcdb9c774f245868ce8df71ed4febb2b_r.jpg
+
 
 # If the banner of category page not setting, it will show the top_img
 # note: category page, not categories page (子分類頁面的 top_img)
@@ -136,15 +137,15 @@ cover:
   position: both
   # When cover is not set, the default cover is displayed (當沒有設置cover時，默認的封面顯示)
   default_cover:
-    - https://s1.vika.cn/space/2022/09/22/f363eb7949254625873e22b7cf5cd067
-    - https://s1.vika.cn/space/2022/09/22/c76ed8d1d283460db4eeaaa21eb45043
-    - https://s1.vika.cn/space/2022/09/22/1fbde1548a37413cb8c82decb862f0d7
-    - https://s1.vika.cn/space/2022/09/22/950ef42ce99f47fcafbeb6ef156c1fba
-    - https://s1.vika.cn/space/2022/09/22/ea8edebda5f74fa4bdb07f806e3d2d80
-    - https://s1.vika.cn/space/2022/09/22/6fe2bc2ec4684a4392298a0d52370f6a
-    - https://s1.vika.cn/space/2022/09/22/6512bad071974299b0878cdb4196ffb7
-    - https://s1.vika.cn/space/2022/09/22/8e594ab489f64e32944cef9e75dc105c
-    # - https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg
+    - https://r906.com/7634/i/2022/09/23/10zjur3.png
+    - https://r906.com/7634/i/2022/09/23/10zk8u3.png
+    - https://r906.com/7634/i/2022/09/23/10zkfdt.png
+    - https://r906.com/7634/i/2022/09/23/10zkt9v.jpg
+    - https://r906.com/7634/i/2022/09/23/10zkxcy.png
+    - https://r906.com/7634/i/2022/09/23/10zln5a.png
+    - https://r906.com/7634/i/2022/09/23/10zuvg9.png
+    - https://r906.com/7634/i/2022/09/23/10zvac3.png
+
 
 # Replace Broken Images (替換無法顯示的圖片)
 error_img:
@@ -703,7 +704,7 @@ aside:
     color: true
     sort_order: # Don't modify the setting unless you know how it works
   card_archives:
-    enable: true
+    enable: false
     type: monthly # yearly or monthly
     format: MMMM YYYY # eg: YYYY年MM月
     order: -1 # Sort of order. 1, asc for ascending; -1, desc for descending
@@ -887,6 +888,9 @@ inject:
     # - <script src="xxxx"></script>
     - <script defer src="https://npm.elemecdn.com/jquery@latest/dist/jquery.min.js"></script>
     - <script defer data-pjax src="/js/rightMenu.js"></script>
+    # 静态资源异步加载 https://blog.imzjw.cn/posts/hexocdn
+    - <script defer https://npm.elemecdn.com/vue@2.6.11"></script>
+    - <script async src="https://cdn.jsdelivr.net/gh/zjwo/CDN/js/pyq/pyq.min.js"></script>
 
 # CDN
 # Don't modify the following settings unless you know how they work
