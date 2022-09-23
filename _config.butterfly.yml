@@ -205,8 +205,8 @@ toc:
 
 # 文章版权
 post_copyright:
-  enable: true
-  decode: false
+  enable: false
+  decode: true
   author_href: https://github.com/narutohyc
   license: CC BY-NC-SA 4.0
   license_url: https://creativecommons.org/licenses/by-nc-sa/4.0/
@@ -689,7 +689,7 @@ aside:
     content: 兼一书虫博客成功上线啦~ 中秋折腾了三天，为了解决typora和hexo的资源路径问题，写了python去做路径的转换，好在最后成功处理，接下来可以专注写博客啦~
   card_recent_post:
     enable: true
-    limit: 5 # if set 0 will show all
+    limit: 3 # if set 0 will show all
     sort: date # date or updated
     sort_order: # Don't modify the setting unless you know how it works
   card_categories:
@@ -698,7 +698,7 @@ aside:
     expand: none # none/true/false
     sort_order: # Don't modify the setting unless you know how it works
   card_tags:
-    enable: true
+    enable: false
     limit: 40 # if set 0 will show all
     color: true
     sort_order: # Don't modify the setting unless you know how it works
@@ -730,7 +730,7 @@ runtimeshow:
 
 # Aside widget - Newest Comments 最新评论
 newest_comments:
-  enable: true
+  enable: false
   sort_order: # Don't modify the setting unless you know how it works
   limit: 3
   storage: 10 # unit: mins, save data to localStorage
@@ -978,13 +978,3 @@ CDN:
     # prismjs_autoloader:
     # artalk_js:
     # artalk_css:
-
-# artitalk:
-#   enable: true
-#   appId: aroKa0A3PwpreaqyXmS9yyeI-MdYXbMMI
-#   appKey: x0g7bGyOE09UnktsOzMjFv8w
-#   path:
-#   js:
-#   option:
-#   front_matter:    
-
