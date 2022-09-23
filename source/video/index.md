@@ -20,6 +20,6 @@ src="//player.bilibili.com/player.html?aid=387354314&cid=819910976&page=1&as_wid
 frameborder="no" framespacing="0" allowfullscreen="true" style="position: absolute; width: 100%; 
 height: 100%; left: 0; top: 0;"> </iframe></div>
 
-<div style="position: relative; padding: 30% 45%;">
-<iframe src="https://player.bilibili.com/player.html?aid=387354314&cid=819910976&page=1&as_wide=1&high_quality=1&danmaku=0" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" style="position: absolute; width: 100%; height: 100%; left: 0; top: 0;" sandbox="allow-top-navigation allow-same-origin allow-forms allow-scripts"> </iframe>
-</div>
+<div style="position: relative; width: 100%; height: 0; padding-bottom: 75%;">
+<iframe src="//player.bilibili.com/player.html?aid=899733283&bvid=BV14N4y1F7Tg&cid=807001424&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true">style="position: absolute; width: 100%; 
+height: 100%; left: 0; top: 0;"> </iframe></div>
