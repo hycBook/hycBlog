@@ -59,6 +59,15 @@ jobs:
         # 插入b站的视频卡片
         npm i hexo-bilibili-card --save
 
+        # gulp 压缩
+        npm install --global gulp-cli
+        npm install gulp-htmlclean --save-dev
+        npm install --save gulp-html-minifier-terser
+        npm install gulp-clean-css --save-dev
+        npm install --save-dev gulp-uglify
+        npm install --save-dev gulp-babel @babel/core @babel/preset-env
+
+
         echo 开始修改文件资源路径
         cd source/_posts
         python dir_change.py
