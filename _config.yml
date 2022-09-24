@@ -179,3 +179,21 @@ kramed:
   smartypants: true    
 
 
+# 在主配置_config.yml或者主题配置_config.butterfly.yml文件中引入配置项
+# envelope_comment
+# see https://akilar.top/posts/58900a8/
+# 留言板信封  https://blog.imzjw.cn/posts/b74f504f
+envelope_comment:
+  enable: true #开关
+  cover: https://ae01.alicdn.com/kf/U5bb04af32be544c4b41206d9a42fcacfd.jpg #信笺封面图
+  message: #信笺内容，支持多行
+    - 有什么想问的？
+    - 有什么想说的？
+    - 有什么想吐槽的？
+    - 哪怕是有什么想吃的，都可以告诉我哦~
+  bottom: 自动书记人偶竭诚为您服务！ #信笺结束语，只能单行
+  height: #调整信笺划出高度，默认1050px
+  path: #【可选】comments 的路径名称。默认为 comments，生成的页面为 comments/index.html
+  front_matter: #【可选】comments页面的 front_matter 配置
+    title: 留言板
+    comments: true

@@ -975,19 +975,3 @@ CDN:
     # artalk_js:
     # artalk_css:
 
-
-# 留言板信封  https://blog.imzjw.cn/posts/b74f504f
-envelope_comment:
-  enable: true
-  cover: https://ae01.alicdn.com/kf/U5bb04af32be544c4b41206d9a42fcacfd.jpg # 信笺封面图
-  message:  # 信笺内容，支持多行
-    - 有什么想问的？
-    - 有什么想说的？
-    - 有什么想吐槽的？
-  bottom: 自动书记人偶竭诚为您服务！   # 信笺结束语，只能单行
-  height:                          # 调整信笺划出高度，默认1050px
-  path:                            # 【可选】comments 的路径名称。默认为 comments ， 生成的页面为 comments/index.html
-  front_matter:                    # 【可选】comments页面的 front_matter 配置
-    title: 留言板
-    comments: false
-    aside: false
