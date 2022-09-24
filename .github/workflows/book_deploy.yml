@@ -71,6 +71,9 @@ jobs:
         # 留言板信封
         npm install hexo-butterfly-envelope --save
 
+        # 轮播置顶文章
+        npm install hexo-butterfly-swiper --save
+
         echo 开始修改文件资源路径
         cd source/_posts
         python dir_change.py
