@@ -63,10 +63,11 @@ jobs:
         npm i gulp --save-dev
         npm install --global gulp-cli
         npm install gulp-htmlclean --save-dev
-        npm install --save gulp-html-minifier-terser
+        npm install --global --save gulp-html-minifier-terser
         npm install gulp-clean-css --save-dev
         npm install --save-dev gulp-uglify
         npm install --save-dev gulp-babel @babel/core @babel/preset-env
+
 
         # 留言板信封
         npm install hexo-butterfly-envelope --save
