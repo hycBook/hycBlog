@@ -99,7 +99,7 @@ disable_top_img: false
 # The banner image of home page   https://zhuanlan.zhihu.com/p/506008307
 # https://pic2.zhimg.com/v2-25b296eb772ad9c6c15448ce32fccd8d_r.jpg
 # https://pic2.zhimg.com/v2-549cf12ea9bfe56d9b50f2107e82d159_r.jpg
-index_img: https://pic.hycbook.com/i//hexo/copfig_imgs/index_img.webp
+index_img: https://pic.hycbook.com/i//hexo/config_imgs/index_img.webp
 
 # If the banner of page not setting, it will show the top_img
 default_top_img: https://r906.com/7634/i/2022/09/23/631739.jpg
@@ -535,7 +535,7 @@ tag_ui: # 留空或 index
 background:
 
 # Footer Background
-footer_bg: 
+footer_bg: https://pic.hycbook.com/i/hexo/config_imgs/footer_bg.webp
 
 # the position of bottom right button/default unit: px (右下角按鈕距離底部的距離/默認單位為px)
 rightside-bottom: 80px
