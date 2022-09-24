@@ -67,6 +67,9 @@ jobs:
         npm install --save-dev gulp-uglify
         npm install --save-dev gulp-babel @babel/core @babel/preset-env
 
+        # 留言板信封
+        npm install hexo-butterfly-envelope --save
+
         echo 开始修改文件资源路径
         cd source/_posts
         python dir_change.py

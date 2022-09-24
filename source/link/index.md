@@ -47,7 +47,15 @@ type: "link"
       link: https://crisp.chat/zh/livechat/
       avatar: https://crisp.chat/favicon-512x512.png
       descr: 即时聊天软件
-
+    - name: Imagine
+      link: https://github.com/meowtec/Imagine/releases
+      avatar: https://avatars.githubusercontent.com/u/4006436?v=4
+      descr: 图像压缩软件,支持png,jpg,webp格式
+    - name: 薄荷图床
+      link: https://riyugo.com/
+      avatar: https://riyugo.cn/i/2202/28/n38o.jpg
+      descr: 专业的文件外链工具,收费但速度很快
+      
 
 - class_name: 网站
   class_desc: 值得推荐的网站
@@ -80,5 +88,10 @@ type: "link"
       link: https://www.laijiahao.cn/
       avatar: https://s1.vika.cn/space/2022/09/08/d9fef370605a4500907cd05eaa2a05cd
       descr: Huanhao's blog
+    - name: 小嘉的部落格
+      link: https://blog.imzjw.cn/
+      avatar: https://npm.elemecdn.com/nanshen/avatar.jpg
+      descr: Huanhao's blog
+  
   
   {% endflink %}
