@@ -1011,7 +1011,7 @@ categoryBar:
   message:
     - name: common
       descr: 通用知识学习记录
-      cover: https://pic.hycbook.com/i//hexo/category_bar_imgs/category_bar_2.webp
+      cover: https://pic.hycbook.com/i//hexo/category_bar_imgs/category_bar_3.webp
     - name: python
       descr: python学习记录
       cover: https://pic.hycbook.com/i//hexo/category_bar_imgs/category_bar_2.webp
