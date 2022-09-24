@@ -25,12 +25,8 @@ height: 100%; left: 0; top: 0;"> </iframe></div>
 height: 100%; left: 0; top: 0;"> </iframe></div>
 
 
-
-
-
-{% videos, 2 %}
-{% video https://github.com/volantis-x/volantis-docs/releases/download/assets/IMG_0341.mov %}
-{% video https://github.com/volantis-x/volantis-docs/releases/download/assets/IMG_0341.mov %}
-{% video https://github.com/volantis-x/volantis-docs/releases/download/assets/IMG_0341.mov %}
-{% video https://github.com/volantis-x/volantis-docs/releases/download/assets/IMG_0341.mov %}
-{% endvideos %}
+<iframe 
+    height=498 width=510 
+    src="https://github.com/volantis-x/volantis-docs/releases/download/assets/IMG_0341.mov" 
+    frameborder=0 allowfullscreen>
+</iframe>
