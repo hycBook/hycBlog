@@ -993,3 +993,32 @@ swiper:
   swiper_js: https://npm.elemecdn.com/hexo-butterfly-swiper/lib/swiper.min.js #swiper js依赖
   custom_css: https://npm.elemecdn.com/hexo-butterfly-swiper/lib/swiperstyle.css # 适配主题样式补丁
   custom_js: https://npm.elemecdn.com/hexo-butterfly-swiper/lib/swiper_init.js # swiper初始化方法
+
+
+# 分类磁贴
+# hexo-butterfly-categories-card
+# see https://akilar.top/posts/a9131002/
+categoryBar:
+  enable: true # 开关
+  priority: 5 #过滤器优先权
+  enable_page: / # 应用页面
+  layout: # 挂载容器类型
+    type: id
+    name: recent-posts
+    index: 0
+  column: odd # odd：3列 | even：4列
+  row: 1 #显示行数，默认两行，超过行数切换为滚动显示
+  message:
+    - name: common
+      descr: 通用知识学习记录
+      cover: https://assets.akilar.top/image/cover1.webp
+    - name: python
+      descr: python学习记录
+      cover: https://assets.akilar.top/image/cover2.webp
+    - name: java
+      descr: java学习记录
+      cover: https://assets.akilar.top/image/cover3.webp
+    - name: math
+      descr: 数学知识学习
+      cover: https://assets.akilar.top/image/cover4.webp
+  custom_css: https://npm.elemecdn.com/hexo-butterfly-categories-card@1.0.0/lib/categorybar.css  

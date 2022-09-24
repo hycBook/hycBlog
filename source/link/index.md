@@ -99,5 +99,9 @@ aside: false
       link: https://akilar.top/
       avatar: https://sdn.geekzu.org/avatar/d4e7f32f4d361ad752f844a14e9e2a94?d=robohas
       descr: Akilarの糖果屋
+    - name: 小冰博客
+      link: https://zfe.space/
+      avatar: https://zfe.space/images/headimage.png
+      descr: 小冰博客
   
   {% endflink %}
