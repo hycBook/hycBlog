@@ -6,11 +6,10 @@ categories:
 abbrlink: e4e21ef8
 ---
 
-![img](res/other/异世界蕾姆_0.jpg)
+---
 
 [TOC]
 
-***
 
 # 详细步骤
 

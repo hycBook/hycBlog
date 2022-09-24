@@ -6,11 +6,10 @@ categories:
 abbrlink: 7819d42
 ---
 
-![img](res/other/异世界蕾姆_1.png)
+---
 
 [TOC]
 
-***
 
 # Java中的注解到底是如何工作的？
 

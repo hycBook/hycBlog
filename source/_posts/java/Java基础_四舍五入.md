@@ -6,11 +6,10 @@ categories:
 abbrlink: 48f373f3
 ---
 
-![img](res/other/异世界蕾姆_0.jpg)
+---
 
 [TOC]
 
----
 
 # 四舍五入
 

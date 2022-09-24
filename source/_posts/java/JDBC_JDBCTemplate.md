@@ -7,11 +7,10 @@ abbrlink: e73474f0
 ---
 
 
-![img](res/other/异世界蕾姆_1.png)
+---
 
 >[【黑马程序员-Java语言高级部分11】JDBC](https://www.bilibili.com/video/av61491585)
 
----
 
 # Spring JDBC
 

@@ -6,7 +6,7 @@ categories:
 abbrlink: 81c2c0c1
 ---
 
-![img](res/other/异世界蕾姆_0.jpg)
+---
 
 [TOC]
 

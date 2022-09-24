@@ -6,13 +6,12 @@ categories:
 abbrlink: eebdb36a
 ---
 
-![img](res/other/异世界蕾姆_1.png)
+---
 
 [TOC]
 
 >[MySQL多表查询与事务的操作](./res/MySQL_多表查询/MySQL多表查询与事务的操作.pdf)
 
----
 
 # 基本介绍
 

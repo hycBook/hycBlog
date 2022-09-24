@@ -6,11 +6,10 @@ categories:
 abbrlink: 7543a0fc
 ---
 
-![img](res/other/异世界蕾姆_0.jpg)
+---
 
 [TOC]
 
-***
 
 # 解析与生成XML
 

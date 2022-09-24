@@ -59,7 +59,7 @@ jobs:
         # 插入b站的视频卡片
         npm i hexo-bilibili-card --save
 
-        # gulp 压缩
+        # gulp 压缩   https://blog.imzjw.cn/posts/b74f504f/#gulp-%E5%8E%8B%E7%BC%A9
         npm install --global gulp-cli
         npm install gulp-htmlclean --save-dev
         npm install --save gulp-html-minifier-terser
@@ -84,7 +84,7 @@ jobs:
         # 执行编译
         hexo clean
         hexo bangumi -u # 更新番剧数据
-        hexo g
+        hexo g && gulp
         mv source/_posts/target_dir_img/* public/img/
         # 修改非首页的top图片的高度
         echo '#page-header.post-bg {  height: 600px; }' >> public/css/index.css

@@ -6,11 +6,10 @@ categories:
 abbrlink: 3b72c11
 ---
 
-![img](res/other/异世界蕾姆_0.jpg)
+---
 
 [TOC]
 
-***
 
 # 后台服务器开发
 

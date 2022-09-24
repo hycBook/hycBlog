@@ -6,7 +6,7 @@ categories:
 abbrlink: d192a1af
 ---
 
-![img](res/other/异世界蕾姆_0.jpg)
+---
 
 [TOC]
 

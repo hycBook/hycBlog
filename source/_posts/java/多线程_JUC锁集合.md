@@ -6,7 +6,7 @@ categories:
 abbrlink: 10fd680e
 ---
 
-![img](res/other/异世界蕾姆_1.png)
+---
 
 [TOC]
 

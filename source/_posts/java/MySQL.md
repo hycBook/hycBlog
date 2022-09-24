@@ -6,4 +6,4 @@ categories:
 abbrlink: c24675b4
 ---
 
-![img](res/other/异世界蕾姆_1.png)
+---

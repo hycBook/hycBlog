@@ -6,14 +6,12 @@ categories:
 abbrlink: 336443d5
 ---
 
-![img](res/other/异世界蕾姆_1.png)
+---
 
 [TOC]
 
 
-
 >[MySQL多表查询与事务的操作](./res/MySQL_多表查询/MySQL多表查询与事务的操作.pdf)
-
 
 
 ---

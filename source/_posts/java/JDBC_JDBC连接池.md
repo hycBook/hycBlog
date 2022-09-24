@@ -6,7 +6,7 @@ categories:
 abbrlink: ae528721
 ---
 
-![img](res/other/异世界蕾姆_1.png)
+---
 
 [TOC]
 

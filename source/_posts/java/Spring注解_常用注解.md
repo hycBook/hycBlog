@@ -6,11 +6,10 @@ categories:
 abbrlink: a0f3b9ff
 ---
 
-![img](res/other/异世界蕾姆_1.png)
+---
 
 [TOC]
 
-***
 
 # 12种 Spring 常用注解
 

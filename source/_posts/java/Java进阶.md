@@ -6,5 +6,5 @@ categories:
 abbrlink: 599c28b5
 ---
 
-![img](res/other/异世界蕾姆_1.png)
+---
 

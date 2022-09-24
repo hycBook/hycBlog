@@ -6,4 +6,4 @@ categories:
 abbrlink: f7ede91d
 ---
 
-![img](res/other/异世界蕾姆_0.jpg)
+---

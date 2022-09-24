@@ -6,11 +6,10 @@ categories:
 abbrlink: 336a2a82
 ---
 
-![img](res/other/异世界蕾姆_0.jpg)
+---
 
 [TOC]
 
-***
 
 # 对象正反序列化
 

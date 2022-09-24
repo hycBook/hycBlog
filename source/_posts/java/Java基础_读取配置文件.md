@@ -6,11 +6,10 @@ categories:
 abbrlink: f3dd51e8
 ---
 
-![img](res/other/异世界蕾姆_0.jpg)
+---
 
 [TOC]
 
-***
 
 #  读取配置文件
 
