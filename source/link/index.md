@@ -91,7 +91,10 @@ type: "link"
     - name: 小嘉的部落格
       link: https://blog.imzjw.cn/
       avatar: https://npm.elemecdn.com/nanshen/avatar.jpg
-      descr: Huanhao's blog
-  
+      descr: 小嘉的部落格
+    - name: Akilarの糖果屋
+      link: https://akilar.top/
+      avatar: https://sdn.geekzu.org/avatar/d4e7f32f4d361ad752f844a14e9e2a94?d=robohas
+      descr: Akilarの糖果屋
   
   {% endflink %}

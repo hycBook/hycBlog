@@ -184,10 +184,10 @@ kramed:
 envelope_comment:
   enable: true #控制开关
   custom_pic:      
-    cover: https://ae01.alicdn.com/kf/U5bb04af32be544c4b41206d9a42fcacfd.jpg #信笺封面图
-    line: https://ae01.alicdn.com/kf/U5bb04af32be544c4b41206d9a42fcacfd.jpg #信笺底部图片
-    beforeimg: https://ae01.alicdn.com/kf/U5bb04af32be544c4b41206d9a42fcacfd.jpg # 信封前半部分
-    afterimg: https://ae01.alicdn.com/kf/U5bb04af32be544c4b41206d9a42fcacfd.jpg # 信封后半部分
+    cover: https://pic.hycbook.com/i//hexo/envelope_comments/cover.webp #信笺封面图
+    line: https://pic.hycbook.com/i//hexo/envelope_comments/line.webp #信笺底部图片
+    beforeimg: https://pic.hycbook.com/i//hexo/envelope_comments/beforeimg.webp # 信封前半部分
+    afterimg: https://pic.hycbook.com/i//hexo/envelope_comments/afterimg.webp # 信封后半部分
   message: #信笺正文，多行文本，写法如下
     - 有什么想问的？
     - 有什么想说的？
