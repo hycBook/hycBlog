@@ -209,10 +209,10 @@ post_copyright:
 reward:
   enable: true
   QR_code:
-    - img: /img/hyc_wechat_收款码.png
+    - img: https://pic.hycbook.com/i//hexo/qr_codes/hyc_wechat.webp
       link:
       text: wechat
-    - img: /img/hyc_alipay_收款码.png
+    - img: https://pic.hycbook.com/i//hexo/qr_codes/hyc_alipay.webp
       link:
       text: alipay
 
