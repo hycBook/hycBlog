@@ -60,6 +60,7 @@ jobs:
         npm i hexo-bilibili-card --save
 
         # gulp 压缩   https://blog.imzjw.cn/posts/b74f504f/#gulp-%E5%8E%8B%E7%BC%A9
+        npm i gulp --save-dev
         npm install --global gulp-cli
         npm install gulp-htmlclean --save-dev
         npm install --save gulp-html-minifier-terser
