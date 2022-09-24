@@ -2,6 +2,9 @@
 title: shuoshuo
 date: 2022-09-12 06:28:47
 comments: false
+top_img: https://pic.hycbook.com/i//hexo/config_imgs/元神10.webp
+showToc: false
+aside: false
 ---
 
 

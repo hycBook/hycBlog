@@ -2,6 +2,10 @@
 title: 友情链接
 date: 2022-09-09 23:46:15
 type: "link"
+top_img: https://pic.hycbook.com/i//hexo/config_imgs/元神8.webp
+type: "bangumis"
+showToc: false
+aside: false
 ---
 
 {% flink %}

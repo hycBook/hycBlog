@@ -2,6 +2,9 @@
 title: gallery
 date: 2022-09-12 06:28:47
 type: "gallery"
+top_img: https://pic.hycbook.com/i//hexo/config_imgs/元神7.webp
+showToc: false
+aside: false
 layout: "gallery"
 ---
 

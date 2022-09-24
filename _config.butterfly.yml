@@ -103,29 +103,29 @@ disable_top_img: false
 index_img: https://pic.hycbook.com/i//hexo/config_imgs/index_img.webp
 
 # If the banner of page not setting, it will show the top_img
-default_top_img: https://r906.com/7634/i/2022/09/23/631739.jpg
+default_top_img: https://pic.hycbook.com/i//hexo/config_imgs/元神2.webp
 
 # The banner image of archive page
-archive_img: https://r906.com/7634/i/2022/09/23/v2-7b31e5e4441fe0802b125d9688acc11f_r.jpg
+archive_img: https://pic.hycbook.com/i//hexo/config_imgs/元神0.webp
 
 # If the banner of tag page not setting, it will show the top_img
 # note: tag page, not tags page (子標籤頁面的 top_img)
-tag_img: https://initiate.alphacoders.com/images/702/cropped-1600-900-702274.png?9402
+tag_img: https://pic.hycbook.com/i//hexo/config_imgs/元神1.webp
 
 # The banner image of tag page
 # format:
 #  - tag name: xxxxx
-tag_per_img: https://r906.com/7634/i/2022/09/23/5635_v2-dcdb9c774f245868ce8df71ed4febb2b_r.jpg
+tag_per_img: https://pic.hycbook.com/i//hexo/config_imgs/元神5.webp
 
 
 # If the banner of category page not setting, it will show the top_img
 # note: category page, not categories page (子分類頁面的 top_img)
-category_img: https://images.alphacoders.com/737/737770.png
+category_img: https://pic.hycbook.com/i//hexo/config_imgs/元神3.webp
 
 # The banner image of category page
 # format:
 #  - category name: xxxxx
-category_per_img: https://images5.alphacoders.com/729/729952.png
+category_per_img: https://pic.hycbook.com/i//hexo/config_imgs/元神4.webp
 
 # 文章封面
 cover:
