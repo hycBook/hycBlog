@@ -25,8 +25,4 @@ height: 100%; left: 0; top: 0;"> </iframe></div>
 height: 100%; left: 0; top: 0;"> </iframe></div>
 
 
-<iframe 
-    height=498 width=510 
-    src="https://github.com/volantis-x/volantis-docs/releases/download/assets/IMG_0341.mov" 
-    frameborder=0 allowfullscreen>
-</iframe>
+<iframe src="https://streamja.com/o7QBQ" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" width="100%"  height="580" quality="high" > </iframe>
