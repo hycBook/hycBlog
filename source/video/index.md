@@ -25,4 +25,14 @@ height: 100%; left: 0; top: 0;"> </iframe></div>
 height: 100%; left: 0; top: 0;"> </iframe></div>
 
 
+> [《崩坏3》动画短片《崩坏3 Reburn》正式发布！对抗崩坏的战斗永不止息，为了能守护这个美丽的世界，琪亚娜出击！](https://www.bilibili.com/video/BV1Tx411V7be/?vd_source=d741c08a55ba6a6a780b28e90920def0)
+
+
+
+
+
+
+
+> [《崩坏3》动画短片「布洛妮娅」](https://www.bilibili.com/video/BV1NE411y738/?vd_source=d741c08a55ba6a6a780b28e90920def0)
+
 <iframe src="https://streamja.com/o7QBQ" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" width="100%"  height="580" quality="high" > </iframe>
