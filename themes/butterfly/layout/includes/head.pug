@@ -74,3 +74,7 @@ include ./head/noscript.pug
 !=fragment_cache('injectHeadJs', function(){return inject_head_js()})
 
 !=fragment_cache('injectHead', function(){return injectHtml(theme.inject.head)})
+
+// hyc 樱花配置
+if theme.sakura.enable
+  script(src="/js/sakura.js")
