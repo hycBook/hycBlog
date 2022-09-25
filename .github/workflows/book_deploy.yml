@@ -96,7 +96,7 @@ jobs:
         hexo g
         mv source/_posts/target_dir_img/* public/img/
         # 修改非首页的top图片的高度
-        cat themes\butterfly\source\css\hyc_font.css >> public/css/index.css
+        cat themes/butterfly/source/css/hyc_font.css >> public/css/index.css
         echo '#page-header.post-bg {  height: 800px; }' >> public/css/index.css
         echo '#page-header.not-home-page {  height: 800px;}' >> public/css/index.css
         hexo algolia
