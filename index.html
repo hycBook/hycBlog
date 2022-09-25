@@ -1,0 +1,528 @@
+<!DOCTYPE html><html lang="en" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>兼一书虫 - 一日千里</title><meta name="keywords" content="server,frontend,backend,hexo"><meta name="author" content="narutohyc"><meta name="copyright" content="narutohyc"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="挑战时没有失败放弃时才是失败">
+<meta property="og:type" content="website">
+<meta property="og:title" content="兼一书虫">
+<meta property="og:url" content="https://hycbook.github.io/hycBlog/index.html">
+<meta property="og:site_name" content="兼一书虫">
+<meta property="og:description" content="挑战时没有失败放弃时才是失败">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://pic.hycbook.com/i/hexo/person_img/%E5%85%BC%E4%B8%80%E5%A4%B4%E5%83%8F.jpg">
+<meta property="article:author" content="narutohyc">
+<meta property="article:tag" content="server,frontend,backend,hexo">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://pic.hycbook.com/i/hexo/person_img/%E5%85%BC%E4%B8%80%E5%A4%B4%E5%83%8F.jpg"><link rel="shortcut icon" href="/img/%E7%BD%91%E7%AB%99%E5%9B%BE%E6%A0%87.ico"><link rel="canonical" href="https://hycbook.github.io/hycBlog/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: {"appId":"IMKX0J251S","apiKey":"92de3dc43df2b8318c81df68e94d2221","indexName":"hexo_book","hits":{"per_page":10},"languages":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}.","hits_stats":"${hits} results found in ${time} ms"}},
+  localSearch: undefined,
+  translate: {"defaultEncoding":1,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"簡"},
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":400},
+  copy: {
+    success: 'Copy successfully',
+    error: 'Copy error',
+    noSupport: 'The browser does not support'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: 'days',
+  date_suffix: {
+    just: 'Just',
+    min: 'minutes ago',
+    hour: 'hours ago',
+    day: 'days ago',
+    month: 'months ago'
+  },
+  copyright: {"limitCount":120,"languages":{"author":"Author: narutohyc","link":"Link: ","source":"Source: 兼一书虫","info":"Copyright is owned by the author. For commercial reprints, please contact the author for authorization. For non-commercial reprints, please indicate the source."}},
+  lightbox: 'fancybox',
+  Snackbar: {"chs_to_cht":"Traditional Chinese Activated Manually","cht_to_chs":"Simplified Chinese Activated Manually","day_to_night":"Dark Mode Activated Manually","night_to_day":"Light Mode Activated Manually","bgLight":"#49b1f5","bgDark":"#1f1f1f","position":"bottom-left"},
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: true,
+  isAnchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '兼一书虫',
+  isPost: false,
+  isHome: true,
+  isHighlightShrink: false,
+  isToc: false,
+  postUpdate: '2022-09-25 12:04:20'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><link rel="stylesheet" href="https://at.alicdn.com/t/c/font_3670467_00vzmz2zz841k.css?spm=a313x.7781069.1998910419.53&file=font_3670467_00vzmz2zz841k.css"><link rel="stylesheet" href="/css/rightMenu.css"><link rel="stylesheet" href="/css/mouse.css"><!-- hyc 樱花配置--><!-- if theme.sakura.enable--><script src="/js/sakura.js"></script><!-- hexo injector head_end start --><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Zfour/Butterfly-double-row-display@1.00/cardlistpost.min.css"/>
+<style>#recent-posts > .recent-post-item >.recent-post-info > .article-meta-wrap > .tags:before {content:"\A";
+  white-space: pre;}#recent-posts > .recent-post-item >.recent-post-info > .article-meta-wrap > .tags > .article-meta__separator{display:none}</style>
+<link rel="stylesheet" href="https://npm.elemecdn.com/hexo-butterfly-categories-card@1.0.0/lib/categorybar.css"><link rel="stylesheet" href="https://npm.elemecdn.com/hexo-butterfly-swiper/lib/swiper.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://npm.elemecdn.com/hexo-butterfly-swiper/lib/swiperstyle.css" media="print" onload="this.media='all'"><!-- hexo injector head_end end --><meta name="generator" content="Hexo 6.3.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://pic.hycbook.com/i/hexo/person_img/兼一头像.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">72</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">94</div></a><a href="/categories/"><div class="headline">Categories</div><div class="length-num">4</div></a></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fa fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fa fa-compass"></i><span> 文章</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/archives/"><i class="fa-fw fa fa-archive"></i><span> 归档</span></a></li><li><a class="site-page child" href="/categories/"><i class="fa-fw fa fa-folder-open"></i><span> 分类</span></a></li><li><a class="site-page child" href="/tags/"><i class="fa-fw fa fa-tags"></i><span> 标签</span></a></li></ul></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fa fa-list"></i><span> 娱乐</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fa fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/bangumis/"><i class="fa-fw fa fa-video"></i><span> 追番</span></a></li><li><a class="site-page child" href="/gallery/"><i class="fa-fw fa fa-image"></i><span> 相册</span></a></li><li><a class="site-page child" href="/video/"><i class="fa-fw fa fa-image"></i><span> 视频</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/shuoshuo/"><i class="fa-fw fa fa-coffee"></i><span> 微言</span></a></div><div class="menus_item"><a class="site-page" href="/comments/"><i class="fa-fw fa fa-comments"></i><span> 留言板</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fa fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fa fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="page" id="body-wrap"><header class="full_page" id="page-header" style="background-image: url('https://pic.hycbook.com/i//hexo/config_imgs/index_img.webp')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">兼一书虫</a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> Search</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fa fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fa fa-compass"></i><span> 文章</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/archives/"><i class="fa-fw fa fa-archive"></i><span> 归档</span></a></li><li><a class="site-page child" href="/categories/"><i class="fa-fw fa fa-folder-open"></i><span> 分类</span></a></li><li><a class="site-page child" href="/tags/"><i class="fa-fw fa fa-tags"></i><span> 标签</span></a></li></ul></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fa fa-list"></i><span> 娱乐</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fa fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/bangumis/"><i class="fa-fw fa fa-video"></i><span> 追番</span></a></li><li><a class="site-page child" href="/gallery/"><i class="fa-fw fa fa-image"></i><span> 相册</span></a></li><li><a class="site-page child" href="/video/"><i class="fa-fw fa fa-image"></i><span> 视频</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/shuoshuo/"><i class="fa-fw fa fa-coffee"></i><span> 微言</span></a></div><div class="menus_item"><a class="site-page" href="/comments/"><i class="fa-fw fa fa-comments"></i><span> 留言板</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fa fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fa fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="site-info"><h1 id="site-title">兼一书虫</h1><div id="site-subtitle"><span id="subtitle"></span></div><div id="site_social_icons"><a class="social-icon" href="https://github.com/narutohyc" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="/1832044043@qq.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a></div></div><div id="scroll-down"><i class="fas fa-angle-down scroll-down-effects"></i></div></header><main class="layout" id="content-inner"><div class="recent-posts" id="recent-posts"><div class="recent-post-item"><div class="post_cover left"><a href="/article/14386.html" title="阿里云部署"><img class="post_bg" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://pic.hycbook.com/i//hexo/post_cover/蕾姆0.webp" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="阿里云部署"></a></div><div class="recent-post-info"><a class="article-title" href="/article/14386.html" title="阿里云部署">阿里云部署</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">Created</span><time class="post-meta-date-created" datetime="2022-09-12T02:02:25.000Z" title="Created 2022-09-12 10:02:25">2022-09-12</time><span class="article-meta-separator">|</span><i class="fas fa-history"></i><span class="article-meta-label">Updated</span><time class="post-meta-date-updated" datetime="2022-09-25T04:04:08.282Z" title="Updated 2022-09-25 12:04:08">2022-09-25</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/common/">common</a></span><span class="article-meta tags"><span class="article-meta-separator">|</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/tags/%E9%98%BF%E9%87%8C%E4%BA%91/">阿里云</a><span class="article-meta-link">•</span><a class="article-meta__tags" href="/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8/">服务器</a></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-comments"></i><a class="twikoo-count" href="/article/14386.html#post-comment"><i class="fa-solid fa-spinner fa-spin"></i></a><span class="article-meta-label"> comments</span></span></div><div class="content">
+阿里云部署
+阿里云部署笔记(centos版本)，购买阿里云主机，开启安全组
+
+
+云主机实例
+
+
+
+配置安全组
+
+
+环境安装安装git、jdk和nodejs
+安装jdk
+
+12# 安装jdkrpm -ivh jdk-8u241-linux-x64.rpm
+
+
+配置jdk环境变量vi /etc/profile
+
+1234export JAVA_HOME=/usr/java/jdk1.8.0_241-amd64export JRE_HOME=/usr/java/jdk1.8.0_241-amd64/jreexport PATH=$PATH:$JAVA_HOME/bin:$JRE_HOME/binexport CLASSPATH=.:$CLASSPATH:$JAVA_HOME/lib:$JRE_HOME/lib
+
+
+ps: 若原先存在openjdk，需要先卸载
+
+1234# 查看jdk列表rpm -qa|grep java# 卸载rpm -e --nodeps java-1.8.0-openjdk-1.8.0.181-7.b13.el7.x86_64
+
+
+安装和配置nodejs
+
+12345 ...</div></div></div><div class="recent-post-item"><div class="post_cover right"><a href="/article/48230.html" title="Linux常用命令"><img class="post_bg" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://pic.hycbook.com/i//hexo/post_cover/蕾姆2.webp" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Linux常用命令"></a></div><div class="recent-post-info"><a class="article-title" href="/article/48230.html" title="Linux常用命令">Linux常用命令</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">Created</span><time class="post-meta-date-created" datetime="2022-09-12T02:02:25.000Z" title="Created 2022-09-12 10:02:25">2022-09-12</time><span class="article-meta-separator">|</span><i class="fas fa-history"></i><span class="article-meta-label">Updated</span><time class="post-meta-date-updated" datetime="2022-09-25T04:04:08.298Z" title="Updated 2022-09-25 12:04:08">2022-09-25</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/common/">common</a></span><span class="article-meta tags"><span class="article-meta-separator">|</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/tags/linux%E6%8C%87%E4%BB%A4/">linux指令</a></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-comments"></i><a class="twikoo-count" href="/article/48230.html#post-comment"><i class="fa-solid fa-spinner fa-spin"></i></a><span class="article-meta-label"> comments</span></span></div><div class="content">
+linux常用指令
+linux指令入门
+
+文件类
+远程拷贝文件(-P 是指定端口，-r 是循环复制)
+
+1scp -P port -r root@192.168.2.1:/home/hyc/test /home/hyc/
+
+
+文件权限
+
+
+删除文件
+
+
+删除文件夹
+
+
+移动或更名
+
+
+查找搜索
+
+寻找特定档案：find、locate、whereis
+寻找【执行挡】：which
+磁盘类
+查看某个文件或目录占用磁盘空间的大小(需要进入到当前目录)
+
+1du -ah --max-depth=1
+
+
+查看全局文件系统磁盘占用
+
+1df -h
+
+
+查看当前路径下 各文件夹的磁盘占用
+
+1du -sh *
+
+端口类
+netstat -atunlp查看端口占用
+
+
+进程类
+杀死指定进程
+
+
+批量杀死进程
+查看进程号
+
+1234[root@iZ2zeh6nc313zs4azjijjnZ ~]# ps -ef | grep gitbook | grep -v grep|awk &#x27;&#123;print $2&#125;&#x27;240642938730425
+
+
+方式一：batch_she ...</div></div></div><div class="recent-post-item"><div class="post_cover left"><a href="/article/51084.html" title="github协作"><img class="post_bg" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://pic.hycbook.com/i//hexo/post_cover/蕾姆3.webp" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="github协作"></a></div><div class="recent-post-info"><a class="article-title" href="/article/51084.html" title="github协作">github协作</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">Created</span><time class="post-meta-date-created" datetime="2022-09-12T02:02:25.000Z" title="Created 2022-09-12 10:02:25">2022-09-12</time><span class="article-meta-separator">|</span><i class="fas fa-history"></i><span class="article-meta-label">Updated</span><time class="post-meta-date-updated" datetime="2022-09-25T04:04:08.298Z" title="Updated 2022-09-25 12:04:08">2022-09-25</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/common/">common</a></span><span class="article-meta tags"><span class="article-meta-separator">|</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/tags/github/">github</a></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-comments"></i><a class="twikoo-count" href="/article/51084.html#post-comment"><i class="fa-solid fa-spinner fa-spin"></i></a><span class="article-meta-label"> comments</span></span></div><div class="content">
+github协作
+GitHub 多人协作开发三种方式
+
+Fork 方式
+暂无
+
+Organizations方式准备项目
+新建组织(创建免费的即可，有每月免费2000分钟)
+
+
+
+创建team(不建也是可以，建了容易管理)
+
+
+
+添加team成员，在组织下选择team，给team拉队友，队友收到邮件后，同意了就可以加入
+
+
+
+仓库转入(原来已有的仓库，进入仓库选择settings，下滑选Transfer)或在新建项目
+
+
+
+为组织下的仓库添加合作者，配置权限
+
+
+
+设置主分支保护，不让其他人直接push到主分支，打开仓库下的settings，选择branchs
+添加Branch protection rules
+
+
+开始协作
+协作者在组织下找到对应的仓库，克隆仓库到本地
+
+1git clone git@github.com:hycBook/bk_python.git
+
+
+开始编写，完成后提交至新分支，一般命名为dev_xxx
+
+
+
+新分支创建一次就可以，commit之后，再push到自己的dev_xxx分支
+注意：在修改文件之前一般是先从主分支拉取最新内容，修改完成后尽早提交，较少冲突 ...</div></div></div><div class="recent-post-item"><div class="post_cover right"><a href="/article/44835.html" title="gitbook博客搭建"><img class="post_bg" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://pic.hycbook.com/i//hexo/post_cover/蕾姆4.webp" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="gitbook博客搭建"></a></div><div class="recent-post-info"><a class="article-title" href="/article/44835.html" title="gitbook博客搭建">gitbook博客搭建</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">Created</span><time class="post-meta-date-created" datetime="2022-09-12T02:02:25.000Z" title="Created 2022-09-12 10:02:25">2022-09-12</time><span class="article-meta-separator">|</span><i class="fas fa-history"></i><span class="article-meta-label">Updated</span><time class="post-meta-date-updated" datetime="2022-09-25T04:04:08.302Z" title="Updated 2022-09-25 12:04:08">2022-09-25</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/common/">common</a></span><span class="article-meta tags"><span class="article-meta-separator">|</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/tags/gitbook/">gitbook</a></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-comments"></i><a class="twikoo-count" href="/article/44835.html#post-comment"><i class="fa-solid fa-spinner fa-spin"></i></a><span class="article-meta-label"> comments</span></span></div><div class="content">
+gitbook
+使用 Gitbook 打造你的电子书
+gitbook官网
+
+环境搭建
+nodejs
+
+官网下载，这里可以选择12.16.1版本，太新的版本后面可能会出现奇怪的问题，这是笔者使用的版本
+
+执行以下命令安装gitbook命令
+
+123456npm install -g gitbook-cli# 查看是否安装完成, 能正确显示版本号就行，这里推荐gitBook==3.2.3gitbook -VCLI version: 2.3.2GitBook version: 3.2.3
+
+
+
+初始化电子书
+初始化电子书
+
+1gitbook init
+
+这时候会生成下面两个文件README.md和SUMMARY.md
+README.md 书籍的介绍写在这个文件里；SUMMARY.md书籍的目录结构在这里配置
+
+安装插件
+
+有配置book.json时，执行gitbook install会安装插件到node_modules目录
+
+使用以下命令启动gitbook，打开http://localhost:4000就可以访问了，
+
+1gitbook serve
+
+
+重要文件
+book.json，没有的 ...</div></div></div><div class="recent-post-item"><div class="post_cover left"><a href="/article/41279.html" title="重装系统"><img class="post_bg" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://pic.hycbook.com/i//hexo/post_cover/蕾姆1.webp" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="重装系统"></a></div><div class="recent-post-info"><a class="article-title" href="/article/41279.html" title="重装系统">重装系统</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">Created</span><time class="post-meta-date-created" datetime="2022-09-12T02:02:25.000Z" title="Created 2022-09-12 10:02:25">2022-09-12</time><span class="article-meta-separator">|</span><i class="fas fa-history"></i><span class="article-meta-label">Updated</span><time class="post-meta-date-updated" datetime="2022-09-25T04:04:08.306Z" title="Updated 2022-09-25 12:04:08">2022-09-25</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/common/">common</a></span><span class="article-meta tags"><span class="article-meta-separator">|</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/tags/%E9%87%8D%E8%A3%85%E7%B3%BB%E7%BB%9F/">重装系统</a></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-comments"></i><a class="twikoo-count" href="/article/41279.html#post-comment"><i class="fa-solid fa-spinner fa-spin"></i></a><span class="article-meta-label"> comments</span></span></div><div class="content">
+重装系统
+安装系统不区分windows和linux，方式都是一样的
+
+u盘启动盘制作方式一
+百度搜索微软官网工具
+
+
+
+下载后，使用管理员身份运行
+
+按步骤操作，其中下载镜像会比较耗时(好像只能下载win10)
+
+制作启动盘完成后，就可以开始安装系统了
+
+
+方式二
+百度搜索itellyou，下载系统镜像
+
+2. 下载u盘启动盘制作工具UltraISO，安装后执行
+3. 制作启动盘完成后，就可以开始安装系统了
+磁盘格式化
+以 UEFI 启动的 Windows 磁盘必须是 GPT 格式，这里介绍如何在安装 Windows 期间将磁盘从 MBR 转换成 GPT。在安装界面按Shift+F10或Fn+Shift+F10进入cmd界面
+
+
+输入diskpart，进入管理界面
+
+输入list disk查看所有的磁盘情况
+12345磁盘 ###  状态           大小     可用     Dyn  Gpt--------  -------------  -------  -------  ---  ---磁盘 0    联机              119 GB   118 GB   ...</div></div></div><div class="recent-post-item"><div class="post_cover right"><a href="/article/4071.html" title="枚举类Enum"><img class="post_bg" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://pic.hycbook.com/i//hexo/post_cover/蕾姆0.webp" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="枚举类Enum"></a></div><div class="recent-post-info"><a class="article-title" href="/article/4071.html" title="枚举类Enum">枚举类Enum</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">Created</span><time class="post-meta-date-created" datetime="2022-09-10T12:46:25.000Z" title="Created 2022-09-10 20:46:25">2022-09-10</time><span class="article-meta-separator">|</span><i class="fas fa-history"></i><span class="article-meta-label">Updated</span><time class="post-meta-date-updated" datetime="2022-09-25T04:04:08.286Z" title="Updated 2022-09-25 12:04:08">2022-09-25</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/python/">python</a></span><span class="article-meta tags"><span class="article-meta-separator">|</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/tags/python/">python</a><span class="article-meta-link">•</span><a class="article-meta__tags" href="/tags/%E6%9E%9A%E4%B8%BE/">枚举</a></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-comments"></i><a class="twikoo-count" href="/article/4071.html#post-comment"><i class="fa-solid fa-spinner fa-spin"></i></a><span class="article-meta-label"> comments</span></span></div><div class="content">
+枚举类Enum枚举类有哪些好处
+枚举类可以方便地表示星期，月份等常数类型，如果你不用枚举类，那么你只能用数字或者字符串。如果你使用数字，用1-7来表示星期数，但一个数字在程序中不仅可以表示星期数，可能还有其他许多含义，这样你在写程序时就必须时刻记住这些数字的含义，这降低了程序的可读性，也导致容易出错。而当你使用字符串时，虽然没有明显的缺点，但在内存中字符串所占内存要比数字多，这就降低了程序的效率。
+枚举类正好弥补了这两方面的缺点，你可以在代码中使用枚举类，但在内存中存放时使用的是数字，既提高了可读性，又提高了程序效率。更重要的是，Python中的枚举类型是不可变类型，又可以进行迭代，这就意味着你可以随时使用枚举类型而不用担心改变了枚举类型的值。
+
+两种枚举类定义方式
+程序有两种方式来定义枚举类：
+
+直接使用 Enum 列出多个枚举值来创建枚举类。
+通过继承 Enum 基类来派生枚举类。
+
+
+案例简单枚举类定义12345678# 由于枚举类的“new”方法，将会保证内存中只会存在一个枚举类的实例# -*- coding: utf-8 -*from enum import Enum# 这 ...</div></div></div><div class="recent-post-item"><div class="post_cover left"><a href="/article/62278.html" title="pandas小记"><img class="post_bg" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://pic.hycbook.com/i//hexo/post_cover/蕾姆0.webp" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="pandas小记"></a></div><div class="recent-post-info"><a class="article-title" href="/article/62278.html" title="pandas小记">pandas小记</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">Created</span><time class="post-meta-date-created" datetime="2022-09-10T12:46:25.000Z" title="Created 2022-09-10 20:46:25">2022-09-10</time><span class="article-meta-separator">|</span><i class="fas fa-history"></i><span class="article-meta-label">Updated</span><time class="post-meta-date-updated" datetime="2022-09-25T04:04:08.286Z" title="Updated 2022-09-25 12:04:08">2022-09-25</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/python/">python</a></span><span class="article-meta tags"><span class="article-meta-separator">|</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/tags/python/">python</a><span class="article-meta-link">•</span><a class="article-meta__tags" href="/tags/pandas/">pandas</a></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-comments"></i><a class="twikoo-count" href="/article/62278.html#post-comment"><i class="fa-solid fa-spinner fa-spin"></i></a><span class="article-meta-label"> comments</span></span></div><div class="content">
+pandas学习</div></div></div><div class="recent-post-item"><div class="post_cover right"><a href="/article/30791.html" title="numpy小记"><img class="post_bg" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://pic.hycbook.com/i//hexo/post_cover/蕾姆0.webp" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="numpy小记"></a></div><div class="recent-post-info"><a class="article-title" href="/article/30791.html" title="numpy小记">numpy小记</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">Created</span><time class="post-meta-date-created" datetime="2022-09-10T12:46:25.000Z" title="Created 2022-09-10 20:46:25">2022-09-10</time><span class="article-meta-separator">|</span><i class="fas fa-history"></i><span class="article-meta-label">Updated</span><time class="post-meta-date-updated" datetime="2022-09-25T04:04:08.290Z" title="Updated 2022-09-25 12:04:08">2022-09-25</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/python/">python</a></span><span class="article-meta tags"><span class="article-meta-separator">|</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/tags/python/">python</a><span class="article-meta-link">•</span><a class="article-meta__tags" href="/tags/numpy/">numpy</a></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-comments"></i><a class="twikoo-count" href="/article/30791.html#post-comment"><i class="fa-solid fa-spinner fa-spin"></i></a><span class="article-meta-label"> comments</span></span></div><div class="content">
+numpy小记
+70个NumPy分级练习题：用Python一举搞定机器学习矩阵运算
+1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556import numpy as np# 1. 替换满足条件的元素而不影响原始数组arr = np.arange(10)out = np.where(arr%2==1, -1, arr)arrOut[4]: array([0, 1, 2, 3, 4, 5, 6, 7, 8, 9])outOut[5]: array([ 0, -1,  2, -1,  4, -1,  6, -1,  8, -1])# 7. 获取两个数组元素匹配的索引号a = np.array([1,2,3,2,3,4,3,4,5,6])b = np.array([7,2,10,2,7,4,9,4,9,8])np.where(a==b)Out[33]: (array([1, 3, 5, 7], dtype=int64),) # 9. 将处 ...</div></div></div><div class="recent-post-item"><div class="post_cover left"><a href="/article/27292.html" title="python_pipe包管道包学习"><img class="post_bg" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://pic.hycbook.com/i//hexo/post_cover/蕾姆0.webp" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="python_pipe包管道包学习"></a></div><div class="recent-post-info"><a class="article-title" href="/article/27292.html" title="python_pipe包管道包学习">python_pipe包管道包学习</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">Created</span><time class="post-meta-date-created" datetime="2022-09-10T12:46:25.000Z" title="Created 2022-09-10 20:46:25">2022-09-10</time><span class="article-meta-separator">|</span><i class="fas fa-history"></i><span class="article-meta-label">Updated</span><time class="post-meta-date-updated" datetime="2022-09-25T04:04:08.290Z" title="Updated 2022-09-25 12:04:08">2022-09-25</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/python/">python</a></span><span class="article-meta tags"><span class="article-meta-separator">|</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/tags/python/">python</a><span class="article-meta-link">•</span><a class="article-meta__tags" href="/tags/pipe%E5%8C%85%E7%AE%A1%E9%81%93/">pipe包管道</a></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-comments"></i><a class="twikoo-count" href="/article/27292.html#post-comment"><i class="fa-solid fa-spinner fa-spin"></i></a><span class="article-meta-label"> comments</span></span></div><div class="content">
+python pipe包管道包学习
+参考: https://github.com/JulienPalard/Pipe
+
+1234567891011121314151617181920212223242526from pipe import *# 此处不是太理解[1, 2, 3, 4, 5] | tee | as_list12345Out[32]: [1, 2, 3, 4, 5]# 将生成器转换成list列表[1, 2, 3, 4, 5, 6] | as_listOut[34]: [1, 2, 3, 4, 5, 6]    # Like Python&#x27;s built-in &quot;reversed&quot; primitive.[1, 2, 3] | reverse | concatOut[52]: &#x27;3, 2, 1&#x27;    # Returns index of value in iterable 检索值# 输入value start stop[1,2,3,2,1] | index(value=2,start=2,stop=4)Out[53]: 3[ ...</div></div></div><div class="recent-post-item"><div class="post_cover right"><a href="/article/65108.html" title="Python增强提案PEP"><img class="post_bg" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://pic.hycbook.com/i//hexo/post_cover/蕾姆0.webp" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Python增强提案PEP"></a></div><div class="recent-post-info"><a class="article-title" href="/article/65108.html" title="Python增强提案PEP">Python增强提案PEP</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">Created</span><time class="post-meta-date-created" datetime="2022-09-10T12:46:25.000Z" title="Created 2022-09-10 20:46:25">2022-09-10</time><span class="article-meta-separator">|</span><i class="fas fa-history"></i><span class="article-meta-label">Updated</span><time class="post-meta-date-updated" datetime="2022-09-25T04:04:08.290Z" title="Updated 2022-09-25 12:04:08">2022-09-25</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/python/">python</a></span><span class="article-meta tags"><span class="article-meta-separator">|</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/tags/python/">python</a><span class="article-meta-link">•</span><a class="article-meta__tags" href="/tags/PEP%E5%A2%9E%E5%BC%BA%E6%8F%90%E6%A1%88/">PEP增强提案</a></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-comments"></i><a class="twikoo-count" href="/article/65108.html#post-comment"><i class="fa-solid fa-spinner fa-spin"></i></a><span class="article-meta-label"> comments</span></span></div><div class="content">
+Python 增强提案PEP
+
+Python中10个必读的PEP提案
+理解Python数据类：Dataclass 的特征概述 （上）
+理解Python数据类：Dataclass fields 的概述（下）
+Python3.7 dataclass使用指南小结
+
+​        PEP 是 Python 增强提案(Python Enhancement Proposal)的缩写。社区通过PEP来给 Python 语言建言献策，每个版本你所看到的新特性和一些变化都是通过PEP提案经过社区决策层讨论、投票决议的。
+
+PEP 557  数据类（data class）
+dataclass的定义位于PEP-557，根据定义一个dataclass是指“一个带有默认值的可变的namedtuple”，广义的定义就是有一个类，它的属性均可公开访问，可以带有默认值并能被修改，而且类中含有与这些属性相关的类方法，那么这个类就可以称为dataclass，再通俗点讲，dataclass就是一个含有数据及操作数据方法的容器。
+Dataclasses 是一些适合于存储数据对象(data object)的 Python ...</div></div></div><nav id="pagination"><div class="pagination"><span class="page-number current">1</span><a class="page-number" href="/page/2/#content-inner">2</a><span class="space">&hellip;</span><a class="page-number" href="/page/8/#content-inner">8</a><a class="extend next" rel="next" href="/page/2/#content-inner"><i class="fas fa-chevron-right fa-fw"></i></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://pic.hycbook.com/i/hexo/person_img/兼一头像.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">narutohyc</div><div class="author-info__description">挑战时没有失败<br>放弃时才是失败</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">72</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">94</div></a><a href="/categories/"><div class="headline">Categories</div><div class="length-num">4</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/narutohyc"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/narutohyc" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="/1832044043@qq.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>Announcement</span></div><div class="announcement_content">兼一书虫博客成功上线啦~ 中秋折腾了三天，为了解决typora和hexo的资源路径问题，写了python去做路径的转换，好在最后成功处理，接下来可以专注写博客啦~</div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>Recent Post</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/article/14386.html" title="阿里云部署"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://pic.hycbook.com/i//hexo/post_cover/蕾姆0.webp" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="阿里云部署"/></a><div class="content"><a class="title" href="/article/14386.html" title="阿里云部署">阿里云部署</a><time datetime="2022-09-12T02:02:25.000Z" title="Created 2022-09-12 10:02:25">2022-09-12</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/article/48230.html" title="Linux常用命令"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://pic.hycbook.com/i//hexo/post_cover/蕾姆2.webp" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Linux常用命令"/></a><div class="content"><a class="title" href="/article/48230.html" title="Linux常用命令">Linux常用命令</a><time datetime="2022-09-12T02:02:25.000Z" title="Created 2022-09-12 10:02:25">2022-09-12</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/article/51084.html" title="github协作"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://pic.hycbook.com/i//hexo/post_cover/蕾姆3.webp" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="github协作"/></a><div class="content"><a class="title" href="/article/51084.html" title="github协作">github协作</a><time datetime="2022-09-12T02:02:25.000Z" title="Created 2022-09-12 10:02:25">2022-09-12</time></div></div></div></div><div class="card-widget card-categories"><div class="item-headline">
+            <i class="fas fa-folder-open"></i>
+            <span>Categories</span>
+            
+            </div>
+            <ul class="card-category-list" id="aside-cat-list">
+            <li class="card-category-list-item "><a class="card-category-list-link" href="/categories/common/"><span class="card-category-list-name">common</span><span class="card-category-list-count">5</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/java/"><span class="card-category-list-name">java</span><span class="card-category-list-count">40</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/math/"><span class="card-category-list-name">math</span><span class="card-category-list-count">1</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/python/"><span class="card-category-list-name">python</span><span class="card-category-list-count">26</span></a></li>
+            </ul></div><div class="card-widget card-webinfo"><div class="item-headline"><i class="fas fa-chart-line"></i><span>Info</span></div><div class="webinfo"><div class="webinfo-item"><div class="item-name">Article :</div><div class="item-count">72</div></div><div class="webinfo-item"><div class="item-name">Run time :</div><div class="item-count" id="runtimeshow" data-publishDate="2022-09-08T16:00:00.000Z"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">Total Count :</div><div class="item-count">282.1k</div></div><div class="webinfo-item"><div class="item-name">UV :</div><div class="item-count" id="busuanzi_value_site_uv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">PV :</div><div class="item-count" id="busuanzi_value_site_pv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">Last Push :</div><div class="item-count" id="last-push-date" data-lastPushDate="2022-09-25T04:04:18.968Z"><i class="fa-solid fa-spinner fa-spin"></i></div></div></div></div><div class="card-widget user-map" id="user-map"><div class="item-headline"><i class="fas fa-heartbeat"></i><span>访客地图</span></div><div class="item-content"><script type="text/javascript" id="clstr_globe" src="//clustrmaps.com/globe.js?d=R4ri-6C6hgE42ZlLxoyM8Q6QUhAC3IeHB4KBln4TNBE"></script></div></div></div></div></main><footer id="footer" style="background-image: url('https://pic.hycbook.com/i/hexo/config_imgs/footer_bg.webp')"><div id="footer-wrap"><div class="copyright">&copy;2022 By narutohyc</div><div class="framework-info"><span>Framework </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>Theme </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div><div class="footer_custom_text">I wish you to become your own sun, no need to rely on who's light.<br><p><a target="_blank" href="https://hexo.io/"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://img.shields.io/badge/Frame-Hexo-blue?style=flat&logo=hexo" title="博客框架为Hexo"></a>&nbsp;<a target="_blank" href="https://demo.jerryc.me/"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://img.shields.io/badge/Theme-Butterfly-6513df?style=flat&logo=bitdefender" title="主题采用butterfly"></a>&nbsp;<a target="_blank" href="https://vercel.com/ "><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://img.shields.io/badge/Hosted-Vervel-brightgreen?style=flat&logo=Vercel" title="本站采用双线部署，默认线路托管于Vercel"></a>&nbsp;<a target="_blank" href="https://github.com/"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://img.shields.io/badge/Source-Github-d021d6?style=flat&logo=GitHub" title="本站项目由Gtihub托管"></a></p></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="translateLink" type="button" title="Switch Between Traditional Chinese And Simplified Chinese">简</button><button id="darkmode" type="button" title="Switch Between Light And Dark Mode"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="Toggle between single-column and double-column"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="Setting"><i class="fas fa-cog fa-spin"></i></button><button id="go-up" type="button" title="Back To Top"><i class="fas fa-arrow-up"></i></button></div></div><div id="algolia-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">Search</span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="search-wrap"><div id="algolia-search-input"></div><hr/><div id="algolia-search-results"><div id="algolia-hits"></div><div id="algolia-pagination"></div><div id="algolia-info"><div class="algolia-stats"></div><div class="algolia-poweredBy"></div></div></div></div></div><div id="search-mask"></div></div><div id="rightMenu"><div class="rightMenu-group rightMenu-small"><div class="rightMenu-item" id="menu-backward"><i class="fa-solid fa-arrow-left"></i></div><div class="rightMenu-item" id="menu-forward"><i class="fa-solid fa-arrow-right"></i></div><div class="rightMenu-item" id="menu-refresh"><i class="fa-solid fa-arrow-rotate-right"></i></div><div class="rightMenu-item" id="menu-home"><i class="fa-solid fa-house"></i></div></div><div class="rightMenu-group rightMenu-line rightMenuOther"><a class="rightMenu-item menu-link" href="/archives/"><i class="fa-solid fa-archive"></i><span>文章归档</span></a><a class="rightMenu-item menu-link" href="/categories/"><i class="fa-solid fa-folder-open"></i><span>文章分类</span></a><a class="rightMenu-item menu-link" href="/tags/"><i class="fa-solid fa-tags"></i><span>文章标签</span></a></div><div class="rightMenu-group rightMenu-line rightMenuNormal"><a class="rightMenu-item menu-link" id="menu-radompage" href="/random/index.html"><i class="fa-solid fa-shoe-prints"></i><span>随便逛逛</span></a><div class="rightMenu-item" id="menu-translate"><i class="fa-solid fa-earth-asia"></i><span>繁简切换</span></div><div class="rightMenu-item" id="menu-darkmode"><i class="fa-solid fa-moon"></i><span>切换模式</span></div></div></div><div id="rightmenu-mask"></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/js/tw_cn.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.min.js"></script><script src="https://cdn.jsdelivr.net/npm/instant.page/instantpage.min.js" type="module"></script><script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload/dist/lazyload.iife.min.js"></script><script src="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.js"></script><script src="https://cdn.jsdelivr.net/npm/algoliasearch/dist/algoliasearch-lite.umd.min.js"></script><script src="https://cdn.jsdelivr.net/npm/instantsearch.js/dist/instantsearch.production.min.js"></script><script src="/js/search/algolia.js"></script><div class="js-pjax"><script>(() => { 
+  const getCommentUrl = () => {
+    const eleGroup = document.querySelectorAll('#recent-posts .article-title')
+    let urlArray = []
+    eleGroup.forEach(i=>{
+      urlArray.push(i.getAttribute('href'))
+    })
+    return urlArray
+  }
+
+  const getCount = () => {
+    const runTwikoo = () => {
+      twikoo.getCommentsCount({
+        envId: 'https://vercel.hycbook.com',
+        region: '',
+        urls: getCommentUrl(),
+        includeReply: false
+      }).then(function (res) {
+        document.querySelectorAll('#recent-posts .twikoo-count').forEach((item,index) => {
+          item.innerText = res[index].count
+        })
+      }).catch(function (err) {
+        console.log(err)
+      })
+    }
+
+      if (typeof twikoo === 'object') {
+        runTwikoo()
+      } else {
+        getScript('https://cdn.jsdelivr.net/npm/twikoo/dist/twikoo.all.min.js').then(runTwikoo)
+      }
+  }
+
+  window.pjax ? getCount() : window.addEventListener('load', getCount)
+
+})()</script><script>function subtitleType () {
+  if (true) { 
+    window.typed = new Typed("#subtitle", {
+      strings: ["努力是不会骗人的，认识自己的无知，就是最大的智慧","Effort will not deceive others. To know one's ignorance is the greatest wisdom"],
+      startDelay: 300,
+      typeSpeed: 150,
+      loop: true,
+      backSpeed: 50
+    })
+  } else {
+    document.getElementById("subtitle").innerHTML = '努力是不会骗人的，认识自己的无知，就是最大的智慧'
+  }
+}
+
+if (true) {
+  if (typeof Typed === 'function') {
+    subtitleType()
+  } else {
+    getScript('https://cdn.jsdelivr.net/npm/typed.js/lib/typed.min.js').then(subtitleType)
+  }
+} else {
+  subtitleType()
+}</script><script>(() => {
+  const $mermaidWrap = document.querySelectorAll('#article-container .mermaid-wrap')
+  if ($mermaidWrap.length) {
+    window.runMermaid = () => {
+      window.loadMermaid = true
+      const theme = document.documentElement.getAttribute('data-theme') === 'dark' ? 'dark' : 'default'
+
+      Array.from($mermaidWrap).forEach((item, index) => {
+        const mermaidSrc = item.firstElementChild
+        const mermaidThemeConfig = '%%{init:{ \'theme\':\'' + theme + '\'}}%%\n'
+        const mermaidID = 'mermaid-' + index
+        const mermaidDefinition = mermaidThemeConfig + mermaidSrc.textContent
+        mermaid.mermaidAPI.render(mermaidID, mermaidDefinition, (svgCode) => {
+          mermaidSrc.insertAdjacentHTML('afterend', svgCode)
+        })
+      })
+    }
+
+    const loadMermaid = () => {
+      window.loadMermaid ? runMermaid() : getScript('https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js').then(runMermaid)
+    }
+
+    window.pjax ? loadMermaid() : document.addEventListener('DOMContentLoaded', loadMermaid)
+  }
+})()</script></div><script defer src="https://npm.elemecdn.com/jquery@latest/dist/jquery.min.js"></script><script defer data-pjax src="/js/rightMenu.js"></script><script defer https://npm.elemecdn.com/vue@2.6.11"></script><canvas class="fireworks" mobile="false"></canvas><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/fireworks.min.js"></script><script defer="defer" id="fluttering_ribbon" mobile="false" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/canvas-fluttering-ribbon.min.js"></script><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/activate-power-mode.min.js"></script><script>POWERMODE.colorful = true;
+POWERMODE.shake = false;
+POWERMODE.mobile = false;
+document.body.addEventListener('input', POWERMODE);
+</script><script>window.$crisp = [];
+window.CRISP_WEBSITE_ID = "561b80db-3f0f-45cb-b3b1-aae7355939e6";
+(function () {
+  d = document;
+  s = d.createElement("script");
+  s.src = "https://client.crisp.chat/l.js";
+  s.async = 1;
+  d.getElementsByTagName("head")[0].appendChild(s);
+})();
+$crisp.push(["safe", true])
+
+if (false) {
+  $crisp.push(["do", "chat:hide"])
+  $crisp.push(["on", "chat:closed", function() {
+    $crisp.push(["do", "chat:hide"])
+  }])
+  var chatBtnFn = () => {
+    var chatBtn = document.getElementById("chat_btn")
+    chatBtn.addEventListener("click", function(){
+      $crisp.push(["do", "chat:show"])
+      $crisp.push(["do", "chat:open"])
+
+    });
+  }
+  chatBtnFn()
+} else {
+  if (false) {
+    function chatBtnHide () {
+      $crisp.push(["do", "chat:hide"])
+    }
+    function chatBtnShow () {
+      $crisp.push(["do", "chat:show"])
+    }
+  }
+}</script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div><!-- hexo injector body_end start --><script data-pjax>
+    function butterfly_categories_card_injector_config(){
+      var parent_div_git = document.getElementById('recent-posts');
+      var item_html = '<style>li.categoryBar-list-item{width:32.3%;}.categoryBar-list{max-height: 380px;overflow:auto;}.categoryBar-list::-webkit-scrollbar{width:0!important}@media screen and (max-width: 650px){.categoryBar-list{max-height: 320px;}}</style><div class="recent-post-item" style="height:auto;width:100%;padding:0px;"><div id="categoryBar"><ul class="categoryBar-list"><li class="categoryBar-list-item" style="background:url(https://pic.hycbook.com/i//hexo/category_bar_imgs/category_bar_3.webp);"> <a class="categoryBar-list-link" href="categories/common/">common</a><span class="categoryBar-list-count">5</span><span class="categoryBar-list-descr">通用知识学习记录</span></li><li class="categoryBar-list-item" style="background:url(https://pic.hycbook.com/i//hexo/category_bar_imgs/category_bar_2.webp);"> <a class="categoryBar-list-link" href="categories/python/">python</a><span class="categoryBar-list-count">26</span><span class="categoryBar-list-descr">python学习记录</span></li><li class="categoryBar-list-item" style="background:url(https://pic.hycbook.com/i//hexo/category_bar_imgs/category_bar_0.webp);"> <a class="categoryBar-list-link" href="categories/java/">java</a><span class="categoryBar-list-count">40</span><span class="categoryBar-list-descr">java学习记录</span></li><li class="categoryBar-list-item" style="background:url(https://pic.hycbook.com/i//hexo/category_bar_imgs/category_bar_1.webp);"> <a class="categoryBar-list-link" href="categories/math/">math</a><span class="categoryBar-list-count">1</span><span class="categoryBar-list-descr">数学知识学习</span></li></ul></div></div>';
+      console.log('已挂载butterfly_categories_card')
+      parent_div_git.insertAdjacentHTML("afterbegin",item_html)
+      }
+    if( document.getElementById('recent-posts') && (location.pathname ==='/'|| '/' ==='all')){
+    butterfly_categories_card_injector_config()
+    }
+  </script><script data-pjax>
+  function butterfly_swiper_injector_config(){
+    var parent_div_git = document.getElementById('recent-posts');
+    var item_html = '<div class="recent-post-item" style="height: auto;width: 100%"><div class="blog-slider swiper-container-fade swiper-container-horizontal" id="swiper_container"><div class="blog-slider__wrp swiper-wrapper" style="transition-duration: 0ms;"><div class="blog-slider__item swiper-slide" style="width: 750px; opacity: 1; transform: translate3d(0px, 0px, 0px); transition-duration: 0ms;"><a class="blog-slider__img" href="article/13105.html" alt=""><img width="48" height="48" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://pic.hycbook.com/i//hexo/post_cover/蕾姆0.webp" alt="" onerror="this.src=https://unpkg.zhimg.com/akilar-candyassets/image/loading.gif; this.onerror = null;"/></a><div class="blog-slider__content"><span class="blog-slider__code">2022-09-10</span><a class="blog-slider__title" href="article/13105.html" alt="">正则表达式学习</a><div class="blog-slider__text">python正则表达式的学习记录</div><a class="blog-slider__button" href="article/13105.html" alt="">详情   </a></div></div><div class="blog-slider__item swiper-slide" style="width: 750px; opacity: 1; transform: translate3d(0px, 0px, 0px); transition-duration: 0ms;"><a class="blog-slider__img" href="article/10706.html" alt=""><img width="48" height="48" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://pic.hycbook.com/i//hexo/post_cover/蕾姆0.webp" alt="" onerror="this.src=https://unpkg.zhimg.com/akilar-candyassets/image/loading.gif; this.onerror = null;"/></a><div class="blog-slider__content"><span class="blog-slider__code">2022-09-10</span><a class="blog-slider__title" href="article/10706.html" alt="">机器学习_一元函数微积分</a><div class="blog-slider__text">机器学习的数学基础入门知识</div><a class="blog-slider__button" href="article/10706.html" alt="">详情   </a></div></div><div class="blog-slider__item swiper-slide" style="width: 750px; opacity: 1; transform: translate3d(0px, 0px, 0px); transition-duration: 0ms;"><a class="blog-slider__img" href="article/45122.html" alt=""><img width="48" height="48" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://pic.hycbook.com/i//hexo/post_cover/蕾姆0.webp" alt="" onerror="this.src=https://unpkg.zhimg.com/akilar-candyassets/image/loading.gif; this.onerror = null;"/></a><div class="blog-slider__content"><span class="blog-slider__code">2022-09-10</span><a class="blog-slider__title" href="article/45122.html" alt="">python装饰器</a><div class="blog-slider__text">python装饰器学习以及函数式编程的库介绍</div><a class="blog-slider__button" href="article/45122.html" alt="">详情   </a></div></div><div class="blog-slider__item swiper-slide" style="width: 750px; opacity: 1; transform: translate3d(0px, 0px, 0px); transition-duration: 0ms;"><a class="blog-slider__img" href="article/12909.html" alt=""><img width="48" height="48" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://pic.hycbook.com/i//hexo/post_cover/蕾姆0.webp" alt="" onerror="this.src=https://unpkg.zhimg.com/akilar-candyassets/image/loading.gif; this.onerror = null;"/></a><div class="blog-slider__content"><span class="blog-slider__code">2022-09-10</span><a class="blog-slider__title" href="article/12909.html" alt="">logging模块</a><div class="blog-slider__text">python日志文件配置使用方法</div><a class="blog-slider__button" href="article/12909.html" alt="">详情   </a></div></div><div class="blog-slider__item swiper-slide" style="width: 750px; opacity: 1; transform: translate3d(0px, 0px, 0px); transition-duration: 0ms;"><a class="blog-slider__img" href="article/41279.html" alt=""><img width="48" height="48" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://pic.hycbook.com/i//hexo/post_cover/蕾姆1.webp" alt="" onerror="this.src=https://unpkg.zhimg.com/akilar-candyassets/image/loading.gif; this.onerror = null;"/></a><div class="blog-slider__content"><span class="blog-slider__code">2022-09-12</span><a class="blog-slider__title" href="article/41279.html" alt="">重装系统</a><div class="blog-slider__text">重装系统以及一些软件的推荐，包括Chrome插件</div><a class="blog-slider__button" href="article/41279.html" alt="">详情   </a></div></div></div><div class="blog-slider__pagination swiper-pagination-clickable swiper-pagination-bullets"></div></div></div>';
+    console.log('已挂载butterfly_swiper')
+    parent_div_git.insertAdjacentHTML("afterbegin",item_html)
+    }
+  var elist = 'undefined'.split(',');
+  var cpage = location.pathname;
+  var epage = 'all';
+  var flag = 0;
+
+  for (var i=0;i<elist.length;i++){
+    if (cpage.includes(elist[i])){
+      flag++;
+    }
+  }
+
+  if ((epage ==='all')&&(flag == 0)){
+    butterfly_swiper_injector_config();
+  }
+  else if (epage === cpage){
+    butterfly_swiper_injector_config();
+  }
+  </script><script defer src="https://npm.elemecdn.com/hexo-butterfly-swiper/lib/swiper.min.js"></script><script defer data-pjax src="https://npm.elemecdn.com/hexo-butterfly-swiper/lib/swiper_init.js"></script><!-- hexo injector body_end end --></body></html>
