@@ -884,7 +884,8 @@ inject:
     - <script defer src="https://npm.elemecdn.com/jquery@latest/dist/jquery.min.js"></script>
     - <script defer data-pjax src="/js/rightMenu.js"></script>
     # 静态资源异步加载 https://blog.imzjw.cn/posts/hexocdn
-    - <script defer https://npm.elemecdn.com/vue@2.6.11"></script>
+    - <script defer src="https://npm.elemecdn.com/vue@2.6.11"></script>
+    - <script defer src="https://yremp.live/wp-content/uploads/resource/js/sakura.js"></script>
 
 # CDN
 # Don't modify the following settings unless you know how they work
