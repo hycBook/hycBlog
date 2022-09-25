@@ -27,7 +27,7 @@ type: "about"
 
 
 
-{% note orange 'icon fa-battery-half' simple %}
+{% note orange 'icofont icon-suannai' simple %}
 你是刷 Visa 还是 UnionPay
 {% endnote %}
 

@@ -876,7 +876,7 @@ css_prefix: true
 inject:
   head:
     # - <link rel="stylesheet" href="/xxx.css">
-    - <link rel="stylesheet" href="https://at.alicdn.com/t/c/font_3670467_00vzmz2zz841k.css?spm=a313x.7781069.1998910419.53&file=font_3670467_00vzmz2zz841k.css">  # 阿里巴巴矢量图库
+    - <link rel="stylesheet" href="https://at.alicdn.com/t/c/font_3670467_s6ou5la766.css?spm=a313x.7781069.1998910419.53&file=font_3670467_s6ou5la766.css">  # 阿里巴巴矢量图库
     - <link rel="stylesheet" href="/css/rightMenu.css">  # 自定义右键菜单  https://tzy1997.com/articles/hexo1608/
     - <link rel="stylesheet" href="/css/mouse.css"> # 修改鼠标样式   https://www.cnblogs.com/JanYork/p/16259336.html
   bottom:
@@ -885,6 +885,7 @@ inject:
     - <script defer data-pjax src="/js/rightMenu.js"></script>
     # 静态资源异步加载 https://blog.imzjw.cn/posts/hexocdn
     - <script defer src="https://npm.elemecdn.com/vue@2.6.11"></script>
+    # 引入樱花
     - <script defer src="https://yremp.live/wp-content/uploads/resource/js/sakura.js"></script>
 
 # CDN
