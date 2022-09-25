@@ -104,5 +104,23 @@ aside: false
       link: https://zfe.space/
       avatar: https://zfe.space/images/headimage.png
       descr: 小冰博客
+      screenshot: https://img.issey.top/img/202209210151958.png
   
   {% endflink %}
+
+
+
+
+
+申请友链格式
+
+在下方评论处留言
+
+```yml
+name: your Blog's name
+link: your Blog's address
+avatar: your Blog's avatar
+descr: the description of your blog
+screenshot: the screenshot of your website # 此项可不填 会根据贵站链接调用API自动获取截图
+```
+
