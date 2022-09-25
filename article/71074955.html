@@ -1,13 +1,13 @@
-<!DOCTYPE html><html lang="en" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>MySQL_数据库设计 | 兼一书虫</title><meta name="keywords" content="server,frontend,backend,hexo"><meta name="author" content="narutohyc"><meta name="copyright" content="narutohyc"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="表间关系 MySQL约束与设计  关系分类  一对一(了解)：  如：人和身份证 分析：一个人只有一个身份证，一个身份证只能对应一个人 实现方式：一对一关系实现，可以在任意一方添加唯一外键指向另一方的主键   一对多(多对一)：  如：部门和员工 分析：一个部门有多个员工，一个员工只能对应一个部门 实现方式：在多的一方建立外键，指向一的一方的主键   多对多：  如：学生和课程     分析：一">
+<!DOCTYPE html><html lang="en" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>MySQL_数据库设计 | 兼一书虫</title><meta name="keywords" content="server,frontend,backend,hexo"><meta name="author" content="narutohyc"><meta name="copyright" content="narutohyc"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="表间关系 MySQL约束与设计  关系分类  一对一(了解)：  如：人和身份证 分析：一个人只有一个身份证，一个身份证只能对应一个人 实现方式：一对一关系实现，可以在任意一方添加唯一外键指向另一方的主键   一对多(多对一)：  如：部门和员工 分析：一个部门有多个员工，一个员工只能对应一个部门 实现方式：在多的一方建立外键，指向一的一方的主键     多对多：  如：学生和课程     分析">
 <meta property="og:type" content="article">
 <meta property="og:title" content="MySQL_数据库设计">
 <meta property="og:url" content="https://hycbook.github.io/hycBlog/article/71074955.html">
 <meta property="og:site_name" content="兼一书虫">
-<meta property="og:description" content="表间关系 MySQL约束与设计  关系分类  一对一(了解)：  如：人和身份证 分析：一个人只有一个身份证，一个身份证只能对应一个人 实现方式：一对一关系实现，可以在任意一方添加唯一外键指向另一方的主键   一对多(多对一)：  如：部门和员工 分析：一个部门有多个员工，一个员工只能对应一个部门 实现方式：在多的一方建立外键，指向一的一方的主键   多对多：  如：学生和课程     分析：一">
+<meta property="og:description" content="表间关系 MySQL约束与设计  关系分类  一对一(了解)：  如：人和身份证 分析：一个人只有一个身份证，一个身份证只能对应一个人 实现方式：一对一关系实现，可以在任意一方添加唯一外键指向另一方的主键   一对多(多对一)：  如：部门和员工 分析：一个部门有多个员工，一个员工只能对应一个部门 实现方式：在多的一方建立外键，指向一的一方的主键     多对多：  如：学生和课程     分析">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://pic.hycbook.com/i//hexo/post_cover/%E8%95%BE%E5%A7%860.webp">
 <meta property="article:published_time" content="2022-09-10T12:46:25.000Z">
-<meta property="article:modified_time" content="2022-09-25T04:13:43.634Z">
+<meta property="article:modified_time" content="2022-09-25T10:07:15.359Z">
 <meta property="article:author" content="narutohyc">
 <meta property="article:tag" content="server,frontend,backend,hexo">
 <meta name="twitter:card" content="summary">
@@ -53,7 +53,7 @@
   isHome: false,
   isHighlightShrink: false,
   isToc: true,
-  postUpdate: '2022-09-25 12:13:43'
+  postUpdate: '2022-09-25 18:07:15'
 }</script><noscript><style type="text/css">
   #nav {
     opacity: 1
@@ -145,9 +145,9 @@
     })(window)</script><link rel="stylesheet" href="https://at.alicdn.com/t/c/font_3670467_00vzmz2zz841k.css?spm=a313x.7781069.1998910419.53&file=font_3670467_00vzmz2zz841k.css"><link rel="stylesheet" href="/css/rightMenu.css"><link rel="stylesheet" href="/css/mouse.css"><!-- hexo injector head_end start --><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Zfour/Butterfly-double-row-display@1.00/cardlistpost.min.css"/>
 <style>#recent-posts > .recent-post-item >.recent-post-info > .article-meta-wrap > .tags:before {content:"\A";
   white-space: pre;}#recent-posts > .recent-post-item >.recent-post-info > .article-meta-wrap > .tags > .article-meta__separator{display:none}</style>
-<link rel="stylesheet" href="https://npm.elemecdn.com/hexo-butterfly-categories-card@1.0.0/lib/categorybar.css"><link rel="stylesheet" href="https://npm.elemecdn.com/hexo-butterfly-swiper/lib/swiper.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://npm.elemecdn.com/hexo-butterfly-swiper/lib/swiperstyle.css" media="print" onload="this.media='all'"><!-- hexo injector head_end end --><meta name="generator" content="Hexo 6.3.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://pic.hycbook.com/i/hexo/person_img/兼一头像.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">72</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">94</div></a><a href="/categories/"><div class="headline">Categories</div><div class="length-num">4</div></a></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fa fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fa fa-compass"></i><span> 文章</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/archives/"><i class="fa-fw fa fa-archive"></i><span> 归档</span></a></li><li><a class="site-page child" href="/categories/"><i class="fa-fw fa fa-folder-open"></i><span> 分类</span></a></li><li><a class="site-page child" href="/tags/"><i class="fa-fw fa fa-tags"></i><span> 标签</span></a></li></ul></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fa fa-list"></i><span> 娱乐</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fa fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/bangumis/"><i class="fa-fw fa fa-video"></i><span> 追番</span></a></li><li><a class="site-page child" href="/gallery/"><i class="fa-fw fa fa-image"></i><span> 相册</span></a></li><li><a class="site-page child" href="/video/"><i class="fa-fw fa fa-image"></i><span> 视频</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/shuoshuo/"><i class="fa-fw fa fa-coffee"></i><span> 微言</span></a></div><div class="menus_item"><a class="site-page" href="/comments/"><i class="fa-fw fa fa-comments"></i><span> 留言板</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fa fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fa fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://pic.hycbook.com/i//hexo/post_cover/蕾姆0.webp')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">兼一书虫</a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> Search</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fa fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fa fa-compass"></i><span> 文章</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/archives/"><i class="fa-fw fa fa-archive"></i><span> 归档</span></a></li><li><a class="site-page child" href="/categories/"><i class="fa-fw fa fa-folder-open"></i><span> 分类</span></a></li><li><a class="site-page child" href="/tags/"><i class="fa-fw fa fa-tags"></i><span> 标签</span></a></li></ul></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fa fa-list"></i><span> 娱乐</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fa fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/bangumis/"><i class="fa-fw fa fa-video"></i><span> 追番</span></a></li><li><a class="site-page child" href="/gallery/"><i class="fa-fw fa fa-image"></i><span> 相册</span></a></li><li><a class="site-page child" href="/video/"><i class="fa-fw fa fa-image"></i><span> 视频</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/shuoshuo/"><i class="fa-fw fa fa-coffee"></i><span> 微言</span></a></div><div class="menus_item"><a class="site-page" href="/comments/"><i class="fa-fw fa fa-comments"></i><span> 留言板</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fa fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fa fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">MySQL_数据库设计</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">Created</span><time class="post-meta-date-created" datetime="2022-09-10T12:46:25.000Z" title="Created 2022-09-10 20:46:25">2022-09-10</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">Updated</span><time class="post-meta-date-updated" datetime="2022-09-25T04:13:43.634Z" title="Updated 2022-09-25 12:13:43">2022-09-25</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/java/">java</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">Word count:</span><span class="word-count">1.9k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">Reading time:</span><span>6min</span></span><span class="post-meta-separator">|</span><span id="" data-flag-title="MySQL_数据库设计"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">Post View:</span><span id="twikoo_visitors"><i class="fa-solid fa-spinner fa-spin"></i></span></span><span class="post-meta-separator">|</span><span class="post-meta-commentcount"><i class="far fa-comments fa-fw post-meta-icon"></i><span class="post-meta-label">Comments:</span><a href="/article/71074955.html#post-comment"><span id="twikoo-count"><i class="fa-solid fa-spinner fa-spin"></i></span></a></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><hr>
+<link rel="stylesheet" href="https://npm.elemecdn.com/hexo-butterfly-categories-card@1.0.0/lib/categorybar.css"><link rel="stylesheet" href="https://npm.elemecdn.com/hexo-butterfly-swiper/lib/swiper.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://npm.elemecdn.com/hexo-butterfly-swiper/lib/swiperstyle.css" media="print" onload="this.media='all'"><!-- hexo injector head_end end --><meta name="generator" content="Hexo 6.3.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://pic.hycbook.com/i/hexo/person_img/兼一头像.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">72</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">94</div></a><a href="/categories/"><div class="headline">Categories</div><div class="length-num">4</div></a></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fa fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fa fa-compass"></i><span> 文章</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/archives/"><i class="fa-fw fa fa-archive"></i><span> 归档</span></a></li><li><a class="site-page child" href="/categories/"><i class="fa-fw fa fa-folder-open"></i><span> 分类</span></a></li><li><a class="site-page child" href="/tags/"><i class="fa-fw fa fa-tags"></i><span> 标签</span></a></li></ul></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fa fa-list"></i><span> 娱乐</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fa fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/bangumis/"><i class="fa-fw fa fa-video"></i><span> 追番</span></a></li><li><a class="site-page child" href="/gallery/"><i class="fa-fw fa fa-image"></i><span> 相册</span></a></li><li><a class="site-page child" href="/video/"><i class="fa-fw fa fa-image"></i><span> 视频</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/shuoshuo/"><i class="fa-fw fa fa-coffee"></i><span> 微言</span></a></div><div class="menus_item"><a class="site-page" href="/comments/"><i class="fa-fw fa fa-comments"></i><span> 留言板</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fa fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fa fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://pic.hycbook.com/i//hexo/post_cover/蕾姆0.webp')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">兼一书虫</a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> Search</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fa fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fa fa-compass"></i><span> 文章</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/archives/"><i class="fa-fw fa fa-archive"></i><span> 归档</span></a></li><li><a class="site-page child" href="/categories/"><i class="fa-fw fa fa-folder-open"></i><span> 分类</span></a></li><li><a class="site-page child" href="/tags/"><i class="fa-fw fa fa-tags"></i><span> 标签</span></a></li></ul></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fa fa-list"></i><span> 娱乐</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fa fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/bangumis/"><i class="fa-fw fa fa-video"></i><span> 追番</span></a></li><li><a class="site-page child" href="/gallery/"><i class="fa-fw fa fa-image"></i><span> 相册</span></a></li><li><a class="site-page child" href="/video/"><i class="fa-fw fa fa-image"></i><span> 视频</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/shuoshuo/"><i class="fa-fw fa fa-coffee"></i><span> 微言</span></a></div><div class="menus_item"><a class="site-page" href="/comments/"><i class="fa-fw fa fa-comments"></i><span> 留言板</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fa fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fa fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">MySQL_数据库设计</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">Created</span><time class="post-meta-date-created" datetime="2022-09-10T12:46:25.000Z" title="Created 2022-09-10 20:46:25">2022-09-10</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">Updated</span><time class="post-meta-date-updated" datetime="2022-09-25T10:07:15.359Z" title="Updated 2022-09-25 18:07:15">2022-09-25</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/java/">java</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">Word count:</span><span class="word-count">1.9k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">Reading time:</span><span>6min</span></span><span class="post-meta-separator">|</span><span id="" data-flag-title="MySQL_数据库设计"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">Post View:</span><span id="twikoo_visitors"><i class="fa-solid fa-spinner fa-spin"></i></span></span><span class="post-meta-separator">|</span><span class="post-meta-commentcount"><i class="far fa-comments fa-fw post-meta-icon"></i><span class="post-meta-label">Comments:</span><a href="/article/71074955.html#post-comment"><span id="twikoo-count"><i class="fa-solid fa-spinner fa-spin"></i></span></a></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><hr>
 <h1 id="表间关系"><a href="#表间关系" class="headerlink" title="表间关系"></a>表间关系</h1><blockquote>
-<p><a href="./res/MySQL_%E6%95%B0%E6%8D%AE%E5%BA%93%E8%AE%BE%E8%AE%A1/MySQL%E7%BA%A6%E6%9D%9F%E4%B8%8E%E8%AE%BE%E8%AE%A1.pdf">MySQL约束与设计</a></p>
+<p><a href="./res/MySQL_数据库设计/MySQL约束与设计.pdf">MySQL约束与设计</a></p>
 </blockquote>
 <h2 id="关系分类"><a href="#关系分类" class="headerlink" title="关系分类"></a>关系分类</h2><blockquote>
 <ol>
@@ -160,9 +160,11 @@
 </li>
 <li><p><code>一对多</code>(多对一)：</p>
 <ul>
-<li>如：部门和员工</li>
+<li>如：部门和员工<ul>
 <li>分析：一个部门有多个员工，一个员工只能对应一个部门</li>
 <li>实现方式：在多的一方建立外键，指向一的一方的主键</li>
+</ul>
+</li>
 </ul>
 </li>
 <li><p><code>多对多</code>：</p>
@@ -180,31 +182,27 @@
 </blockquote>
 <h2 id="案例"><a href="#案例" class="headerlink" title="案例"></a>案例</h2><blockquote>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br></pre></td><td class="code"><pre><span class="line">&gt;-- 创建旅游线路分类表 tab_category</span><br><span class="line">&gt;-- cid 旅游线路分类主键，自动增长</span><br><span class="line">&gt;-- cname 旅游线路分类名称非空，唯一，字符串 100</span><br><span class="line">&gt;CREATE TABLE tab_category (</span><br><span class="line">cid INT PRIMARY KEY AUTO_INCREMENT,</span><br><span class="line">cname VARCHAR(100) NOT NULL UNIQUE</span><br><span class="line">&gt;);</span><br><span class="line"></span><br><span class="line">&gt;-- 创建旅游线路表 tab_route</span><br><span class="line">&gt;/*</span><br><span class="line">   rid 旅游线路主键，自动增长</span><br><span class="line">   rname 旅游线路名称非空，唯一，字符串 100</span><br><span class="line">   price 价格</span><br><span class="line">   rdate 上架时间，日期类型</span><br><span class="line">   cid 外键，所属分类 */</span><br><span class="line">&gt;CREATE TABLE tab_route(</span><br><span class="line">rid INT PRIMARY KEY AUTO_INCREMENT,</span><br><span class="line">rname VARCHAR(100) NOT NULL UNIQUE,</span><br><span class="line">price DOUBLE,</span><br><span class="line">rdate DATE,</span><br><span class="line">cid INT,</span><br><span class="line">FOREIGN KEY (cid) REFERENCES tab_category(cid)</span><br><span class="line">&gt;);</span><br><span class="line"></span><br><span class="line">&gt;/*创建用户表 tab_user</span><br><span class="line">   uid 用户主键，自增长</span><br><span class="line">   username 用户名长度 100，唯一，非空</span><br><span class="line">   password 密码长度 30，非空</span><br><span class="line">   name 真实姓名长度 100</span><br><span class="line">   birthday 生日</span><br><span class="line">   sex 性别，定长字符串 1</span><br><span class="line">   telephone 手机号，字符串 11</span><br><span class="line">   email 邮箱，字符串长度 100 */</span><br><span class="line">&gt;CREATE TABLE tab_user (</span><br><span class="line">uid INT PRIMARY KEY AUTO_INCREMENT,</span><br><span class="line">username VARCHAR(100) UNIQUE NOT NULL,</span><br><span class="line">PASSWORD VARCHAR(30) NOT NULL,</span><br><span class="line">NAME VARCHAR(100),</span><br><span class="line">birthday DATE,</span><br><span class="line">sex CHAR(1) DEFAULT &#x27;男&#x27;,</span><br><span class="line">telephone VARCHAR(11),</span><br><span class="line">email VARCHAR(100)</span><br><span class="line">&gt;);</span><br><span class="line"></span><br><span class="line">&gt;/*创建收藏表 tab_favorite</span><br><span class="line">   rid 旅游线路 id，外键</span><br><span class="line">   date 收藏时间</span><br><span class="line">   uid 用户 id，外键</span><br><span class="line">   rid 和 uid 不能重复，设置复合主键，同一个用户不能收藏同一个线路两次 */</span><br><span class="line">&gt;CREATE TABLE tab_favorite (</span><br><span class="line">rid INT, -- 线路id</span><br><span class="line">DATE DATETIME,</span><br><span class="line">uid INT, -- 用户id</span><br><span class="line">-- 创建复合主键</span><br><span class="line">PRIMARY KEY(rid,uid), -- 联合主键</span><br><span class="line">FOREIGN KEY (rid) REFERENCES tab_route(rid),</span><br><span class="line">FOREIGN KEY(uid) REFERENCES tab_user(uid)</span><br><span class="line">&gt;);</span><br></pre></td></tr></table></figure>
-
-
 </blockquote>
 <h1 id="设计范式"><a href="#设计范式" class="headerlink" title="设计范式"></a>设计范式</h1><h2 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h2><p><strong>概念</strong>：设计数据库时，需要遵循的一些规范。要遵循后边的范式要求，必须先遵循前边的所有范式要求</p>
 <blockquote>
 <pre><code>设计关系数据库时，遵从不同的规范要求，设计出合理的关系型数据库，这些不同的规范要求被称为不同的范式，各种范式呈递次规范，越高的范式数据库冗余越小。
 目前关系数据库有六种范式：第一范式（1NF）、第二范式（2NF）、第三范式（3NF）、巴斯-科德范式（BCNF）、第四范式(4NF）和第五范式（5NF，又称完美范式）。
-</code></pre>
-<p><strong>分类</strong>: </p>
+</code></pre><p><strong>分类</strong>: </p>
 <ol>
 <li><code>第一范式(1NF)</code>：每一列都是不可分割的原子数据项</li>
-<li><code>第二范式(2NF)</code>：在1NF的基础上，非码属性必须完全依赖于码（在1NF基础上消除非主属性对主码的部分函数依赖）</li>
-</ol>
+<li><p><code>第二范式(2NF)</code>：在1NF的基础上，非码属性必须完全依赖于码（在1NF基础上消除非主属性对主码的部分函数依赖）</p>
 <ul>
-<li><p><code>函数依赖</code>：A–&gt;B,如果通过A属性(属性组)的值，可以确定唯一B属性的值。则称B依赖于A</p>
-<p>例如：学号–&gt;姓名</p>
+<li><p><code>函数依赖</code>：A—&gt;B,如果通过A属性(属性组)的值，可以确定唯一B属性的值。则称B依赖于A</p>
+<p>例如：学号—&gt;姓名</p>
 </li>
-<li><p><code>完全函数依赖</code>：A–&gt;B， 如果A是一个属性组，则B属性值得确定需要依赖于A属性组中所有的属性值。</p>
-<p>例如：(学号, 课程名称) –&gt; 分数</p>
+<li><p><code>完全函数依赖</code>：A—&gt;B， 如果A是一个属性组，则B属性值得确定需要依赖于A属性组中所有的属性值。</p>
+<p>例如：(学号, 课程名称) —&gt; 分数</p>
 </li>
-<li><p>部分函数依赖：A–&gt;B， 如果A是一个属性组，则B属性值得确定只需要依赖于A属性组中某一些值即可。</p>
-<p>例如：(学号, 课程名称) – &gt; 姓名</p>
+<li><p>部分函数依赖：A—&gt;B， 如果A是一个属性组，则B属性值得确定只需要依赖于A属性组中某一些值即可。</p>
+<p>例如：(学号, 课程名称) — &gt; 姓名</p>
 </li>
-<li><p>传递函数依赖：A–&gt;B, B – &gt;C . 如果通过A属性(属性组)的值，可以确定唯一B属性的值，在通过B属性（属性组）的值可以确定唯一C属性的值，则称 C 传递函数依赖于A </p>
-<p>例如：学号–&gt;系名，系名–&gt;系主任</p>
+<li><p>传递函数依赖：A—&gt;B, B — &gt;C . 如果通过A属性(属性组)的值，可以确定唯一B属性的值，在通过B属性（属性组）的值可以确定唯一C属性的值，则称 C 传递函数依赖于A </p>
+<p>例如：学号—&gt;系名，系名—&gt;系主任</p>
 </li>
 <li><p>码：如果在一张表中，一个属性或属性组，被其他所有属性所完全依赖，则称这个属性(属性组)为该表的码 </p>
 <p>例如：该表中码为：(学号, 课程名称)</p>
@@ -216,11 +214,13 @@
 </ul>
 </li>
 </ul>
-<ol start="3">
-<li><code>第三范式(3NF)</code>：在2NF基础上，任何非主属性不依赖于其它非主属性（在2NF基础上消除传递依赖）</li>
+</li>
+<li><p><code>第三范式(3NF)</code>：在2NF基础上，任何非主属性不依赖于其它非主属性（在2NF基础上消除传递依赖）</p>
+</li>
 </ol>
 </blockquote>
 <h2 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h2><h3 id="普通表"><a href="#普通表" class="headerlink" title="普通表"></a>普通表</h3><blockquote>
+<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -232,7 +232,8 @@
 <th>分数</th>
 </tr>
 </thead>
-<tbody><tr>
+<tbody>
+<tr>
 <td>10010</td>
 <td>张无忌</td>
 <td>经济系</td>
@@ -304,9 +305,12 @@
 <td>大学英语</td>
 <td>99</td>
 </tr>
-</tbody></table>
+</tbody>
+</table>
+</div>
 </blockquote>
 <h3 id="1NF"><a href="#1NF" class="headerlink" title="1NF"></a>1NF</h3><blockquote>
+<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -318,7 +322,8 @@
 <th>分数</th>
 </tr>
 </thead>
-<tbody><tr>
+<tbody>
+<tr>
 <td>10010</td>
 <td>张无忌</td>
 <td>经济系</td>
@@ -396,9 +401,10 @@
 <td>计算机系</td>
 <td>殷天正</td>
 <td></td>
-<td></td>
 </tr>
-</tbody></table>
+</tbody>
+</table>
+</div>
 <p>存在的问题：</p>
 <ol>
 <li>存在非常严重的数据冗余(重复)：姓名、系名、系主任</li>
@@ -408,6 +414,7 @@
 </blockquote>
 <h3 id="2NF"><a href="#2NF" class="headerlink" title="2NF"></a>2NF</h3><blockquote>
 <p><strong>选课表</strong></p>
+<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -416,7 +423,8 @@
 <th>分数</th>
 </tr>
 </thead>
-<tbody><tr>
+<tbody>
+<tr>
 <td>10010</td>
 <td>高等数学</td>
 <td>95</td>
@@ -461,8 +469,11 @@
 <td>大学英语</td>
 <td>99</td>
 </tr>
-</tbody></table>
+</tbody>
+</table>
+</div>
 <p><strong>学生表</strong></p>
+<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -472,7 +483,8 @@
 <th>系主任</th>
 </tr>
 </thead>
-<tbody><tr>
+<tbody>
+<tr>
 <td>10010</td>
 <td>张无忌</td>
 <td>经济系</td>
@@ -496,7 +508,9 @@
 <td>计算机系</td>
 <td>殷天正</td>
 </tr>
-</tbody></table>
+</tbody>
+</table>
+</div>
 <p>存在的问题：</p>
 <ol>
 <li>数据添加存在问题：添加新开设的系和系主任时，数据不合法</li>
@@ -505,6 +519,7 @@
 </blockquote>
 <h3 id="3NF"><a href="#3NF" class="headerlink" title="3NF"></a>3NF</h3><blockquote>
 <p><strong>选课表</strong></p>
+<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -513,7 +528,8 @@
 <th>分数</th>
 </tr>
 </thead>
-<tbody><tr>
+<tbody>
+<tr>
 <td>10010</td>
 <td>高等数学</td>
 <td>95</td>
@@ -558,8 +574,11 @@
 <td>大学英语</td>
 <td>99</td>
 </tr>
-</tbody></table>
+</tbody>
+</table>
+</div>
 <p><strong>学生表</strong></p>
+<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -568,7 +587,8 @@
 <th>系名</th>
 </tr>
 </thead>
-<tbody><tr>
+<tbody>
+<tr>
 <td>10010</td>
 <td>张无忌</td>
 <td>经济系</td>
@@ -583,8 +603,11 @@
 <td>杨过</td>
 <td>法律系</td>
 </tr>
-</tbody></table>
+</tbody>
+</table>
+</div>
 <p><strong>系表</strong></p>
+<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -592,7 +615,8 @@
 <th>系主任</th>
 </tr>
 </thead>
-<tbody><tr>
+<tbody>
+<tr>
 <td>经济系</td>
 <td>张三丰</td>
 </tr>
@@ -604,7 +628,9 @@
 <td>计算机系</td>
 <td>殷天正</td>
 </tr>
-</tbody></table>
+</tbody>
+</table>
+</div>
 <p>刚刚所有的三个问题全部被解决掉！！！</p>
 </blockquote>
 <h1 id="数据库备份和还原"><a href="#数据库备份和还原" class="headerlink" title="数据库备份和还原"></a>数据库备份和还原</h1><blockquote>
