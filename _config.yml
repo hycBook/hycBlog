@@ -202,7 +202,6 @@ envelope_comment:
     title: 留言板
     comments: true    
 
-# 页面樱花飘落动效
+# 页面樱花飘落动效   https://blog.csdn.net/qq_43489474/article/details/106889352
 sakura:
   enable: true
-    
