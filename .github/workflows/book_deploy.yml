@@ -48,7 +48,7 @@ jobs:
         npm install hexo-algoliasearch --save
 
         # 給 hexo-theme-butterfly 添加 Artitalk 説説
-        npm install hexo-butterfly-artitalk
+        npm install hexo-butterfly-artitalk --save
 
         # Hexo哔哩哔哩番剧页面插件
         npm install hexo-bilibili-bangumi-plus --save
@@ -59,7 +59,7 @@ jobs:
         # 插入b站的视频卡片
         npm i hexo-bilibili-card --save
 
-        # gulp 压缩   https://blog.imzjw.cn/posts/b74f504f/#gulp-%E5%8E%8B%E7%BC%A9
+        # gulp 压缩   https://blog.imzjw.cn/posts/b74f504f/#gulp-%E5%8E%8B%E7%BC%A9  会影响Hexo哔哩哔哩番剧页面插件
         # npm i gulp --save-dev
         # npm install --global gulp-cli
         # npm install gulp-htmlclean --save-dev
@@ -99,6 +99,7 @@ jobs:
         echo '#page-header.post-bg {  height: 800px; }' >> public/css/index.css
         echo '#page-header.not-home-page {  height: 800px;}' >> public/css/index.css
         hexo algolia
+        cp package-lock.json public/package-lock.json
         # gulp
 
     - name: Deploy #步骤4：把编译好的静态目录上传到gh-pages分支上  https://cloud.tencent.com/developer/article/1917861
