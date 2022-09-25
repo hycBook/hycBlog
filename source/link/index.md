@@ -59,23 +59,34 @@ aside: false
       link: https://riyugo.com/
       avatar: https://riyugo.cn/i/2202/28/n38o.jpg
       descr: 专业的文件外链工具,收费但速度很快
-      
-
+    - name: 多吉云
+      link: https://console.dogecloud.com/
+      avatar: https://console.dogecloud.com/images/logo_colored.png
+      descr: 提供软件下载分发和静态资源加速服务
+    - name: 腾讯云
+      link: https://cloud.tencent.com/
+      avatar: https://cloud.tencent.com/favicon.ico
+      descr: 为数百万的企业和开发者提供安全稳定的云计算服务
+    - name: leancloud
+      link: https://console.leancloud.cn/
+      avatar: https://console.leancloud.cn/favicon.ico
+      descr: 针对移动应用的一站式云端服务,专注于为应用开发者提供工具和平台
+  
 - class_name: 网站
   class_desc: 值得推荐的网站
   link_list:
-    - name: Youtube
-      link: https://www.youtube.com/
-      avatar: https://i.loli.net/2020/05/14/9ZkGg8v3azHJfM1.png
-      descr: 视频网站
-    - name: Weibo
-      link: https://www.weibo.com/
-      avatar: https://i.loli.net/2020/05/14/TLJBum386vcnI1P.png
-      descr: 中国最大社交分享平台
-    - name: Twitter
-      link: https://twitter.com/
-      avatar: https://i.loli.net/2020/05/14/5VyHPQqR6LWF39a.png
-      descr: 社交分享平台
+    - name: gtmetrix
+      link: https://gtmetrix.com/
+      avatar: https://gtmetrix.com/favicon.ico
+      descr: How fast does your website load? Find out with GTmetrix
+    - name: pagespeed
+      link: https://pagespeed.web.dev/
+      avatar: https://www.gstatic.com/pagespeed/insights/ui/logo/favicon_48.png
+      descr: Google提供的网页性能工具
+    - name: iconfont
+      link: https://www.iconfont.cn/
+      avatar: https://img.alicdn.com/imgextra/i2/O1CN01FF1t1g1Q3PDWpSm4b_!!6000000001920-55-tps-508-135.svg
+      descr: 国内功能很强大且图标内容很丰富的矢量图标库
 
 - class_name: hexo网站
   class_desc: 基于hexo搭建的优秀网站
@@ -114,7 +125,7 @@ aside: false
 
 
 
-{% label 欢迎友链交换，可以在下方评论处留言 pink %}
+> {% label 欢迎友链交换，可以在下方评论处留言 pink %}
 
 ```yml
 name: your Blog's name
@@ -125,7 +136,7 @@ descr: the description of your blog
 
 
 
-{% label 本站友链信息 green %}
+> {% label 本站友链信息 green %}
 
 ```yml
 name: 兼一书虫
