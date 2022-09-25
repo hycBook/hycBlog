@@ -148,9 +148,11 @@ algolia:
 bangumi:
   enable: true 
   vmid: 121853877
+  source: bili
   title: '生命不息，追番不止！'
   quote: 'Where there is life, there is life.'
   show: 1
+  webp: false
   loading: '/img/bangumi-loading.gif'
 
 
