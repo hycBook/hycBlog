@@ -36,7 +36,7 @@ jobs:
         npm install hexo-abbrlink --save
         
         # Math 数学
-        # npm uninstall hexo-renderer-marked --save
+        npm uninstall hexo-renderer-marked --save
         npm install hexo-renderer-kramed --save
 
         # 添加字数统计
