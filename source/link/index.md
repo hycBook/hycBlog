@@ -80,10 +80,11 @@ aside: false
 - class_name: hexo网站
   class_desc: 基于hexo搭建的优秀网站
   link_list:
-    - name: 唐志远の博客
+  
+    - name: Ethan.Tzy
       link: https://tzy1997.com/
       avatar: https://bu.dusays.com/2022/05/02/626f92e193879.jpg
-      descr: 唐志远の博客
+      descr: 古今之成大事者，不惟有超世之才，亦必有坚忍不拔之
     - name: justlovesmile
       link: https://blog.justlovesmile.top/
       avatar: https://npm.elemecdn.com/justlovesmile-static/img/avatar.jpg
@@ -104,23 +105,36 @@ aside: false
       link: https://zfe.space/
       avatar: https://zfe.space/images/headimage.png
       descr: 小冰博客
-      screenshot: https://img.issey.top/img/202209210151958.png
   
   {% endflink %}
 
 
 
+---
 
 
-申请友链格式
 
-在下方评论处留言
+{% note orange 'iconfont icon-zhifengche' simple %}
+欢迎友链交换，可以在下方评论处留言
+{% endnote %}
 
 ```yml
 name: your Blog's name
 link: your Blog's address
 avatar: your Blog's avatar
 descr: the description of your blog
-screenshot: the screenshot of your website # 此项可不填 会根据贵站链接调用API自动获取截图
+```
+
+
+
+{% note orange 'iconfont icon-fangwu' simple %}
+本站友链信息
+{% endnote %}
+
+```yml
+name: 兼一书虫
+link: https://blog.hycbook.com/
+avatar: https://pic.hycbook.com/i/hexo/person_img/兼一头像.jpg
+descr: 
 ```
 
