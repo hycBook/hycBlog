@@ -114,9 +114,7 @@ aside: false
 
 
 
-{% note orange 'iconfont icon-zhifengche' simple %}
-欢迎友链交换，可以在下方评论处留言
-{% endnote %}
+{% label 欢迎友链交换，可以在下方评论处留言 pink %}
 
 ```yml
 name: your Blog's name
@@ -127,14 +125,12 @@ descr: the description of your blog
 
 
 
-{% note orange 'iconfont icon-fangwu' simple %}
-本站友链信息
-{% endnote %}
+{% label 本站友链信息 green %}
 
 ```yml
 name: 兼一书虫
 link: https://blog.hycbook.com/
 avatar: https://pic.hycbook.com/i/hexo/person_img/兼一头像.jpg
-descr: 
+descr: 知足且上进，温柔而坚定，生活中的温暖总会与你不期而遇。
 ```
 
