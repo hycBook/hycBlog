@@ -51,7 +51,7 @@ jobs:
         npm install hexo-butterfly-artitalk
 
         # Hexo哔哩哔哩番剧页面插件
-        npm install hexo-bilibili-bangumi --save
+        npm install hexo-bilibili-bangumi-plus --save
 
         # 双栏布局插件引入
         npm i hexo-butterfly-article-double-row --save
