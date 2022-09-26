@@ -77,17 +77,17 @@ jobs:
         # 分类磁贴
         npm install hexo-butterfly-categories-card --save
 
-        echo 开始修改文件资源路径
-        cd source/_posts
-        python dir_change.py
-        rm -rf java
-        rm -rf common
-        rm -rf python
-        rm -rf english
-        rm -rf math
-        mv target_dir/* .
-        cd ../..
-        echo 修改文件资源路径完成
+        # echo 开始修改文件资源路径
+        # cd source/_posts
+        # python dir_change.py
+        # rm -rf java
+        # rm -rf common
+        # rm -rf python
+        # rm -rf english
+        # rm -rf math
+        # mv target_dir/* .
+        # cd ../..
+        # echo 修改文件资源路径完成
         # cp nodejs/hexo-renderer-marked/lib/renderer.js node_modules/hexo-renderer-marked/lib/
         # 修改数学公式多行显示问题 https://www.uynajgi.com/919906d6.html
         # cp nodejs/kramed/lib/rules/inline.js node_modules/kramed/lib/rules/inline.js
