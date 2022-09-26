@@ -8,7 +8,6 @@ abbrlink: b885131b
 
 ---
 
-[TOC]
 
 > [【黑马程序员-Java语言高级部分9.2】Java 反射](https://www.bilibili.com/video/av56351262)
 >
@@ -43,8 +42,7 @@ abbrlink: b885131b
 >
 > 我们可以通过这个对象看到类的结构。这个对象就像一面镜子，透过这个镜子看到类的结构，所以，我们形象的称之为：反射
 >
-> ![image-20200309213141544](res/Java进阶_反射/image-20200309213141544.png)
-
+![img](https://pic.hycbook.com/i/hexo/bk_resources/java/Java进阶_反射/image-20200309213141544.webp)
 
 
 ## 代码的三个阶段
@@ -55,8 +53,7 @@ abbrlink: b885131b
 >
 > - RunTime运行时阶段：创建对象的过程new。
 >
->   ![img](res/Java进阶_反射/Java%E4%BB%A3%E7%A0%81%E7%9A%84%E4%B8%89%E4%B8%AA%E9%98%B6%E6%AE%B5.bmp)
-
+![img](https://pic.hycbook.com/i/hexo/bk_resources/java/Java进阶_反射/Java代码的三个阶段.webp)
 
 
 # Java内存
@@ -71,8 +68,7 @@ abbrlink: b885131b
 
 >当程序主动使用某个类时，如果该类还未被加载到内存中，则系统会通过如下三个步骤来对该类进行初始化。
 >
->![image-20200309215702460](res/Java%E8%BF%9B%E9%98%B6_%E5%8F%8D%E5%B0%84/image-20200309215702460.png)
-
+![img](https://pic.hycbook.com/i/hexo/bk_resources/java/Java进阶_反射/image-20200309215702460.webp)
 ## 类加载与ClassLoader
 
 >    **加载**：将class文件字节码内容加载到内存中，并将这些静态数据转换成方法区的运行时数据结构，然后生成一个代表这个类的java.lang.Class对象。
@@ -117,14 +113,12 @@ abbrlink: b885131b
 >    **类加载的作用**：将class文件字节码内容加载到内存中，并将这些静态数据转换成方法区的运行时
 >    数据结构，然后在堆中生成一个代表这个类的java.lang.Class对象，作为方法区中类数据的访问入口。
 >    **类缓存**：标准的JavaSE类加载器可以按要求查找类，但一旦某个类被加载到类加载器中，它将维持加载(缓存)一段时间。不过JVM垃圾回收机制可以回收这些Class对象
->    ![image-20200309220115775](res/Java%E8%BF%9B%E9%98%B6_%E5%8F%8D%E5%B0%84/image-20200309220115775.png)
->
+![img](https://pic.hycbook.com/i/hexo/bk_resources/java/Java进阶_反射/image-20200309220115775.webp)>
 >    **类加载器作用**是用来把类(class)装载进内存的。
 >
 >    JVM规范定义了如下类型的类的加载器。
 >
->    ![image-20200309220200871](res/Java%E8%BF%9B%E9%98%B6_%E5%8F%8D%E5%B0%84/image-20200309220200871.png)
->
+![img](https://pic.hycbook.com/i/hexo/bk_resources/java/Java进阶_反射/image-20200309220200871.webp)>
 >    ```java
 >    public static void main(string[] args){
 >    	// 获取系统类的加载器 
@@ -145,10 +139,8 @@ abbrlink: b885131b
 >    }
 >    ```
 >
->    ![image-20200309220415790](res/Java%E8%BF%9B%E9%98%B6_%E5%8F%8D%E5%B0%84/image-20200309220415790.png)
->
->    ![image-20200310194313313](res/Java%E8%BF%9B%E9%98%B6_%E5%8F%8D%E5%B0%84/image-20200310194313313.png)
-
+![img](https://pic.hycbook.com/i/hexo/bk_resources/java/Java进阶_反射/image-20200309220415790.webp)>
+![img](https://pic.hycbook.com/i/hexo/bk_resources/java/Java进阶_反射/image-20200310194313313.webp)
 ## 自定义网络类加载
 
 >```java
@@ -326,8 +318,7 @@ abbrlink: b885131b
 > }
 > ```
 >
-> ![image-20200309213256005](res/Java%E8%BF%9B%E9%98%B6_%E5%8F%8D%E5%B0%84/image-20200309213256005.png)
-
+![img](https://pic.hycbook.com/i/hexo/bk_resources/java/Java进阶_反射/image-20200309213256005.webp)
 
 
 # 反操作泛型
@@ -375,8 +366,7 @@ abbrlink: b885131b
 >    }
 >    ```
 >
->    ![image-20200309223405261](res/Java%E8%BF%9B%E9%98%B6_%E5%8F%8D%E5%B0%84/image-20200309223405261.png)
-
+![img](https://pic.hycbook.com/i/hexo/bk_resources/java/Java进阶_反射/image-20200309223405261.webp)
 
 
 # Class对象功能
@@ -477,8 +467,7 @@ abbrlink: b885131b
 > }
 > ```
 >
->![img](res/Java进阶_反射/clipboard.png)
-
+![img](https://pic.hycbook.com/i/hexo/bk_resources/java/Java进阶_反射/clipboard.webp)
 
 
 >```java
@@ -511,12 +500,10 @@ abbrlink: b885131b
 > }
 >```
 >
->![img](res/Java进阶_反射/clipboard-1583757303499.png)
->
+![img](https://pic.hycbook.com/i/hexo/bk_resources/java/Java进阶_反射/clipboard-1583757303499.webp)>
 >没有忽略访问修饰符直接访问抛出的异常
 >
->![img](res/Java进阶_反射/clipboard-1583757311152.png)
-
+![img](https://pic.hycbook.com/i/hexo/bk_resources/java/Java进阶_反射/clipboard-1583757311152.webp)
 ## Constructor:构造方法
 
 > **创建对象**：T newInstance(Object... initargs)
@@ -594,8 +581,7 @@ abbrlink: b885131b
 > }
 > ````
 >
->![img](res/Java进阶_反射/clipboard-1583757474373.png)
->
+![img](https://pic.hycbook.com/i/hexo/bk_resources/java/Java进阶_反射/clipboard-1583757474373.webp)>
 >
 
 >**对于getDeclaredConstructor方法和getDeclaredConstructors方法**
@@ -704,8 +690,7 @@ abbrlink: b885131b
 > }
 >````
 > 
-> ![img](res/Java进阶_反射/clipboard-1583757833119.png)
-> 
+![img](https://pic.hycbook.com/i/hexo/bk_resources/java/Java进阶_反射/clipboard-1583757833119.webp)> 
 > 
 
 ## getName方法
@@ -726,8 +711,7 @@ abbrlink: b885131b
 >}
 >```
 >
->![img](res/Java进阶_反射/clipboard-1583757870418.png)
-
+![img](https://pic.hycbook.com/i/hexo/bk_resources/java/Java进阶_反射/clipboard-1583757870418.webp)
 > **获取类名**
 >
 > getClass()方法是Object类的方法，需要注意一点获取的类名是**全类名**（带有路径）
@@ -741,8 +725,7 @@ abbrlink: b885131b
 > }
 > ```
 >
-> ![img](res/Java%E8%BF%9B%E9%98%B6_%E5%8F%8D%E5%B0%84/clipboard-1583757948090.png)
-
+![img](https://pic.hycbook.com/i/hexo/bk_resources/java/Java进阶_反射/clipboard-1583757948090.webp)
 ## 关于获取成员方法们的另外两个方法
 
 >同之前的叙述一样，带有Declared关键字的方法这两个方法，可以获取到任意修饰符的方法。同样的提供了setAccessible(true);方法进行暴力反射。

@@ -10,7 +10,6 @@ abbrlink: d13ef431
 
 # Java 核心编程技术干货
 
-[TOC]
 
 > 参考: https://mp.weixin.qq.com/s/-KbOyp4gXYY4Ok8S-rPa6Q
 >

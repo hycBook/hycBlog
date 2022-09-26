@@ -8,7 +8,6 @@ abbrlink: d192a1af
 
 ---
 
-[TOC]
 
 # spark环境搭建
 
@@ -485,8 +484,7 @@ scp -r root@192.168.123.24:/usr/spark-3.0 /usr/
 
 > 在`sbin`目录下使用`start-all.sh`启动集群
 
-![image-20220125113759221](res/Spark%E9%9B%86%E7%BE%A4%E6%90%AD%E5%BB%BA/image-20220125113759221.png)
-
+![img](https://pic.hycbook.com/i/hexo/bk_resources/java/Spark集群搭建/image-20220125113759221.webp)
 启动成功后，我们在浏览器输入`Slave03:8080`看到有三个结点，就代表我们安装成功了。
 如果发现启动错误，请查看`logs`目录下的日志，自行检查配置文件！
 
@@ -651,14 +649,12 @@ pip install graphframes==0.6
 
 > 选择远程的解释器
 
-![img](res/Spark集群搭建/image-20220127143544475.png)
-
+![img](https://pic.hycbook.com/i/hexo/bk_resources/java/Spark集群搭建/image-20220127143544475.webp)
 > 点击move即可next
 > 配置路径，远程的选择自己之前新建的`/home/huangyc/hyc_test`
 > `Automatically upload ...`表示会自动上传项目到服务器中
 
-![img](res/Spark集群搭建/image-20220127143940559.png)
-
+![img](https://pic.hycbook.com/i/hexo/bk_resources/java/Spark集群搭建/image-20220127143940559.webp)
 
 
 ### 其它功能

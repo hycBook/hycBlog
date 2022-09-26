@@ -8,7 +8,6 @@ abbrlink: 3b72c11
 
 ---
 
-[TOC]
 
 
 # 后台服务器开发
@@ -157,16 +156,14 @@ abbrlink: 3b72c11
 >
 >* Jetty的应用更加快速，修改简单，对新的Servlet规范的支持较好。
 >* Tomcat目前应用比较广泛，对JavaEE和Servlet的支持更加全面，很多特性会直接集成进来。
->* [Google 选择 Jetty, 放弃 Tomcat](https://yq.aliyun.com/go/articleRenderRedirect?url=http%3A%2F%2Fblog.csdn.net%2Fliguohuaty%2Farticle%2Fdetails%2F8053147)
+>* [Google 选择 Jetty, 放弃 Tomcat](https://yq.aliyun.com/go/articleRenderRedirect?url=http://blog.csdn.net/liguohuaty/article/details/8053147)
 >
 >` Jetty的基本架构 `
 >
-> ![img](res/Java基础_后台服务器开发/20180614230109366.png) 
->
+![img](https://pic.hycbook.com/i/hexo/bk_resources/java/Java基础_后台服务器开发/20180614230109366.webp)>
 >`Tomcat的基本架构`
 >
-> ![img](res/Java基础_后台服务器开发/20180616093348674.gif) 
-
+![img](https://pic.hycbook.com/i/hexo/bk_resources/java/Java基础_后台服务器开发/20180616093348674.webp)
 # 不同开发实现
 
 >

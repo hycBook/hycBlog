@@ -8,7 +8,6 @@ abbrlink: fcd59143
 
 ---
 
-[TOC]
 
 > [MySQL约束与设计](./res/MySQL_数据库设计/MySQL约束与设计.pdf)
 

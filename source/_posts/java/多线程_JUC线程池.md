@@ -8,12 +8,10 @@ abbrlink: 5912654c
 
 ---
 
-[TOC]
 
 # JUC线程池
 
-![img](res/多线程_JUC线程池/07231601-3ee0f7defe5847289e6e308d1d312ed1.jpg)
-
+![img](https://pic.hycbook.com/i/hexo/bk_resources/java/多线程_JUC线程池/07231601-3ee0f7defe5847289e6e308d1d312ed1.webp)
 ```java
 1. Executor
 它是"执行者"接口，它是来执行任务的。准确的说，Executor提供了execute()接口来执行已提交的 Runnable 任务的对象。Executor存在的目的是提供一种将"任务提交"与"任务如何运行"分离开来的机制。
@@ -157,7 +155,7 @@ private volatile int maximumPoolSize;
 
 ## 线程池调度
 
-![07233652-f7ae34a572fc475bbc2c489da97fbf03.jpg (res/Java%20Thread/07233652-f7ae34a572fc475bbc2c489da97fbf03.jpg)](https://images0.cnblogs.com/blog/497634/201401/07233652-f7ae34a572fc475bbc2c489da97fbf03.jpg)
+![07233652-f7ae34a572fc475bbc2c489da97fbf03.jpg (res/Java Thread/07233652-f7ae34a572fc475bbc2c489da97fbf03.jpg)](https://images0.cnblogs.com/blog/497634/201401/07233652-f7ae34a572fc475bbc2c489da97fbf03.jpg)
 
 ![img](https://images0.cnblogs.com/blog/497634/201401/07233814-6b62871a4a0f447fb71993602f71058a.jpg)
 
@@ -308,8 +306,7 @@ TERMINATED -- 对应的高3位值是011。
 
 ## 线程状态切换
 
-![img](res/多线程_JUC线程池/08000847-0a9caed4d6914485b2f56048c668251a.jpg)
-
+![img](https://pic.hycbook.com/i/hexo/bk_resources/java/多线程_JUC线程池/08000847-0a9caed4d6914485b2f56048c668251a.webp)
 **RUNNING**
 
 (01) 状态说明：线程池处在RUNNING状态时，能够接收新任务，以及对已添加的任务进行处理。
@@ -602,8 +599,7 @@ Future 是一个接口。它用于表示异步计算的结果。提供了检查�
 说明：Future用于表示异步计算的结果。它的实现类是FutureTask，在讲解FutureTask之前，我们先看看Callable, Future, FutureTask它们之间的关系图，如下：
 ```
 
-![img](res/多线程_JUC线程池/111156106192237.jpg)
-
+![img](https://pic.hycbook.com/i/hexo/bk_resources/java/多线程_JUC线程池/111156106192237.webp)
 ```java
 说明：
 (01) RunnableFuture是一个接口，它继承了Runnable和Future这两个接口。RunnableFuture的源码如下：

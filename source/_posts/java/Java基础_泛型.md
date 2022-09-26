@@ -8,7 +8,6 @@ abbrlink: 73fcdf9d
 
 ---
 
-[TOC]
 
 
 # 泛型

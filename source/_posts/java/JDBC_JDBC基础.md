@@ -8,7 +8,6 @@ abbrlink: d6fc26d1
 
 ---
 
-[TOC]
 
 >[【黑马程序员-Java语言高级部分11】JDBC](https://www.bilibili.com/video/av61491585)
 
@@ -22,8 +21,7 @@ abbrlink: d6fc26d1
 >
 >**JDBC**`本质`：其实是官方（sun公司）定义的一套操作所有关系型数据库的规则，即接口。各个数据库厂商去实现这套接口，提供数据库驱动jar包。我们可以使用这套接口（JDBC）编程，真正执行的代码是驱动jar包中的实现类。
 >
->![image-20200322202245440](res/JDBC_JDBC%E5%9F%BA%E7%A1%80/image-20200322202245440.png)
-
+![img](https://pic.hycbook.com/i/hexo/bk_resources/java/JDBC_JDBC基础/image-20200322202245440.webp)
 ## 快速入门
 
 >**步骤**：

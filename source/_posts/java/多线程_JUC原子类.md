@@ -9,7 +9,6 @@ abbrlink: 304974ef
 ---
 
 
-[TOC]
 
 # JUC原子类
 
@@ -94,20 +93,20 @@ public class LongTest {
         // 新建AtomicLong对象
         AtomicLong mAtoLong = new AtomicLong();
         mAtoLong.set(0x0123456789ABCDEFL);
-        System.out.printf("%20s : 0x%016X\n", "get()", mAtoLong.get());
-        System.out.printf("%20s : 0x%016X\n", "intValue()", mAtoLong.intValue());
-        System.out.printf("%20s : 0x%016X\n", "longValue()", mAtoLong.longValue());
-        System.out.printf("%20s : %s\n", "doubleValue()", mAtoLong.doubleValue());
-        System.out.printf("%20s : %s\n", "floatValue()", mAtoLong.floatValue());
-        System.out.printf("%20s : 0x%016X\n", "getAndDecrement()", mAtoLong.getAndDecrement());
-        System.out.printf("%20s : 0x%016X\n", "decrementAndGet()", mAtoLong.decrementAndGet());
-        System.out.printf("%20s : 0x%016X\n", "getAndIncrement()", mAtoLong.getAndIncrement());
-        System.out.printf("%20s : 0x%016X\n", "incrementAndGet()", mAtoLong.incrementAndGet());
-        System.out.printf("%20s : 0x%016X\n", "addAndGet(0x10)", mAtoLong.addAndGet(0x10));
-        System.out.printf("%20s : 0x%016X\n", "getAndAdd(0x10)", mAtoLong.getAndAdd(0x10));
-        System.out.printf("\n%20s : 0x%016X\n", "get()", mAtoLong.get());
-        System.out.printf("%20s : %s\n", "compareAndSet()", mAtoLong.compareAndSet(0x12345679L, 0xFEDCBA9876543210L));
-        System.out.printf("%20s : 0x%016X\n", "get()", mAtoLong.get());
+        System.out.printf(" s : 0x6X\n", "get()", mAtoLong.get());
+        System.out.printf(" s : 0x6X\n", "intValue()", mAtoLong.intValue());
+        System.out.printf(" s : 0x6X\n", "longValue()", mAtoLong.longValue());
+        System.out.printf(" s : %s\n", "doubleValue()", mAtoLong.doubleValue());
+        System.out.printf(" s : %s\n", "floatValue()", mAtoLong.floatValue());
+        System.out.printf(" s : 0x6X\n", "getAndDecrement()", mAtoLong.getAndDecrement());
+        System.out.printf(" s : 0x6X\n", "decrementAndGet()", mAtoLong.decrementAndGet());
+        System.out.printf(" s : 0x6X\n", "getAndIncrement()", mAtoLong.getAndIncrement());
+        System.out.printf(" s : 0x6X\n", "incrementAndGet()", mAtoLong.incrementAndGet());
+        System.out.printf(" s : 0x6X\n", "addAndGet(0x10)", mAtoLong.addAndGet(0x10));
+        System.out.printf(" s : 0x6X\n", "getAndAdd(0x10)", mAtoLong.getAndAdd(0x10));
+        System.out.printf("\n s : 0x6X\n", "get()", mAtoLong.get());
+        System.out.printf(" s : %s\n", "compareAndSet()", mAtoLong.compareAndSet(0x12345679L, 0xFEDCBA9876543210L));
+        System.out.printf(" s : 0x6X\n", "get()", mAtoLong.get());
     }
 }
 
@@ -182,14 +181,14 @@ public class LongArrayTest {
         ala.set(0, 100);
         for (int i=0, len=ala.length(); i<len; i++) 
             System.out.printf("get(%d) : %s\n", i, ala.get(i));
-        System.out.printf("%20s : %s\n", "getAndDecrement(0)", ala.getAndDecrement(0));
-        System.out.printf("%20s : %s\n", "decrementAndGet(1)", ala.decrementAndGet(1));
-        System.out.printf("%20s : %s\n", "getAndIncrement(2)", ala.getAndIncrement(2));
-        System.out.printf("%20s : %s\n", "incrementAndGet(3)", ala.incrementAndGet(3));
-        System.out.printf("%20s : %s\n", "addAndGet(100)", ala.addAndGet(0, 100));
-        System.out.printf("%20s : %s\n", "getAndAdd(100)", ala.getAndAdd(1, 100));
-        System.out.printf("%20s : %s\n", "compareAndSet()", ala.compareAndSet(2, 31, 1000));
-        System.out.printf("%20s : %s\n", "get(2)", ala.get(2));
+        System.out.printf(" s : %s\n", "getAndDecrement(0)", ala.getAndDecrement(0));
+        System.out.printf(" s : %s\n", "decrementAndGet(1)", ala.decrementAndGet(1));
+        System.out.printf(" s : %s\n", "getAndIncrement(2)", ala.getAndIncrement(2));
+        System.out.printf(" s : %s\n", "incrementAndGet(3)", ala.incrementAndGet(3));
+        System.out.printf(" s : %s\n", "addAndGet(100)", ala.addAndGet(0, 100));
+        System.out.printf(" s : %s\n", "getAndAdd(100)", ala.getAndAdd(1, 100));
+        System.out.printf(" s : %s\n", "compareAndSet()", ala.compareAndSet(2, 31, 1000));
+        System.out.printf(" s : %s\n", "get(2)", ala.get(2));
     }
 }
 

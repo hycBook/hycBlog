@@ -8,7 +8,6 @@ abbrlink: d6e2fafb
 
 ---
 
-[TOC]
 
 
 # 集合

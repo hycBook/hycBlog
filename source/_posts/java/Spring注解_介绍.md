@@ -8,7 +8,6 @@ abbrlink: 7819d42
 
 ---
 
-[TOC]
 
 
 # Java中的注解到底是如何工作的？
@@ -29,8 +28,7 @@ abbrlink: 7819d42
 >
 > [用Spring Boot颠覆Java应用开发]( https://zhuanlan.zhihu.com/p/22920391 )
 
- ![img](res/Spring注解_介绍/v2-b2c92856b17a107a7fdd53e65b7b2eff_hd.webp) 
-
+![img](https://pic.hycbook.com/i/hexo/bk_resources/java/Spring注解_介绍/v2-b2c92856b17a107a7fdd53e65b7b2eff_hd.webp)
 # 什么是注解？
 
 用一个词就可以描述注解，那就是元数据，即一种描述数据的数据。所以，可以说注解就是源代码的元数据。比如，下面这段代码：

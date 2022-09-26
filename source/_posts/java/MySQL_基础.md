@@ -8,7 +8,6 @@ abbrlink: 5dca6626
 
 ---
 
-[TOC]
 
 
 >[【黑马程序员-Java语言高级部分10】MySQL入门学习](https://www.bilibili.com/video/av56473701)
@@ -112,8 +111,7 @@ abbrlink: 5dca6626
 > > `DCL(Data Control Language)数据控制语言(了解)`
 > > 	用来定义数据库的访问权限和安全级别，及创建用户。关键字：GRANT， REVOKE 等
 > 
-> ![异世界.png](res/MySQL_%E5%9F%BA%E7%A1%80/SQL分类.bmp)
-
+![img](https://pic.hycbook.com/i/hexo/bk_resources/java/MySQL_基础/SQL分类.webp)
 # DDL: 操作数据库、表
 
 ## 操作数据库：CRUD

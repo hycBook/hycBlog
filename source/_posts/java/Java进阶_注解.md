@@ -8,7 +8,6 @@ abbrlink: 657dc990
 
 ---
 
-[TOC]
 
 > [【黑马程序员-Java语言高级部分9.3】Java 注解](https://www.bilibili.com/video/av62102209)
 
@@ -181,8 +180,7 @@ abbrlink: 657dc990
 >}
 >```
 >
->![img](res/Java%E8%BF%9B%E9%98%B6_%E6%B3%A8%E8%A7%A3/20200306202943796.png)
->
+![img](https://pic.hycbook.com/i/hexo/bk_resources/java/Java进阶_注解/20200306202943796.webp)>
 >在程序中使用注解：获取注解中定义的属性值
 >
 >> 1. 获取注解定义的位置的对象 (Class, Method, Field)
@@ -283,14 +281,11 @@ abbrlink: 657dc990
 > 
 > 运行TestCheck类中的主方法，就会自动检查所有注解@Check的方法是否异常：
 > 
-> ![img](res/Java%E8%BF%9B%E9%98%B6_%E6%B3%A8%E8%A7%A3/20200306214605527.png)
-> 
-> ![img](res/Java%E8%BF%9B%E9%98%B6_%E6%B3%A8%E8%A7%A3/20200306214630500.png)
-
+![img](https://pic.hycbook.com/i/hexo/bk_resources/java/Java进阶_注解/20200306214605527.webp)> 
+![img](https://pic.hycbook.com/i/hexo/bk_resources/java/Java进阶_注解/20200306214630500.webp)
 ## ORM实例
 
->![image-20200309223608769](res/Java%E8%BF%9B%E9%98%B6_%E6%B3%A8%E8%A7%A3/image-20200309223608769.png)
->
+![img](https://pic.hycbook.com/i/hexo/bk_resources/java/Java进阶_注解/image-20200309223608769.webp)>
 >```java
 >// 类名的注解 
 >@Target(ElementType.TYPE) 
@@ -345,5 +340,4 @@ abbrlink: 657dc990
 >}
 >```
 >
->![image-20200309224336761](res/Java%E8%BF%9B%E9%98%B6_%E6%B3%A8%E8%A7%A3/image-20200309224336761.png)
-
+![img](https://pic.hycbook.com/i/hexo/bk_resources/java/Java进阶_注解/image-20200309224336761.webp)

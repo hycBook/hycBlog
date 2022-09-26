@@ -8,7 +8,6 @@ abbrlink: ae528721
 
 ---
 
-[TOC]
 
 >[【黑马程序员-Java语言高级部分11】JDBC](https://www.bilibili.com/video/av61491585)
 

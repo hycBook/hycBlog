@@ -8,7 +8,6 @@ abbrlink: 10fd680e
 
 ---
 
-[TOC]
 
 # JUC锁集合 
 
@@ -254,7 +253,7 @@ class Depot {
                 int inc = (size+left)>capacity ? (capacity-size) : left;
                 size += inc;
                 left -= inc;
-                System.out.printf("%s produce(%3d) --> left=%3d, inc=%3d, size=%3d\n", 
+                System.out.printf("%s produce(=) --> left==, inc==, size==\n", 
                         Thread.currentThread().getName(), val, left, inc, size);
                 // 通知“消费者”可以消费了。
                 emptyCondtion.signal();
@@ -280,7 +279,7 @@ class Depot {
                 int dec = (size<left) ? size : left;
                 size -= dec;
                 left -= dec;
-                System.out.printf("%s consume(%3d) <-- left=%3d, dec=%3d, size=%3d\n", 
+                System.out.printf("%s consume(=) <-- left==, dec==, size==\n", 
                         Thread.currentThread().getName(), val, left, dec, size);
                 fullCondtion.signal();
             }

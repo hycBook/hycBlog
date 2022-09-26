@@ -8,7 +8,6 @@ abbrlink: 3c274368
 
 ---
 
-[TOC]
 
 
 # 反射机制
@@ -401,7 +400,7 @@ java.lang.String([B,java.lang.String,)
 
 # jOOR反射api
 
-> [jOOR反射api](https://github.com/tianzhijiexian/Android-Best-Practices/blob/master/2015.9/reflect/README%20-%20chinese.md)
+> [jOOR反射api](https://github.com/tianzhijiexian/Android-Best-Practices/blob/master/2015.9/reflect/README - chinese.md)
 
 ```xml
 <!-- https://mvnrepository.com/artifact/org.jooq/joor -->

@@ -8,7 +8,6 @@ abbrlink: eebdb36a
 
 ---
 
-[TOC]
 
 >[MySQL多表查询与事务的操作](./res/MySQL_多表查询/MySQL多表查询与事务的操作.pdf)
 

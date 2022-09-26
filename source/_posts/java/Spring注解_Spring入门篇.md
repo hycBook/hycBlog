@@ -8,7 +8,6 @@ abbrlink: 1ddf4748
 
 ---
 
-[TOC]
 
 # [Spring入门篇](https://www.imooc.com/learn/196)
 
@@ -33,8 +32,7 @@ abbrlink: 1ddf4748
 >
 > * -将简单的组件配置、组合成为复杂的应用，这个意义上是框架 
 >
-> ![spring framework runtime结构图](res/Spring注解_Spring入门篇/spring%20framework%20runtime.png)
->
+![img](https://pic.hycbook.com/i/hexo/bk_resources/java/Spring注解_Spring入门篇/spring framework runtime.webp)>
 > [Java 程序员必须掌握的 5 个注解！](https://mp.weixin.qq.com/s?__biz=MzI3ODcxMzQzMw==&mid=2247486373&idx=1&sn=601720b8a9dc1af60ffe6b2bd1dfc917&scene=21#wechat_redirect)
 
 
@@ -99,8 +97,7 @@ abbrlink: 1ddf4748
 > * DI（依赖注入）是其一种实现方式 
 > * 目的：创建对象并且组装对象之间的关系 
 >
-> ![IoC container结构图](res/Spring注解_Spring入门篇/IoC%20container.png)
->
+![img](https://pic.hycbook.com/i/hexo/bk_resources/java/Spring注解_Spring入门篇/IoC container.webp)>
 > **扩展理解**
 >
 > * 2004年，Martin Fowler探讨了同一个问题，既然IOC是控制 反转，那么到底是“哪些方面的控制被反转了呢？”，经过详 细地分析和论证后，他得出了答案：“获得依赖对象的过程被 反转了”。控制被反转之后，获得依赖对象的过程由自身管理 变为了由IOC容器主动注入。于是，他给“控制反转”取了一 个更合适的名字叫做“依赖注入（Dependency Injection) "。他的这个答案，实际上给出了实现IOC的方法：注入。所 谓依赖注入，就是由IOC容器在运行期间，动态地将某种依赖 关系注入到对象之中。
@@ -1073,8 +1070,7 @@ abbrlink: 1ddf4748
 >* AOP：Aspect Oriented Programming的缩写，意为：面向切面编程，通过预编译方式和运行期动态代理实现程序功能 的统一维护的一种技术 
 >* 主要的功能是：日志记录，性能统计，安全控制，事务处理， 异常处理等等 
 >
->![AOP切面示意图](res/Spring注解_Spring入门篇/AOP%E5%88%87%E9%9D%A2%E7%A4%BA%E6%84%8F%E5%9B%BE.png)
->
+![img](https://pic.hycbook.com/i/hexo/bk_resources/java/Spring注解_Spring入门篇/AOP切面示意图.webp)>
 >**AOP实现方式**
 >
 >* 预编译 
