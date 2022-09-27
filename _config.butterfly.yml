@@ -423,7 +423,7 @@ gitter:
 # crisp
 # https://crisp.chat/en/
 crisp:
-  enable: true
+  enable: false
   website_id: 561b80db-3f0f-45cb-b3b1-aae7355939e6
 
 # messenger
