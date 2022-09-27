@@ -1016,16 +1016,16 @@ categoryBar:
     - name: common
       descr: 通用知识学习记录
       cover: https://pic.hycbook.com/i//hexo/category_bar_imgs/category_bar_3.webp
-    - name: python
-      descr: python学习记录
-      cover: https://pic.hycbook.com/i//hexo/category_bar_imgs/category_bar_2.webp
-    - name: java
-      descr: java学习记录
-      cover: https://pic.hycbook.com/i//hexo/category_bar_imgs/category_bar_0.webp
-    - name: math
-      descr: 数学知识学习
-      cover: https://pic.hycbook.com/i//hexo/category_bar_imgs/category_bar_1.webp
     - name: english
       descr: 英语语法入门基础
       cover: https://pic.hycbook.com/i//hexo/category_bar_imgs/category_bar_4.webp
+    - name: java
+      descr: java学习记录
+      cover: https://pic.hycbook.com/i//hexo/category_bar_imgs/category_bar_0.webp
+    - name: python
+      descr: python学习记录
+      cover: https://pic.hycbook.com/i//hexo/category_bar_imgs/category_bar_2.webp
+    - name: math
+      descr: 数学知识学习
+      cover: https://pic.hycbook.com/i//hexo/category_bar_imgs/category_bar_1.webp
   custom_css: https://npm.elemecdn.com/hexo-butterfly-categories-card@1.0.0/lib/categorybar.css  
