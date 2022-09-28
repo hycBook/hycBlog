@@ -87,7 +87,7 @@ katex:
 # --------------------------------------
 
 # Favicon（網站圖標）
-favicon: /img/网站图标.png
+favicon: https://pic.hycbook.com/i//hexo/config_imgs/网站图标.webp
 
 # Avatar (頭像)
 avatar:
