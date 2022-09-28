@@ -91,7 +91,6 @@ aside: false
 - class_name: hexo网站
   class_desc: 基于hexo搭建的优秀网站
   link_list:
-  
     - name: Ethan.Tzy
       link: https://tzy1997.com/
       avatar: https://bu.dusays.com/2022/05/02/626f92e193879.jpg
@@ -116,7 +115,15 @@ aside: false
       link: https://zfe.space/
       avatar: https://zfe.space/images/headimage.png
       descr: 小冰博客
-  
+      
+- class_name: hexo网站
+  class_desc: 基于hexo搭建的优秀网站
+  link_list:
+    - name: dnschecker
+      link: https://dnschecker.org/
+      avatar: https://dnschecker.org/themes/common/images/general/logo.png
+      descr: 免费网站监测服务,不同的是它主要针对DNS记录进行检查
+
   {% endflink %}
 
 
