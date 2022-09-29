@@ -5951,7 +5951,7 @@ blockquote.pullquote.right {
 
 @font-face{
   font-family: 'lxgwshare' ;  /* 自定义字体名称 */
-  src: url('https://s-bj-4554-hexopic.oss.dogecdn.com/lxgwshare.ttf'); /* 引入字体文件的路径 */
+  src: url('https://s1.vika.cn/space/2022/09/28/0b1146dc6983496da0856f836cf4b9a2?attname=lxgwshare.ttf'); /* 引入字体文件的路径 */
 }
 /*应用在body体里，放在第一个，font-family会按顺序使用字体族。如果第一个没找到就会找第二个，以此类推。*/
 body {
