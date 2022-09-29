@@ -439,7 +439,7 @@ footer:
   owner:
     enable: true
     since: 2022
-  custom_text: I wish you to become your own sun, no need to rely on who's light.<br><p><a target="_blank" href="https://hexo.io/"><img src="https://img.shields.io/badge/Frame-Hexo-blue?style=flat&logo=hexo" title="博客框架为Hexo"></a>&nbsp;<a target="_blank" href="https://demo.jerryc.me/"><img src="https://img.shields.io/badge/Theme-Butterfly-6513df?style=flat&logo=bitdefender" title="主题采用butterfly"></a>&nbsp;<a target="_blank" href="https://vercel.com/ "><img src="https://img.shields.io/badge/Hosted-Vervel-brightgreen?style=flat&logo=Vercel" title="本站采用双线部署，默认线路托管于Vercel"></a>&nbsp;<a target="_blank" href="https://github.com/"><img src="https://img.shields.io/badge/Source-Github-d021d6?style=flat&logo=GitHub" title="本站项目由Gtihub托管"></a></p><a target="_blank" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=35020502000647"><img src="https://pic.hycbook.com/i//hexo/config_imgs//备案图标.webp" style="float:left;"/>闽公网安备 35020502000647号</a><a href="https://beian.miit.gov.cn/" target="_blank">闽ICP备2022013843号-1</a>
+  custom_text: custom_text: I wish you to become your own sun, no need to rely on who's light.<br><p><a target="_blank" href="https://hexo.io/"><img src="https://img.shields.io/badge/Frame-Hexo-blue?style=flat&logo=hexo" title="博客框架为Hexo"></a>&nbsp;<a target="_blank" href="https://demo.jerryc.me/"><img src="https://img.shields.io/badge/Theme-Butterfly-6513df?style=flat&logo=bitdefender" title="主题采用butterfly"></a>&nbsp;<a target="_blank" href="https://vercel.com/ "><img src="https://img.shields.io/badge/Hosted-Vervel-brightgreen?style=flat&logo=Vercel" title="本站采用双线部署，默认线路托管于Vercel"></a>&nbsp;<a target="_blank" href="https://github.com/"><img src="https://img.shields.io/badge/Source-Github-d021d6?style=flat&logo=GitHub" title="本站项目由Gtihub托管"></a></p><a target="_blank" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=35020502000647"><img src="https://pic.hycbook.com/i//hexo/config_imgs//备案图标.webp"/>闽公网安备35020502000647号  </a><a href="https://beian.miit.gov.cn/" target="_blank">闽ICP备2022013843号-1</a>
   copyright: true # Copyright of theme and framework
 
 # Analysis
@@ -831,7 +831,7 @@ aplayerInject:
 # 可選 top-left / top-center / top-right / bottom-left / bottom-center / bottom-right
 snackbar:
   enable: true
-  position: bottom-left
+  position: top-center
   bg_light: '#49b1f5' # The background color of Toast Notification in light mode
   bg_dark: '#1f1f1f' # The background color of Toast Notification in dark mode
 
@@ -875,11 +875,8 @@ css_prefix: true
 # 插入代码到头部 </head> 之前 和 底部 </body> 之前
 inject:
   head:
-    # - <link rel="stylesheet" href="/xxx.css">
     # - <link rel="stylesheet" href="https://at.alicdn.com/t/c/font_3670467_s6ou5la766.css?spm=a313x.7781069.1998910419.53&file=font_3670467_s6ou5la766.css">  # 阿里巴巴矢量图库
     - <link rel="stylesheet" href="../css/hyc_udf.css"> # 自定义css
-    # - <link rel="stylesheet" href="/css/rightMenu.css">  # 自定义右键菜单  https://tzy1997.com/articles/hexo1608/
-    # - <link rel="stylesheet" href="/css/mouse.css"> # 修改鼠标样式   https://www.cnblogs.com/JanYork/p/16259336.html
   bottom:
     # - <script src="xxxx"></script>
     - <script defer src="https://npm.elemecdn.com/jquery@latest/dist/jquery.min.js"></script>
