@@ -220,3 +220,13 @@ a,img {
 #page-header.post-bg {  height: 800px; }
 #page-header.not-home-page {  height: 800px;}
 /* 自定义非首页的top图片的高度 */
+
+
+/* 自定义页脚的高度 */
+#footer-wrap {
+  position: relative;
+  padding: 5px 20px;
+  color: var(--light-grey);
+  text-align: center;
+}
+/* 自定义页脚的高度 */
