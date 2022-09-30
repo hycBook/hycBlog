@@ -77,6 +77,9 @@ jobs:
         # 分类磁贴
         npm install hexo-butterfly-categories-card --save
 
+        # 安装pwa相关插件
+        npm install hexo-offline --save
+
         # echo 开始修改文件资源路径
         # cd source/_posts
         # python dir_change.py
