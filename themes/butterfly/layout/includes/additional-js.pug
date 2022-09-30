@@ -70,3 +70,6 @@ div
 
   if theme.busuanzi.site_uv || theme.busuanzi.site_pv || theme.busuanzi.page_pv
     script(async data-pjax src='//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js')
+
+  if theme.pwa.enable
+    !=partial('includes/third-party/pwanotice', {}, {cache: true})

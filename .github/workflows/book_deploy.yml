@@ -68,6 +68,12 @@ jobs:
         # npm install --save-dev gulp-uglify
         # npm install --save-dev gulp-babel @babel/core @babel/preset-env
 
+        # 配置PWA   https://akilar.top/posts/8f31c3d0/
+        npm install --global gulp-cli # 全局安装gulp命令集
+        npm install workbox-build gulp --save # 安装workbox和gulp插件
+
+
+
         # 留言板信封
         npm install hexo-butterfly-envelope --save
 
@@ -106,7 +112,7 @@ jobs:
         # echo '#page-header.not-home-page {  height: 800px;}' >> public/css/index.css
         hexo algolia
         cp package-lock.json public/package-lock.json
-        # gulp
+        gulp
 
     - name: Deploy #步骤4：把编译好的静态目录上传到gh-pages分支上  https://cloud.tencent.com/developer/article/1917861
       uses: JamesIves/github-pages-deploy-action@3.1.5 #这里调用第三方依赖，用于上传代码到指定分支上
