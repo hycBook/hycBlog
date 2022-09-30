@@ -1,43 +1,96 @@
-#app-refresh.app-refresh(style='position: fixed;top: -2.2rem;left: 0;right: 0;z-index: 99999;padding: 0 1rem;font-size: 15px;height: 2.2rem;transition: all 0.3s ease;')
-  .app-refresh-wrap(style=' display: flex;color: #fff;height: 100%;align-items: center;justify-content: center;')
-    label ✨ 兼一书虫上新啦！ 👉
-    a(href='javascript:void(0)' onclick='location.reload()')
-      span(style='color: #fff;text-decoration: underline;cursor: pointer;') 🍭查看新品🍬
-script.
-  if ('serviceWorker' in navigator) {
-  if (navigator.serviceWorker.controller) {
-  navigator.serviceWorker.addEventListener('controllerchange', function() {
-  showNotification()
-  })
-  }
-  window.addEventListener('load', function() {
-  navigator.serviceWorker.register('/sw.js')
-  })
-  }
-  function showNotification() {
-  if (GLOBAL_CONFIG.Snackbar) {
-  var snackbarBg =
-  document.documentElement.getAttribute('data-theme') === 'light' ?
-  GLOBAL_CONFIG.Snackbar.bgLight :
-  GLOBAL_CONFIG.Snackbar.bgDark
-  var snackbarPos = GLOBAL_CONFIG.Snackbar.position
-  Snackbar.show({
-  text: '✨ 糖果屋上新啦！ 👉',
-  backgroundColor: snackbarBg,
-  duration: 500000,
-  pos: snackbarPos,
-  actionText: '🍭查看新品🍬',
-  actionTextColor: '#fff',
-  onActionClick: function(e) {
-  location.reload()
-  },
-  })
-  } else {
-  var showBg =
-  document.documentElement.getAttribute('data-theme') === 'light' ?
-  '#49b1f5' :
-  '#1f1f1f'
-  var cssText = `top: 0; background: ${showBg};`
-  document.getElementById('app-refresh').style.cssText = cssText
-  }
-  }
+const workboxVersion = '5.1.3';
+
+importScripts(`https://storage.googleapis.com/workbox-cdn/releases/${workboxVersion}/workbox-sw.js`);
+
+workbox.core.setCacheNameDetails({
+    prefix: "your name"
+});
+
+workbox.core.skipWaiting();
+
+workbox.core.clientsClaim();
+
+// 注册成功后要立即缓存的资源列表
+// 具体缓存列表在gulpfile.js中配置，见下文
+workbox.precaching.precacheAndRoute(self.__WB_MANIFEST,{
+    directoryIndex: null
+});
+
+// 清空过期缓存
+workbox.precaching.cleanupOutdatedCaches();
+
+// 图片资源（可选，不需要就注释掉）
+workbox.routing.registerRoute(
+    /\.(?:png|jpg|jpeg|gif|bmp|webp|svg|ico)$/,
+    new workbox.strategies.CacheFirst({
+        cacheName: "images",
+        plugins: [
+            new workbox.expiration.ExpirationPlugin({
+                maxEntries: 1000,
+                maxAgeSeconds: 60 * 60 * 24 * 30
+            }),
+            new workbox.cacheableResponse.CacheableResponsePlugin({
+                statuses: [0, 200]
+            })
+        ]
+    })
+);
+
+// 字体文件（可选，不需要就注释掉）
+workbox.routing.registerRoute(
+    /\.(?:eot|ttf|woff|woff2)$/,
+    new workbox.strategies.CacheFirst({
+        cacheName: "fonts",
+        plugins: [
+            new workbox.expiration.ExpirationPlugin({
+                maxEntries: 1000,
+                maxAgeSeconds: 60 * 60 * 24 * 30
+            }),
+            new workbox.cacheableResponse.CacheableResponsePlugin({
+                statuses: [0, 200]
+            })
+        ]
+    })
+);
+
+// 谷歌字体（可选，不需要就注释掉）
+workbox.routing.registerRoute(
+    /^https:\/\/fonts\.googleapis\.com/,
+    new workbox.strategies.StaleWhileRevalidate({
+        cacheName: "google-fonts-stylesheets"
+    })
+);
+workbox.routing.registerRoute(
+    /^https:\/\/fonts\.gstatic\.com/,
+    new workbox.strategies.CacheFirst({
+        cacheName: 'google-fonts-webfonts',
+        plugins: [
+            new workbox.expiration.ExpirationPlugin({
+                maxEntries: 1000,
+                maxAgeSeconds: 60 * 60 * 24 * 30
+            }),
+            new workbox.cacheableResponse.CacheableResponsePlugin({
+                statuses: [0, 200]
+            })
+        ]
+    })
+);
+
+// jsdelivr的CDN资源（可选，不需要就注释掉）
+workbox.routing.registerRoute(
+    /^https:\/\/cdn\.jsdelivr\.net/,
+    new workbox.strategies.CacheFirst({
+        cacheName: "static-libs",
+        plugins: [
+            new workbox.expiration.ExpirationPlugin({
+                maxEntries: 1000,
+                maxAgeSeconds: 60 * 60 * 24 * 30
+            }),
+            new workbox.cacheableResponse.CacheableResponsePlugin({
+                statuses: [0, 200]
+            })
+        ]
+    })
+);
+
+workbox.googleAnalytics.initialize();
