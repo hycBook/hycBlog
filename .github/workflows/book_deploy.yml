@@ -70,7 +70,7 @@ jobs:
         npm install --save-dev gulp-uglify
         npm install --save-dev gulp-babel @babel/core @babel/preset-env
         # 压缩图片插件
-        npm install --save-dev gulp-imagemin
+        # npm install --save-dev gulp-imagemin
 
 
         # 配置PWA   https://akilar.top/posts/8f31c3d0/
