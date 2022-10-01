@@ -31,24 +31,24 @@ gulp.task('generate-service-worker', () => {
 
 //minify js babel
 // 若使用babel压缩js，则取消下方注释，并注释terser的代码
-// gulp.task('compress', () =>
-//   gulp.src(['./public/**/*.js', '!./public/**/*.min.js'])
-//      .pipe(babel({
-//          presets: ['@babel/preset-env']
-//      }))
-//     .pipe(uglify().on('error', function(e){
-//       console.log(e);
-//     }))
-//      .pipe(gulp.dest('./public'))
-// );
+gulp.task('compress', () =>
+  gulp.src(['./public/**/*.js', '!./public/**/*.min.js'])
+     .pipe(babel({
+         presets: ['@babel/preset-env']
+     }))
+    .pipe(uglify().on('error', function(e){
+      console.log(e);
+    }))
+     .pipe(gulp.dest('./public'))
+);
 
 // minify js - gulp-tester
 // 若使用terser压缩js
-gulp.task('compress', () =>
-  gulp.src(['./public/**/*.js', '!./public/**/*.min.js'])
-    .pipe(terser())
-    .pipe(gulp.dest('./public'))
-)
+// gulp.task('compress', () =>
+//   gulp.src(['./public/**/*.js', '!./public/**/*.min.js'])
+//     .pipe(terser())
+//     .pipe(gulp.dest('./public'))
+// )
 //css
 gulp.task('minify-css', () => {
   return gulp.src('./public/**/*.css')
