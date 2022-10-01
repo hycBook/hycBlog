@@ -2,7 +2,6 @@ var gulp = require('gulp');
 var cleanCSS = require('gulp-clean-css');
 var htmlmin = require('gulp-htmlmin');
 var htmlclean = require('gulp-htmlclean');
-var imagemin = require('gulp-imagemin');
 var workbox = require("workbox-build");
 
 // 若使用babel压缩js，则取消下方注释，并注释terser的代码
