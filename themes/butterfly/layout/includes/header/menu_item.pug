@@ -6,7 +6,12 @@ if theme.menu
           - const valueArray = value.split('||')
           a.site-page(href=url_for(trim(valueArray[0])))
             if valueArray[1]
-              i.fa-fw(class=trim(valueArray[1]))
+              - var icon_value = trim(value.split('||')[1])
+              if icon_value.substring(0,2)=="fa"      
+                i.fa-fw(class=icon_value)
+              else if icon_value.substring(0,4)=="icon"          
+                svg.icon(aria-hidden="true")
+                  use(xlink:href=`#`+ icon_value)
             span=' '+label
       else
         .menus_item
@@ -14,7 +19,12 @@ if theme.menu
           - const hideClass = labelArray[2] && trim(labelArray[2]) === 'hide' ? 'hide' : ''
           a.site-page.group(class=`${hideClass}` href='javascript:void(0);')
             if labelArray[1]
-              i.fa-fw(class=trim(labelArray[1]))
+              - var icon_label = trim(label.split('||')[1])
+              if icon_label.substring(0,2)=="fa"      
+                i.fa-fw(class=icon_label)
+              else if icon_label.substring(0,4)=="icon"    
+                svg.icon(aria-hidden="true")
+                  use(xlink:href=`#`+ icon_label)              
             span=' '+ trim(labelArray[0])
             i.fas.fa-chevron-down
           ul.menus_item_child
@@ -23,5 +33,10 @@ if theme.menu
               li
                 a.site-page.child(href=url_for(trim(valArray[0])))
                   if valArray[1]
-                    i.fa-fw(class=trim(valArray[1]))
+                    - var icon_val = trim(val.split('||')[1])
+                    if icon_val.substring(0,2)=="fa"      
+                      i.fa-fw(class=icon_val)
+                    else if icon_val.substring(0,4)=="icon"
+                      svg.icon(aria-hidden="true")
+                        use(xlink:href=`#`+ icon_val)                    
                   span=' '+ lab

@@ -2,10 +2,11 @@
 # see https://butterfly.js.org/posts/4aa8abbe/#導航菜單
 # --------------------------------------
 
+# 使用阿里彩色图标  https://akilar.top/posts/23fdf850/
 menu:
   首页: / || fa fa-home
   文章 || fa fa-compass:
-    归档: /archives/ || fa fa-archive
+    归档: /archives/ || fa icon-zhifeiji
     分类: /categories/ || fa fa-folder-open
     标签: /tags/ || fa fa-tags
   娱乐 || fa fa-list:
@@ -886,7 +887,7 @@ inject:
     - <script defer src="https://npm.elemecdn.com/vue@2.6.11"></script>
     # 引入樱花
     - <script defer src="https://yremp.live/wp-content/uploads/resource/js/sakura.js"></script>
-    # 阿里巴巴矢量图库
+    # 阿里巴巴矢量图库   https://akilar.top/posts/d2ebecef/
     - <script async src="//at.alicdn.com/t/c/font_3670467_s6ou5la766.js"></script>
 
 # CDN
