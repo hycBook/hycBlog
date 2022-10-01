@@ -9,7 +9,7 @@ var workbox = require("workbox-build");
 // var babel = require('gulp-babel');
 
 // 若使用terser压缩js
-var terser = require('gulp-terser');
+// var terser = require('gulp-terser');
 
 //pwa
 gulp.task('generate-service-worker', () => {

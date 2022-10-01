@@ -115,7 +115,16 @@ aside: false
       link: https://zfe.space/
       avatar: https://zfe.space/images/headimage.png
       descr: 小冰博客
-      
+    - name: 张洪Heo
+      link: https://blog.zhheo.com/
+      avatar: https://img.zhheo.com/i/2022/08/19/62ff32fa28da1.png
+      descr: 分享设计与科技生活
+    - name: 安知鱼`Blog
+      link: https://anzhiy.cn/
+      avatar: https://image.anzhiy.cn/adminuploads/1/2022/09/15/63232b7d91d22.jpg
+      descr: 生活明朗，万物可爱
+  
+  
 - class_name: hexo网站
   class_desc: 基于hexo搭建的优秀网站
   link_list:
@@ -123,7 +132,14 @@ aside: false
       link: https://dnschecker.org/
       avatar: https://dnschecker.org/themes/common/images/general/logo.png
       descr: 免费网站监测服务,不同的是它主要针对DNS记录进行检查
-
+    - name: brandmark
+      link: https://app.brandmark.io/v3/
+      avatar: https://app.brandmark.io/favicon32.gif
+      descr: 图标设计网站
+    - name: dnschecker
+      link: https://realfavicongenerator.net/
+      avatar: https://realfavicongenerator.net/realfavicongenerator_brand.png?v=2
+      descr: 全平台的WEB APP图标设计，用于生成PWA使用的manifest
   {% endflink %}
 
 
