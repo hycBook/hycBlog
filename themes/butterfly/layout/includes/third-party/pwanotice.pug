@@ -5,39 +5,41 @@
       span(style='color: #fff;text-decoration: underline;cursor: pointer;') 🍭查看新品🍬
 script.
   if ('serviceWorker' in navigator) {
-  if (navigator.serviceWorker.controller) {
-  navigator.serviceWorker.addEventListener('controllerchange', function() {
-  showNotification()
-  })
+    if (navigator.serviceWorker.controller) {
+      navigator.serviceWorker.addEventListener('controllerchange', function() {
+        showNotification()
+      })
+    }
+    window.addEventListener('load', function() {
+      navigator.serviceWorker.register('/sw.js')
+    })
   }
-  window.addEventListener('load', function() {
-  navigator.serviceWorker.register('/sw.js')
-  })
-  }
+
   function showNotification() {
-  if (GLOBAL_CONFIG.Snackbar) {
-  var snackbarBg =
-  document.documentElement.getAttribute('data-theme') === 'light' ?
-  GLOBAL_CONFIG.Snackbar.bgLight :
-  GLOBAL_CONFIG.Snackbar.bgDark
-  var snackbarPos = GLOBAL_CONFIG.Snackbar.position
-  Snackbar.show({
-  text: '✨ 兼一书虫上新啦！ 👉',
-  backgroundColor: snackbarBg,
-  duration: 500000,
-  pos: snackbarPos,
-  actionText: '🍭查看新品🍬',
-  actionTextColor: '#fff',
-  onActionClick: function(e) {
-  location.reload()
-  },
-  })
-  } else {
-  var showBg =
-  document.documentElement.getAttribute('data-theme') === 'light' ?
-  '#49b1f5' :
-  '#1f1f1f'
-  var cssText = `top: 0; background: ${showBg};`
-  document.getElementById('app-refresh').style.cssText = cssText
-  }
+    if (GLOBAL_CONFIG.Snackbar) {
+      var snackbarBg =
+        document.documentElement.getAttribute('data-theme') === 'light' ?
+        GLOBAL_CONFIG.Snackbar.bgLight :
+        GLOBAL_CONFIG.Snackbar.bgDark
+      var snackbarPos = GLOBAL_CONFIG.Snackbar.position
+      Snackbar.show({
+        text: '✨ 兼一书虫上新啦！ 👉',
+        backgroundColor: snackbarBg,
+        duration: 500000,
+        pos: snackbarPos,
+        actionText: '🍭查看新品🍬',
+        actionTextColor: '#fff',
+        onActionClick: function(e) {
+          location.reload()
+        },
+      })
+    } else {
+      var showBg =
+        document.documentElement.getAttribute('data-theme') === 'light' ?
+        '#49b1f5' :
+        '#1f1f1f'
+      var cssText = `top: 0; background: ${showBg};`
+      document.getElementById('app-refresh')
+        .style.cssText = cssText
+    }
   }

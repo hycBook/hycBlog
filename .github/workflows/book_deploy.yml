@@ -60,19 +60,22 @@ jobs:
         npm i hexo-bilibili-card --save
 
         # gulp 压缩   https://blog.imzjw.cn/posts/b74f504f/#gulp-%E5%8E%8B%E7%BC%A9  会影响Hexo哔哩哔哩番剧页面插件
-        # npm i gulp --save-dev
-        # npm install --global gulp-cli
-        # npm install gulp-htmlclean --save-dev
-        # npm install --save gulp-html-minifier-terser
-        # npm install gulp-clean-css --save-dev
-        # npm install --save-dev gulp-uglify
-        # npm install --save-dev gulp-babel @babel/core @babel/preset-env
+        # 压缩html插件
+        npm install gulp-htmlclean --save-dev
+        npm install --save gulp-htmlmin
+        # 压缩css插件
+        npm install gulp-clean-css --save-dev
+        # 压缩js插件
+        # 使用babel压缩js，与terser二选一
+        npm install --save-dev gulp-uglify
+        npm install --save-dev gulp-babel @babel/core @babel/preset-env
+        # 压缩图片插件
+        npm install --save-dev gulp-imagemin
+
 
         # 配置PWA   https://akilar.top/posts/8f31c3d0/
         npm install --global gulp-cli # 全局安装gulp命令集
         npm install workbox-build gulp --save # 安装workbox和gulp插件
-
-
 
         # 留言板信封
         npm install hexo-butterfly-envelope --save

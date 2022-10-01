@@ -3,7 +3,7 @@ const workboxVersion = '5.1.3';
 importScripts(`https://storage.googleapis.com/workbox-cdn/releases/${workboxVersion}/workbox-sw.js`);
 
 workbox.core.setCacheNameDetails({
-    prefix: "your name"
+    prefix: "兼一书虫缓存"
 });
 
 workbox.core.skipWaiting();
