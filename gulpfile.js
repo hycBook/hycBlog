@@ -6,7 +6,7 @@ var workbox = require("workbox-build");
 
 // 若使用babel压缩js，则取消下方注释，并注释terser的代码
 // var uglify = require('gulp-uglify');
-// var babel = require('gulp-babel');
+var babel = require('gulp-babel');
 
 // 若使用terser压缩js
 // var terser = require('gulp-terser');
