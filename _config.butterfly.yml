@@ -41,9 +41,10 @@ copy:
 # social settings (社交圖標設置)
 # formal:
 #   icon: link || the description
+# 教程参考 https://akilar.top/posts/23fdf850/
 social:
-  icon-github: https://github.com/narutohyc || Github
-  icon-youjian1: 1832044043@qq.com || Email
+  Github: https://github.com/narutohyc || icon-github
+  Email: mailto:1832044043@qq.com || icon-youjian1
 
 # search (搜索)
 # see https://butterfly.js.org/posts/ceeb73f/#搜索系統
