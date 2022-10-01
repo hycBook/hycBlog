@@ -61,7 +61,7 @@ gulp.task('minify-css', () => {
 
 // 壓縮 public 目錄內 html
 gulp.task('minify-html', () => {
-  return gulp.src('./public/**/*.html')
+  return gulp.src('../public/**/*.html')
     .pipe(htmlclean())
     .pipe(htmlmin({
       removeComments: true, //清除 HTML 註釋
@@ -74,7 +74,7 @@ gulp.task('minify-html', () => {
       minifyCSS: true, //壓縮頁面 CSS
       minifyURLs: true
     }))
-    .pipe(gulp.dest('./public'))
+    .pipe(gulp.dest('../public'))
 });
 
 // 壓縮 public/uploads 目錄內圖片
