@@ -6,7 +6,7 @@
 menu:
   首页: / || fa fa-home
   文章 || fa fa-compass:
-    归档: /archives/ || fa icon-zhifeiji
+    归档: /archives/ || icon-zhifeiji
     分类: /categories/ || fa fa-folder-open
     标签: /tags/ || fa fa-tags
   娱乐 || fa fa-list:
