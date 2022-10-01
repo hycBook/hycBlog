@@ -4,20 +4,20 @@
 
 # 使用阿里彩色图标  https://akilar.top/posts/23fdf850/
 menu:
-  首页: / || fa fa-home
-  文章 || fa fa-compass:
-    归档: /archives/ || icon-zhifeiji
-    分类: /categories/ || fa fa-folder-open
-    标签: /tags/ || fa fa-tags
-  娱乐 || fa fa-list:
-    音乐: /music/ || fa fa-music
-    追番: /bangumis/ || fa fa-video
-    相册: /gallery/ || fa fa-image
-    视频: /video/ || fa fa-image
-  微言: /shuoshuo/ || fa fa-coffee
-  留言板: /comments/ || fa fa-comments
-  友链: /link/ || fa fa-link
-  关于: /about/ || fa fa-heart
+  首页: / || icon-fangwu
+  文章 || icon-wenzhang1:
+    归档: /archives/ || icon-guidang
+    分类: /categories/ || icon-fenlei
+    标签: /tags/ || icon-biaoqian
+  娱乐 || icon-zhifeiji:
+    音乐: /music/ || icon-yinle
+    追番: /bangumis/ || icon-wodezhuifan
+    相册: /gallery/ || icon-xiangce
+    视频: /video/ || icon-shipin
+  微言: /shuoshuo/ || icon-41shuoshuo
+  留言板: /comments/ || icon-TIFFANYSROOM_huaban
+  友链: /link/ || icon-changyonglianjie
+  关于: /about/ || icon-aixin
 
 
 # Code Blocks (代碼相關)
@@ -42,8 +42,8 @@ copy:
 # formal:
 #   icon: link || the description
 social:
-  fab fa-github: https://github.com/narutohyc || Github
-  fas fa-envelope: 1832044043@qq.com || Email
+  icon-github: https://github.com/narutohyc || Github
+  icon-youjian1: 1832044043@qq.com || Email
 
 # search (搜索)
 # see https://butterfly.js.org/posts/ceeb73f/#搜索系統
