@@ -90,6 +90,8 @@ jobs:
 
         # 生成站点地图
         npm install hexo-generator-seo-friendly-sitemap --save
+        # 加强网站SEO和防止权重流失
+        npm i hexo-filter-nofollow --save
 
         # echo 开始修改文件资源路径
         # cd source/_posts

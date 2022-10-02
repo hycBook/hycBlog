@@ -32,9 +32,9 @@ type: "about"
 
 
 
-{% icon icon-zhifeiji %}
+{% icon icon-zhifeiji,5 %}
 
-{% icon icon-zhifengche %}
+{% icon icon-zhifengche,8 %}
 
 
 

@@ -501,6 +501,11 @@ sitemap:
     tag: false # 标签页不添加到网站地图中
     category: false # 分类页不添加到网站地图中
 
+# 加强网站SEO和防止权重流失
+nofollow:
+  enable: true
+  field: site
+
 # Beautify/Effect (美化/效果)
 # --------------------------------------
 
