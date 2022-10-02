@@ -119,7 +119,7 @@ jobs:
         # echo '#page-header.not-home-page {  height: 800px;}' >> public/css/index.css
         hexo algolia
         cp package-lock.json public/package-lock.json
-        cp google_sitemap/google17693a5a4fce28e1.html >> public/google17693a5a4fce28e1.html
+        cp sitemaps/* >> public/
         gulp
 
     - name: Deploy #步骤4：把编译好的静态目录上传到gh-pages分支上  https://cloud.tencent.com/developer/article/1917861
