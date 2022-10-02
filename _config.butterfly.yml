@@ -881,8 +881,8 @@ inject:
     # - <link rel="stylesheet" href="https://at.alicdn.com/t/c/font_3670467_s6ou5la766.css?spm=a313x.7781069.1998910419.53&file=font_3670467_s6ou5la766.css">  # 阿里巴巴矢量图库
     - <link rel="stylesheet" href="/css/hyc_udf.css"> # 自定义css
     # 自定义404页面   https://blog.zhheo.com/p/f48e518b.html
-    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/js-heo@1.0.11/mainColor/heoMainColor.css">
-    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/js-heo@1.0.11/404/404.css">
+    - <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/js-heo@1.0.11/mainColor/heoMainColor.css">
+    - <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/js-heo@1.0.11/404/404.css">
   bottom:
     # - <script src="xxxx"></script>
     - <script defer src="https://npm.elemecdn.com/jquery@latest/dist/jquery.min.js"></script>
