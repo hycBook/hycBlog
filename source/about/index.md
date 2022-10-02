@@ -12,7 +12,7 @@ type: "about"
 
 
 
-> {% label 关于本站 pink %}
+> {% icon icon-qiqiu,1.2 %} {% label 关于本站 pink %}
 
 本站使用的是 [Hexo框架](https://hexo.io/zh-cn/) + [Butterfly主题](https://github.com/jerryc127/hexo-theme-butterfly)
 
@@ -24,7 +24,7 @@ type: "about"
 
 
 
-> {% label 免责声明 green %}
+> {% icon icon-suannai,1.2 %} {% label 免责声明 green %}
 
 本站以分享互联网经验、学习知识为目的，所有文章所涉及使用的工具、资源等均来自互联网， 仅供学习和研究使用，版权归作者所有，如果无意之中侵犯了您的版权，请来信告知。本站将在第一时间处理！另外， 本站内的文章多为博主原创，部分是由各平台文章学习借鉴过来，并尽量附上来源链接，仅供学习交流之用，不参与商业用途。
 
@@ -32,13 +32,77 @@ type: "about"
 
 
 
-{% icon icon-zhifeiji,5 %}
+---
 
-{% icon icon-zhifengche,8 %}
+> {% icon icon-xuegao,1.5 %} {% label 网站搭建历程 purple  %}
+
+{% timeline 2022, purple %}
+
+<!-- timeline 09.30-10.02 -->
+
+1. 添加{% label PWA功能 pink %}技术来增强Web应用程序功能，提高访问效率
+2. 更新使用[阿里图标](https://www.iconfont.cn/)
+3. {% icon icon-taideng,1.4 %} 添加站点地图和机器人协议，并防止权重流失
+
+<!-- endtimeline -->
+
+<!-- timeline 09.27-09.30 -->
+
+1. {% icon icon-dianhua,1.4 %} {% label 域名备案 green %}通过啦~，添加[多吉云CDN](https://www.dogecloud.com/)加速国内访问
+2. {% label 公安联网备案 green %}通过啦~
+
+<!-- endtimeline -->
+
+<!-- timeline 09.24-09.25 -->
+
+1. 添加樱花特效
+1. {% icon icon-41shuoshuo,1.4 %} 添加留言板功能和[说说功能](https://artitalk.js.org/doc.html)
+
+<!-- endtimeline -->
+<!-- timeline 09.23 -->
+使用[Imagine图片压缩](https://github.com/meowtec/Imagine/releases)软件，并结合[薄荷图床](https://riyugo.com/)，改善图片请求速度
+<!-- endtimeline -->
+<!-- timeline 09.20 -->
+使用{% label github_actions red %}实现自动化部署任务
+<!-- endtimeline -->
+<!-- timeline 09.12-09.12 -->
+
+1. {% icon icon-yinliao1,1.4 %} 初始化hexo博客网站，并使用{% label butterfly主题 pink %}
+2. 生成唯一链接地址，并添加说说功能
+3. {% icon icon-qiche,1.4 %} 添加网站图标，添加B站追番，同时添加数学公式解析插件
+4. 添加{% label algolia搜索插件 orange %}
+
+<!-- endtimeline -->
+
+{% endtimeline %}
 
 
 
-> 示例
+---
 
-臣亮言：{% label 先帝 %}创业未半，而{% label 中道崩殂 blue %}。今天下三分，{% label 益州疲敝 pink %}，此诚{% label 危急存亡之秋 red %}也！然侍衞之臣，不懈于内；{% label 忠志之士 purple %}，忘身于外者，盖追先帝之殊遇，欲报之于陛下也。诚宜开张圣听，以光先帝遗德，恢弘志士之气；不宜妄自菲薄，引喻失义，以塞忠谏之路也。
-宫中、府中，俱为一体；陟罚臧否，不宜异同。若有{% label 作奸 orange %}、{% label 犯科 green %}，及为忠善者，宜付有司，论其刑赏，以昭陛下平明之治；不宜偏私，使内外异法也。
+{% note success modern %}美文欣赏{% endnote %}
+
+{% poem , %}
+阅读流年，就是为积淀智慧。
+
+越是用心阅读，就会少了许多惊恐和不安。
+
+人生之旅，谁都不会一帆风顺，事事如意。
+
+那些层层叠叠的执念，
+
+都会相伴于岁月的浪花，默默远去。
+
+人生之旅，风雨兼程，
+
+人们从感叹命运的不公，到微笑着应对。
+
+可是是在一条不能迂回的路上，
+
+又一次印证了生命的卑微，
+
+演绎了一场随遇而安的人生定律。
+{% endpoem %}
+
+
+

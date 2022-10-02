@@ -124,7 +124,6 @@ aside: false
       avatar: https://image.anzhiy.cn/adminuploads/1/2022/09/15/63232b7d91d22.jpg
       descr: 生活明朗，万物可爱
   
-  
 - class_name: hexo网站
   class_desc: 基于hexo搭建的优秀网站
   link_list:
@@ -140,7 +139,7 @@ aside: false
       link: https://realfavicongenerator.net/
       avatar: https://realfavicongenerator.net/realfavicongenerator_brand.png?v=2
       descr: 全平台的WEB APP图标设计，用于生成PWA使用的manifest
-  {% endflink %}
+      {% endflink %}
 
 
 
@@ -148,7 +147,7 @@ aside: false
 
 
 
-> {% label 欢迎友链交换，可以在下方评论处留言 pink %}
+> {% icon icon-aixin,1.4 %} {% label 欢迎友链交换，可以在下方评论处留言 pink %}
 
 ```yml
 name: your Blog's name
@@ -159,11 +158,11 @@ descr: the description of your blog
 
 
 
-> {% label 本站友链信息 green %}
+> {% icon icon-changyonglianjie,1.4 %} {% label 本站友链信息 green %}
 
 ```yml
 name: 兼一书虫
-link: https://blog.hycbook.com/
+link: https://hycbook.com/
 avatar: https://pic.hycbook.com/i/hexo/person_img/兼一头像.jpg
 descr: 知足且上进，温柔而坚定，生活中的温暖总会与你不期而遇。
 ```

@@ -30,13 +30,12 @@ jobs:
         node -v
         npm i -g hexo-cli
         npm i
-        # npm install hexo-deployer-git --save
 
         # echo 使用 Hexo-abbrlink生成唯一文章链接
         npm install hexo-abbrlink --save
         
         # Math 数学
-        npm uninstall hexo-renderer-marked --save
+        # npm uninstall hexo-renderer-marked --save
         npm install hexo-renderer-kramed --save
 
         # 添加字数统计
@@ -55,9 +54,6 @@ jobs:
 
         # 双栏布局插件引入
         npm i hexo-butterfly-article-double-row --save
-        
-        # 插入b站的视频卡片
-        # npm i hexo-bilibili-card --save
 
         # gulp 压缩   https://blog.imzjw.cn/posts/b74f504f/#gulp-%E5%8E%8B%E7%BC%A9  会影响Hexo哔哩哔哩番剧页面插件
         # 压缩html插件
@@ -73,7 +69,7 @@ jobs:
         # npm install --save-dev gulp-imagemin
 
         # 配置PWA   https://akilar.top/posts/8f31c3d0/
-        npm install --global gulp-cli # 全局安装gulp命令集
+        npm install --global gulp-cli --save # 全局安装gulp命令集
         npm install workbox-build gulp --save # 安装workbox和gulp插件
 
         # 留言板信封
@@ -92,6 +88,9 @@ jobs:
         npm install hexo-generator-seo-friendly-sitemap --save
         # 加强网站SEO和防止权重流失
         npm i hexo-filter-nofollow --save
+
+        # 增强外挂标签插件  https://anzhiy.cn/posts/7d58.html
+        npm install hexo-butterfly-tag-plugins-plus --save
 
         # echo 开始修改文件资源路径
         # cd source/_posts
