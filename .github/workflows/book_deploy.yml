@@ -89,6 +89,10 @@ jobs:
         # 安装pwa相关插件
         npm install hexo-offline --save
 
+        # 生成站点地图
+        npm install hexo-generator-sitemap --save
+        npm install hexo-generator-baidu-sitemap --save
+
         # echo 开始修改文件资源路径
         # cd source/_posts
         # python dir_change.py
