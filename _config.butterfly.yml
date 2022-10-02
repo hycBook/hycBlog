@@ -491,8 +491,15 @@ google_adsense:
 site_verification:
   # - name: google-site-verification
   #   content: xxxxxx
-  - name: baidu-site-verification
-    content: code-9A4mbLlt1R
+  # - name: baidu-site-verification
+  #   content: code-9A4mbLlt1R
+
+# hexo sitemap配置网站地图(在hexo站的_config.yml文件添加配置)
+# https://cloud.tencent.com/developer/article/2023063
+sitemap:
+    path: sitemap.xml # 索引地图路径
+    tag: false # 标签页不添加到网站地图中
+    category: false # 分类页不添加到网站地图中
 
 # Beautify/Effect (美化/效果)
 # --------------------------------------

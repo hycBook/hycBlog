@@ -72,7 +72,6 @@ jobs:
         # 压缩图片插件
         # npm install --save-dev gulp-imagemin
 
-
         # 配置PWA   https://akilar.top/posts/8f31c3d0/
         npm install --global gulp-cli # 全局安装gulp命令集
         npm install workbox-build gulp --save # 安装workbox和gulp插件
@@ -90,8 +89,7 @@ jobs:
         npm install hexo-offline --save
 
         # 生成站点地图
-        npm install hexo-generator-sitemap --save
-        npm install hexo-generator-baidu-sitemap --save
+        npm install hexo-generator-seo-friendly-sitemap --save
 
         # echo 开始修改文件资源路径
         # cd source/_posts
@@ -119,7 +117,7 @@ jobs:
         # echo '#page-header.not-home-page {  height: 800px;}' >> public/css/index.css
         hexo algolia
         cp package-lock.json public/package-lock.json
-        cp sitemaps/* >> public/
+        # cp sitemaps/* >> public/
         gulp
 
     - name: Deploy #步骤4：把编译好的静态目录上传到gh-pages分支上  https://cloud.tencent.com/developer/article/1917861
