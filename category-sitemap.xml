@@ -9,36 +9,36 @@
 
 
     <url>
-        <loc>https://hycbook.com/categories/math/</loc>
-        <lastmod>2022-10-02T09:06:26.195Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
         <loc>https://hycbook.com/categories/python/</loc>
-        <lastmod>2022-10-02T09:06:26.191Z</lastmod>
+        <lastmod>2022-10-02T12:55:45.552Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
-        <loc>https://hycbook.com/categories/common/</loc>
-        <lastmod>2022-10-02T09:06:26.171Z</lastmod>
+        <loc>https://hycbook.com/categories/math/</loc>
+        <lastmod>2022-10-02T12:55:45.548Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
         <loc>https://hycbook.com/categories/java/</loc>
-        <lastmod>2022-10-02T09:03:46.817Z</lastmod>
+        <lastmod>2022-10-02T12:55:45.548Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
         <loc>https://hycbook.com/categories/english/</loc>
-        <lastmod>2022-10-02T09:03:46.809Z</lastmod>
+        <lastmod>2022-10-02T12:55:45.540Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://hycbook.com/categories/common/</loc>
+        <lastmod>2022-10-02T12:55:45.540Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
