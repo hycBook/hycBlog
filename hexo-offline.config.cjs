@@ -1,6 +1,6 @@
 // offline config passed to workbox-build.
 module.exports = {
-  globPatterns: ['index.html', '**/*.{js,html,css,png,jpg,gif,svg,webp,eot,ttf,woff,woff2}', '**/**/*.{js,html,css,png,jpg,gif,svg,webp,eot,ttf,woff,woff2}'],
+  globPatterns: ['index.html', 'https://hycbook.com/*.{js,html,css,png,jpg,gif,svg,webp,eot,ttf,woff,woff2}', 'https://hycbook.com/**/*.{js,html,css,png,jpg,gif,svg,webp,eot,ttf,woff,woff2}', 'https://hycbook.com/**/**/*.{js,html,css,png,jpg,gif,svg,webp,eot,ttf,woff,woff2}'],
   // 静态文件合集，如果你的站点使用了例如 webp 格式的文件，请将文件类型添加进去。
   globDirectory: 'public',
   swDest: 'public/service-worker.js',
