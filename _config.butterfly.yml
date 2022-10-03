@@ -872,7 +872,7 @@ lazyload:
 pwa:
   enable: true
   manifest: /manifest.json
-  theme_color: '#212121'
+  theme_color: '#ffccff'
   apple_touch_icon: /img/siteicon/apple-touch-icon.png
   favicon_32_32: /img/siteicon/favicon-32x32.png
   favicon_16_16: /img/siteicon/favicon-16x16.png
