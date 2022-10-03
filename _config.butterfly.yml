@@ -873,10 +873,10 @@ pwa:
   enable: true
   manifest: /manifest.json
   theme_color: '#ffccff'
-  apple_touch_icon: /img/siteicon/apple-touch-icon.png
-  favicon_32_32: /img/siteicon/favicon-32x32.png
-  favicon_16_16: /img/siteicon/favicon-16x16.png
-  mask_icon: /img/siteicon/safari-pinned-tab.svg
+  apple_touch_icon: https://pic.hycbook.com/i//hexo/source/img/siteicon/apple-touch-icon.png
+  favicon_32_32: https://pic.hycbook.com/i//hexo/source/img/siteicon/favicon-32x32.png
+  favicon_16_16: https://pic.hycbook.com/i//hexo/source/img/siteicon/favicon-16x16.png
+  mask_icon: https://pic.hycbook.com/i//hexo/source/img/siteicon/safari-pinned-tab.svg
 
 # Open graph meta tags
 # https://developers.facebook.com/docs/sharing/webmasters/
