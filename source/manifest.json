@@ -3,8 +3,8 @@
     "short_name": "书虫~",
     "scope": "/",
     "start_url": "/",
-    "theme_color": "#212121",
-    "background_color": "#212121",
+    "theme_color": "#ffccff",
+    "background_color": "#ccffcc",
     "icons": [
         {
             "src": "/img/siteicon/android-chrome-36x36.png",
