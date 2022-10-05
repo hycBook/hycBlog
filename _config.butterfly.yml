@@ -279,7 +279,7 @@ addtoany:
 comments:
   # Up to two comments system, the first will be shown as default
   # Choose: Disqus/Disqusjs/Livere/Gitalk/Valine/Waline/Utterances/Facebook Comments/Twikoo/Giscus/Remark42/Artalk
-  use: # Valine,Disqus Twikoo,Valine
+  use: Twikoo,Valine # Valine,Disqus Twikoo,Valine
   text: true # Display the comment name next to the button
   # lazyload: The comment system will be load when comment element enters the browser's viewport.
   # If you set it to true, the comment count will be invalid
@@ -425,7 +425,7 @@ gitter:
 # crisp
 # https://crisp.chat/en/
 crisp:
-  enable: false
+  enable: true
   website_id: 561b80db-3f0f-45cb-b3b1-aae7355939e6
 
 # messenger
