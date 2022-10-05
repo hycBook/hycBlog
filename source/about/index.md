@@ -20,7 +20,7 @@ type: "about"
 
 本博客文章采用xxx协议，转载请注明出处
 
-欢迎小伙伴们交换友链，具体说明可在 友链页 查看。
+欢迎小伙伴们交换友链，具体说明可在<font size=4>{% nota 友链页, "欢迎交换友链，点击右上角直达" %}</font>查看。
 
 
 
@@ -34,7 +34,11 @@ type: "about"
 
 ---
 
-> {% icon icon-xuegao,1.5 %} {% label 网站搭建历程 purple  %}
+> {% icon icon-xuegao,1.5 %} {% bubble "网站搭建", "最早的博客起源于2020年的过年前，使用的是gitbook，中间也经历过好几个版本的迭代，摸爬滚打多年，同样是部署在github pages上，有兴趣的可以访问看看，https://hycbook.github.io/bk_index/，后面嫌弃样式不好看，以及功能不够全，转而开始使用hexo", "#de4489" %}历程
+
+
+
+
 
 {% timeline 2022, purple %}
 
@@ -67,7 +71,7 @@ type: "about"
 <!-- endtimeline -->
 <!-- timeline 09.12-09.12 -->
 
-1. {% icon icon-yinliao1,1.4 %} 初始化hexo博客网站，并使用{% label butterfly主题 pink %}
+1. {% icon icon-yinliao1,1.4 %} 初始化`hexo博客`网站，并使用{% label butterfly主题 pink %}
 2. 生成唯一链接地址，并添加说说功能
 3. {% icon icon-qiche,1.4 %} 添加网站图标，添加B站追番，同时添加数学公式解析插件
 4. 添加{% label algolia搜索插件 orange %}
@@ -75,6 +79,8 @@ type: "about"
 <!-- endtimeline -->
 
 {% endtimeline %}
+
+
 
 
 
