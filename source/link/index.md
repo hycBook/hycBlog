@@ -83,11 +83,15 @@ aside: false
       link: https://pagespeed.web.dev/
       avatar: https://www.gstatic.com/pagespeed/insights/ui/logo/favicon_48.png
       descr: Google提供的网页性能工具
+    - name: mathematica
+      link: https://www.wolfram.com/mathematica/
+      avatar: https://www.wolfram.com/common/framework/img/spikey.zh.png
+      descr: 功能强大的科学计算软件,具有涵盖所有技术计算领域的将近5千个内置函数
     - name: iconfont
       link: https://www.iconfont.cn/
       avatar: https://img.alicdn.com/imgextra/i2/O1CN01FF1t1g1Q3PDWpSm4b_!!6000000001920-55-tps-508-135.svg
       descr: 国内功能很强大且图标内容很丰富的矢量图标库
-
+      
 - class_name: hexo网站
   class_desc: 基于hexo搭建的优秀网站
   link_list:
