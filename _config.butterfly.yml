@@ -695,7 +695,7 @@ aside:
       link: https://github.com/narutohyc
   card_announcement:
     enable: true
-    content: [兼一书虫]上线一个月啦~ 从最早的路径问题捣鼓，到域名购买登记，再到图床的使用，cdn的加速等等，前前后后不断优化插件的使用，基本的形态已经完成，接下来可以专注写博客啦~
+    content: 兼一书虫上线一个月啦~ 从最早的路径问题捣鼓，到域名购买登记，再到图床的使用，cdn的加速等等，前前后后不断优化插件的使用，基本的形态已经完成，接下来可以专注写博客啦~
   card_recent_post:
     enable: true
     limit: 3 # if set 0 will show all
