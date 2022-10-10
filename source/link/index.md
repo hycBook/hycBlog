@@ -91,7 +91,7 @@ aside: false
       link: https://www.iconfont.cn/
       avatar: https://img.alicdn.com/imgextra/i2/O1CN01FF1t1g1Q3PDWpSm4b_!!6000000001920-55-tps-508-135.svg
       descr: 国内功能很强大且图标内容很丰富的矢量图标库
-      
+  
 - class_name: hexo网站
   class_desc: 基于hexo搭建的优秀网站
   link_list:
@@ -99,26 +99,26 @@ aside: false
       link: https://tzy1997.com/
       avatar: https://bu.dusays.com/2022/05/02/626f92e193879.jpg
       descr: 古今之成大事者，不惟有超世之才，亦必有坚忍不拔之
-    - name: justlovesmile
+    - name: MJ's Blog
       link: https://blog.justlovesmile.top/
-      avatar: https://npm.elemecdn.com/justlovesmile-static/img/avatar.jpg
-      descr: justlovesmile的博客
-    - name: laijiahao
+      avatar: https://npm.elemecdn.com/justlovesmile-img/logo.jpg
+      descr: 醒亦念卿，梦亦念卿
+    - name: Huanhao
       link: https://www.laijiahao.cn/
       avatar: https://s1.vika.cn/space/2022/09/08/d9fef370605a4500907cd05eaa2a05cd
-      descr: Huanhao's blog
+      descr: 一个刚入大学的在校大学生
     - name: 小嘉的部落格
       link: https://blog.imzjw.cn/
       avatar: https://npm.elemecdn.com/nanshen/avatar.jpg
-      descr: 小嘉的部落格
+      descr: 一个爱折腾的Java开发工程师
     - name: Akilarの糖果屋
       link: https://akilar.top/
-      avatar: https://sdn.geekzu.org/avatar/d4e7f32f4d361ad752f844a14e9e2a94?d=robohas
-      descr: Akilarの糖果屋
+      avatar: https://akilar.top/img/siteicon/favicon.png
+      descr: 期待您的光临！
     - name: 小冰博客
       link: https://zfe.space/
       avatar: https://zfe.space/images/headimage.png
-      descr: 小冰博客
+      descr: 做个有梦想的人！
     - name: 张洪Heo
       link: https://blog.zhheo.com/
       avatar: https://img.zhheo.com/i/2022/08/19/62ff32fa28da1.png
