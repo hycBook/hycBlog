@@ -1045,6 +1045,9 @@ categoryBar:
     - name: math
       descr: 数学知识学习
       cover: https://pic.hycbook.com/i//hexo/category_bar_imgs/category_bar_1.webp
+    - name: entertainment
+      descr: 娱乐
+      cover: https://pic.hycbook.com/i//hexo/category_bar_imgs/category_bar_3.webp
   custom_css: https://npm.elemecdn.com/hexo-butterfly-categories-card@1.0.0/lib/categorybar.css
 
 
