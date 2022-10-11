@@ -1,6 +1,8 @@
 ---
 title: MySQL_数据库设计
 date: '2022/9/10 20:46:25'
+top_img: 'https://pic.hycbook.com/i/hexo/post_imgs/蕾姆11.webp'
+cover: 'https://pic.hycbook.com/i/hexo/post_cover/蕾姆11.webp'
 categories:
   - java
 abbrlink: '71074955'

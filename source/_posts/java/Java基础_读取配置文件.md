@@ -1,6 +1,8 @@
 ---
 title: Java基础_读取配置文件
 date: '2022/9/10 20:46:25'
+top_img: 'https://pic.hycbook.com/i/hexo/post_imgs/蕾姆4.webp'
+cover: 'https://pic.hycbook.com/i/hexo/post_cover/蕾姆4.webp'
 categories:
   - java
 abbrlink: f3dd51e8

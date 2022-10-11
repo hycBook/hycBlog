@@ -1,6 +1,8 @@
 ---
 title: JDBC_JDBC基础
 date: '2022/9/10 20:46:25'
+top_img: 'https://pic.hycbook.com/i/hexo/post_imgs/蕾姆5.webp'
+cover: 'https://pic.hycbook.com/i/hexo/post_cover/蕾姆5.webp'
 categories:
   - java
 abbrlink: d6fc26d1

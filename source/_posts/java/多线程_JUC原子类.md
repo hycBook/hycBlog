@@ -1,6 +1,8 @@
 ---
 title: 多线程_JUC原子类
 date: '2022/9/10 20:46:25'
+top_img: 'https://pic.hycbook.com/i/hexo/post_imgs/蕾姆9.webp'
+cover: 'https://pic.hycbook.com/i/hexo/post_cover/蕾姆9.webp'
 categories:
   - java
 abbrlink: 304974ef
