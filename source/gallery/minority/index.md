@@ -3,8 +3,6 @@ title: gallery
 date: 2022-09-12 06:28:47
 type: "galleries"
 layout: "galleries"
-message: 需要密码才能查看哦
-password: lovepic
 ---
 
 
