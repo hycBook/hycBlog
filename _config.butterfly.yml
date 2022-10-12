@@ -3,6 +3,7 @@
 # --------------------------------------
 
 # 使用阿里彩色图标  https://akilar.top/posts/23fdf850/
+# 微言: /shuoshuo/ || icon-41shuoshuo
 menu:
   首页: / || icon-fangwu
   文章 || icon-wenzhang1:
@@ -14,7 +15,6 @@ menu:
     追番: /bangumis/ || icon-wodezhuifan
     相册: /gallery/ || icon-xiangce
     视频: /video/ || icon-shipin
-  微言: /shuoshuo/ || icon-41shuoshuo
   留言板: /comments/ || icon-TIFFANYSROOM_huaban
   友链: /link/ || icon-changyonglianjie
   关于: /about/ || icon-aixin
@@ -356,6 +356,7 @@ facebook_comments:
 
 # Twikoo
 # https://github.com/imaegoo/twikoo
+# https://twikoo.js.org/quick-start.html
 twikoo:
   envId: https://vercel.hycbook.com
   region: 
@@ -573,17 +574,17 @@ canvas_ribbon:
 
 # Fluttering Ribbon (動態彩帶)
 canvas_fluttering_ribbon:
-  enable: true
+  enable: false
   mobile: false
 
 # canvas_nest  背景将会有动画效果
 # https://github.com/hustcc/canvas-nest.js
 canvas_nest:
-  enable: false
+  enable: true
   color: '0,0,255' #color of lines, default: '0,0,0'; RGB values: (R,G,B).(note: use ',' to separate.)
   opacity: 0.7 # the opacity of line (0~1), default: 0.5.
   zIndex: -1 # z-index property of the background, default: -1.
-  count: 99 # the number of lines, default: 99.
+  count: 199 # the number of lines, default: 99.
   mobile: false
 
 # Typewriter Effect (打字效果)
@@ -596,14 +597,14 @@ activate_power_mode:
 
 # Mouse click effects: fireworks (鼠標點擊效果: 煙火特效)
 fireworks:
-  enable: true
+  enable: false
   zIndex: 9999 # -1 or 9999
   mobile: false
 
 # Mouse click effects: Heart symbol (鼠標點擊效果: 愛心)
 click_heart:
-  enable: false
-  mobile: false
+  enable: true
+  mobile: true
 
 # Mouse click effects: words (鼠標點擊效果: 文字)
 ClickShowText:
@@ -1022,7 +1023,7 @@ swiper:
 categoryBar:
   enable: true # 开关
   priority: 5 #过滤器优先权
-  enable_page: /categories # 应用页面
+  enable_page: /categories/ # 应用页面
   layout: # 挂载容器类型
     type: id
     name: recent-posts
