@@ -1003,7 +1003,7 @@ CDN:
 swiper:
   enable: true # 开关
   priority: 5 #过滤器优先权
-  enable_page: all # 应用页面
+  enable_page: / # 应用页面
   timemode: date #date/updated
   layout: # 挂载容器类型
     type: id
@@ -1022,7 +1022,7 @@ swiper:
 categoryBar:
   enable: true # 开关
   priority: 5 #过滤器优先权
-  enable_page: / # 应用页面
+  enable_page: /categories # 应用页面
   layout: # 挂载容器类型
     type: id
     name: recent-posts

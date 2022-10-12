@@ -92,6 +92,9 @@ jobs:
         # 增强外挂标签插件  https://anzhiy.cn/posts/7d58.html
         npm install hexo-butterfly-tag-plugins-plus --save
 
+        # 实现文章输入密码才能浏览
+        npm install hexo-blog-encrypt --save
+
         # echo 开始修改文件资源路径
         # cd source/_posts
         # python dir_change.py
