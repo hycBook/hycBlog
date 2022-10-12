@@ -58,7 +58,7 @@
   isHome: false,
   isHighlightShrink: false,
   isToc: false,
-  postUpdate: '2022-10-11 21:14:27'
+  postUpdate: '2022-10-12 09:38:09'
 }</script><noscript><style type="text/css">
   #nav {
     opacity: 1
@@ -324,7 +324,7 @@ function showNotification() {
       console.log('已挂载butterfly_categories_card')
       parent_div_git.insertAdjacentHTML("afterbegin",item_html)
       }
-    if( document.getElementById('recent-posts') && (location.pathname ==='/'|| '/' ==='all')){
+    if( document.getElementById('recent-posts') && (location.pathname ==='/categories'|| '/categories' ==='all')){
     butterfly_categories_card_injector_config()
     }
   </script><script data-pjax>
@@ -336,7 +336,7 @@ function showNotification() {
     }
   var elist = 'undefined'.split(',');
   var cpage = location.pathname;
-  var epage = 'all';
+  var epage = '/';
   var flag = 0;
 
   for (var i=0;i<elist.length;i++){
