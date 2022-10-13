@@ -127,9 +127,13 @@ aside: false
       link: https://anzhiy.cn/
       avatar: https://image.anzhiy.cn/adminuploads/1/2022/09/15/63232b7d91d22.jpg
       descr: 生活明朗，万物可爱
+    - name: 七鳄の学习格
+      link: https://blog.gmcj0816.top/
+      avatar: https://blog.gmcj0816.top/img/SeriousWission_TouXiangPic.jpg
+      descr: 如果世界多了精彩，每一位都是创造者，大家都是你的观众
   
-- class_name: hexo网站
-  class_desc: 基于hexo搭建的优秀网站
+- class_name: 搭建hexo涉及的一些工具
+  class_desc: 感谢优秀的工具，帮我更好的实现网站搭建
   link_list:
     - name: dnschecker
       link: https://dnschecker.org/
