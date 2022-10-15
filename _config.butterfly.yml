@@ -57,9 +57,8 @@ algolia_search:
     per_page: 10
   labels:
     input_placeholder: Search for Posts
-    hits_empty: "我们没有找到任何搜索结果: ${query}"
+    hits_empty: "Sorry, 我们没有找到任何搜索结果: ${query}"
     hits_stats: "找到${hits}条结果（用时${time} ms）"
-
 
 # Local search
 local_search:
@@ -202,7 +201,7 @@ toc:
 
 # 文章版权
 post_copyright:
-  enable: false
+  enable: true
   decode: true
   author_href: https://github.com/narutohyc
   license: CC BY-NC-SA 4.0
@@ -231,7 +230,7 @@ post_edit:
 related_post:
   enable: true
   limit: 6 # Number of posts displayed
-  date_type: created # or created or updated 文章日期顯示創建日或者更新日
+  date_type: updated # or created or updated 文章日期顯示創建日或者更新日
 
 # figcaption (圖片描述文字)
 photofigcaption: false
@@ -548,7 +547,7 @@ tag_ui: # 留空或 index
 # Website Background (設置網站背景)
 # can set it to color or image (可設置圖片 或者 顔色)
 # The formal of image: url(http://xxxxxx.com/xxx.jpg)
-background:
+background: 
 
 # Footer Background
 footer_bg: https://pic.hycbook.com/i/hexo/config_imgs/footer_bg.webp
@@ -699,8 +698,8 @@ aside:
     content: 兼一书虫上线一个月啦~ 从最早的路径问题捣鼓，到域名购买登记，再到图床的使用，cdn的加速等等，前前后后不断优化插件的使用，基本的形态已经完成，接下来可以专注写博客啦~
   card_recent_post:
     enable: true
-    limit: 3 # if set 0 will show all
-    sort: date # date or updated
+    limit: 5 # if set 0 will show all
+    sort: updated # date or updated
     sort_order: # Don't modify the setting unless you know how it works
   card_categories:
     enable: true
@@ -708,7 +707,7 @@ aside:
     expand: none # none/true/false
     sort_order: # Don't modify the setting unless you know how it works
   card_tags:
-    enable: false
+    enable: true
     limit: 40 # if set 0 will show all
     color: true
     sort_order: # Don't modify the setting unless you know how it works
@@ -1007,7 +1006,7 @@ swiper:
   enable: true # 开关
   priority: 5 #过滤器优先权
   enable_page: / # 应用页面
-  timemode: date #date/updated
+  timemode: updated #date/updated
   layout: # 挂载容器类型
     type: id
     name: recent-posts
