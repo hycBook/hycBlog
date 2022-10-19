@@ -1,1 +1,778 @@
-"use strict";function _typeof(e){return(_typeof="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e})(e)}function _toConsumableArray(e){return _arrayWithoutHoles(e)||_iterableToArray(e)||_unsupportedIterableToArray(e)||_nonIterableSpread()}function _nonIterableSpread(){throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.")}function _unsupportedIterableToArray(e,t){if(e){if("string"==typeof e)return _arrayLikeToArray(e,t);var n=Object.prototype.toString.call(e).slice(8,-1);return"Object"===n&&e.constructor&&(n=e.constructor.name),"Map"===n||"Set"===n?Array.from(e):"Arguments"===n||/^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)?_arrayLikeToArray(e,t):void 0}}function _iterableToArray(e){if("undefined"!=typeof Symbol&&null!=e[Symbol.iterator]||null!=e["@@iterator"])return Array.from(e)}function _arrayWithoutHoles(e){if(Array.isArray(e))return _arrayLikeToArray(e)}function _arrayLikeToArray(e,t){(null==t||t>e.length)&&(t=e.length);for(var n=0,o=new Array(t);n<t;n++)o[n]=e[n];return o}document.addEventListener("DOMContentLoaded",function(){var o,i,a,r,t=!1,l=function(e){if(e){o=document.getElementById("site-name").offsetWidth;var t=document.querySelectorAll("#menus .menus_item");i=0,t.length&&t.forEach(function(e){i+=e.offsetWidth});var n=document.querySelector("#search-button");a=n?n.offsetWidth:0,r=document.getElementById("nav")}window.innerWidth<768||o+i+a>r.offsetWidth-120?r.classList.add("hide-menu"):r.classList.remove("hide-menu")},s=function(){btf.sidebarPaddingR(),document.body.style.overflow="hidden",btf.animateIn(document.getElementById("menu-mask"),"to_show 0.5s"),document.getElementById("sidebar-menus").classList.add("open"),t=!0},n=function(){var e=document.body;e.style.overflow="",e.style.paddingRight="",btf.animateOut(document.getElementById("menu-mask"),"to_hide 0.5s"),document.getElementById("sidebar-menus").classList.remove("open"),t=!1},d=function(){var e=GLOBAL_CONFIG.highlight;if(e){var t=e.highlightCopy,n=e.highlightLang,o=GLOBAL_CONFIG_SITE.isHighlightShrink,c=e.highlightHeightLimit,r=t||n||void 0!==o,i="highlighjs"===e.plugin?document.querySelectorAll("figure.highlight"):document.querySelectorAll('pre[class*="language-"]');if((r||c)&&i.length){var a="prismjs"===e.plugin,l="",s="",d=!0===o?"closed":"";void 0!==o&&(l='<i class="fas fa-angle-down expand '.concat(d,'"></i>')),t&&(s='<div class="copy-notice"></div><i class="fas fa-paste copy-button"></i>');var u=function(e){var t=e.parentNode;t.classList.add("copy-true");var n=window.getSelection(),o=document.createRange();a?o.selectNodeContents(t.querySelectorAll("pre code")[0]):o.selectNodeContents(t.querySelectorAll("table .code pre")[0]),n.removeAllRanges(),n.addRange(o);n.toString();!function(e,t){if(document.queryCommandSupported&&document.queryCommandSupported("copy"))if(document.execCommand("copy"),void 0!==GLOBAL_CONFIG.Snackbar)btf.snackbarShow(GLOBAL_CONFIG.copy.success);else{var n=t.previousElementSibling;n.innerText=GLOBAL_CONFIG.copy.success,n.style.opacity=1,setTimeout(function(){n.style.opacity=0},700)}else void 0!==GLOBAL_CONFIG.Snackbar?btf.snackbarShow(GLOBAL_CONFIG.copy.noSupport):t.previousElementSibling.innerText=GLOBAL_CONFIG.copy.noSupport}(0,e.lastChild),n.removeAllRanges(),t.classList.remove("copy-true")},f=function(e){var t,n,o=e.target.classList;o.contains("expand")?(n=_toConsumableArray((t=this).parentNode.children).slice(1),t.firstChild.classList.toggle("closed"),btf.isHidden(n[n.length-1])?n.forEach(function(e){e.style.display="block"}):n.forEach(function(e){e.style.display="none"})):o.contains("copy-button")&&u(this)},m=function(){this.classList.toggle("expand-done")};n?a?i.forEach(function(e){var t=e.getAttribute("data-language")?e.getAttribute("data-language"):"Code",n='<div class="code-lang">'.concat(t,"</div>");btf.wrap(e,"figure",{class:"highlight"}),h(n,e)}):i.forEach(function(e){var t=e.getAttribute("class").split(" ")[1];"plain"!==t&&void 0!==t||(t="Code"),h('<div class="code-lang">'.concat(t,"</div>"),e,"hl")}):a?i.forEach(function(e){btf.wrap(e,"figure",{class:"highlight"}),h("",e)}):i.forEach(function(e){h("",e,"hl")})}}function h(e,t,n){var o=document.createDocumentFragment();if(r){var i=document.createElement("div");i.className="highlight-tools ".concat(d),i.innerHTML=l+e+s,i.addEventListener("click",f),o.appendChild(i)}if(c&&t.offsetHeight>c+30){var a=document.createElement("div");a.className="code-expand-btn",a.innerHTML='<i class="fas fa-angle-double-down"></i>',a.addEventListener("click",m),o.appendChild(a)}"hl"===n?t.insertBefore(o,t.firstChild):t.parentNode.insertBefore(o,t)}};var u=function(){var a=document.getElementById("rightside"),c=window.innerHeight+56;if(document.body.scrollHeight<=c)a.style.cssText="opacity: 1; transform: translateX(-58px)";else{var r=0,l=!0,s=document.getElementById("page-header"),d="function"==typeof chatBtnHide,u="function"==typeof chatBtnShow;window.scrollCollect=function(){return btf.throttle(function(e){var t,n,o=window.scrollY||document.documentElement.scrollTop,i=(n=r<(t=o),r=t,n);56<o?(i?(s.classList.contains("nav-visible")&&s.classList.remove("nav-visible"),u&&!0===l&&(chatBtnHide(),l=!1)):(s.classList.contains("nav-visible")||s.classList.add("nav-visible"),d&&!1===l&&(chatBtnShow(),l=!0)),s.classList.add("nav-fixed"),"0"===window.getComputedStyle(a).getPropertyValue("opacity")&&(a.style.cssText="opacity: 0.8; transform: translateX(-58px)")):(0===o&&s.classList.remove("nav-fixed","nav-visible"),a.style.cssText="opacity: ''; transform: ''"),document.body.scrollHeight<=c&&(a.style.cssText="opacity: 0.8; transform: translateX(-58px)")},200)()},window.addEventListener("scroll",scrollCollect)}},f=function(){var n=GLOBAL_CONFIG_SITE.isToc,c=GLOBAL_CONFIG.isAnchor,r=document.getElementById("article-container");if(r&&(n||c)){var l,s,t,d,u;if(n){var e=document.getElementById("card-toc");s=e.getElementsByClassName("toc-content")[0],l=s.querySelectorAll(".toc-link");var f=e.querySelector(".toc-percentage");u=s.classList.contains("is-expand"),t=function(e){var t=r.clientHeight,n=document.documentElement.clientHeight,o=(e-r.offsetTop)/(n<t?t-n:document.documentElement.scrollHeight-n),i=Math.round(100*o),a=100<i?100:i<=0?0:i;f.textContent=a},window.mobileToc={open:function(){e.style.cssText="animation: toc-open .3s; opacity: 1; right: 55px"},close:function(){e.style.animation="toc-close .2s",setTimeout(function(){e.style.cssText="opacity:''; animation: ''; right: ''"},100)}},s.addEventListener("click",function(e){e.preventDefault();var t=e.target.classList;if(!t.contains("toc-content")){var n=t.contains("toc-link")?e.target:e.target.parentElement;btf.scrollToDest(btf.getEleTop(document.getElementById(decodeURI(n.getAttribute("href")).replace("#",""))),300),window.innerWidth<900&&window.mobileToc.close()}}),d=function(e){var t=e.getBoundingClientRect().top,n=s.scrollTop;t>document.documentElement.clientHeight-100&&(s.scrollTop=n+150),t<100&&(s.scrollTop=n-150)}}var m=r.querySelectorAll("h1,h2,h3,h4,h5,h6"),h="";window.tocScrollFn=function(){return btf.throttle(function(){var e=window.scrollY||document.documentElement.scrollTop;n&&t(e),function(o){if(0===o)return;var i="",a="";if(m.forEach(function(e,t){if(o>btf.getEleTop(e)-80){var n=e.id;i=n?"#"+encodeURI(n):"",a=t}}),h!==a&&(c&&btf.updateAnchor(i),h=a,n)){if(s.querySelectorAll(".active").forEach(function(e){e.classList.remove("active")}),""===i)return;var e=l[a];if(e.classList.add("active"),setTimeout(function(){d(e)},0),u)return;for(var t=e.parentNode;!t.matches(".toc");t=t.parentNode)t.matches("li")&&t.classList.add("active")}}(e)},100)()},window.addEventListener("scroll",tocScrollFn)}},c=function(){var t=document.body;t.classList.add("read-mode");var n=document.createElement("button");n.type="button",n.className="fas fa-sign-out-alt exit-readmode",t.appendChild(n),n.addEventListener("click",function e(){t.classList.remove("read-mode"),n.remove(),n.removeEventListener("click",e)})},m=function(){"light"===("dark"===document.documentElement.getAttribute("data-theme")?"dark":"light")?(activateDarkMode(),saveToLocal.set("theme","dark",2),void 0!==GLOBAL_CONFIG.Snackbar&&btf.snackbarShow(GLOBAL_CONFIG.Snackbar.day_to_night)):(activateLightMode(),saveToLocal.set("theme","light",2),void 0!==GLOBAL_CONFIG.Snackbar&&btf.snackbarShow(GLOBAL_CONFIG.Snackbar.night_to_day)),"function"==typeof utterancesTheme&&utterancesTheme(),"function"==typeof changeGiscusTheme&&changeGiscusTheme(),"object"===("undefined"==typeof FB?"undefined":_typeof(FB))&&window.loadFBComment(),"function"==typeof runMermaid&&window.runMermaid()},h=function(e){var t=document.getElementById("rightside-config-hide").classList;t.toggle("show"),e.classList.contains("show")&&(t.add("status"),setTimeout(function(){t.remove("status")},300)),e.classList.toggle("show")},g=function(){btf.scrollToDest(0,500)},y=function(){var e=document.documentElement.classList;e.contains("hide-aside")?saveToLocal.set("aside-status","show",2):saveToLocal.set("aside-status","hide",2),e.toggle("hide-aside")},p=function(){"0"===window.getComputedStyle(document.getElementById("card-toc")).getPropertyValue("opacity")?window.mobileToc.open():window.mobileToc.close()};document.getElementById("rightside").addEventListener("click",function(e){var t=e.target.id?e.target:e.target.parentNode;switch(t.id){case"go-up":g();break;case"rightside_config":h(t);break;case"mobile-toc-button":p();break;case"readmode":c();break;case"darkmode":m();break;case"hide-aside-btn":y()}});var v,b=function(){document.querySelectorAll("#article-container .tab > button").forEach(function(e){e.addEventListener("click",function(e){var t=this.parentNode;if(!t.classList.contains("active")){var n=t.parentNode.nextElementSibling,o=btf.siblings(t,".active")[0];o&&o.classList.remove("active"),t.classList.add("active");var i=this.getAttribute("data-href").replace("#","");_toConsumableArray(n.children).forEach(function(e){e.id===i?e.classList.add("active"):e.classList.remove("active")});var a=n.querySelectorAll("#".concat(i," .fj-gallery"));0<a.length&&btf.initJustifiedGallery(a)}})})},L=function(){document.querySelectorAll("#article-container .tabs .tab-to-top").forEach(function(e){e.addEventListener("click",function(){btf.scrollToDest(btf.getEleTop(btf.getParents(this,".tabs")),300)})})},E=function(e){e.forEach(function(e){var t=e,n=t.getAttribute("datetime");t.innerText=btf.diffDate(n,!0),t.style.display="inline"})};window.refreshFn=function(){var e,t;l(!0),r.classList.add("show"),GLOBAL_CONFIG_SITE.isPost?(void 0!==GLOBAL_CONFIG.noticeOutdate&&function(){var e=GLOBAL_CONFIG.noticeOutdate,t=btf.diffDate(GLOBAL_CONFIG_SITE.postUpdate);if(t>=e.limitDay){var n=document.createElement("div");n.className="post-outdate-notice",n.textContent=e.messagePrev+" "+t+" "+e.messageNext;var o=document.getElementById("article-container");"top"===e.position?o.insertBefore(n,o.firstChild):o.appendChild(n)}}(),GLOBAL_CONFIG.relativeDate.post&&E(document.querySelectorAll("#post-meta time"))):(GLOBAL_CONFIG.relativeDate.homepage&&E(document.querySelectorAll("#recent-posts time")),GLOBAL_CONFIG.runtime&&function(){var e=document.getElementById("runtimeshow");if(e){var t=e.getAttribute("data-publishDate");e.innerText=btf.diffDate(t)+" "+GLOBAL_CONFIG.runtime}}(),function(){var e=document.getElementById("last-push-date");if(e){var t=e.getAttribute("data-lastPushDate");e.innerText=btf.diffDate(t,!0)}}(),(e=document.querySelectorAll("#aside-cat-list .card-category-list-item.parent i")).length&&e.forEach(function(e){e.addEventListener("click",function(e){e.preventDefault(),this.classList.toggle("expand");var t=this.parentNode.nextElementSibling;btf.isHidden(t)?t.style.display="block":t.style.display="none"})})),f(),GLOBAL_CONFIG_SITE.isHome&&((t=document.getElementById("scroll-down"))&&t.addEventListener("click",function(){btf.scrollToDest(document.getElementById("content-inner").offsetTop,300)})),d(),GLOBAL_CONFIG.isPhotoFigcaption&&document.querySelectorAll("#article-container img").forEach(function(e){var t=e.parentNode,n=e.title||e.alt;if(n&&!t.parentNode.classList.contains("justified-gallery")){var o=document.createElement("div");o.className="img-alt is-center",o.textContent=n,t.insertBefore(o,e.nextSibling)}}),u();var n,o,i,a,c=document.querySelectorAll("#article-container .fj-gallery");c.length&&function(e){if(e.forEach(function(e){e.querySelectorAll("img").forEach(function(e){var t=e.getAttribute("data-lazy-src");t&&(e.src=t),btf.wrap(e,"div",{class:"fj-gallery-item"})})}),window.fjGallery)setTimeout(function(){btf.initJustifiedGallery(e)},100);else{var t=document.createElement("link");t.rel="stylesheet",t.href=GLOBAL_CONFIG.source.justifiedGallery.css,document.body.appendChild(t),getScript("".concat(GLOBAL_CONFIG.source.justifiedGallery.js)).then(function(){btf.initJustifiedGallery(e)})}}(c),btf.loadLightbox(document.querySelectorAll("#article-container img:not(.no-lightbox)")),(n=document.querySelectorAll("#article-container :not(.highlight) > table, #article-container > table")).length&&n.forEach(function(e){btf.wrap(e,"div",{class:"table-wrap"})}),(o=document.querySelectorAll("#article-container .hide-button")).length&&o.forEach(function(e){e.addEventListener("click",function(e){this.classList.add("open");var t=this.nextElementSibling.querySelectorAll(".fj-gallery");t.length&&btf.initJustifiedGallery(t)})}),b(),L(),i=!1,(a=document.querySelector("#comment-switch > .switch-btn"))&&a.addEventListener("click",function(){this.classList.toggle("move"),document.querySelectorAll("#post-comment > .comment-wrap > div").forEach(function(e){btf.isHidden(e)?e.style.cssText="display: block;animation: tabshow .5s":e.style.cssText="display: none;animation: ''"}),i||"function"!=typeof loadOtherComment||(i=!0,loadOtherComment())}),document.getElementById("toggle-menu").addEventListener("click",function(){s()})},refreshFn(),window.addEventListener("resize",function(){l(!1),btf.isHidden(document.getElementById("toggle-menu"))&&t&&n()}),document.getElementById("menu-mask").addEventListener("click",function(e){n()}),document.querySelectorAll("#sidebar-menus .site-page.group").forEach(function(e){e.addEventListener("click",function(){this.classList.toggle("hide")})}),GLOBAL_CONFIG.islazyload&&(window.lazyLoadInstance=new LazyLoad({elements_selector:"img",threshold:0,data_src:"lazy-src"})),void 0!==GLOBAL_CONFIG.copyright&&(v=GLOBAL_CONFIG.copyright,document.body.oncopy=function(e){var t;e.preventDefault();var n=window.getSelection(0).toString();return t=n.length>v.limitCount?n+"\n\n\n"+v.languages.author+"\n"+v.languages.link+window.location.href+"\n"+v.languages.source+"\n"+v.languages.info:n,e.clipboardData?e.clipboardData.setData("text",t):window.clipboardData.setData("text",t)})});
+document.addEventListener('DOMContentLoaded', function () {
+  let blogNameWidth, menusWidth, searchWidth, $nav
+  let mobileSidebarOpen = false
+
+  const adjustMenu = (init) => {
+    if (init) {
+      blogNameWidth = document.getElementById('site-name').offsetWidth
+      const $menusEle = document.querySelectorAll('#menus .menus_item')
+      menusWidth = 0
+      $menusEle.length && $menusEle.forEach(i => { menusWidth += i.offsetWidth })
+      const $searchEle = document.querySelector('#search-button')
+      searchWidth = $searchEle ? $searchEle.offsetWidth : 0
+      $nav = document.getElementById('nav')
+    }
+
+    let hideMenuIndex = ''
+    if (window.innerWidth < 768) hideMenuIndex = true
+    else hideMenuIndex = blogNameWidth + menusWidth + searchWidth > $nav.offsetWidth - 120
+
+    if (hideMenuIndex) {
+      $nav.classList.add('hide-menu')
+    } else {
+      $nav.classList.remove('hide-menu')
+    }
+  }
+
+  // 初始化header
+  const initAdjust = () => {
+    adjustMenu(true)
+    $nav.classList.add('show')
+  }
+
+  // sidebar menus
+  const sidebarFn = {
+    open: () => {
+      btf.sidebarPaddingR()
+      document.body.style.overflow = 'hidden'
+      btf.animateIn(document.getElementById('menu-mask'), 'to_show 0.5s')
+      document.getElementById('sidebar-menus').classList.add('open')
+      mobileSidebarOpen = true
+    },
+    close: () => {
+      const $body = document.body
+      $body.style.overflow = ''
+      $body.style.paddingRight = ''
+      btf.animateOut(document.getElementById('menu-mask'), 'to_hide 0.5s')
+      document.getElementById('sidebar-menus').classList.remove('open')
+      mobileSidebarOpen = false
+    }
+  }
+
+  /**
+   * 首頁top_img底下的箭頭
+   */
+  const scrollDownInIndex = () => {
+    const $scrollDownEle = document.getElementById('scroll-down')
+    $scrollDownEle && $scrollDownEle.addEventListener('click', function () {
+      btf.scrollToDest(document.getElementById('content-inner').offsetTop, 300)
+    })
+  }
+
+  /**
+   * 代碼
+   * 只適用於Hexo默認的代碼渲染
+   */
+  const addHighlightTool = function () {
+    const highLight = GLOBAL_CONFIG.highlight
+    if (!highLight) return
+
+    const isHighlightCopy = highLight.highlightCopy
+    const isHighlightLang = highLight.highlightLang
+    const isHighlightShrink = GLOBAL_CONFIG_SITE.isHighlightShrink
+    const highlightHeightLimit = highLight.highlightHeightLimit
+    const isShowTool = isHighlightCopy || isHighlightLang || isHighlightShrink !== undefined
+    const $figureHighlight = highLight.plugin === 'highlighjs' ? document.querySelectorAll('figure.highlight') : document.querySelectorAll('pre[class*="language-"]')
+
+    if (!((isShowTool || highlightHeightLimit) && $figureHighlight.length)) return
+
+    const isPrismjs = highLight.plugin === 'prismjs'
+
+    let highlightShrinkEle = ''
+    let highlightCopyEle = ''
+    const highlightShrinkClass = isHighlightShrink === true ? 'closed' : ''
+
+    if (isHighlightShrink !== undefined) {
+      highlightShrinkEle = `<i class="fas fa-angle-down expand ${highlightShrinkClass}"></i>`
+    }
+
+    if (isHighlightCopy) {
+      highlightCopyEle = '<div class="copy-notice"></div><i class="fas fa-paste copy-button"></i>'
+    }
+
+    const copy = (text, ctx) => {
+      if (document.queryCommandSupported && document.queryCommandSupported('copy')) {
+        document.execCommand('copy')
+        if (GLOBAL_CONFIG.Snackbar !== undefined) {
+          btf.snackbarShow(GLOBAL_CONFIG.copy.success)
+        } else {
+          const prevEle = ctx.previousElementSibling
+          prevEle.innerText = GLOBAL_CONFIG.copy.success
+          prevEle.style.opacity = 1
+          setTimeout(() => { prevEle.style.opacity = 0 }, 700)
+        }
+      } else {
+        if (GLOBAL_CONFIG.Snackbar !== undefined) {
+          btf.snackbarShow(GLOBAL_CONFIG.copy.noSupport)
+        } else {
+          ctx.previousElementSibling.innerText = GLOBAL_CONFIG.copy.noSupport
+        }
+      }
+    }
+
+    // click events
+    const highlightCopyFn = (ele) => {
+      const $buttonParent = ele.parentNode
+      $buttonParent.classList.add('copy-true')
+      const selection = window.getSelection()
+      const range = document.createRange()
+      if (isPrismjs) range.selectNodeContents($buttonParent.querySelectorAll('pre code')[0])
+      else range.selectNodeContents($buttonParent.querySelectorAll('table .code pre')[0])
+      selection.removeAllRanges()
+      selection.addRange(range)
+      const text = selection.toString()
+      copy(text, ele.lastChild)
+      selection.removeAllRanges()
+      $buttonParent.classList.remove('copy-true')
+    }
+
+    const highlightShrinkFn = (ele) => {
+      const $nextEle = [...ele.parentNode.children].slice(1)
+      ele.firstChild.classList.toggle('closed')
+      if (btf.isHidden($nextEle[$nextEle.length - 1])) {
+        $nextEle.forEach(e => { e.style.display = 'block' })
+      } else {
+        $nextEle.forEach(e => { e.style.display = 'none' })
+      }
+    }
+
+    const highlightToolsFn = function (e) {
+      const $target = e.target.classList
+      if ($target.contains('expand')) highlightShrinkFn(this)
+      else if ($target.contains('copy-button')) highlightCopyFn(this)
+    }
+
+    const expandCode = function () {
+      this.classList.toggle('expand-done')
+    }
+
+    function createEle (lang, item, service) {
+      const fragment = document.createDocumentFragment()
+
+      if (isShowTool) {
+        const hlTools = document.createElement('div')
+        hlTools.className = `highlight-tools ${highlightShrinkClass}`
+        hlTools.innerHTML = highlightShrinkEle + lang + highlightCopyEle
+        hlTools.addEventListener('click', highlightToolsFn)
+        fragment.appendChild(hlTools)
+      }
+
+      if (highlightHeightLimit && item.offsetHeight > highlightHeightLimit + 30) {
+        const ele = document.createElement('div')
+        ele.className = 'code-expand-btn'
+        ele.innerHTML = '<i class="fas fa-angle-double-down"></i>'
+        ele.addEventListener('click', expandCode)
+        fragment.appendChild(ele)
+      }
+
+      if (service === 'hl') {
+        item.insertBefore(fragment, item.firstChild)
+      } else {
+        item.parentNode.insertBefore(fragment, item)
+      }
+    }
+
+    if (isHighlightLang) {
+      if (isPrismjs) {
+        $figureHighlight.forEach(function (item) {
+          const langName = item.getAttribute('data-language') ? item.getAttribute('data-language') : 'Code'
+          const highlightLangEle = `<div class="code-lang">${langName}</div>`
+          btf.wrap(item, 'figure', { class: 'highlight' })
+          createEle(highlightLangEle, item)
+        })
+      } else {
+        $figureHighlight.forEach(function (item) {
+          let langName = item.getAttribute('class').split(' ')[1]
+          if (langName === 'plain' || langName === undefined) langName = 'Code'
+          const highlightLangEle = `<div class="code-lang">${langName}</div>`
+          createEle(highlightLangEle, item, 'hl')
+        })
+      }
+    } else {
+      if (isPrismjs) {
+        $figureHighlight.forEach(function (item) {
+          btf.wrap(item, 'figure', { class: 'highlight' })
+          createEle('', item)
+        })
+      } else {
+        $figureHighlight.forEach(function (item) {
+          createEle('', item, 'hl')
+        })
+      }
+    }
+  }
+
+  /**
+   * PhotoFigcaption
+   */
+  function addPhotoFigcaption () {
+    document.querySelectorAll('#article-container img').forEach(function (item) {
+      const parentEle = item.parentNode
+      const altValue = item.title || item.alt
+      if (altValue && !parentEle.parentNode.classList.contains('justified-gallery')) {
+        const ele = document.createElement('div')
+        ele.className = 'img-alt is-center'
+        ele.textContent = altValue
+        parentEle.insertBefore(ele, item.nextSibling)
+      }
+    })
+  }
+
+  /**
+   * Lightbox
+   */
+  const runLightbox = () => {
+    btf.loadLightbox(document.querySelectorAll('#article-container img:not(.no-lightbox)'))
+  }
+
+  /**
+   * justified-gallery 圖庫排版
+   */
+  const runJustifiedGallery = function (ele) {
+    ele.forEach(item => {
+      const $imgList = item.querySelectorAll('img')
+
+      $imgList.forEach(i => {
+        const dataLazySrc = i.getAttribute('data-lazy-src')
+        if (dataLazySrc) i.src = dataLazySrc
+        btf.wrap(i, 'div', { class: 'fj-gallery-item' })
+      })
+    })
+
+    if (window.fjGallery) {
+      setTimeout(() => { btf.initJustifiedGallery(ele) }, 100)
+      return
+    }
+
+    const newEle = document.createElement('link')
+    newEle.rel = 'stylesheet'
+    newEle.href = GLOBAL_CONFIG.source.justifiedGallery.css
+    document.body.appendChild(newEle)
+    getScript(`${GLOBAL_CONFIG.source.justifiedGallery.js}`).then(() => { btf.initJustifiedGallery(ele) })
+  }
+
+  /**
+   * 滾動處理
+   */
+  const scrollFn = function () {
+    const $rightside = document.getElementById('rightside')
+    const innerHeight = window.innerHeight + 56
+
+    // 當滾動條小于 56 的時候
+    if (document.body.scrollHeight <= innerHeight) {
+      $rightside.style.cssText = 'opacity: 1; transform: translateX(-58px)'
+      return
+    }
+
+    // find the scroll direction
+    function scrollDirection (currentTop) {
+      const result = currentTop > initTop // true is down & false is up
+      initTop = currentTop
+      return result
+    }
+
+    let initTop = 0
+    let isChatShow = true
+    const $header = document.getElementById('page-header')
+    const isChatBtnHide = typeof chatBtnHide === 'function'
+    const isChatBtnShow = typeof chatBtnShow === 'function'
+
+    window.scrollCollect = () => {
+      return btf.throttle(function (e) {
+        const currentTop = window.scrollY || document.documentElement.scrollTop
+        const isDown = scrollDirection(currentTop)
+        if (currentTop > 56) {
+          if (isDown) {
+            if ($header.classList.contains('nav-visible')) $header.classList.remove('nav-visible')
+            if (isChatBtnShow && isChatShow === true) {
+              chatBtnHide()
+              isChatShow = false
+            }
+          } else {
+            if (!$header.classList.contains('nav-visible')) $header.classList.add('nav-visible')
+            if (isChatBtnHide && isChatShow === false) {
+              chatBtnShow()
+              isChatShow = true
+            }
+          }
+          $header.classList.add('nav-fixed')
+          if (window.getComputedStyle($rightside).getPropertyValue('opacity') === '0') {
+            $rightside.style.cssText = 'opacity: 0.8; transform: translateX(-58px)'
+          }
+        } else {
+          if (currentTop === 0) {
+            $header.classList.remove('nav-fixed', 'nav-visible')
+          }
+          $rightside.style.cssText = "opacity: ''; transform: ''"
+        }
+
+        if (document.body.scrollHeight <= innerHeight) {
+          $rightside.style.cssText = 'opacity: 0.8; transform: translateX(-58px)'
+        }
+      }, 200)()
+    }
+
+    window.addEventListener('scroll', scrollCollect)
+  }
+
+  /**
+  * toc,anchor
+  */
+  const scrollFnToDo = function () {
+    const isToc = GLOBAL_CONFIG_SITE.isToc
+    const isAnchor = GLOBAL_CONFIG.isAnchor
+    const $article = document.getElementById('article-container')
+
+    if (!($article && (isToc || isAnchor))) return
+
+    let $tocLink, $cardToc, scrollPercent, autoScrollToc, isExpand
+
+    if (isToc) {
+      const $cardTocLayout = document.getElementById('card-toc')
+      $cardToc = $cardTocLayout.getElementsByClassName('toc-content')[0]
+      $tocLink = $cardToc.querySelectorAll('.toc-link')
+      const $tocPercentage = $cardTocLayout.querySelector('.toc-percentage')
+      isExpand = $cardToc.classList.contains('is-expand')
+
+      scrollPercent = currentTop => {
+        const docHeight = $article.clientHeight
+        const winHeight = document.documentElement.clientHeight
+        const headerHeight = $article.offsetTop
+        const contentMath = (docHeight > winHeight) ? (docHeight - winHeight) : (document.documentElement.scrollHeight - winHeight)
+        const scrollPercent = (currentTop - headerHeight) / (contentMath)
+        const scrollPercentRounded = Math.round(scrollPercent * 100)
+        const percentage = (scrollPercentRounded > 100) ? 100 : (scrollPercentRounded <= 0) ? 0 : scrollPercentRounded
+        $tocPercentage.textContent = percentage
+      }
+
+      window.mobileToc = {
+        open: () => {
+          $cardTocLayout.style.cssText = 'animation: toc-open .3s; opacity: 1; right: 55px'
+        },
+
+        close: () => {
+          $cardTocLayout.style.animation = 'toc-close .2s'
+          setTimeout(() => {
+            $cardTocLayout.style.cssText = "opacity:''; animation: ''; right: ''"
+          }, 100)
+        }
+      }
+
+      // toc元素點擊
+      $cardToc.addEventListener('click', e => {
+        e.preventDefault()
+        const target = e.target.classList
+        if (target.contains('toc-content')) return
+        const $target = target.contains('toc-link')
+          ? e.target
+          : e.target.parentElement
+        btf.scrollToDest(btf.getEleTop(document.getElementById(decodeURI($target.getAttribute('href')).replace('#', ''))), 300)
+        if (window.innerWidth < 900) {
+          window.mobileToc.close()
+        }
+      })
+
+      autoScrollToc = item => {
+        const activePosition = item.getBoundingClientRect().top
+        const sidebarScrollTop = $cardToc.scrollTop
+        if (activePosition > (document.documentElement.clientHeight - 100)) {
+          $cardToc.scrollTop = sidebarScrollTop + 150
+        }
+        if (activePosition < 100) {
+          $cardToc.scrollTop = sidebarScrollTop - 150
+        }
+      }
+    }
+
+    // find head position & add active class
+    const list = $article.querySelectorAll('h1,h2,h3,h4,h5,h6')
+    let detectItem = ''
+    const findHeadPosition = function (top) {
+      if (top === 0) {
+        return false
+      }
+
+      let currentId = ''
+      let currentIndex = ''
+
+      list.forEach(function (ele, index) {
+        if (top > btf.getEleTop(ele) - 80) {
+          const id = ele.id
+          currentId = id ? '#' + encodeURI(id) : ''
+          currentIndex = index
+        }
+      })
+
+      if (detectItem === currentIndex) return
+
+      if (isAnchor) btf.updateAnchor(currentId)
+
+      detectItem = currentIndex
+
+      if (isToc) {
+        $cardToc.querySelectorAll('.active').forEach(i => { i.classList.remove('active') })
+
+        if (currentId === '') {
+          return
+        }
+
+        const currentActive = $tocLink[currentIndex]
+        currentActive.classList.add('active')
+
+        setTimeout(() => {
+          autoScrollToc(currentActive)
+        }, 0)
+
+        if (isExpand) return
+        let parent = currentActive.parentNode
+
+        for (; !parent.matches('.toc'); parent = parent.parentNode) {
+          if (parent.matches('li')) parent.classList.add('active')
+        }
+      }
+    }
+
+    // main of scroll
+    window.tocScrollFn = function () {
+      return btf.throttle(function () {
+        const currentTop = window.scrollY || document.documentElement.scrollTop
+        isToc && scrollPercent(currentTop)
+        findHeadPosition(currentTop)
+      }, 100)()
+    }
+    window.addEventListener('scroll', tocScrollFn)
+  }
+
+  /**
+   * Rightside
+   */
+  const rightSideFn = {
+    switchReadMode: () => { // read-mode
+      const $body = document.body
+      $body.classList.add('read-mode')
+      const newEle = document.createElement('button')
+      newEle.type = 'button'
+      newEle.className = 'fas fa-sign-out-alt exit-readmode'
+      $body.appendChild(newEle)
+
+      function clickFn () {
+        $body.classList.remove('read-mode')
+        newEle.remove()
+        newEle.removeEventListener('click', clickFn)
+      }
+
+      newEle.addEventListener('click', clickFn)
+    },
+    switchDarkMode: () => { // Switch Between Light And Dark Mode
+      const nowMode = document.documentElement.getAttribute('data-theme') === 'dark' ? 'dark' : 'light'
+      if (nowMode === 'light') {
+        activateDarkMode()
+        saveToLocal.set('theme', 'dark', 2)
+        GLOBAL_CONFIG.Snackbar !== undefined && btf.snackbarShow(GLOBAL_CONFIG.Snackbar.day_to_night)
+      } else {
+        activateLightMode()
+        saveToLocal.set('theme', 'light', 2)
+        GLOBAL_CONFIG.Snackbar !== undefined && btf.snackbarShow(GLOBAL_CONFIG.Snackbar.night_to_day)
+      }
+      // handle some cases
+      typeof utterancesTheme === 'function' && utterancesTheme()
+      typeof changeGiscusTheme === 'function' && changeGiscusTheme()
+      typeof FB === 'object' && window.loadFBComment()
+      typeof runMermaid === 'function' && window.runMermaid()
+    },
+    showOrHideBtn: (e) => { // rightside 點擊設置 按鈕 展開
+      const rightsideHideClassList = document.getElementById('rightside-config-hide').classList
+      rightsideHideClassList.toggle('show')
+      if (e.classList.contains('show')) {
+        rightsideHideClassList.add('status')
+        setTimeout(() => {
+          rightsideHideClassList.remove('status')
+        }, 300)
+      }
+      e.classList.toggle('show')
+    },
+    scrollToTop: () => { // Back to top
+      btf.scrollToDest(0, 500)
+    },
+    hideAsideBtn: () => { // Hide aside
+      const $htmlDom = document.documentElement.classList
+      $htmlDom.contains('hide-aside')
+        ? saveToLocal.set('aside-status', 'show', 2)
+        : saveToLocal.set('aside-status', 'hide', 2)
+      $htmlDom.toggle('hide-aside')
+    },
+
+    runMobileToc: () => {
+      if (window.getComputedStyle(document.getElementById('card-toc')).getPropertyValue('opacity') === '0') window.mobileToc.open()
+      else window.mobileToc.close()
+    }
+  }
+
+  document.getElementById('rightside').addEventListener('click', function (e) {
+    const $target = e.target.id ? e.target : e.target.parentNode
+    switch ($target.id) {
+      case 'go-up':
+        rightSideFn.scrollToTop()
+        break
+      case 'rightside_config':
+        rightSideFn.showOrHideBtn($target)
+        break
+      case 'mobile-toc-button':
+        rightSideFn.runMobileToc()
+        break
+      case 'readmode':
+        rightSideFn.switchReadMode()
+        break
+      case 'darkmode':
+        rightSideFn.switchDarkMode()
+        break
+      case 'hide-aside-btn':
+        rightSideFn.hideAsideBtn()
+        break
+      default:
+        break
+    }
+  })
+
+  /**
+   * menu
+   * 側邊欄sub-menu 展開/收縮
+   */
+  const clickFnOfSubMenu = () => {
+    document.querySelectorAll('#sidebar-menus .site-page.group').forEach(function (item) {
+      item.addEventListener('click', function () {
+        this.classList.toggle('hide')
+      })
+    })
+  }
+
+  /**
+   * 複製時加上版權信息
+   */
+  const addCopyright = () => {
+    const copyright = GLOBAL_CONFIG.copyright
+    document.body.oncopy = (e) => {
+      e.preventDefault()
+      let textFont; const copyFont = window.getSelection(0).toString()
+      if (copyFont.length > copyright.limitCount) {
+        textFont = copyFont + '\n' + '\n' + '\n' +
+        copyright.languages.author + '\n' +
+        copyright.languages.link + window.location.href + '\n' +
+        copyright.languages.source + '\n' +
+        copyright.languages.info
+      } else {
+        textFont = copyFont
+      }
+      if (e.clipboardData) {
+        return e.clipboardData.setData('text', textFont)
+      } else {
+        return window.clipboardData.setData('text', textFont)
+      }
+    }
+  }
+
+  /**
+   * 網頁運行時間
+   */
+  const addRuntime = () => {
+    const $runtimeCount = document.getElementById('runtimeshow')
+    if ($runtimeCount) {
+      const publishDate = $runtimeCount.getAttribute('data-publishDate')
+      $runtimeCount.innerText = btf.diffDate(publishDate) + ' ' + GLOBAL_CONFIG.runtime
+    }
+  }
+
+  /**
+   * 最後一次更新時間
+   */
+  const addLastPushDate = () => {
+    const $lastPushDateItem = document.getElementById('last-push-date')
+    if ($lastPushDateItem) {
+      const lastPushDate = $lastPushDateItem.getAttribute('data-lastPushDate')
+      $lastPushDateItem.innerText = btf.diffDate(lastPushDate, true)
+    }
+  }
+
+  /**
+   * table overflow
+   */
+  const addTableWrap = () => {
+    const $table = document.querySelectorAll('#article-container :not(.highlight) > table, #article-container > table')
+    if ($table.length) {
+      $table.forEach(item => {
+        btf.wrap(item, 'div', { class: 'table-wrap' })
+      })
+    }
+  }
+
+  /**
+   * tag-hide
+   */
+  const clickFnOfTagHide = function () {
+    const $hideInline = document.querySelectorAll('#article-container .hide-button')
+    if ($hideInline.length) {
+      $hideInline.forEach(function (item) {
+        item.addEventListener('click', function (e) {
+          const $this = this
+          $this.classList.add('open')
+          const $fjGallery = $this.nextElementSibling.querySelectorAll('.fj-gallery')
+          $fjGallery.length && btf.initJustifiedGallery($fjGallery)
+        })
+      })
+    }
+  }
+
+  const tabsFn = {
+    clickFnOfTabs: function () {
+      document.querySelectorAll('#article-container .tab > button').forEach(function (item) {
+        item.addEventListener('click', function (e) {
+          const $this = this
+          const $tabItem = $this.parentNode
+
+          if (!$tabItem.classList.contains('active')) {
+            const $tabContent = $tabItem.parentNode.nextElementSibling
+            const $siblings = btf.siblings($tabItem, '.active')[0]
+            $siblings && $siblings.classList.remove('active')
+            $tabItem.classList.add('active')
+            const tabId = $this.getAttribute('data-href').replace('#', '')
+            const childList = [...$tabContent.children]
+            childList.forEach(item => {
+              if (item.id === tabId) item.classList.add('active')
+              else item.classList.remove('active')
+            })
+            const $isTabJustifiedGallery = $tabContent.querySelectorAll(`#${tabId} .fj-gallery`)
+            if ($isTabJustifiedGallery.length > 0) {
+              btf.initJustifiedGallery($isTabJustifiedGallery)
+            }
+          }
+        })
+      })
+    },
+    backToTop: () => {
+      document.querySelectorAll('#article-container .tabs .tab-to-top').forEach(function (item) {
+        item.addEventListener('click', function () {
+          btf.scrollToDest(btf.getEleTop(btf.getParents(this, '.tabs')), 300)
+        })
+      })
+    }
+  }
+
+  const toggleCardCategory = function () {
+    const $cardCategory = document.querySelectorAll('#aside-cat-list .card-category-list-item.parent i')
+    if ($cardCategory.length) {
+      $cardCategory.forEach(function (item) {
+        item.addEventListener('click', function (e) {
+          e.preventDefault()
+          const $this = this
+          $this.classList.toggle('expand')
+          const $parentEle = $this.parentNode.nextElementSibling
+          if (btf.isHidden($parentEle)) {
+            $parentEle.style.display = 'block'
+          } else {
+            $parentEle.style.display = 'none'
+          }
+        })
+      })
+    }
+  }
+
+  const switchComments = function () {
+    let switchDone = false
+    const $switchBtn = document.querySelector('#comment-switch > .switch-btn')
+    $switchBtn && $switchBtn.addEventListener('click', function () {
+      this.classList.toggle('move')
+      document.querySelectorAll('#post-comment > .comment-wrap > div').forEach(function (item) {
+        if (btf.isHidden(item)) {
+          item.style.cssText = 'display: block;animation: tabshow .5s'
+        } else {
+          item.style.cssText = "display: none;animation: ''"
+        }
+      })
+
+      if (!switchDone && typeof loadOtherComment === 'function') {
+        switchDone = true
+        loadOtherComment()
+      }
+    })
+  }
+
+  const addPostOutdateNotice = function () {
+    const data = GLOBAL_CONFIG.noticeOutdate
+    const diffDay = btf.diffDate(GLOBAL_CONFIG_SITE.postUpdate)
+    if (diffDay >= data.limitDay) {
+      const ele = document.createElement('div')
+      ele.className = 'post-outdate-notice'
+      ele.textContent = data.messagePrev + ' ' + diffDay + ' ' + data.messageNext
+      const $targetEle = document.getElementById('article-container')
+      if (data.position === 'top') {
+        $targetEle.insertBefore(ele, $targetEle.firstChild)
+      } else {
+        $targetEle.appendChild(ele)
+      }
+    }
+  }
+
+  const lazyloadImg = () => {
+    window.lazyLoadInstance = new LazyLoad({
+      elements_selector: 'img',
+      threshold: 0,
+      data_src: 'lazy-src'
+    })
+  }
+
+  const relativeDate = function (selector) {
+    selector.forEach(item => {
+      const $this = item
+      const timeVal = $this.getAttribute('datetime')
+      $this.innerText = btf.diffDate(timeVal, true)
+      $this.style.display = 'inline'
+    })
+  }
+
+  const unRefreshFn = function () {
+    window.addEventListener('resize', () => {
+      adjustMenu(false)
+      btf.isHidden(document.getElementById('toggle-menu')) && mobileSidebarOpen && sidebarFn.close()
+    })
+
+    document.getElementById('menu-mask').addEventListener('click', e => { sidebarFn.close() })
+
+    clickFnOfSubMenu()
+    GLOBAL_CONFIG.islazyload && lazyloadImg()
+    GLOBAL_CONFIG.copyright !== undefined && addCopyright()
+  }
+
+  window.refreshFn = function () {
+    initAdjust()
+
+    if (GLOBAL_CONFIG_SITE.isPost) {
+      GLOBAL_CONFIG.noticeOutdate !== undefined && addPostOutdateNotice()
+      GLOBAL_CONFIG.relativeDate.post && relativeDate(document.querySelectorAll('#post-meta time'))
+    } else {
+      GLOBAL_CONFIG.relativeDate.homepage && relativeDate(document.querySelectorAll('#recent-posts time'))
+      GLOBAL_CONFIG.runtime && addRuntime()
+      addLastPushDate()
+      toggleCardCategory()
+    }
+
+    scrollFnToDo()
+    GLOBAL_CONFIG_SITE.isHome && scrollDownInIndex()
+    addHighlightTool()
+    GLOBAL_CONFIG.isPhotoFigcaption && addPhotoFigcaption()
+    scrollFn()
+
+    const $jgEle = document.querySelectorAll('#article-container .fj-gallery')
+    $jgEle.length && runJustifiedGallery($jgEle)
+
+    runLightbox()
+    addTableWrap()
+    clickFnOfTagHide()
+    tabsFn.clickFnOfTabs()
+    tabsFn.backToTop()
+    switchComments()
+    document.getElementById('toggle-menu').addEventListener('click', () => { sidebarFn.open() })
+  }
+
+  refreshFn()
+  unRefreshFn()
+})
