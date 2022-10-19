@@ -93,36 +93,15 @@ jobs:
         npm install hexo-butterfly-tag-plugins-plus --save
 
         # 实现文章输入密码才能浏览
-        npm install hexo-blog-encrypt --save
-
-        # echo 开始修改文件资源路径
-        # cd source/_posts
-        # python dir_change.py
-        # rm -rf java
-        # rm -rf common
-        # rm -rf python
-        # rm -rf english
-        # rm -rf math
-        # mv target_dir/* .
-        # cd ../..
-        # echo 修改文件资源路径完成
-        # cp nodejs/hexo-renderer-marked/lib/renderer.js node_modules/hexo-renderer-marked/lib/
-        # 修改数学公式多行显示问题 https://www.uynajgi.com/919906d6.html
-        # cp nodejs/kramed/lib/rules/inline.js node_modules/kramed/lib/rules/inline.js
+        # npm install hexo-blog-encrypt --save
 
         # 执行编译
         hexo clean
         hexo bangumi -u # 更新番剧数据
         hexo g
-        # mv source/_posts/target_dir_img/* public/img/
-        # 修改非首页的top图片的高度
-        # cat themes/butterfly/source/css/hyc_font.css >> public/css/index.css
-        # echo '#page-header.post-bg {  height: 800px; }' >> public/css/index.css
-        # echo '#page-header.not-home-page {  height: 800px;}' >> public/css/index.css
         hexo algolia
         cp package-lock.json public/package-lock.json
-        # cp sitemaps/* >> public/
-        gulp
+        # gulp
 
     - name: Deploy #步骤4：把编译好的静态目录上传到gh-pages分支上  https://cloud.tencent.com/developer/article/1917861
       uses: JamesIves/github-pages-deploy-action@3.1.5 #这里调用第三方依赖，用于上传代码到指定分支上
