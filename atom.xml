@@ -1,0 +1,535 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>兼一书虫</title>
+  <icon>https://hycbook.com/icon.png</icon>
+  <subtitle>一日千里</subtitle>
+  <link href="https://hycbook.com/atom.xml" rel="self"/>
+  
+  <link href="https://hycbook.com/"/>
+  <updated>2022-10-27T03:53:08.998Z</updated>
+  <id>https://hycbook.com/</id>
+  
+  <author>
+    <name>narutohyc</name>
+    
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>机器学习_线性代数与矩阵论</title>
+    <link href="https://hycbook.com/article/47032.html"/>
+    <id>https://hycbook.com/article/47032.html</id>
+    <published>2022-10-11T12:38:22.000Z</published>
+    <updated>2022-10-27T03:53:08.998Z</updated>
+    
+    
+    <summary type="html">机器学习的数学基础入门知识</summary>
+    
+    
+    
+    <category term="math" scheme="https://hycbook.com/categories/math/"/>
+    
+    
+    <category term="python" scheme="https://hycbook.com/tags/python/"/>
+    
+    <category term="机器学习数学" scheme="https://hycbook.com/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E6%95%B0%E5%AD%A6/"/>
+    
+    <category term="线性代数" scheme="https://hycbook.com/tags/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/"/>
+    
+    <category term="矩阵论" scheme="https://hycbook.com/tags/%E7%9F%A9%E9%98%B5%E8%AE%BA/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>docker基本使用</title>
+    <link href="https://hycbook.com/article/50622.html"/>
+    <id>https://hycbook.com/article/50622.html</id>
+    <published>2022-10-09T05:17:57.000Z</published>
+    <updated>2022-10-27T03:53:08.990Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;hr&gt;
+&lt;h1 id=&quot;docker&quot;&gt;&lt;a href=&quot;#docker&quot; class=&quot;headerlink&quot; title=&quot;docker&quot;&gt;&lt;/a&gt;docker&lt;/h1&gt;&lt;h2 id=&quot;docker安装&quot;&gt;&lt;a href=&quot;#docker安装&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="common" scheme="https://hycbook.com/categories/common/"/>
+    
+    
+    <category term="docker" scheme="https://hycbook.com/tags/docker/"/>
+    
+    <category term="neo4j" scheme="https://hycbook.com/tags/neo4j/"/>
+    
+    <category term="图数据库" scheme="https://hycbook.com/tags/%E5%9B%BE%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>厦门方特梦幻王国一日攻略</title>
+    <link href="https://hycbook.com/article/63632.html"/>
+    <id>https://hycbook.com/article/63632.html</id>
+    <published>2022-10-03T14:46:24.000Z</published>
+    <updated>2022-10-27T03:53:08.990Z</updated>
+    
+    
+    <summary type="html">厦门同安方特梦幻王国游玩攻略</summary>
+    
+    
+    
+    <category term="entertainment" scheme="https://hycbook.com/categories/entertainment/"/>
+    
+    
+    <category term="厦门方特" scheme="https://hycbook.com/tags/%E5%8E%A6%E9%97%A8%E6%96%B9%E7%89%B9/"/>
+    
+    <category term="旅游" scheme="https://hycbook.com/tags/%E6%97%85%E6%B8%B8/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>阿里云部署</title>
+    <link href="https://hycbook.com/article/14386.html"/>
+    <id>https://hycbook.com/article/14386.html</id>
+    <published>2022-09-12T02:02:25.000Z</published>
+    <updated>2022-10-27T03:53:08.990Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;hr&gt;
+&lt;h1 id=&quot;阿里云部署&quot;&gt;&lt;a href=&quot;#阿里云部署&quot; class=&quot;headerlink&quot; title=&quot;阿里云部署&quot;&gt;&lt;/a&gt;阿里云部署&lt;/h1&gt;&lt;blockquote&gt;
+&lt;p&gt;阿里云部署笔记(centos版本)，购买&lt;a</summary>
+        
+      
+    
+    
+    
+    <category term="common" scheme="https://hycbook.com/categories/common/"/>
+    
+    
+    <category term="阿里云" scheme="https://hycbook.com/tags/%E9%98%BF%E9%87%8C%E4%BA%91/"/>
+    
+    <category term="服务器" scheme="https://hycbook.com/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Linux常用命令</title>
+    <link href="https://hycbook.com/article/48230.html"/>
+    <id>https://hycbook.com/article/48230.html</id>
+    <published>2022-09-12T02:02:25.000Z</published>
+    <updated>2022-10-27T03:53:08.990Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;hr&gt;
+&lt;h1 id=&quot;linux常用指令&quot;&gt;&lt;a href=&quot;#linux常用指令&quot; class=&quot;headerlink&quot; title=&quot;linux常用指令&quot;&gt;&lt;/a&gt;linux常用指令&lt;/h1&gt;&lt;blockquote&gt;
+&lt;p&gt;&lt;a</summary>
+        
+      
+    
+    
+    
+    <category term="common" scheme="https://hycbook.com/categories/common/"/>
+    
+    
+    <category term="linux指令" scheme="https://hycbook.com/tags/linux%E6%8C%87%E4%BB%A4/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>github协作</title>
+    <link href="https://hycbook.com/article/51084.html"/>
+    <id>https://hycbook.com/article/51084.html</id>
+    <published>2022-09-12T02:02:25.000Z</published>
+    <updated>2022-10-27T03:53:08.990Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;hr&gt;
+&lt;h1 id=&quot;github协作&quot;&gt;&lt;a href=&quot;#github协作&quot; class=&quot;headerlink&quot; title=&quot;github协作&quot;&gt;&lt;/a&gt;github协作&lt;/h1&gt;&lt;blockquote&gt;
+&lt;p&gt;&lt;a</summary>
+        
+      
+    
+    
+    
+    <category term="common" scheme="https://hycbook.com/categories/common/"/>
+    
+    
+    <category term="github" scheme="https://hycbook.com/tags/github/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>gitbook博客搭建</title>
+    <link href="https://hycbook.com/article/44835.html"/>
+    <id>https://hycbook.com/article/44835.html</id>
+    <published>2022-09-12T02:02:25.000Z</published>
+    <updated>2022-10-27T03:53:08.990Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;hr&gt;
+&lt;h1 id=&quot;gitbook&quot;&gt;&lt;a href=&quot;#gitbook&quot; class=&quot;headerlink&quot; title=&quot;gitbook&quot;&gt;&lt;/a&gt;gitbook&lt;/h1&gt;&lt;blockquote&gt;
+&lt;p&gt;&lt;a</summary>
+        
+      
+    
+    
+    
+    <category term="common" scheme="https://hycbook.com/categories/common/"/>
+    
+    
+    <category term="gitbook" scheme="https://hycbook.com/tags/gitbook/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>重装系统</title>
+    <link href="https://hycbook.com/article/41279.html"/>
+    <id>https://hycbook.com/article/41279.html</id>
+    <published>2022-09-12T02:02:25.000Z</published>
+    <updated>2022-10-27T03:53:08.990Z</updated>
+    
+    
+    <summary type="html">重装系统以及一些软件的推荐，包括Chrome插件</summary>
+    
+    
+    
+    <category term="common" scheme="https://hycbook.com/categories/common/"/>
+    
+    
+    <category term="重装系统" scheme="https://hycbook.com/tags/%E9%87%8D%E8%A3%85%E7%B3%BB%E7%BB%9F/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>语法_简单句</title>
+    <link href="https://hycbook.com/article/2509a8a1.html"/>
+    <id>https://hycbook.com/article/2509a8a1.html</id>
+    <published>2022-09-10T12:46:25.000Z</published>
+    <updated>2022-10-27T03:53:08.990Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;hr&gt;
+&lt;h1 id=&quot;英语句子基本结构&quot;&gt;&lt;a href=&quot;#英语句子基本结构&quot; class=&quot;headerlink&quot; title=&quot;英语句子基本结构&quot;&gt;&lt;/a&gt;英语句子基本结构&lt;/h1&gt;&lt;h2 id=&quot;主谓&quot;&gt;&lt;a href=&quot;#主谓&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="english" scheme="https://hycbook.com/categories/english/"/>
+    
+    
+    <category term="简单句" scheme="https://hycbook.com/tags/%E7%AE%80%E5%8D%95%E5%8F%A5/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>语法_并列句</title>
+    <link href="https://hycbook.com/article/d4db6f86.html"/>
+    <id>https://hycbook.com/article/d4db6f86.html</id>
+    <published>2022-09-10T12:46:25.000Z</published>
+    <updated>2022-10-27T03:53:08.990Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;hr&gt;
+&lt;h1 id=&quot;并列句定义&quot;&gt;&lt;a href=&quot;#并列句定义&quot; class=&quot;headerlink&quot; title=&quot;并列句定义&quot;&gt;&lt;/a&gt;并列句定义&lt;/h1&gt;&lt;blockquote&gt;
+&lt;p&gt;首先举个例子，引出并列句：&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;I</summary>
+        
+      
+    
+    
+    
+    <category term="english" scheme="https://hycbook.com/categories/english/"/>
+    
+    
+    <category term="并列句" scheme="https://hycbook.com/tags/%E5%B9%B6%E5%88%97%E5%8F%A5/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>语法_名词性从句</title>
+    <link href="https://hycbook.com/article/be621570.html"/>
+    <id>https://hycbook.com/article/be621570.html</id>
+    <published>2022-09-10T12:46:25.000Z</published>
+    <updated>2022-10-27T03:53:08.990Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;hr&gt;
+&lt;h1 id=&quot;名词能做的成分&quot;&gt;&lt;a href=&quot;#名词能做的成分&quot; class=&quot;headerlink&quot; title=&quot;名词能做的成分&quot;&gt;&lt;/a&gt;名词能做的成分&lt;/h1&gt;&lt;blockquote&gt;
+&lt;p&gt;用我们大家熟知的电影Forrest</summary>
+        
+      
+    
+    
+    
+    <category term="english" scheme="https://hycbook.com/categories/english/"/>
+    
+    
+    <category term="名词性从句" scheme="https://hycbook.com/tags/%E5%90%8D%E8%AF%8D%E6%80%A7%E4%BB%8E%E5%8F%A5/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>语法_特殊结构</title>
+    <link href="https://hycbook.com/article/b80bb25bce.html"/>
+    <id>https://hycbook.com/article/b80bb25bce.html</id>
+    <published>2022-09-10T12:46:25.000Z</published>
+    <updated>2022-10-27T03:53:08.990Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;hr&gt;
+&lt;p&gt;测试&lt;/p&gt;
+</summary>
+        
+      
+    
+    
+    
+    <category term="english" scheme="https://hycbook.com/categories/english/"/>
+    
+    
+    <category term="祈使句" scheme="https://hycbook.com/tags/%E7%A5%88%E4%BD%BF%E5%8F%A5/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>IDE快捷键</title>
+    <link href="https://hycbook.com/article/7978bafd.html"/>
+    <id>https://hycbook.com/article/7978bafd.html</id>
+    <published>2022-09-10T12:46:25.000Z</published>
+    <updated>2022-10-27T03:53:08.990Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;hr&gt;
+&lt;blockquote&gt;
+&lt;p&gt;参考: &lt;a</summary>
+        
+      
+    
+    
+    
+    <category term="java" scheme="https://hycbook.com/categories/java/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>JDBC</title>
+    <link href="https://hycbook.com/article/8fe47ff4.html"/>
+    <id>https://hycbook.com/article/8fe47ff4.html</id>
+    <published>2022-09-10T12:46:25.000Z</published>
+    <updated>2022-10-27T03:53:08.990Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;hr&gt;
+</summary>
+        
+      
+    
+    
+    
+    <category term="java" scheme="https://hycbook.com/categories/java/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>JDBC_JDBCTemplate</title>
+    <link href="https://hycbook.com/article/e73474f0.html"/>
+    <id>https://hycbook.com/article/e73474f0.html</id>
+    <published>2022-09-10T12:46:25.000Z</published>
+    <updated>2022-10-27T03:53:08.990Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;hr&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;a href=&quot;https://www.bilibili.com/video/av61491585&quot;&gt;【黑马程序员-Java语言高级部分11】JDBC&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h1</summary>
+        
+      
+    
+    
+    
+    <category term="java" scheme="https://hycbook.com/categories/java/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>JDBC_JDBC连接池</title>
+    <link href="https://hycbook.com/article/ae528721.html"/>
+    <id>https://hycbook.com/article/ae528721.html</id>
+    <published>2022-09-10T12:46:25.000Z</published>
+    <updated>2022-10-27T03:53:08.990Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;hr&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;a href=&quot;https://www.bilibili.com/video/av61491585&quot;&gt;【黑马程序员-Java语言高级部分11】JDBC&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;hr&gt;
+&lt;h1</summary>
+        
+      
+    
+    
+    
+    <category term="java" scheme="https://hycbook.com/categories/java/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Java core programming</title>
+    <link href="https://hycbook.com/article/d13ef431.html"/>
+    <id>https://hycbook.com/article/d13ef431.html</id>
+    <published>2022-09-10T12:46:25.000Z</published>
+    <updated>2022-10-27T03:53:08.990Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;hr&gt;
+&lt;h1 id=&quot;Java-核心编程技术干货&quot;&gt;&lt;a href=&quot;#Java-核心编程技术干货&quot; class=&quot;headerlink&quot; title=&quot;Java 核心编程技术干货&quot;&gt;&lt;/a&gt;Java 核心编程技术干货&lt;/h1&gt;&lt;blockquote&gt;
+&lt;p&gt;参考: &lt;a</summary>
+        
+      
+    
+    
+    
+    <category term="java" scheme="https://hycbook.com/categories/java/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Java基础</title>
+    <link href="https://hycbook.com/article/f7ede91d.html"/>
+    <id>https://hycbook.com/article/f7ede91d.html</id>
+    <published>2022-09-10T12:46:25.000Z</published>
+    <updated>2022-10-27T03:53:08.990Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;hr&gt;
+</summary>
+        
+      
+    
+    
+    
+    <category term="java" scheme="https://hycbook.com/categories/java/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Java基础_反射机制</title>
+    <link href="https://hycbook.com/article/3c274368.html"/>
+    <id>https://hycbook.com/article/3c274368.html</id>
+    <published>2022-09-10T12:46:25.000Z</published>
+    <updated>2022-10-27T03:53:08.990Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;hr&gt;
+&lt;h1 id=&quot;反射机制&quot;&gt;&lt;a href=&quot;#反射机制&quot; class=&quot;headerlink&quot; title=&quot;反射机制&quot;&gt;&lt;/a&gt;反射机制&lt;/h1&gt;&lt;blockquote&gt;
+&lt;p&gt;&lt;a</summary>
+        
+      
+    
+    
+    
+    <category term="java" scheme="https://hycbook.com/categories/java/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Java基础_后台服务器开发</title>
+    <link href="https://hycbook.com/article/3b72c11.html"/>
+    <id>https://hycbook.com/article/3b72c11.html</id>
+    <published>2022-09-10T12:46:25.000Z</published>
+    <updated>2022-10-27T03:53:08.990Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;hr&gt;
+&lt;h1 id=&quot;后台服务器开发&quot;&gt;&lt;a href=&quot;#后台服务器开发&quot; class=&quot;headerlink&quot; title=&quot;后台服务器开发&quot;&gt;&lt;/a&gt;后台服务器开发&lt;/h1&gt;&lt;h1 id=&quot;远程通信方式&quot;&gt;&lt;a href=&quot;#远程通信方式&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="java" scheme="https://hycbook.com/categories/java/"/>
+    
+    
+  </entry>
+  
+</feed>
