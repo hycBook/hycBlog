@@ -1084,6 +1084,11 @@ live2d:
 rss: /atom.xml
 
 
+webPushNotification:
+  webpushrKey: "3cee2765f77cbf4f86e394f22cc1a91f"
+  webpushrAuthToken: "60048"
+  trackingCode: "BNsPXs6noKKutT2MTU32VVWnrBSvpmnCErG-Q10dKzwbrNnjkhA128RuHkkrqaPm462UCN0tc_7-BX0taMCrFXc"
+
 # Hexo浏览器定向推送文章更新
 # https://blog.ccknbc.cc/posts/hexo-webpushr-notification/
 # webpushr:
