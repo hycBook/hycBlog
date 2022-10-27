@@ -63,7 +63,7 @@ jobs:
         # Hexo浏览器定向推送文章更新
         # https://blog.ccknbc.cc/posts/hexo-webpushr-notification/
         # npm i hexo-webpushr-notification
-        npm i hexo-web-push-notification --save
+        # npm i hexo-web-push-notification --save
 
         # gulp 压缩   https://blog.imzjw.cn/posts/b74f504f/#gulp-%E5%8E%8B%E7%BC%A9  会影响Hexo哔哩哔哩番剧页面插件
         # 压缩html插件
