@@ -45,6 +45,8 @@ jobs:
         # 配置algolia环境参数
         export HEXO_ALGOLIA_INDEXING_KEY=${{ secrets.ALGOLIA_TOKEN }}
         # npm install hexo-algoliasearch --save
+        # 安装贝蒂搜索插件
+        npm install hexo-generator-search --save
 
         # 給 hexo-theme-butterfly 添加 Artitalk 説説
         npm install hexo-butterfly-artitalk --save
