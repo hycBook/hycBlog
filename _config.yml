@@ -200,3 +200,18 @@ envelope_comment:
   front_matter: #【可选】comments页面的 front_matter 配置
     title: 留言板
     comments: true    
+
+# RSS订阅
+feed:
+  enable: true
+  type: atom
+  path: atom.xml
+  limit: 20
+  hub:
+  content:
+  content_limit: 140
+  content_limit_delim: ' '
+  order_by: -date
+  icon: icon.png
+  autodiscovery: true
+  template:

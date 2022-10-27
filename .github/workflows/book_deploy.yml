@@ -54,6 +54,9 @@ jobs:
         # Hexo哔哩哔哩番剧页面插件
         npm install hexo-bilibili-bangumi-plus --save
 
+        # 安装rss订阅插件
+        npm install --save hexo-generator-feed
+
         # 双栏布局插件引入
         npm i hexo-butterfly-article-double-row --save
 
