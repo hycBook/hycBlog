@@ -1076,4 +1076,8 @@ tag_plugins:
 # https://www.bilibili.com/read/cv18133283
 # 具体配置在 live2d-widget 文件夹下的 waifu-tips.js 中的大约 160 行，原作者也在这里注释了模型的 ID，默认为 1，后面的模型依次递增，我比较喜欢第二个和第三个 2233 娘，那就把这里改成 2 就行了 作者：zeroれい零 https://www.bilibili.com/read/cv18133283 出处：bilibili
 live2d:
-  enable: true    
+  enable: true
+
+
+# RSS订阅
+rss: /atom.xml  
