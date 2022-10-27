@@ -132,10 +132,10 @@ algolia:
   appId: "IMKX0J251S"
   apiKey: "92de3dc43df2b8318c81df68e94d2221"
   adminApiKey: "1981da031c9547f201aa1622c2e3aaf1"
-  chunkSize: 50000
+  chunkSize: 5000
   indexName: hexo_book
   fields:
-    - content:strip:truncate,0,500000
+    - content:strip:truncate,0,100000
     - excerpt:strip
     - gallery
     - permalink
