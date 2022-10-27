@@ -1087,8 +1087,8 @@ rss: /atom.xml
 # Hexo浏览器定向推送文章更新
 # https://blog.ccknbc.cc/posts/hexo-webpushr-notification/
 webpushr:
-  # webpushrKey: "webpushrKey" # 出于安全考虑，建议添加至系统环境变量，并注释掉此处配置
-  # webpushrAuthToken: "webpushrAuthToken" # 出于安全考虑，建议添加至系统环境变量，并注释掉此处配置
+  webpushrKey: "3cee2765f77cbf4f86e394f22cc1a91f" # 出于安全考虑，建议添加至系统环境变量，并注释掉此处配置
+  webpushrAuthToken: "60048" # 出于安全考虑，建议添加至系统环境变量，并注释掉此处配置
   # 对于环境变量，各操作系统可使用命令临时调用或写入系统永久变量
   # 对于 GitHub Actions 用户，您可设置secrets后传入即可，例如
   # env:
