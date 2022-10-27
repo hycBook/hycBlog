@@ -1086,32 +1086,32 @@ rss: /atom.xml
 
 # Hexo浏览器定向推送文章更新
 # https://blog.ccknbc.cc/posts/hexo-webpushr-notification/
-webpushr:
-  webpushrKey: "3cee2765f77cbf4f86e394f22cc1a91f" # 出于安全考虑，建议添加至系统环境变量，并注释掉此处配置
-  webpushrAuthToken: "60048" # 出于安全考虑，建议添加至系统环境变量，并注释掉此处配置
-  # 对于环境变量，各操作系统可使用命令临时调用或写入系统永久变量
-  # 对于 GitHub Actions 用户，您可设置secrets后传入即可，例如
-  # env:
-  #    webpushrKey: ${{ secrets.WEBPUSHR_KEY }}
-  #    webpushrAuthToken: ${{ secrets.WEBPUSHR_AUTH_TOKEN }}
-  trackingCode: "BNsPXs6noKKutT2MTU32VVWnrBSvpmnCErG-Q10dKzwbrNnjkhA128RuHkkrqaPm462UCN0tc_7-BX0taMCrFXc"
-  icon: "https://pic.hycbook.com/i//hexo/source/img/siteicon/android-chrome-192x192.png" # 必须为192*192 png图片
-  # auto_hide: "0" # 默认为 1，代表true，即自动隐藏
-  # sort: "date" # 默认为updated，即只要最新文章更改了更新时间即推送新文章，改为date即发布时间
-  # delay: "30" # 延时推送，考虑到CDN缓存更新，默认定时为在 hexo d 10分钟后推送，单位为分钟（最短时间为5min）
-  # expire: "15d" # 推送过期时长，默认值为7天，格式如下：'5m'代表5分钟,'5h'代表5小时, '5d'代表5天.
-  # image: # 默认为文章封面，Front-matter 属性为'cover'(butterfly主题友好选项)，如果您没有定义默认封面或此属性，请在这里设置默认image
-  action_buttons: # false # ，默认第一个按钮为前往查看文章，您可以关闭false后替换第二个按钮相关属性，因参数需求限制（本人太菜）否则将显示两个前往查看按钮
-    [
-      {
-        "title": "状态页面",
-        "url": "https://hycbook.com"
-      }
-    ]
-  # 以下配置为按订阅主题推送给不同订阅用户，请按照数组形式，一一对应
-  # categories: [数学]
-  # segment: ["484223"]
+# webpushr:
+#   webpushrKey: "3cee2765f77cbf4f86e394f22cc1a91f" # 出于安全考虑，建议添加至系统环境变量，并注释掉此处配置
+#   webpushrAuthToken: "60048" # 出于安全考虑，建议添加至系统环境变量，并注释掉此处配置
+#   # 对于环境变量，各操作系统可使用命令临时调用或写入系统永久变量
+#   # 对于 GitHub Actions 用户，您可设置secrets后传入即可，例如
+#   # env:
+#   #    webpushrKey: ${{ secrets.WEBPUSHR_KEY }}
+#   #    webpushrAuthToken: ${{ secrets.WEBPUSHR_AUTH_TOKEN }}
+#   trackingCode: "BNsPXs6noKKutT2MTU32VVWnrBSvpmnCErG-Q10dKzwbrNnjkhA128RuHkkrqaPm462UCN0tc_7-BX0taMCrFXc"
+#   icon: "https://pic.hycbook.com/i//hexo/source/img/siteicon/android-chrome-192x192.png" # 必须为192*192 png图片
+#   # auto_hide: "0" # 默认为 1，代表true，即自动隐藏
+#   # sort: "date" # 默认为updated，即只要最新文章更改了更新时间即推送新文章，改为date即发布时间
+#   # delay: "30" # 延时推送，考虑到CDN缓存更新，默认定时为在 hexo d 10分钟后推送，单位为分钟（最短时间为5min）
+#   # expire: "15d" # 推送过期时长，默认值为7天，格式如下：'5m'代表5分钟,'5h'代表5小时, '5d'代表5天.
+#   # image: # 默认为文章封面，Front-matter 属性为'cover'(butterfly主题友好选项)，如果您没有定义默认封面或此属性，请在这里设置默认image
+#   action_buttons: # false # ，默认第一个按钮为前往查看文章，您可以关闭false后替换第二个按钮相关属性，因参数需求限制（本人太菜）否则将显示两个前往查看按钮
+#     [
+#       {
+#         "title": "状态页面",
+#         "url": "https://hycbook.com"
+#       }
+#     ]
+#   # 以下配置为按订阅主题推送给不同订阅用户，请按照数组形式，一一对应
+#   # categories: [数学]
+#   # segment: ["484223"]
 
-  # 此外，在文章 Frontmatter 处
-  # 可覆盖auto_hide和expire配置，针对特别提醒文章可以设置不自动隐藏及过期时间延长等操作
-  # 以及可指定schedule参数（例如：schedule: 2022-10-01 00:00:00），定时推送，而非延时发送
+#   # 此外，在文章 Frontmatter 处
+#   # 可覆盖auto_hide和expire配置，针对特别提醒文章可以设置不自动隐藏及过期时间延长等操作
+#   # 以及可指定schedule参数（例如：schedule: 2022-10-01 00:00:00），定时推送，而非延时发送
