@@ -45,6 +45,7 @@ copy:
 social:
   Github: https://github.com/narutohyc || icon-github
   Email: mailto:1832044043@qq.com || icon-youjian1
+  RSS: fas fa-rss: https://dclef.icu/atom.xml || RSS
 
 # search (搜索)
 # see https://butterfly.js.org/posts/ceeb73f/#搜索系統
