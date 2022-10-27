@@ -45,7 +45,7 @@ copy:
 social:
   Github: https://github.com/narutohyc || icon-github
   Email: mailto:1832044043@qq.com || icon-youjian1
-  fas fa-rss: https://hycbook.com/atom.xml || icon-github
+  fas fa-rss: https://hycbook.com/atom.xml || icon-RSS
 
 # search (搜索)
 # see https://butterfly.js.org/posts/ceeb73f/#搜索系統
@@ -905,7 +905,7 @@ inject:
     # 引入樱花
     - <script defer src="https://yremp.live/wp-content/uploads/resource/js/sakura.js"></script>
     # 阿里巴巴矢量图库   https://akilar.top/posts/d2ebecef/
-    - <script async src="//at.alicdn.com/t/c/font_3670467_4gmvtw6g6gp.js"></script>
+    - <script async src="//at.alicdn.com/t/c/font_3670467_a0sijt8frxo.js"></script>
     # 看板娘
     - <script defer src="/live2d-widget/autoload.js"></script>
 
