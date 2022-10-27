@@ -1109,8 +1109,8 @@ webpushr:
       }
     ]
   # 以下配置为按订阅主题推送给不同订阅用户，请按照数组形式，一一对应
-  categories: [数学]
-  segment: ["484223"]
+  # categories: [数学]
+  # segment: ["484223"]
 
   # 此外，在文章 Frontmatter 处
   # 可覆盖auto_hide和expire配置，针对特别提醒文章可以设置不自动隐藏及过期时间延长等操作
