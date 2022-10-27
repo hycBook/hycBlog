@@ -1,0 +1,869 @@
+<!DOCTYPE html><html lang="en" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>docker基本使用 | 兼一书虫</title><meta name="keywords" content="docker,neo4j,图数据库"><meta name="author" content="narutohyc"><meta name="copyright" content="narutohyc"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="dockerdocker安装 docker安装部署neo4j  docker安装分为安装包和命令行两种 安装包命令行下载docker安装包，按照指示安装即可1curl -fsSL https:&#x2F;&#x2F;get.docker.com | bash -s docker --mirror Aliyun  配置镜像加速  进入阿里云，登陆后点击左侧的镜像加速，生成自己的镜像加速地址 执行阿里云推荐的终端命令，">
+<meta property="og:type" content="article">
+<meta property="og:title" content="docker基本使用">
+<meta property="og:url" content="https://hycbook.com/article/50622.html">
+<meta property="og:site_name" content="兼一书虫">
+<meta property="og:description" content="dockerdocker安装 docker安装部署neo4j  docker安装分为安装包和命令行两种 安装包命令行下载docker安装包，按照指示安装即可1curl -fsSL https:&#x2F;&#x2F;get.docker.com | bash -s docker --mirror Aliyun  配置镜像加速  进入阿里云，登陆后点击左侧的镜像加速，生成自己的镜像加速地址 执行阿里云推荐的终端命令，">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://pic.hycbook.com/i//hexo/post_cover/%E8%95%BE%E5%A7%865.webp">
+<meta property="article:published_time" content="2022-10-09T05:17:57.000Z">
+<meta property="article:modified_time" content="2022-10-27T11:44:28.802Z">
+<meta property="article:author" content="narutohyc">
+<meta property="article:tag" content="docker">
+<meta property="article:tag" content="neo4j">
+<meta property="article:tag" content="图数据库">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://pic.hycbook.com/i//hexo/post_cover/%E8%95%BE%E5%A7%865.webp"><link rel="shortcut icon" href="https://pic.hycbook.com/i//hexo/config_imgs/网站图标.webp"><link rel="canonical" href="https://hycbook.com/article/50622"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//hm.baidu.com"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="manifest" href="/manifest.json"/><meta name="msapplication-TileColor" content="#ffccff"/><link rel="apple-touch-icon" sizes="180x180" href="https://pic.hycbook.com/i//hexo/source/img/siteicon/apple-touch-icon.png"/><link rel="icon" type="image/png" sizes="32x32" href="https://pic.hycbook.com/i//hexo/source/img/siteicon/favicon-32x32.png"/><link rel="icon" type="image/png" sizes="16x16" href="https://pic.hycbook.com/i//hexo/source/img/siteicon/favicon-16x16.png"/><link rel="mask-icon" href="https://pic.hycbook.com/i//hexo/source/img/siteicon/safari-pinned-tab.svg" color="#5bbad5"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.min.css" media="print" onload="this.media='all'"><script>var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?68340394dfd808cea9826e8a57f87aa6";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: {"appId":"IMKX0J251S","apiKey":"92de3dc43df2b8318c81df68e94d2221","indexName":"hexo_book","hits":{"per_page":10},"languages":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}.","hits_stats":"${hits} results found in ${time} ms"}},
+  localSearch: undefined,
+  translate: {"defaultEncoding":1,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"簡"},
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":400},
+  copy: {
+    success: 'Copy successfully',
+    error: 'Copy error',
+    noSupport: 'The browser does not support'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: 'days',
+  date_suffix: {
+    just: 'Just',
+    min: 'minutes ago',
+    hour: 'hours ago',
+    day: 'days ago',
+    month: 'months ago'
+  },
+  copyright: {"limitCount":120,"languages":{"author":"Author: narutohyc","link":"Link: ","source":"Source: 兼一书虫","info":"Copyright is owned by the author. For commercial reprints, please contact the author for authorization. For non-commercial reprints, please indicate the source."}},
+  lightbox: 'fancybox',
+  Snackbar: {"chs_to_cht":"Traditional Chinese Activated Manually","cht_to_chs":"Simplified Chinese Activated Manually","day_to_night":"Dark Mode Activated Manually","night_to_day":"Light Mode Activated Manually","bgLight":"#49b1f5","bgDark":"#1f1f1f","position":"top-center"},
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: true,
+  isAnchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'docker基本使用',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2022-10-27 19:44:28'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><link rel="stylesheet" href="/css/hyc_udf.css"><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/js-heo@1.0.11/mainColor/heoMainColor.css"><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/js-heo@1.0.11/404/404.css"><!-- hexo injector head_end start --><link rel="stylesheet" href="https://npm.elemecdn.com/hexo-butterfly-categories-card@1.0.0/lib/categorybar.css"><link rel="stylesheet" href="https://npm.elemecdn.com/hexo-butterfly-swiper/lib/swiper.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://npm.elemecdn.com/hexo-butterfly-swiper/lib/swiperstyle.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.cbd.int/hexo-butterfly-tag-plugins-plus@latest/lib/assets/font-awesome-animation.min.css" media="defer" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.cbd.int/hexo-butterfly-tag-plugins-plus@latest/lib/tag_plugins.css" media="defer" onload="this.media='all'"><script src="https://cdn.cbd.int/hexo-butterfly-tag-plugins-plus@latest/lib/assets/carousel-touch.js"></script><!-- hexo injector head_end end --><meta name="generator" content="Hexo 6.3.0"><link rel="alternate" href="/atom.xml" title="兼一书虫" type="application/atom+xml">
+</head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://pic.hycbook.com/i/hexo/person_img/兼一头像.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">82</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">107</div></a><a href="/categories/"><div class="headline">Categories</div><div class="length-num">6</div></a></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-fangwu"></use></svg><span> 首页</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);" rel="external nofollow noreferrer"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-wenzhang1">             </use></svg><span> 文章</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/archives/"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-guidang">                   </use></svg><span> 归档</span></a></li><li><a class="site-page child" href="/categories/"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-fenlei">                   </use></svg><span> 分类</span></a></li><li><a class="site-page child" href="/tags/"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-biaoqian">                   </use></svg><span> 标签</span></a></li></ul></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);" rel="external nofollow noreferrer"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-zhifeiji">             </use></svg><span> 娱乐</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-yinle">                   </use></svg><span> 音乐</span></a></li><li><a class="site-page child" href="/bangumis/"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-wodezhuifan">                   </use></svg><span> 追番</span></a></li><li><a class="site-page child" href="/gallery/"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-xiangce">                   </use></svg><span> 相册</span></a></li><li><a class="site-page child" href="/video/"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-shipin">                   </use></svg><span> 视频</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/comments/"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-TIFFANYSROOM_huaban"></use></svg><span> 留言板</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-changyonglianjie"></use></svg><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-aixin"></use></svg><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://pic.hycbook.com/i//hexo/post_imgs/蕾姆5.webp')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">兼一书虫</a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> Search</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-fangwu"></use></svg><span> 首页</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);" rel="external nofollow noreferrer"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-wenzhang1">             </use></svg><span> 文章</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/archives/"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-guidang">                   </use></svg><span> 归档</span></a></li><li><a class="site-page child" href="/categories/"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-fenlei">                   </use></svg><span> 分类</span></a></li><li><a class="site-page child" href="/tags/"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-biaoqian">                   </use></svg><span> 标签</span></a></li></ul></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);" rel="external nofollow noreferrer"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-zhifeiji">             </use></svg><span> 娱乐</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-yinle">                   </use></svg><span> 音乐</span></a></li><li><a class="site-page child" href="/bangumis/"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-wodezhuifan">                   </use></svg><span> 追番</span></a></li><li><a class="site-page child" href="/gallery/"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-xiangce">                   </use></svg><span> 相册</span></a></li><li><a class="site-page child" href="/video/"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-shipin">                   </use></svg><span> 视频</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/comments/"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-TIFFANYSROOM_huaban"></use></svg><span> 留言板</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-changyonglianjie"></use></svg><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-aixin"></use></svg><span> 关于</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">docker基本使用</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">Created</span><time class="post-meta-date-created" datetime="2022-10-09T05:17:57.000Z" title="Created 2022-10-09 13:17:57">2022-10-09</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">Updated</span><time class="post-meta-date-updated" datetime="2022-10-27T11:44:28.802Z" title="Updated 2022-10-27 19:44:28">2022-10-27</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/common/">common</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">Word count:</span><span class="word-count">5.9k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">Reading time:</span><span>24min</span></span><span class="post-meta-separator">|</span><span id="" data-flag-title="docker基本使用"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">Post View:</span><span id="twikoo_visitors"><i class="fa-solid fa-spinner fa-spin"></i></span></span><span class="post-meta-separator">|</span><span class="post-meta-commentcount"><i class="far fa-comments fa-fw post-meta-icon"></i><span class="post-meta-label">Comments:</span><a href="/article/50622.html#post-comment"><span id="twikoo-count"><i class="fa-solid fa-spinner fa-spin"></i></span></a></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><hr>
+<h1 id="docker"><a href="#docker" class="headerlink" title="docker"></a>docker</h1><h2 id="docker安装"><a href="#docker安装" class="headerlink" title="docker安装"></a>docker安装</h2><blockquote>
+<p><a target="_blank" rel="noopener external nofollow noreferrer" href="https://www.cnblogs.com/caoyusang/p/13610408.html">docker安装部署neo4j</a></p>
+</blockquote>
+<p>docker安装分为安装包和命令行两种</p>
+<div class="tabs" id="充分条件"><ul class="nav-tabs"><li class="tab active"><button type="button" data-href="#充分条件-1">安装包</button></li><li class="tab"><button type="button" data-href="#充分条件-2">命令行</button></li></ul><div class="tab-contents"><div class="tab-item-content active" id="充分条件-1"><p>下载<a target="_blank" rel="noopener external nofollow noreferrer" href="https://neo4j.com/download-center">docker</a>安装包，按照指示安装即可</p><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="fas fa-arrow-up"></i></button></div><div class="tab-item-content" id="充分条件-2"><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curl -fsSL https://get.docker.com | bash -s docker --mirror Aliyun</span><br></pre></td></tr></table></figure><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="fas fa-arrow-up"></i></button></div></div></div>
+<blockquote>
+<p>配置镜像加速</p>
+</blockquote>
+<p>进入<a target="_blank" rel="noopener external nofollow noreferrer" href="https://cr.console.aliyun.com/">阿里云</a>，登陆后点击左侧的镜像加速，生成自己的镜像加速地址</p>
+<p>执行阿里云推荐的终端命令，即可更新docker的镜像源为阿里云镜像</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">sudo <span class="built_in">mkdir</span> -p /etc/docker</span><br><span class="line">sudo <span class="built_in">tee</span> /etc/docker/daemon.json &lt;&lt;-<span class="string">&#x27;EOF&#x27;</span></span><br><span class="line">&#123;</span><br><span class="line">  <span class="string">&quot;registry-mirrors&quot;</span>: [<span class="string">&quot;https://xk5lrhin.mirror.aliyuncs.com&quot;</span>]</span><br><span class="line">&#125;</span><br><span class="line">EOF</span><br><span class="line">sudo systemctl daemon-reload</span><br><span class="line">sudo systemctl restart docker</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>代理配置</p>
+</blockquote>
+<ol>
+<li><p>为docker服务创建一个内嵌的systemd目录</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">mkdir</span> -p /etc/systemd/system/docker.service.d</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>创建<code>/etc/systemd/system/docker.service.d/http-proxy.conf</code>文件，并添加HTTP_PROXY环境变量，其中[proxy-addr]和[proxy-port]分别改成实际情况的代理地址和端口</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[Service]</span><br><span class="line">Environment=<span class="string">&quot;HTTP_PROXY=http://192.168.4.xx:xx&quot;</span> <span class="string">&quot;HTTPS_PROXY=http://192.168.4.xx:xx&quot;</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>如果还有内部的不需要使用代理来访问的Docker registries，那么还需要制定NO_PROXY环境变量</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[Service]</span><br><span class="line">Environment=<span class="string">&quot;HTTP_PROXY=http://192.168.4.xx:xx&quot;</span> <span class="string">&quot;HTTPS_PROXY=http://192.168.4.xx:xx&quot;</span> <span class="string">&quot;NO_PROXY=localhost,127.0.0.1,docker-registry.somecorporation.com&quot;</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>更新配置并重启Docker服务</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">systemctl daemon-reload</span><br><span class="line">systemctl restart docker</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<script type="math/tex; mode=display">
+docker容器 = 镜像 + 可读层</script><h2 id="基本使用"><a href="#基本使用" class="headerlink" title="基本使用"></a>基本使用</h2><blockquote>
+<p>基本命令</p>
+</blockquote>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 查看版本号</span></span><br><span class="line">docker version</span><br><span class="line"><span class="comment"># 启动docker</span></span><br><span class="line">systemctl start docker</span><br><span class="line"><span class="comment"># 关闭docker</span></span><br><span class="line">systemctl stop docker</span><br><span class="line"><span class="comment"># 重启docker</span></span><br><span class="line">systemctl restart docker</span><br><span class="line"><span class="comment"># docker设置随服务启动而自启动</span></span><br><span class="line">systemctl <span class="built_in">enable</span> docker</span><br><span class="line"><span class="comment"># 查看docker 运行状态</span></span><br><span class="line">systemctl status docker</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>镜像</p>
+</blockquote>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 查看本地镜像</span></span><br><span class="line">docker images</span><br><span class="line"><span class="comment"># 搜索镜像</span></span><br><span class="line">docker search neo4j</span><br><span class="line"><span class="comment"># 拉取镜像</span></span><br><span class="line">docker pull 镜像名:tag</span><br><span class="line"><span class="comment"># 删除镜像 ------当前镜像没有被任何容器使用才可以删除</span></span><br><span class="line">docker rmi -f 镜像名/镜像ID</span><br><span class="line"><span class="comment"># 删除多个 其镜像ID或镜像用用空格隔开即可</span></span><br><span class="line">docker rmi -f 镜像名/镜像ID 镜像名/镜像ID</span><br><span class="line"><span class="comment"># 保存镜像，将我们的镜像保存为tar压缩文件，这样方便镜像转移和保存</span></span><br><span class="line"><span class="comment"># 然后可以在任何一台安装了docker的服务器上加载这个镜像</span></span><br><span class="line">docker save 镜像名/镜像ID -o 镜像保存在哪个位置与名字</span><br><span class="line">docker save -o my_ubuntu_v3.tar runoob/ubuntu:v3</span><br><span class="line"><span class="comment"># 加载镜像</span></span><br><span class="line">docker load --input my_ubuntu_v3.tar</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>容器</p>
+</blockquote>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 创建一个全新的容器，不会立即运行</span></span><br><span class="line">docker create  --name my_container nginx:latest</span><br><span class="line"><span class="comment"># 创建和启动的组合，创建了一个新容器并立即启动它，-d表示后台</span></span><br><span class="line">docker run --name my_container -d nginx:latest</span><br><span class="line"><span class="comment"># 启动已终止容器</span></span><br><span class="line">docker container start</span><br><span class="line"><span class="comment"># 停止容器</span></span><br><span class="line">docker stop 容器ID或者容器名</span><br><span class="line"><span class="comment"># 重启容器</span></span><br><span class="line">docker restart 容器ID或者容器名</span><br><span class="line"></span><br><span class="line"><span class="comment"># 列出所有在运行的容器信息</span></span><br><span class="line">docker ps</span><br><span class="line"><span class="comment"># 查看本地所有容器</span></span><br><span class="line">docker ps -a</span><br><span class="line"><span class="comment"># 删除指定容器</span></span><br><span class="line">docker <span class="built_in">rm</span> -f &lt;container_id0&gt; &lt;container_id1&gt;</span><br><span class="line"><span class="comment"># 删除未启动成功的容器</span></span><br><span class="line">docker <span class="built_in">rm</span> $(docker ps -a|grep Created|awk <span class="string">&#x27;&#123;print $1&#125;&#x27;</span>)</span><br><span class="line"><span class="comment"># 删除所有未运行的容器</span></span><br><span class="line">docker <span class="built_in">rm</span> $(docker ps -a|grep Created|awk <span class="string">&#x27;&#123;print $1&#125;&#x27;</span>)</span><br></pre></td></tr></table></figure>
+<p>镜像打包工具  Buildpacks、Dockerfile</p>
+<p><a target="_blank" rel="noopener external nofollow noreferrer" href="https://www.baeldung.com/ops/docker-dockerfile-docker-compose">Docker, Dockerfile, 和Docker Compose区别 | Baeldung</a></p>
+<p>Docker Compose允许我们定义容器共享的共同对象。例如，我们可以一次性定义一个卷，然后把它挂在每个容器里，这样它们就可以共享一个共同的文件系统。或者，我们可以定义一个或多个容器用来通信的网络。</p>
+<p>Docker Compose只是一个协调多个容器的工具。其他选择包括Kubernetes、Openshift和Apache Mesos</p>
+<p><a target="_blank" rel="noopener external nofollow noreferrer" href="https://www.anquanclub.cn/5985.html">Docker容器迁移到其他服务器的5种方法详解_docker</a></p>
+<h1 id="neo4j"><a href="#neo4j" class="headerlink" title="neo4j"></a>neo4j</h1><h2 id="安装neo4j"><a href="#安装neo4j" class="headerlink" title="安装neo4j"></a>安装neo4j</h2><blockquote>
+<p>拉取neo4j镜像</p>
+</blockquote>
+<ol>
+<li><p>从<a target="_blank" rel="noopener external nofollow noreferrer" href="https://hub.docker.com/search?type=image">docker官方镜像</a>中找合适的镜像</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker search neo4j</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>拉取镜像源</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker pull neo4j(:版本号) <span class="comment"># 缺省 &quot;:版本号&quot; 时默认安装latest版本的</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>查看本地镜像，检验是否拉取成功</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker images</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h2 id="图算法插件"><a href="#图算法插件" class="headerlink" title="图算法插件"></a>图算法插件</h2><blockquote>
+<p>neo4j提供了一系列常用的<a target="_blank" rel="noopener external nofollow noreferrer" href="https://neo4j.com/download-center/#ngds">图算法</a>，该算法库需要单独安装，注意版本对应关系</p>
+</blockquote>
+<ol>
+<li><p>点击上方官网链接，下载<code>Neo4j Graph Data Science</code>下的文件，放到<code>$NEO4J_HOME/plugins</code>目录中</p>
+</li>
+<li><p>将以下内容添加到您的<code>$NEO4J_HOME/conf/neo4j.conf</code>文件中，<a target="_blank" rel="noopener external nofollow noreferrer" href="https://www.likecs.com/show-204290898.html">参考这里</a></p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">dbms.security.procedures.unrestricted=apoc.*,gds.*</span></span><br></pre></td></tr></table></figure>
+<p>此配置条目是必需的，因为 GDS 库访问 Neo4j 的低级组件以最大化性能</p>
+</li>
+<li><p>重启 Neo4j，在docker下就是重启</p>
+</li>
+</ol>
+<blockquote>
+<p>为了验证您的安装，可以输入以下命令</p>
+</blockquote>
+<figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">RETURN gds.version()</span><br></pre></td></tr></table></figure>
+<p>要列出所有已安装的算法，请运行以下<code>gds.list()</code>过程</p>
+<figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">CALL</span> gds.list()</span><br></pre></td></tr></table></figure>
+<p>例子: <a target="_blank" rel="noopener external nofollow noreferrer" href="https://blog.csdn.net/weixin_51432117/article/details/109965487">neo4j实现PageRank算法</a></p>
+<h2 id="启动neo4j"><a href="#启动neo4j" class="headerlink" title="启动neo4j"></a>启动neo4j</h2><p>找一个目录存放docker的各镜像运行目录，比如我这里选的是/home/huangyc/docker</p>
+<p>然后再在这个目录新建具体的镜像对应的文件夹/home/huangyc/docker/neo4j，在下面新建四个文件夹(实际上好像不需要手动建，执行命令时自动会新建)</p>
+<ul>
+<li><strong>data</strong>: 数据存放的文件夹</li>
+<li><strong>logs</strong>: 运行的日志文件夹</li>
+<li><strong>conf</strong>: 数据库配置文件夹(在配置文件<strong>neo4j.conf</strong>中配置包括开放远程连接、设置默认激活的数据库)</li>
+<li><strong>import</strong>: 为了大批量导入csv来构建数据库，需要导入的节点文件<strong>nodes.csv</strong>和关系文件<strong>rel.csv</strong>需要放到这个文件夹下</li>
+<li><strong>plugins</strong>: 存放jar插件</li>
+</ul>
+<blockquote>
+<p>启动命令格式如下</p>
+</blockquote>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">docker run -d --name container_name \  //-d表示容器后台运行 --name指定容器名字</span><br><span class="line">	-p 7474:7474 -p 7687:7687 \  //映射容器的端口号到宿主机的端口号</span><br><span class="line">	-v /home/huangyc/docker/neo4j/data:/data \  //把容器内的数据目录挂载到宿主机的对应目录下</span><br><span class="line">	-v /home/huangyc/docker/neo4j/logs:/logs \  //挂载日志目录</span><br><span class="line">	-v /home/huangyc/docker/neo4j/conf:/var/lib/neo4j/conf   //挂载配置目录</span><br><span class="line">	-v /home/huangyc/docker/neo4j/import:/var/lib/neo4j/import \  //挂载数据导入目录</span><br><span class="line">	-v /home/huangyc/docker/neo4j/plugins:/var/lib/neo4j/plugins \  //挂载数据导入目录</span><br><span class="line">	--<span class="built_in">env</span> NEO4J_AUTH=neo4j/password \  //设定数据库的用户名和和密码</span><br><span class="line">	neo4j //指定使用的镜像</span><br></pre></td></tr></table></figure>
+<p>也可以写成单行命令</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker run -d --name neo4j_hyc -p 7474:7474 -p 7687:7687 -v /home/huangyc/docker/neo4j/data:/data -v /home/huangyc/docker/neo4j/logs:/logs -v /home/huangyc/docker/neo4j/conf:/var/lib/neo4j/conf -v /home/huangyc/docker/neo4j/import:/var/lib/neo4j/import -v /home/huangyc/docker/neo4j/plugins:/var/lib/neo4j/plugins --<span class="built_in">env</span> NEO4J_AUTH=neo4j/hyc neo4j</span><br></pre></td></tr></table></figure>
+<h2 id="py库"><a href="#py库" class="headerlink" title="py库"></a>py库</h2><p>使用Python访问图数据库，主要使用的库时<code>py2neo</code>和<code>neo4j</code>，</p>
+<ul>
+<li>py2neo通过操作python变量，达到操作neo4j的目的，同时也支持<code>cypher</code>语法</li>
+<li>neo4j主要时执行CQL(cypher)语句</li>
+</ul>
+<div class="note success modern"><p><a target="_blank" rel="noopener external nofollow noreferrer" href="https://neo4j.com/docs/cypher-refcard/current/">cypher 语法</a></p>
+</div>
+<div class="tabs" id="充分条件"><ul class="nav-tabs"><li class="tab active"><button type="button" data-href="#充分条件-1">py2neo</button></li><li class="tab"><button type="button" data-href="#充分条件-2">neo4j</button></li></ul><div class="tab-contents"><div class="tab-item-content active" id="充分条件-1"><p>安装</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install py2neo</span><br></pre></td></tr></table></figure>
+<p>使用例子</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># coding:utf-8</span></span><br><span class="line"><span class="keyword">from</span> py2neo <span class="keyword">import</span> Graph, Node, Relationship</span><br><span class="line"> </span><br><span class="line"><span class="comment"># 连接neo4j数据库，输入地址、用户名、密码</span></span><br><span class="line">graph = Graph(<span class="string">&quot;http://192.168.1.106:7474&quot;</span>, name=<span class="string">&quot;neo4j&quot;</span>)</span><br><span class="line">graph.delete_all()</span><br><span class="line"><span class="comment"># 创建结点</span></span><br><span class="line">test_node_1 = Node(<span class="string">&#x27;ru_yi_zhuan&#x27;</span>, name=<span class="string">&#x27;皇帝&#x27;</span>) <span class="comment"># 修改的部分</span></span><br><span class="line">test_node_2 = Node(<span class="string">&#x27;ru_yi_zhuan&#x27;</span>, name=<span class="string">&#x27;皇后&#x27;</span>) <span class="comment"># 修改的部分</span></span><br><span class="line">test_node_3 = Node(<span class="string">&#x27;ru_yi_zhuan&#x27;</span>, name=<span class="string">&#x27;公主&#x27;</span>) <span class="comment"># 修改的部分</span></span><br><span class="line"> </span><br><span class="line">graph.create(test_node_1)</span><br><span class="line">graph.create(test_node_2)</span><br><span class="line">graph.create(test_node_3)</span><br><span class="line"> </span><br><span class="line"><span class="comment"># 创建关系</span></span><br><span class="line"><span class="comment"># 分别建立了test_node_1指向test_node_2和test_node_2指向test_node_1两条关系，关系的类型为&quot;丈夫、妻子&quot;，两条关系都有属性count，且值为1。</span></span><br><span class="line">node_1_zhangfu_node_1 = Relationship(test_node_1, <span class="string">&#x27;丈夫&#x27;</span>, test_node_2)</span><br><span class="line">node_1_zhangfu_node_1[<span class="string">&#x27;count&#x27;</span>] = <span class="number">1</span></span><br><span class="line">node_2_qizi_node_1 = Relationship(test_node_2, <span class="string">&#x27;妻子&#x27;</span>, test_node_1)</span><br><span class="line">node_2_munv_node_1 = Relationship(test_node_2, <span class="string">&#x27;母女&#x27;</span>, test_node_3)</span><br><span class="line"> </span><br><span class="line">node_2_qizi_node_1[<span class="string">&#x27;count&#x27;</span>] = <span class="number">1</span></span><br><span class="line"> </span><br><span class="line">graph.create(node_1_zhangfu_node_1)</span><br><span class="line">graph.create(node_2_qizi_node_1)</span><br><span class="line">graph.create(node_2_munv_node_1)</span><br><span class="line"> </span><br><span class="line"><span class="built_in">print</span>(graph)</span><br><span class="line"><span class="built_in">print</span>(test_node_1)</span><br><span class="line"><span class="built_in">print</span>(test_node_2)</span><br><span class="line"><span class="built_in">print</span>(node_1_zhangfu_node_1)</span><br><span class="line"><span class="built_in">print</span>(node_2_qizi_node_1)</span><br><span class="line"><span class="built_in">print</span>(node_2_munv_node_1) </span><br></pre></td></tr></table></figure><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="fas fa-arrow-up"></i></button></div><div class="tab-item-content" id="充分条件-2"><p>安装</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install neo4j</span><br></pre></td></tr></table></figure>
+<p>使用例子</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> neo4j <span class="keyword">import</span> GraphDatabase</span><br><span class="line"></span><br><span class="line">driver = GraphDatabase.driver(<span class="string">&quot;bolt://localhost:7687&quot;</span>, auth=(<span class="string">&quot;neo4j&quot;</span>, <span class="string">&quot;password&quot;</span>))</span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">add_friend</span>(<span class="params">tx, name, friend_name</span>):</span><br><span class="line">    tx.run(<span class="string">&quot;MERGE (a:Person &#123;name: $name&#125;) &quot;</span></span><br><span class="line">           <span class="string">&quot;MERGE (a)-[:KNOWS]-&gt;(friend:Person &#123;name: $friend_name&#125;)&quot;</span>,</span><br><span class="line">           name=name, friend_name=friend_name)</span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">print_friends</span>(<span class="params">tx, name</span>):</span><br><span class="line">    <span class="keyword">for</span> record <span class="keyword">in</span> tx.run(<span class="string">&quot;MATCH (a:Person)-[:KNOWS]-&gt;(friend) WHERE a.name = $name &quot;</span></span><br><span class="line">                         <span class="string">&quot;RETURN friend.name ORDER BY friend.name&quot;</span>, name=name):</span><br><span class="line">        <span class="built_in">print</span>(record[<span class="string">&quot;friend.name&quot;</span>])</span><br><span class="line"></span><br><span class="line"><span class="keyword">with</span> driver.session() <span class="keyword">as</span> session:</span><br><span class="line">    session.write_transaction(add_friend, <span class="string">&quot;Arthur&quot;</span>, <span class="string">&quot;Guinevere&quot;</span>)</span><br><span class="line">    session.write_transaction(add_friend, <span class="string">&quot;Arthur&quot;</span>, <span class="string">&quot;Lancelot&quot;</span>)</span><br><span class="line">    session.write_transaction(add_friend, <span class="string">&quot;Arthur&quot;</span>, <span class="string">&quot;Merlin&quot;</span>)</span><br><span class="line">    session.read_transaction(print_friends, <span class="string">&quot;Arthur&quot;</span>)</span><br></pre></td></tr></table></figure><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="fas fa-arrow-up"></i></button></div></div></div>
+<h1 id="nebula"><a href="#nebula" class="headerlink" title="nebula"></a>nebula</h1><h2 id="基本介绍"><a href="#基本介绍" class="headerlink" title="基本介绍"></a>基本介绍</h2><p>NebulaGraph 由三种服务构成：Graph 服务、Meta 服务和 Storage 服务，是一种存储与计算分离的架构</p>
+<blockquote>
+<p>Meta 服务</p>
+</blockquote>
+<p>Meta 服务是由 <code>nebula-metad 进程</code>提供的，用户可以根据场景配置 nebula-metad 进程数量：</p>
+<ul>
+<li>测试环境中，用户可以在 NebulaGraph 集群中部署 1 个或 3 个 nebula-metad 进程。如果要部署 3 个，用户可以将它们部署在 1 台机器上，或者分别部署在不同的机器上。</li>
+<li>生产环境中，建议在 NebulaGraph 集群中部署 3 个 nebula-metad 进程。请将这些进程部署在不同的机器上以保证高可用。</li>
+</ul>
+<p>所有 nebula-metad 进程构成了基于 Raft 协议的集群，其中一个进程是 leader，其他进程都是 follower。</p>
+<p>leader 是由多数派选举出来，只有 leader 能够对客户端或其他组件提供服务，其他 follower 作为候补，如果 leader 出现故障，会在所有 follower 中选举出新的 leader。</p>
+<blockquote>
+<p>Graph 服务</p>
+</blockquote>
+<p>Graph 服务是由<code>nebula-graphd 进程</code>提供，服务主要负责处理查询请求，包括解析查询语句、校验语句、生成执行计划以及按照执行计划执行四个大步骤，查询请求发送到 Graph 服务后，会由如下模块依次处理：</p>
+<ol>
+<li><strong>Parser</strong>：词法语法解析模块。</li>
+<li><strong>Validator</strong>：语义校验模块。</li>
+<li><strong>Planner</strong>：执行计划与优化器模块。</li>
+<li><strong>Executor</strong>：执行引擎模块。</li>
+</ol>
+<blockquote>
+<p>Storage 服务</p>
+</blockquote>
+<p>NebulaGraph 的存储包含两个部分，一个是 Meta 相关的存储，称为 Meta 服务，在前文已有介绍。</p>
+<p>另一个是具体数据相关的存储，称为 Storage 服务。其运行在 <code>nebula-storaged 进程</code>中</p>
+<h2 id="环境搭建"><a href="#环境搭建" class="headerlink" title="环境搭建"></a>环境搭建</h2><blockquote>
+<p>以<a target="_blank" rel="noopener external nofollow noreferrer" href="https://docs.nebula-graph.com.cn/3.2.1/4.deployment-and-installation/2.compile-and-install-nebula-graph/deploy-nebula-graph-cluster/">nebula 3.2.1</a>为例</p>
+</blockquote>
+<p>下载并安装NebulaGraph</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">wget https://oss-cdn.nebula-graph.com.cn/package/3.2.1/nebula-graph-3.2.1.el7.x86_64.rpm</span><br><span class="line">sudo rpm -ivh --prefix=/home/huangyc/nebula nebula-graph-3.2.1.el7.x86_64.rpm</span><br></pre></td></tr></table></figure>
+<p><code>--prefix</code>为可选项，用于指定安装路径</p>
+<p>如不设置，系统会将 NebulaGraph 安装到默认路径<code>/usr/local/nebula/</code></p>
+<blockquote>
+<p>集群配置</p>
+</blockquote>
+<div class="note success modern"><p>集群配置需要保证集群机器<a href="https://hycbook.com/article/d192a1af.html">配置ssh免密</a></p>
+</div>
+<p>修改每个服务器上的 NebulaGraph 配置文件</p>
+<p>NebulaGraph 的所有配置文件均位于安装目录的<code>etc</code>目录内，包括<code>nebula-graphd.conf</code>、<code>nebula-metad.conf</code>和<code>nebula-storaged.conf</code>，用户可以只修改所需服务的配置文件。各个机器需要修改的配置文件如下。</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th>机器名称</th>
+<th>待修改配置文件</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>A</td>
+<td><code>nebula-graphd.conf</code>、<code>nebula-storaged.conf</code>、<code>nebula-metad.conf</code></td>
+</tr>
+<tr>
+<td>B</td>
+<td><code>nebula-graphd.conf</code>、<code>nebula-storaged.conf</code>、<code>nebula-metad.conf</code></td>
+</tr>
+<tr>
+<td>C</td>
+<td><code>nebula-graphd.conf</code>、<code>nebula-storaged.conf</code>、<code>nebula-metad.conf</code></td>
+</tr>
+<tr>
+<td>D</td>
+<td><code>nebula-graphd.conf</code>、<code>nebula-storaged.conf</code></td>
+</tr>
+<tr>
+<td>E</td>
+<td><code>nebula-graphd.conf</code>、<code>nebula-storaged.conf</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<ul>
+<li><p>机器 A 配置</p>
+<p>nebula-graphd.conf</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">########## networking ##########</span></span><br><span class="line"><span class="comment"># Comma separated Meta Server Addresses</span></span><br><span class="line">--meta_server_addrs=192.168.10.111:9559,192.168.10.112:9559,192.168.10.113:9559</span><br><span class="line"><span class="comment"># Local IP used to identify the nebula-graphd process.</span></span><br><span class="line"><span class="comment"># Change it to an address other than loopback if the service is distributed or</span></span><br><span class="line"><span class="comment"># will be accessed remotely.</span></span><br><span class="line">--local_ip=192.168.10.111</span><br><span class="line"><span class="comment"># Network device to listen on</span></span><br><span class="line">--listen_netdev=any</span><br><span class="line"><span class="comment"># Port to listen on</span></span><br><span class="line">--port=9669</span><br></pre></td></tr></table></figure>
+<p>nebula-storaged.conf</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">########## networking ##########</span></span><br><span class="line"><span class="comment"># Comma separated Meta server addresses</span></span><br><span class="line">--meta_server_addrs=192.168.10.111:9559,192.168.10.112:9559,192.168.10.113:9559</span><br><span class="line"><span class="comment"># Local IP used to identify the nebula-storaged process.</span></span><br><span class="line"><span class="comment"># Change it to an address other than loopback if the service is distributed or</span></span><br><span class="line"><span class="comment"># will be accessed remotely.</span></span><br><span class="line">--local_ip=192.168.10.111</span><br><span class="line"><span class="comment"># Storage daemon listening port</span></span><br><span class="line">--port=9779</span><br></pre></td></tr></table></figure>
+<p>nebula-metad.conf</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">########## networking ##########</span></span><br><span class="line"><span class="comment"># Comma separated Meta Server addresses</span></span><br><span class="line">--meta_server_addrs=192.168.10.111:9559,192.168.10.112:9559,192.168.10.113:9559</span><br><span class="line"><span class="comment"># Local IP used to identify the nebula-metad process.</span></span><br><span class="line"><span class="comment"># Change it to an address other than loopback if the service is distributed or</span></span><br><span class="line"><span class="comment"># will be accessed remotely.</span></span><br><span class="line">--local_ip=192.168.10.111</span><br><span class="line"><span class="comment"># Meta daemon listening port</span></span><br><span class="line">--port=9559</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>机器 D 配置</p>
+<p>nebula-graphd.conf</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">########## networking ##########</span></span><br><span class="line"><span class="comment"># Comma separated Meta Server Addresses</span></span><br><span class="line">--meta_server_addrs=192.168.10.111:9559,192.168.10.112:9559,192.168.10.113:9559</span><br><span class="line"><span class="comment"># Local IP used to identify the nebula-graphd process.</span></span><br><span class="line"><span class="comment"># Change it to an address other than loopback if the service is distributed or</span></span><br><span class="line"><span class="comment"># will be accessed remotely.</span></span><br><span class="line">--local_ip=192.168.10.114</span><br><span class="line"><span class="comment"># Network device to listen on</span></span><br><span class="line">--listen_netdev=any</span><br><span class="line"><span class="comment"># Port to listen on</span></span><br><span class="line">--port=9669</span><br></pre></td></tr></table></figure>
+<p>nebula-storaged.conf</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">########## networking ##########</span></span><br><span class="line"><span class="comment"># Comma separated Meta server addresses</span></span><br><span class="line">--meta_server_addrs=192.168.10.111:9559,192.168.10.112:9559,192.168.10.113:9559</span><br><span class="line"><span class="comment"># Local IP used to identify the nebula-storaged process.</span></span><br><span class="line"><span class="comment"># Change it to an address other than loopback if the service is distributed or</span></span><br><span class="line"><span class="comment"># will be accessed remotely.</span></span><br><span class="line">--local_ip=192.168.10.114</span><br><span class="line"><span class="comment"># Storage daemon listening port</span></span><br><span class="line">--port=9779</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>ABC三台配置除了<code>local_ip</code>，其他都一致，DE两台配置除了<code>local_ip</code>，其他都一致</p>
+</li>
+</ul>
+<p>启动服务</p>
+<h2 id="命令学习"><a href="#命令学习" class="headerlink" title="命令学习"></a>命令学习</h2><p>使用脚本<code>nebula.service</code>管理服务，包括启动、停止、重启、中止和查看</p>
+<p><code>nebula.service</code>的默认路径是<code>/usr/local/nebula/scripts</code>，如果修改过安装路径，请使用实际路径</p>
+<blockquote>
+<p>语法</p>
+</blockquote>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">sudo /usr/local/nebula/scripts/nebula.service</span><br><span class="line">[-v] [-c &lt;config_file_path&gt;]</span><br><span class="line">&lt;start | stop | restart | <span class="built_in">kill</span> | status&gt;</span><br><span class="line">&lt;metad | graphd | storaged | all&gt;</span><br></pre></td></tr></table></figure>
+<p>比如对于非容器部署的 NebulaGraph，执行如下命令启动服务：</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">sudo /usr/local/nebula/scripts/nebula.service start all</span><br><span class="line">[INFO] Starting nebula-metad...</span><br><span class="line">[INFO] Done</span><br><span class="line">[INFO] Starting nebula-graphd...</span><br><span class="line">[INFO] Done</span><br><span class="line">[INFO] Starting nebula-storaged...</span><br><span class="line">[INFO] Done</span><br></pre></td></tr></table></figure>
+<p>执行如下命令查看 NebulaGraph 服务状态</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo /usr/local/nebula/scripts/nebula.service status all</span><br></pre></td></tr></table></figure>
+<p>如果返回如下结果，表示 NebulaGraph 服务正常运行</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">[INFO] nebula-metad(33fd35e): Running as 29020, Listening on 9559</span><br><span class="line">[INFO] nebula-graphd(33fd35e): Running as 29095, Listening on 9669</span><br><span class="line">[WARN] nebula-storaged after v3.0.0 will not start service until it is added to cluster.</span><br><span class="line">[WARN] See Manage Storage hosts:ADD HOSTS in https://docs.nebula-graph.io/</span><br><span class="line">[INFO] nebula-storaged(33fd35e): Running as 29147, Listening on 9779</span><br></pre></td></tr></table></figure>
+<p>正常启动 NebulaGraph 后，<code>nebula-storaged</code>进程的端口显示红色。这是因为<code>nebula-storaged</code>在启动流程中会等待<code>nebula-metad</code>添加当前 Storage 服务，当前 Storage 服务收到 Ready 信号后才会正式启动服务。从 3.0.0 版本开始，在配置文件中添加的 Storage 节点无法直接读写，配置文件的作用仅仅是将 Storage 节点注册至 Meta 服务中。必须使用<code>ADD HOSTS</code>命令后，才能正常读写 Storage 节点。</p>
+<blockquote>
+<p>注册</p>
+</blockquote>
+<p>具体是通过nebula-console命令行或者studio页面执行，用 java client 也可以的, 底层逻辑都是通过客户端发送一条 <code>add hosts xxxxx</code> query</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ADD HOSTS 192.168.40.39:9779, 192.168.40.40:9779, 192.168.40.41:9779;</span><br></pre></td></tr></table></figure>
+<p>比如使用python客户端</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> nebula3.gclient.net <span class="keyword">import</span> ConnectionPool</span><br><span class="line"><span class="keyword">from</span> nebula3.Config <span class="keyword">import</span> Config</span><br><span class="line"></span><br><span class="line"><span class="comment"># define a config</span></span><br><span class="line">config = Config()</span><br><span class="line">config.max_connection_pool_size = <span class="number">10</span></span><br><span class="line"><span class="comment"># init connection pool</span></span><br><span class="line">connection_pool = ConnectionPool()</span><br><span class="line"><span class="comment"># if the given servers are ok, return true, else return false</span></span><br><span class="line">ok = connection_pool.init([(<span class="string">&#x27;192.168.123.xx&#x27;</span>, <span class="number">9669</span>)], config)</span><br><span class="line"></span><br><span class="line"><span class="comment"># option 1 control the connection release yourself</span></span><br><span class="line"><span class="comment"># get session from the pool</span></span><br><span class="line">session = connection_pool.get_session(<span class="string">&#x27;root&#x27;</span>, <span class="string">&#x27;nebula&#x27;</span>)</span><br><span class="line"></span><br><span class="line">session.execute(<span class="string">&quot;ADD HOSTS 192.168.123.24:9779&quot;</span>)</span><br></pre></td></tr></table></figure>
+<p>等待20s后，重新查看服务状态，发现警告没有就说明成功了</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost nebula]<span class="comment"># sudo scripts/nebula.service status all</span></span><br><span class="line">[WARN] The maximum files allowed to open might be too few: 1024</span><br><span class="line">[INFO] nebula-metad(bb2e684): Running as 11660, Listening on 9559</span><br><span class="line">[INFO] nebula-graphd(bb2e684): Running as 11727, Listening on 9669</span><br><span class="line">[INFO] nebula-storaged(bb2e684): Running as 11764, Listening on 9779</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>清空图</p>
+</blockquote>
+<ul>
+<li><p>数据清除后，<strong>如无备份，无法恢复</strong>。使用该功能务必谨慎</p>
+<p><code>CLEAR SPACE</code>不是原子性操作。如果执行出错，请重新执行，避免残留数据</p>
+</li>
+<li><p>图空间中的数据量越大，<code>CLEAR SPACE</code>消耗的时间越长</p>
+<p>如果<code>CLEAR SPACE</code>的执行因客户端连接超时而失败，可以增大 <a target="_blank" rel="noopener external nofollow noreferrer" href="https://docs.nebula-graph.com.cn/3.2.1/5.configurations-and-logs/1.configurations/3.graph-config/">Graph 服务配置</a>中<code>storage_client_timeout_ms</code>参数的值</p>
+</li>
+<li><p>在<code>CLEAR SPACE</code>的执行过程中，向该图空间写入数据的行为不会被自动禁止</p>
+<p>这样的写入行为可能导致<code>CLEAR SPACE</code>清除数据不完全，残留的数据也可能受到损坏</p>
+</li>
+</ul>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">CLEAR SPACE [IF EXISTS] &lt;space_name&gt;;</span><br></pre></td></tr></table></figure>
+<p>保留的数据<a target="_blank" rel="noopener external nofollow noreferrer" href="https://docs.nebula-graph.com.cn/3.2.1/3.ngql-guide/9.space-statements/6.clear-space/#_4">¶</a></p>
+<p>图空间中，<code>CLEAR SPACE</code>不会删除的数据包括：</p>
+<ul>
+<li>Tag 信息</li>
+<li>Edge type 信息</li>
+<li>原生索引和全文索引的元数据</li>
+</ul>
+<p><code>DROP SPACE</code>语句用于删除指定图空间以及其中的所有信息</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">DROP SPACE [IF EXISTS] &lt;graph_space_name&gt;;</span><br></pre></td></tr></table></figure>
+<h2 id="客户端"><a href="#客户端" class="headerlink" title="客户端"></a>客户端</h2><p>NebulaGraph 支持多种类型的客户端，包括命令行客户端、可视化界面客户端和流行编程语言客户端</p>
+<p>详情参见<a target="_blank" rel="noopener external nofollow noreferrer" href="https://docs.nebula-graph.com.cn/3.2.1/14.client/1.nebula-client/">客户端列表</a></p>
+<div class="tabs" id="客户端"><ul class="nav-tabs"><li class="tab active"><button type="button" data-href="#客户端-1">原生CLI客户端</button></li><li class="tab"><button type="button" data-href="#客户端-2">python客户端</button></li></ul><div class="tab-contents"><div class="tab-item-content active" id="客户端-1"><blockquote>
+<p>前提条件<a target="_blank" rel="noopener external nofollow noreferrer" href="https://docs.nebula-graph.com.cn/3.2.1/4.deployment-and-installation/connect-to-nebula-graph/#_1">¶</a></p>
+<p><a target="_blank" rel="noopener external nofollow noreferrer" href="https://docs.nebula-graph.com.cn/3.2.1/nebula-console/">官方文档</a></p>
+</blockquote>
+<ul>
+<li><p>NebulaGraph 服务已<a target="_blank" rel="noopener external nofollow noreferrer" href="https://docs.nebula-graph.com.cn/3.2.1/4.deployment-and-installation/manage-service/">启动</a></p>
+</li>
+<li><p>运行 NebulaGraph Console 的机器和运行 NebulaGraph 的服务器网络互通</p>
+</li>
+<li><p>NebulaGraph Console 的版本兼容 NebulaGraph 的版本</p>
+</li>
+</ul>
+<p>使用命令<code>arch</code>，查看系统结构，去<a target="_blank" rel="noopener external nofollow noreferrer" href="https://github.com/vesoft-inc/nebula-console/releases">官网</a>下载安装包，重命名文件为<code>nebula_console</code></p>
+<ol>
+<li><p>为用户授予 nebula-console 文件的执行权限</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">chmod</span> 111 nebula-console</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>在命令行界面中，切换工作目录至 nebula-console 文件所在目录，执行如下命令连接 NebulaGraph</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">./nebula-console -addr &lt;ip&gt; -port &lt;port&gt; -u &lt;username&gt; -p &lt;password&gt; [-t 120] [-e <span class="string">&quot;nGQL_statement&quot;</span> | -f filename.nGQL]</span><br></pre></td></tr></table></figure>
+<p>例如，要连接到部署在 192.168.10.8 上的 Graph 服务，运行以下命令</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">./nebula_console -addr 192.168.10.8 -port 9669 -u root -p nebula</span><br></pre></td></tr></table></figure>
+</li>
+</ol><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="fas fa-arrow-up"></i></button></div><div class="tab-item-content" id="客户端-2"><p>已安装 Python，版本为 3.6 及以上，版本对照表<a target="_blank" rel="noopener external nofollow noreferrer" href="https://docs.nebula-graph.com.cn/3.2.1/14.client/5.nebula-python-client/#_2">¶</a></p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th>NebulaGraph 版本</th>
+<th>NebulaGraph Python 版本</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>3.2.1</td>
+<td>3.1.0</td>
+</tr>
+<tr>
+<td>2.6.x</td>
+<td>2.6.0</td>
+</tr>
+</tbody>
+</table>
+</div>
+<blockquote>
+<p>pip安装</p>
+</blockquote>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ pip install nebula3-python==&lt;version&gt;</span><br></pre></td></tr></table></figure><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="fas fa-arrow-up"></i></button></div></div></div>
+<blockquote>
+<p>初始化一些<a target="_blank" rel="noopener external nofollow noreferrer" href="https://docs.nebula-graph.com.cn/3.2.1/2.quick-start/4.nebula-graph-crud/#_2">数据</a></p>
+</blockquote>
+<ol>
+<li><p>执行如下语句创建名为<code>basketballplayer</code>的图空间</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">CREATE SPACE basketballplayer(partition_num=15, replica_factor=1, vid_type=fixed_string(32));</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>执行命令<code>SHOW HOSTS</code>检查分片的分布情况，确保平衡分布</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">nebula&gt; SHOW HOSTS;</span><br><span class="line">+-------------+-----------+-----------+-----------+--------------+----------------------------------+------------------------+---------+</span><br><span class="line">| Host        | Port      | HTTP port | Status    | Leader count | Leader distribution              | Partition distribution | Version |</span><br><span class="line">+-------------+-----------+-----------+-----------+--------------+----------------------------------+------------------------+---------+</span><br><span class="line">| <span class="string">&quot;storaged0&quot;</span> | 9779      | 19669     | <span class="string">&quot;ONLINE&quot;</span>  | 5            | <span class="string">&quot;basketballplayer:5&quot;</span>             | <span class="string">&quot;basketballplayer:5&quot;</span>   | <span class="string">&quot;3.1.0&quot;</span> |</span><br><span class="line">| <span class="string">&quot;storaged1&quot;</span> | 9779      | 19669     | <span class="string">&quot;ONLINE&quot;</span>  | 5            | <span class="string">&quot;basketballplayer:5&quot;</span>             | <span class="string">&quot;basketballplayer:5&quot;</span>   | <span class="string">&quot;3.1.0&quot;</span> |</span><br><span class="line">| <span class="string">&quot;storaged2&quot;</span> | 9779      | 19669     | <span class="string">&quot;ONLINE&quot;</span>  | 5            | <span class="string">&quot;basketballplayer:5&quot;</span>             | <span class="string">&quot;basketballplayer:5&quot;</span>   | <span class="string">&quot;3.1.0&quot;</span> |</span><br><span class="line">+-------------+-----------+-----------+-----------+--------------+----------------------------------+------------------------+---------+</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>选择图空间<code>basketballplayer</code></p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nebula[(none)]&gt; USE basketballplayer;</span><br></pre></td></tr></table></figure>
+<p>用户可以执行命令<code>SHOW SPACES</code>查看创建的图空间</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">nebula&gt; SHOW SPACES;</span><br><span class="line">+--------------------+</span><br><span class="line">| Name               |</span><br><span class="line">+--------------------+</span><br><span class="line">| <span class="string">&quot;basketballplayer&quot;</span> |</span><br><span class="line">+--------------------+</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>创建 Tag 和 Edge type</p>
+<p>语法:</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">CREATE &#123;TAG | EDGE&#125; [IF NOT EXISTS] &#123;&lt;tag_name&gt; | &lt;edge_type_name&gt;&#125;</span><br><span class="line">    (</span><br><span class="line">      &lt;prop_name&gt; &lt;data_type&gt; [NULL | NOT NULL] [DEFAULT &lt;default_value&gt;] [COMMENT <span class="string">&#x27;&lt;comment&gt;&#x27;</span>]</span><br><span class="line">      [&#123;, &lt;prop_name&gt; &lt;data_type&gt; [NULL | NOT NULL] [DEFAULT &lt;default_value&gt;] [COMMENT <span class="string">&#x27;&lt;comment&gt;&#x27;</span>]&#125; ...] </span><br><span class="line">    )</span><br><span class="line">    [TTL_DURATION = &lt;ttl_duration&gt;]</span><br><span class="line">    [TTL_COL = &lt;prop_name&gt;]</span><br><span class="line">    [COMMENT = <span class="string">&#x27;&lt;comment&gt;&#x27;</span>];</span><br></pre></td></tr></table></figure>
+<p>创建 Tag:<code>player</code>和<code>team</code>，以及 Edge type:<code>follow</code>和<code>serve</code>。说明如下表。</p>
+<p>| 名称   | 类型      | 属性                             |<br>| ——— | ————- | ———————————————— |<br>| player | Tag       | name (string), age (int)         |<br>| team   | Tag       | name (string)                    |<br>| follow | Edge type | degree (int)                     |<br>| serve  | Edge type | start_year (int), end_year (int) |</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">CREATE TAG player(name string, age int);</span><br><span class="line">CREATE TAG team(name string);</span><br><span class="line">CREATE EDGE follow(degree int);</span><br><span class="line">CREATE EDGE serve(start_year int, end_year int);</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>插入点和边</p>
+<ul>
+<li><p>插入点</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">INSERT VERTEX [IF NOT EXISTS] [tag_props, [tag_props] ...]</span><br><span class="line">VALUES &lt;vid&gt;: ([prop_value_list])</span><br><span class="line"></span><br><span class="line">tag_props:</span><br><span class="line">  tag_name ([prop_name_list])</span><br><span class="line"></span><br><span class="line">prop_name_list: [prop_name [, prop_name] ...]</span><br><span class="line">prop_value_list: [prop_value [, prop_value] ...]  </span><br></pre></td></tr></table></figure>
+<p><code>vid</code>是 Vertex ID 的缩写，<code>vid</code>在一个图空间中是唯一的。参数详情请参见 <a target="_blank" rel="noopener external nofollow noreferrer" href="https://docs.nebula-graph.com.cn/3.2.1/3.ngql-guide/12.vertex-statements/1.insert-vertex/">INSERT VERTEX</a></p>
+</li>
+<li><p>插入边</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">INSERT EDGE [IF NOT EXISTS] &lt;edge_type&gt; ( &lt;prop_name_list&gt; ) VALUES </span><br><span class="line">&lt;src_vid&gt; -&gt; &lt;dst_vid&gt;[@&lt;rank&gt;] : ( &lt;prop_value_list&gt; )</span><br><span class="line">[, &lt;src_vid&gt; -&gt; &lt;dst_vid&gt;[@&lt;rank&gt;] : ( &lt;prop_value_list&gt; ), ...];</span><br><span class="line"></span><br><span class="line">&lt;prop_name_list&gt; ::= [ &lt;prop_name&gt; [, &lt;prop_name&gt; ] ...]</span><br><span class="line">&lt;prop_value_list&gt; ::= [ &lt;prop_value&gt; [, &lt;prop_value&gt; ] ...]</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>参数详情请参见 <a target="_blank" rel="noopener external nofollow noreferrer" href="https://docs.nebula-graph.com.cn/3.2.1/3.ngql-guide/13.edge-statements/1.insert-edge/">INSERT EDGE</a></p>
+<ul>
+<li><p>插入代表球员和球队的点</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">nebula&gt; INSERT VERTEX player(name, age) VALUES <span class="string">&quot;player100&quot;</span>:(<span class="string">&quot;Tim Duncan&quot;</span>, 42);</span><br><span class="line">nebula&gt; INSERT VERTEX player(name, age) VALUES <span class="string">&quot;player101&quot;</span>:(<span class="string">&quot;Tony Parker&quot;</span>, 36);</span><br><span class="line">nebula&gt; INSERT VERTEX player(name, age) VALUES <span class="string">&quot;player102&quot;</span>:(<span class="string">&quot;LaMarcus Aldridge&quot;</span>, 33);</span><br><span class="line">nebula&gt; INSERT VERTEX team(name) VALUES <span class="string">&quot;team203&quot;</span>:(<span class="string">&quot;Trail Blazers&quot;</span>), <span class="string">&quot;team204&quot;</span>:(<span class="string">&quot;Spurs&quot;</span>);</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>插入代表球员和球队之间关系的边</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">nebula&gt; INSERT EDGE follow(degree) VALUES <span class="string">&quot;player101&quot;</span> -&gt; <span class="string">&quot;player100&quot;</span>:(95);</span><br><span class="line">nebula&gt; INSERT EDGE follow(degree) VALUES <span class="string">&quot;player101&quot;</span> -&gt; <span class="string">&quot;player102&quot;</span>:(90);</span><br><span class="line">nebula&gt; INSERT EDGE follow(degree) VALUES <span class="string">&quot;player102&quot;</span> -&gt; <span class="string">&quot;player100&quot;</span>:(75);</span><br><span class="line">nebula&gt; INSERT EDGE serve(start_year, end_year) VALUES <span class="string">&quot;player101&quot;</span> -&gt; <span class="string">&quot;team204&quot;</span>:(1999, 2018),<span class="string">&quot;player102&quot;</span> -&gt; <span class="string">&quot;team203&quot;</span>:(2006,  2015);</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>查询数据<a target="_blank" rel="noopener external nofollow noreferrer" href="https://docs.nebula-graph.com.cn/3.2.1/2.quick-start/4.nebula-graph-crud/#_7">¶</a></p>
+<ul>
+<li><p><a target="_blank" rel="noopener external nofollow noreferrer" href="https://docs.nebula-graph.com.cn/3.2.1/3.ngql-guide/7.general-query-statements/3.go/">GO</a> 语句可以根据指定的条件遍历数据库。<code>GO</code>语句从一个或多个点开始，沿着一条或多条边遍历，返回<code>YIELD</code>子句中指定的信息。</p>
+</li>
+<li><p><a target="_blank" rel="noopener external nofollow noreferrer" href="https://docs.nebula-graph.com.cn/3.2.1/3.ngql-guide/7.general-query-statements/4.fetch/">FETCH</a> 语句可以获得点或边的属性。</p>
+</li>
+<li><p><a target="_blank" rel="noopener external nofollow noreferrer" href="https://docs.nebula-graph.com.cn/3.2.1/3.ngql-guide/7.general-query-statements/5.lookup/">LOOKUP</a> 语句是基于<a target="_blank" rel="noopener external nofollow noreferrer" href="https://docs.nebula-graph.com.cn/3.2.1/2.quick-start/4.nebula-graph-crud/#_12">索引</a>的，和<code>WHERE</code>子句一起使用，查找符合特定条件的数据。</p>
+</li>
+<li><p><a target="_blank" rel="noopener external nofollow noreferrer" href="https://docs.nebula-graph.com.cn/3.2.1/3.ngql-guide/7.general-query-statements/2.match/">MATCH</a> 语句是查询图数据最常用的，可以灵活的描述各种图模式，但是它依赖<a target="_blank" rel="noopener external nofollow noreferrer" href="https://docs.nebula-graph.com.cn/3.2.1/2.quick-start/4.nebula-graph-crud/#_12">索引</a>去匹配 NebulaGraph 中的数据模型，性能也还需要调优。</p>
+</li>
+</ul>
+</li>
+<li></li>
+</ol>
+<h2 id="可视化"><a href="#可视化" class="headerlink" title="可视化"></a>可视化</h2><p>NebulaGraph Studio（简称 Studio）是一款可以通过 Web 访问的开源图数据库可视化工具，搭配 <a target="_blank" rel="noopener external nofollow noreferrer" href="https://docs.nebula-graph.com.cn/3.2.1/">NebulaGraph</a> 内核使用，提供构图、数据导入、编写 nGQL 查询等一站式服务。</p>
+<blockquote>
+<p>前提条件<a target="_blank" rel="noopener external nofollow noreferrer" href="https://docs.nebula-graph.com.cn/3.2.1/nebula-studio/deploy-connect/st-ug-deploy/#_1">¶</a></p>
+</blockquote>
+<p>在部署 RPM 版 Studio 之前，用户需要确认以下信息：</p>
+<ul>
+<li><p>NebulaGraph 服务已经部署并启动。详细信息，参考 <a target="_blank" rel="noopener external nofollow noreferrer" href="https://docs.nebula-graph.com.cn/3.2.1/4.deployment-and-installation/1.resource-preparations/">NebulaGraph 安装部署</a></p>
+</li>
+<li><p>使用的 Linux 发行版为 CentOS ，已安装 lsof</p>
+</li>
+<li><p>确保以下端口未被占用，<code>7001</code>是Studio 提供 web 服务使用的</p>
+</li>
+</ul>
+<p>从官网下载<a target="_blank" rel="noopener external nofollow noreferrer" href="https://oss-cdn.nebula-graph.com.cn/nebula-graph-studio/3.4.1/nebula-graph-studio-3.4.1.x86_64.rpm">nebula-graph-studio-3.4.1.x86_64.rpm</a>，使用以下命令安装到指定路径</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo rpm -i nebula-graph-studio-3.4.1.x86_64.rpm --prefix=&lt;path&gt; </span><br></pre></td></tr></table></figure>
+<p>安装完，自动会启动，当屏幕返回以下信息时，表示 PRM 版 Studio 已经成功启动。</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Start installing NebulaGraph Studio now...</span><br><span class="line">NebulaGraph Studio has been installed.</span><br><span class="line">NebulaGraph Studio started automatically.</span><br></pre></td></tr></table></figure>
+<p>启动成功后，在浏览器地址栏输入 <code>http://&lt;ip address&gt;:7001</code></p>
+<p><strong>注意</strong>: host处填写为 <code>ip:port</code>格式</p>
+<p>用户名和密码：根据 Nebula Graph 的身份验证设置填写登录账号和密码</p>
+<ul>
+<li>如果未启用身份验证，可以填写默认用户名 <code>root</code> 和任意密码。</li>
+<li>如果已启用身份验证，但是未创建账号信息，用户只能以 GOD 角色登录，必须填写 <code>root</code> 及对应的密码 <code>nebula</code>。</li>
+<li>如果已启用身份验证，同时又创建了不同的用户并分配了角色，不同角色的用户使用自己的账号和密码登录。</li>
+</ul>
+<p>如果在浏览器窗口中能看到以下登录界面，表示已经成功部署并启动 Studio</p>
+<blockquote>
+<p>异常处理<a target="_blank" rel="noopener external nofollow noreferrer" href="https://docs.nebula-graph.com.cn/3.2.1/nebula-studio/deploy-connect/st-ug-deploy/#_4">¶</a></p>
+</blockquote>
+<p>如果在安装过程中自动启动失败或是需要手动启动或停止服务，请使用以下命令：</p>
+<ul>
+<li><p>手动启动服务</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">bash /usr/local/nebula-graph-studio/scripts/rpm/start.sh</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>手动停止服务</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">bash /usr/local/nebula-graph-studio/scripts/rpm/stop.sh</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>如果启动服务时遇到报错报错 <code>ERROR: bind EADDRINUSE 0.0.0.0:7001</code>，用户可以通过以下命令查看端口 7001 是否被占用。</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">lsof -i:7001</span><br></pre></td></tr></table></figure>
+<p>如果端口被占用，且无法结束该端口上进程，用户可以通过以下命令修改 Studio 服务启动端口，并重新启动服务。</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">//修改 studio 服务启动端口</span><br><span class="line">vi etc/studio-api.yam</span><br><span class="line">//修改</span><br><span class="line">Port: 7001 // 修改这个端口号，改成任意一个当前可用的即可</span><br><span class="line">//重启服务</span><br><span class="line">systemctl restart nebula-graph-studio.service</span><br></pre></td></tr></table></figure>
+<h2 id="集群监控"><a href="#集群监控" class="headerlink" title="集群监控"></a>集群监控</h2><p><a target="_blank" rel="noopener external nofollow noreferrer" href="https://docs.nebula-graph.com.cn/3.2.1/nebula-dashboard/1.what-is-dashboard/"><code>NebulaGraph Dashboard</code></a>(简称Dashboard)是一款用于监控NebulaGraph集群中机器和服务状态的可视化工具</p>
+<h2 id="数据导入"><a href="#数据导入" class="headerlink" title="数据导入"></a>数据导入</h2><blockquote>
+<p><a target="_blank" rel="noopener external nofollow noreferrer" href="https://baijiahao.baidu.com/s?id=1737412299821419025&amp;wfr=spider&amp;for=pc">Nebula Importer 数据导入实践</a></p>
+</blockquote>
+<p>Nebula 目前作为较为成熟的产品，已经有着很丰富的生态。数据导入的维度而言就已经提供了多种选择。有大而全的Nebula Exchange，小而精简的Nebula Importer, 还有为 Spark / Flink 引擎提供的Nebula Spark Connector 和 Nebula Flink Connector。</p>
+<p>使用场景介绍：</p>
+<ul>
+<li><p>Nebula Exchange</p>
+</li>
+<li><ul>
+<li>需要将来自 Kafka、Pulsar 平台的流式数据, 导入 Nebula Graph 数据库</li>
+<li>需要从关系型数据库（如 MySQL）或者分布式文件系统（如 HDFS）中读取批式数据</li>
+<li>需要将大批量数据生成 Nebula Graph 能识别的 SST 文件</li>
+</ul>
+</li>
+<li><p>Nebula Importer</p>
+</li>
+<li><ul>
+<li>Importer 适用于将本地 CSV 文件的内容导入至 Nebula Graph 中</li>
+</ul>
+</li>
+<li><p>Nebula Spark Connector:</p>
+</li>
+<li><ul>
+<li>在不同的 Nebula Graph 集群之间迁移数据</li>
+<li>在同一个 Nebula Graph 集群内不同图空间之间迁移数据</li>
+<li>Nebula Graph 与其他数据源之间迁移数据</li>
+<li>结合 Nebula Algorithm 进行图计算</li>
+</ul>
+</li>
+<li><p>Nebula Flink Connector</p>
+</li>
+<li><ul>
+<li>在不同的 Nebula Graph 集群之间迁移数据</li>
+<li>在同一个 Nebula Graph 集群内不同图空间之间迁移数据</li>
+<li>Nebula Graph 与其他数据源之间迁移数据</li>
+</ul>
+</li>
+</ul>
+<p>总体来说，Exchange 大而全，可以和大部分的存储引擎结合，导入到 Nebula 中，但是需要部署Spark 环境。</p>
+<p>Importer 使用简单，所需依赖较少，但需要自己提前生成数据文件，配置好 schema 一劳永逸，但是不支持断点续传，适合数据量中等。</p>
+<p>Spark / Flink Connector 需要和流数据结合。</p>
+<p>不同的场景选择不同的工具，如果作为新人使用 Nebula 在导入数据时，建议使用 Nebula Importer 工具，简单快速上手。</p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">Author: </span><span class="post-copyright-info"><a target="_blank" rel="noopener external nofollow noreferrer" href="https://github.com/narutohyc">narutohyc</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">Link: </span><span class="post-copyright-info"><a href="https://hycbook.com/article/50622.html">https://hycbook.com/article/50622.html</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">Copyright Notice: </span><span class="post-copyright-info">All articles in this blog are licensed under <a target="_blank" rel="noopener external nofollow noreferrer" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> unless stating additionally.</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/docker/">docker</a><a class="post-meta__tags" href="/tags/neo4j/">neo4j</a><a class="post-meta__tags" href="/tags/%E5%9B%BE%E6%95%B0%E6%8D%AE%E5%BA%93/">图数据库</a></div><div class="post_share"><div class="social-share" data-image="https://pic.hycbook.com/i//hexo/post_cover/蕾姆5.webp" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><div class="post-reward"><div class="reward-button"><i class="fas fa-qrcode"></i> Donate</div><div class="reward-main"><ul class="reward-all"><li class="reward-item"><a href="https://pic.hycbook.com/i//hexo/qr_codes/hyc_wechat.webp" rel="external nofollow noreferrer" target="_blank"><img class="post-qr-code-img" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://pic.hycbook.com/i//hexo/qr_codes/hyc_wechat.webp" alt="wechat"/></a><div class="post-qr-code-desc">wechat</div></li><li class="reward-item"><a href="https://pic.hycbook.com/i//hexo/qr_codes/hyc_alipay.webp" rel="external nofollow noreferrer" target="_blank"><img class="post-qr-code-img" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://pic.hycbook.com/i//hexo/qr_codes/hyc_alipay.webp" alt="alipay"/></a><div class="post-qr-code-desc">alipay</div></li></ul></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/article/63632.html"><img class="prev-cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fn.sinaimg.cn%2Fsinakd20210917ac%2F400%2Fw1200h800%2F20210917%2F7afc-e7154f1cc00b947caba98aa8e82f876b.jpg&amp;refer=http%3A%2F%2Fn.sinaimg.cn&amp;app=2002&amp;size=f9999,10000&amp;q=a80&amp;n=0&amp;g=0n&amp;fmt=auto?sec=1667401636&amp;t=6455153a5a3fa9a6f8e1e73f82cb17b9" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">Previous Post</div><div class="prev_info">厦门方特梦幻王国一日攻略</div></div></a></div><div class="next-post pull-right"><a href="/article/47032.html"><img class="next-cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://pic.hycbook.com/i/hexo/post_cover/蕾姆1.webp" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">Next Post</div><div class="next_info">机器学习_线性代数与矩阵论</div></div></a></div></nav><hr/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> Comment</span></div><div id="comment-switch"><span class="first-comment">Twikoo</span><span class="switch-btn"></span><span class="second-comment">Valine</span></div></div><div class="comment-wrap"><div><div id="twikoo-wrap"></div></div><div><div class="vcomment" id="vcomment"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://pic.hycbook.com/i/hexo/person_img/兼一头像.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">narutohyc</div><div class="author-info__description">挑战时没有失败<br>放弃时才是失败</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">82</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">107</div></a><a href="/categories/"><div class="headline">Categories</div><div class="length-num">6</div></a></div><a id="card-info-btn" target="_blank" rel="noopener external nofollow noreferrer" href="https://github.com/narutohyc"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/narutohyc" rel="external nofollow noreferrer" target="_blank" title="Github"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-github">   </use></svg></a><a class="social-icon" href="mailto:1832044043@qq.com" rel="external nofollow noreferrer" target="_blank" title="Email"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-youjian1">   </use></svg></a><a class="social-icon" href="https://hycbook.com/atom.xml" target="_blank" title="fas fa-rss"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-RSS">   </use></svg></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>Announcement</span></div><div class="announcement_content">兼一书虫上线一个月啦~ 从最早的路径问题捣鼓，到域名购买登记，再到图床的使用，cdn的加速等等，前前后后不断优化插件的使用，基本的形态已经完成，接下来可以专注写博客啦~</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>Catalog</span><span class="toc-percentage"></span></div><div class="toc-content is-expand"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#docker"><span class="toc-number">1.</span> <span class="toc-text">docker</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#docker%E5%AE%89%E8%A3%85"><span class="toc-number">1.1.</span> <span class="toc-text">docker安装</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8"><span class="toc-number">1.2.</span> <span class="toc-text">基本使用</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#neo4j"><span class="toc-number">2.</span> <span class="toc-text">neo4j</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%89%E8%A3%85neo4j"><span class="toc-number">2.1.</span> <span class="toc-text">安装neo4j</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9B%BE%E7%AE%97%E6%B3%95%E6%8F%92%E4%BB%B6"><span class="toc-number">2.2.</span> <span class="toc-text">图算法插件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%90%AF%E5%8A%A8neo4j"><span class="toc-number">2.3.</span> <span class="toc-text">启动neo4j</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#py%E5%BA%93"><span class="toc-number">2.4.</span> <span class="toc-text">py库</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#nebula"><span class="toc-number">3.</span> <span class="toc-text">nebula</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9F%BA%E6%9C%AC%E4%BB%8B%E7%BB%8D"><span class="toc-number">3.1.</span> <span class="toc-text">基本介绍</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA"><span class="toc-number">3.2.</span> <span class="toc-text">环境搭建</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%91%BD%E4%BB%A4%E5%AD%A6%E4%B9%A0"><span class="toc-number">3.3.</span> <span class="toc-text">命令学习</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%A2%E6%88%B7%E7%AB%AF"><span class="toc-number">3.4.</span> <span class="toc-text">客户端</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8F%AF%E8%A7%86%E5%8C%96"><span class="toc-number">3.5.</span> <span class="toc-text">可视化</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%9B%86%E7%BE%A4%E7%9B%91%E6%8E%A7"><span class="toc-number">3.6.</span> <span class="toc-text">集群监控</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E5%AF%BC%E5%85%A5"><span class="toc-number">3.7.</span> <span class="toc-text">数据导入</span></a></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>Recent Post</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/article/39324.html" title="Anaconda开发环境"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://pic.hycbook.com/i/hexo/post_cover/蕾姆3.webp" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Anaconda开发环境"/></a><div class="content"><a class="title" href="/article/39324.html" title="Anaconda开发环境">Anaconda开发环境</a><time datetime="2022-10-27T11:44:28.814Z" title="Updated 2022-10-27 19:44:28">2022-10-27</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/article/1290.html" title="Jupyter_Notebook介绍、安装及使用教程"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://pic.hycbook.com/i/hexo/post_cover/蕾姆5.webp" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Jupyter_Notebook介绍、安装及使用教程"/></a><div class="content"><a class="title" href="/article/1290.html" title="Jupyter_Notebook介绍、安装及使用教程">Jupyter_Notebook介绍、安装及使用教程</a><time datetime="2022-10-27T11:44:28.814Z" title="Updated 2022-10-27 19:44:28">2022-10-27</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/article/26285.html" title="Kafka基本安装与使用"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://pic.hycbook.com/i/hexo/post_cover/蕾姆6.webp" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Kafka基本安装与使用"/></a><div class="content"><a class="title" href="/article/26285.html" title="Kafka基本安装与使用">Kafka基本安装与使用</a><time datetime="2022-10-27T11:44:28.814Z" title="Updated 2022-10-27 19:44:28">2022-10-27</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/article/53484.html" title="elementary_os记录"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://pic.hycbook.com/i/hexo/post_cover/蕾姆4.webp" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="elementary_os记录"/></a><div class="content"><a class="title" href="/article/53484.html" title="elementary_os记录">elementary_os记录</a><time datetime="2022-10-27T11:44:28.814Z" title="Updated 2022-10-27 19:44:28">2022-10-27</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/article/54754.html" title="collection模块"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://pic.hycbook.com/i//hexo/post_cover/蕾姆7.webp" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="collection模块"/></a><div class="content"><a class="title" href="/article/54754.html" title="collection模块">collection模块</a><time datetime="2022-10-27T11:44:28.814Z" title="Updated 2022-10-27 19:44:28">2022-10-27</time></div></div></div></div></div></div></main><footer id="footer" style="background-image: url('https://pic.hycbook.com/i/hexo/config_imgs/footer_bg.webp')"><div id="footer-wrap"><div class="copyright">&copy;2022 By narutohyc</div><div class="framework-info"><span>Framework </span><a target="_blank" rel="noopener external nofollow noreferrer" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>Theme </span><a target="_blank" rel="noopener external nofollow noreferrer" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div><div class="footer_custom_text"><p><a target="_blank" href="https://hexo.io/" rel="external nofollow noreferrer"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://img.shields.io/badge/Frame-Hexo-blue?style=flat&logo=hexo" title="博客框架为Hexo"></a>&nbsp;<a target="_blank" href="https://demo.jerryc.me/" rel="external nofollow noreferrer"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://img.shields.io/badge/Theme-Butterfly-6513df?style=flat&logo=bitdefender" title="主题采用butterfly"></a>&nbsp;<a target="_blank" href="https://vercel.com/ " rel="external nofollow noreferrer"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://img.shields.io/badge/Hosted-Vervel-brightgreen?style=flat&logo=Vercel" title="本站采用双线部署，默认线路托管于Vercel"></a>&nbsp;<a target="_blank" href="https://github.com/" rel="external nofollow noreferrer"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://img.shields.io/badge/Source-Github-d021d6?style=flat&logo=GitHub" title="本站项目由Gtihub托管"></a></p><a target="_blank" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=35020502000647" rel="external nofollow noreferrer"><img style="position:relative;top:4px" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://pic.hycbook.com/i//hexo/config_imgs//备案图标.webp" alt="ICP"/>闽公网安备35020502000647号  </a><a href="https://beian.miit.gov.cn/" rel="external nofollow noreferrer" target="_blank">闽ICP备2022013843号-1</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="Read Mode"><i class="fas fa-book-open"></i></button><button id="translateLink" type="button" title="Switch Between Traditional Chinese And Simplified Chinese">简</button><button id="darkmode" type="button" title="Switch Between Light And Dark Mode"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="Toggle between single-column and double-column"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="Setting"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="Table Of Contents"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="Scroll To Comments"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="Back To Top"><i class="fas fa-arrow-up"></i></button></div></div><div id="algolia-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">Search</span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="search-wrap"><div id="algolia-search-input"></div><hr/><div id="algolia-search-results"><div id="algolia-hits"></div><div id="algolia-pagination"></div><div id="algolia-info"><div class="algolia-stats"></div><div class="algolia-poweredBy"></div></div></div></div></div><div id="search-mask"></div></div><div id="rightMenu"><div class="rightMenu-group rightMenu-small"><div class="rightMenu-item" id="menu-backward"><i class="fa-solid fa-arrow-left"></i></div><div class="rightMenu-item" id="menu-forward"><i class="fa-solid fa-arrow-right"></i></div><div class="rightMenu-item" id="menu-refresh"><i class="fa-solid fa-arrow-rotate-right"></i></div><div class="rightMenu-item" id="menu-home"><i class="fa-solid fa-house"></i></div></div><div class="rightMenu-group rightMenu-line rightMenuOther"><a class="rightMenu-item menu-link" href="/archives/"><i class="fa-solid fa-archive"></i><span>文章归档</span></a><a class="rightMenu-item menu-link" href="/categories/"><i class="fa-solid fa-folder-open"></i><span>文章分类</span></a><a class="rightMenu-item menu-link" href="/tags/"><i class="fa-solid fa-tags"></i><span>文章标签</span></a></div><div class="rightMenu-group rightMenu-line rightMenuNormal"><a class="rightMenu-item menu-link" id="menu-radompage" href="/random/index.html"><i class="fa-solid fa-shoe-prints"></i><span>随便逛逛</span></a><div class="rightMenu-item" id="menu-translate"><i class="fa-solid fa-earth-asia"></i><span>繁简切换</span></div><div class="rightMenu-item" id="menu-darkmode"><i class="fa-solid fa-moon"></i><span>切换模式</span></div></div></div><div id="rightmenu-mask"></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/js/tw_cn.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.min.js"></script><script src="https://cdn.jsdelivr.net/npm/instant.page/instantpage.min.js" type="module"></script><script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload/dist/lazyload.iife.min.js"></script><script src="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.js"></script><script src="https://cdn.jsdelivr.net/npm/algoliasearch/dist/algoliasearch-lite.umd.min.js"></script><script src="https://cdn.jsdelivr.net/npm/instantsearch.js/dist/instantsearch.production.min.js"></script><script src="/js/search/algolia.js"></script><div class="js-pjax"><script>(() => {
+  const $mermaidWrap = document.querySelectorAll('#article-container .mermaid-wrap')
+  if ($mermaidWrap.length) {
+    window.runMermaid = () => {
+      window.loadMermaid = true
+      const theme = document.documentElement.getAttribute('data-theme') === 'dark' ? 'dark' : 'default'
+
+      Array.from($mermaidWrap).forEach((item, index) => {
+        const mermaidSrc = item.firstElementChild
+        const mermaidThemeConfig = '%%{init:{ \'theme\':\'' + theme + '\'}}%%\n'
+        const mermaidID = 'mermaid-' + index
+        const mermaidDefinition = mermaidThemeConfig + mermaidSrc.textContent
+        mermaid.mermaidAPI.render(mermaidID, mermaidDefinition, (svgCode) => {
+          mermaidSrc.insertAdjacentHTML('afterend', svgCode)
+        })
+      })
+    }
+
+    const loadMermaid = () => {
+      window.loadMermaid ? runMermaid() : getScript('https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js').then(runMermaid)
+    }
+
+    window.pjax ? loadMermaid() : document.addEventListener('DOMContentLoaded', loadMermaid)
+  }
+})()</script><script>(()=>{
+  const init = () => {
+    twikoo.init(Object.assign({
+      el: '#twikoo-wrap',
+      envId: 'https://vercel.hycbook.com',
+      region: '',
+      onCommentLoaded: function () {
+        btf.loadLightbox(document.querySelectorAll('#twikoo .tk-content img:not(.tk-owo-emotion)'))
+      }
+    }, null))
+  }
+
+  const getCount = () => {
+    const countELement = document.getElementById('twikoo-count')
+    if(!countELement) return
+    twikoo.getCommentsCount({
+      envId: 'https://vercel.hycbook.com',
+      region: '',
+      urls: [window.location.pathname],
+      includeReply: false
+    }).then(function (res) {
+      countELement.innerText = res[0].count
+    }).catch(function (err) {
+      console.error(err);
+    });
+  }
+
+  const runFn = () => {
+    init()
+    GLOBAL_CONFIG_SITE.isPost && getCount()
+  }
+
+  const loadTwikoo = () => {
+    if (typeof twikoo === 'object') {
+      setTimeout(runFn,0)
+      return
+    } 
+    getScript('https://cdn.jsdelivr.net/npm/twikoo/dist/twikoo.all.min.js').then(runFn)
+  }
+
+  if ('Twikoo' === 'Twikoo' || !false) {
+    if (false) btf.loadComment(document.getElementById('twikoo-wrap'), loadTwikoo)
+    else loadTwikoo()
+  } else {
+    window.loadOtherComment = () => {
+      loadTwikoo()
+    }
+  }
+})()</script><script>function loadValine () {
+  function initValine () {
+    const valine = new Valine(Object.assign({
+      el: '#vcomment',
+      appId: 'ncn88uooQf0IO2rrGE7Vniwp-gzGzoHsz',
+      appKey: 'Yghpzg1QfBMFJ0MxxHubVzKL',
+      avatar: 'monsterid',
+      serverURLs: '',
+      emojiMaps: "",
+      path: window.location.pathname,
+      visitor: true
+    }, null))
+  }
+
+  if (typeof Valine === 'function') initValine() 
+  else getScript('https://cdn.jsdelivr.net/npm/valine/dist/Valine.min.js').then(initValine)
+}
+
+if ('Twikoo' === 'Valine' || !false) {
+  if (false) btf.loadComment(document.getElementById('vcomment'),loadValine)
+  else setTimeout(loadValine, 0)
+} else {
+  function loadOtherComment () {
+    loadValine()
+  }
+}</script></div><script defer src="https://npm.elemecdn.com/jquery@latest/dist/jquery.min.js"></script><script defer data-pjax src="/js/rightMenu.js"></script><script defer src="https://npm.elemecdn.com/vue@2.6.11"></script><script defer src="https://yremp.live/wp-content/uploads/resource/js/sakura.js"></script><script async src="//at.alicdn.com/t/c/font_3670467_a0sijt8frxo.js"></script><script defer src="/live2d-widget/autoload.js"></script><script id="canvas_nest" defer="defer" color="0,0,255" opacity="0.7" zIndex="-1" count="120" mobile="false" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/canvas-nest.min.js"></script><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/activate-power-mode.min.js"></script><script>POWERMODE.colorful = true;
+POWERMODE.shake = false;
+POWERMODE.mobile = false;
+document.body.addEventListener('input', POWERMODE);
+</script><script id="click-heart" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/click-heart.min.js" async="async" mobile="true"></script><script>window.$crisp = [];
+window.CRISP_WEBSITE_ID = "561b80db-3f0f-45cb-b3b1-aae7355939e6";
+(function () {
+  d = document;
+  s = d.createElement("script");
+  s.src = "https://client.crisp.chat/l.js";
+  s.async = 1;
+  d.getElementsByTagName("head")[0].appendChild(s);
+})();
+$crisp.push(["safe", true])
+
+if (false) {
+  $crisp.push(["do", "chat:hide"])
+  $crisp.push(["on", "chat:closed", function() {
+    $crisp.push(["do", "chat:hide"])
+  }])
+  var chatBtnFn = () => {
+    var chatBtn = document.getElementById("chat_btn")
+    chatBtn.addEventListener("click", function(){
+      $crisp.push(["do", "chat:show"])
+      $crisp.push(["do", "chat:open"])
+
+    });
+  }
+  chatBtnFn()
+} else {
+  if (false) {
+    function chatBtnHide () {
+      $crisp.push(["do", "chat:hide"])
+    }
+    function chatBtnShow () {
+      $crisp.push(["do", "chat:show"])
+    }
+  }
+}</script><script src="https://cdn.jsdelivr.net/npm/pjax/pjax.min.js"></script><script>let pjaxSelectors = ["head > title","#config-diff","#body-wrap","#rightside-config-hide","#rightside-config-show",".js-pjax"]
+
+var pjax = new Pjax({
+  elements: 'a:not([target="_blank"])',
+  selectors: pjaxSelectors,
+  cacheBust: false,
+  analytics: false,
+  scrollRestoration: false
+})
+
+document.addEventListener('pjax:send', function () {
+
+  // removeEventListener scroll 
+  window.tocScrollFn && window.removeEventListener('scroll', window.tocScrollFn)
+  window.scrollCollect && window.removeEventListener('scroll', scrollCollect)
+
+  typeof preloader === 'object' && preloader.initLoading()
+  document.getElementById('rightside').style.cssText = "opacity: ''; transform: ''"
+  
+  if (window.aplayers) {
+    for (let i = 0; i < window.aplayers.length; i++) {
+      if (!window.aplayers[i].options.fixed) {
+        window.aplayers[i].destroy()
+      }
+    }
+  }
+
+  typeof typed === 'object' && typed.destroy()
+
+  //reset readmode
+  const $bodyClassList = document.body.classList
+  $bodyClassList.contains('read-mode') && $bodyClassList.remove('read-mode')
+
+  typeof disqusjs === 'object' && disqusjs.destroy()
+})
+
+document.addEventListener('pjax:complete', function () {
+  window.refreshFn()
+
+  document.querySelectorAll('script[data-pjax]').forEach(item => {
+    const newScript = document.createElement('script')
+    const content = item.text || item.textContent || item.innerHTML || ""
+    Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+    newScript.appendChild(document.createTextNode(content))
+    item.parentNode.replaceChild(newScript, item)
+  })
+
+  GLOBAL_CONFIG.islazyload && window.lazyLoadInstance.update()
+
+  typeof chatBtnFn === 'function' && chatBtnFn()
+  typeof panguInit === 'function' && panguInit()
+
+  // google analytics
+  typeof gtag === 'function' && gtag('config', '', {'page_path': window.location.pathname});
+
+  // baidu analytics
+  typeof _hmt === 'object' && _hmt.push(['_trackPageview',window.location.pathname]);
+
+  typeof loadMeting === 'function' && document.getElementsByClassName('aplayer').length && loadMeting()
+
+  // prismjs
+  typeof Prism === 'object' && Prism.highlightAll()
+
+  typeof preloader === 'object' && preloader.endLoading()
+})
+
+document.addEventListener('pjax:error', (e) => {
+  if (e.request.status === 404) {
+    pjax.loadUrl('/404.html')
+  }
+})</script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><div class="app-refresh" id="app-refresh" style="position: fixed;top: -2.2rem;left: 0;right: 0;z-index: 99999;padding: 0 1rem;font-size: 15px;height: 2.2rem;transition: all 0.3s ease;"><div class="app-refresh-wrap" style=" display: flex;color: #fff;height: 100%;align-items: center;justify-content: center;"><label>✨ 兼一书虫上新啦！ 👉</label><a href="javascript:void(0)" rel="external nofollow noreferrer" onclick="location.reload()"><span style="color: #fff;text-decoration: underline;cursor: pointer;">🍭查看新品🍬</span></a></div></div><script>if ('serviceWorker' in navigator) {
+  if (navigator.serviceWorker.controller) {
+    navigator.serviceWorker.addEventListener('controllerchange', function() {
+      showNotification()
+    })
+  }
+  window.addEventListener('load', function() {
+    navigator.serviceWorker.register('/sw.js')
+  })
+}
+
+function showNotification() {
+  if (GLOBAL_CONFIG.Snackbar) {
+    var snackbarBg =
+      document.documentElement.getAttribute('data-theme') === 'light' ?
+      GLOBAL_CONFIG.Snackbar.bgLight :
+      GLOBAL_CONFIG.Snackbar.bgDark
+    var snackbarPos = GLOBAL_CONFIG.Snackbar.position
+    Snackbar.show({
+      text: '✨ 兼一书虫上新啦！ 👉',
+      backgroundColor: snackbarBg,
+      duration: 500000,
+      pos: snackbarPos,
+      actionText: '🍭查看新品🍬',
+      actionTextColor: '#fff',
+      onActionClick: function(e) {
+        location.reload()
+      },
+    })
+  } else {
+    var showBg =
+      document.documentElement.getAttribute('data-theme') === 'light' ?
+      '#49b1f5' :
+      '#1f1f1f'
+    var cssText = `top: 0; background: ${showBg};`
+    document.getElementById('app-refresh')
+      .style.cssText = cssText
+  }
+}</script></div><!-- hexo injector body_end start --><script data-pjax>
+    function butterfly_categories_card_injector_config(){
+      var parent_div_git = document.getElementById('recent-posts');
+      var item_html = '<style>li.categoryBar-list-item{width:32.3%;}.categoryBar-list{max-height: 380px;overflow:auto;}.categoryBar-list::-webkit-scrollbar{width:0!important}@media screen and (max-width: 650px){.categoryBar-list{max-height: 320px;}}</style><div class="recent-post-item" style="height:auto;width:100%;padding:0px;"><div id="categoryBar"><ul class="categoryBar-list"><li class="categoryBar-list-item" style="background:url(https://pic.hycbook.com/i//hexo/category_bar_imgs/category_bar_3.webp);"> <a class="categoryBar-list-link" onclick="pjax.loadUrl(&quot;categories/common/&quot;);" href="javascript:void(0);" rel="external nofollow noreferrer">common</a><span class="categoryBar-list-count">6</span><span class="categoryBar-list-descr">通用知识学习记录</span></li><li class="categoryBar-list-item" style="background:url(https://pic.hycbook.com/i//hexo/category_bar_imgs/category_bar_4.webp);"> <a class="categoryBar-list-link" onclick="pjax.loadUrl(&quot;categories/english/&quot;);" href="javascript:void(0);" rel="external nofollow noreferrer">english</a><span class="categoryBar-list-count">7</span><span class="categoryBar-list-descr">英语语法入门基础</span></li><li class="categoryBar-list-item" style="background:url(https://pic.hycbook.com/i//hexo/category_bar_imgs/category_bar_0.webp);"> <a class="categoryBar-list-link" onclick="pjax.loadUrl(&quot;categories/entertainment/&quot;);" href="javascript:void(0);" rel="external nofollow noreferrer">java</a><span class="categoryBar-list-count">1</span><span class="categoryBar-list-descr">java学习记录</span></li><li class="categoryBar-list-item" style="background:url(https://pic.hycbook.com/i//hexo/category_bar_imgs/category_bar_2.webp);"> <a class="categoryBar-list-link" onclick="pjax.loadUrl(&quot;categories/java/&quot;);" href="javascript:void(0);" rel="external nofollow noreferrer">python</a><span class="categoryBar-list-count">40</span><span class="categoryBar-list-descr">python学习记录</span></li><li class="categoryBar-list-item" style="background:url(https://pic.hycbook.com/i//hexo/category_bar_imgs/category_bar_1.webp);"> <a class="categoryBar-list-link" onclick="pjax.loadUrl(&quot;categories/python/&quot;);" href="javascript:void(0);" rel="external nofollow noreferrer">math</a><span class="categoryBar-list-count">26</span><span class="categoryBar-list-descr">数学知识学习</span></li><li class="categoryBar-list-item" style="background:url(https://pic.hycbook.com/i//hexo/category_bar_imgs/category_bar_3.webp);"> <a class="categoryBar-list-link" onclick="pjax.loadUrl(&quot;categories/math/&quot;);" href="javascript:void(0);" rel="external nofollow noreferrer">entertainment</a><span class="categoryBar-list-count">2</span><span class="categoryBar-list-descr">娱乐</span></li></ul></div></div>';
+      console.log('已挂载butterfly_categories_card')
+      parent_div_git.insertAdjacentHTML("afterbegin",item_html)
+      }
+    if( document.getElementById('recent-posts') && (location.pathname ==='/categories/'|| '/categories/' ==='all')){
+    butterfly_categories_card_injector_config()
+    }
+  </script><script data-pjax>
+  function butterfly_swiper_injector_config(){
+    var parent_div_git = document.getElementById('recent-posts');
+    var item_html = '<div class="recent-post-item" style="height: auto;width: 100%"><div class="blog-slider swiper-container-fade swiper-container-horizontal" id="swiper_container"><div class="blog-slider__wrp swiper-wrapper" style="transition-duration: 0ms;"><div class="blog-slider__item swiper-slide" style="width: 750px; opacity: 1; transform: translate3d(0px, 0px, 0px); transition-duration: 0ms;"><a class="blog-slider__img" onclick="pjax.loadUrl(&quot;article/13105.html&quot;);" href="javascript:void(0);" rel="external nofollow noreferrer" alt=""><img width="48" height="48" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://pic.hycbook.com/i//hexo/post_cover/蕾姆10.webp" alt="" onerror="this.src=https://unpkg.zhimg.com/akilar-candyassets/image/loading.gif; this.onerror = null;"/></a><div class="blog-slider__content"><span class="blog-slider__code">2022-10-27</span><a class="blog-slider__title" onclick="pjax.loadUrl(&quot;article/13105.html&quot;);" href="javascript:void(0);" rel="external nofollow noreferrer" alt="">正则表达式学习</a><div class="blog-slider__text">python正则表达式的学习记录</div><a class="blog-slider__button" onclick="pjax.loadUrl(&quot;article/13105.html&quot;);" href="javascript:void(0);" rel="external nofollow noreferrer" alt="">详情       </a></div></div><div class="blog-slider__item swiper-slide" style="width: 750px; opacity: 1; transform: translate3d(0px, 0px, 0px); transition-duration: 0ms;"><a class="blog-slider__img" onclick="pjax.loadUrl(&quot;article/10706.html&quot;);" href="javascript:void(0);" rel="external nofollow noreferrer" alt=""><img width="48" height="48" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://pic.hycbook.com/i/hexo/post_cover/蕾姆0.webp" alt="" onerror="this.src=https://unpkg.zhimg.com/akilar-candyassets/image/loading.gif; this.onerror = null;"/></a><div class="blog-slider__content"><span class="blog-slider__code">2022-10-27</span><a class="blog-slider__title" onclick="pjax.loadUrl(&quot;article/10706.html&quot;);" href="javascript:void(0);" rel="external nofollow noreferrer" alt="">机器学习_一元函数微积分</a><div class="blog-slider__text">机器学习的数学基础入门知识</div><a class="blog-slider__button" onclick="pjax.loadUrl(&quot;article/10706.html&quot;);" href="javascript:void(0);" rel="external nofollow noreferrer" alt="">详情       </a></div></div><div class="blog-slider__item swiper-slide" style="width: 750px; opacity: 1; transform: translate3d(0px, 0px, 0px); transition-duration: 0ms;"><a class="blog-slider__img" onclick="pjax.loadUrl(&quot;article/47032.html&quot;);" href="javascript:void(0);" rel="external nofollow noreferrer" alt=""><img width="48" height="48" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://pic.hycbook.com/i/hexo/post_cover/蕾姆1.webp" alt="" onerror="this.src=https://unpkg.zhimg.com/akilar-candyassets/image/loading.gif; this.onerror = null;"/></a><div class="blog-slider__content"><span class="blog-slider__code">2022-10-27</span><a class="blog-slider__title" onclick="pjax.loadUrl(&quot;article/47032.html&quot;);" href="javascript:void(0);" rel="external nofollow noreferrer" alt="">机器学习_线性代数与矩阵论</a><div class="blog-slider__text">机器学习的数学基础入门知识</div><a class="blog-slider__button" onclick="pjax.loadUrl(&quot;article/47032.html&quot;);" href="javascript:void(0);" rel="external nofollow noreferrer" alt="">详情       </a></div></div><div class="blog-slider__item swiper-slide" style="width: 750px; opacity: 1; transform: translate3d(0px, 0px, 0px); transition-duration: 0ms;"><a class="blog-slider__img" onclick="pjax.loadUrl(&quot;article/45122.html&quot;);" href="javascript:void(0);" rel="external nofollow noreferrer" alt=""><img width="48" height="48" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://pic.hycbook.com/i//hexo/post_cover/蕾姆4.webp" alt="" onerror="this.src=https://unpkg.zhimg.com/akilar-candyassets/image/loading.gif; this.onerror = null;"/></a><div class="blog-slider__content"><span class="blog-slider__code">2022-10-27</span><a class="blog-slider__title" onclick="pjax.loadUrl(&quot;article/45122.html&quot;);" href="javascript:void(0);" rel="external nofollow noreferrer" alt="">python装饰器</a><div class="blog-slider__text">python装饰器学习以及函数式编程的库介绍</div><a class="blog-slider__button" onclick="pjax.loadUrl(&quot;article/45122.html&quot;);" href="javascript:void(0);" rel="external nofollow noreferrer" alt="">详情       </a></div></div><div class="blog-slider__item swiper-slide" style="width: 750px; opacity: 1; transform: translate3d(0px, 0px, 0px); transition-duration: 0ms;"><a class="blog-slider__img" onclick="pjax.loadUrl(&quot;article/12909.html&quot;);" href="javascript:void(0);" rel="external nofollow noreferrer" alt=""><img width="48" height="48" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://pic.hycbook.com/i//hexo/post_cover/蕾姆8.webp" alt="" onerror="this.src=https://unpkg.zhimg.com/akilar-candyassets/image/loading.gif; this.onerror = null;"/></a><div class="blog-slider__content"><span class="blog-slider__code">2022-10-27</span><a class="blog-slider__title" onclick="pjax.loadUrl(&quot;article/12909.html&quot;);" href="javascript:void(0);" rel="external nofollow noreferrer" alt="">logging模块</a><div class="blog-slider__text">python日志文件配置使用方法</div><a class="blog-slider__button" onclick="pjax.loadUrl(&quot;article/12909.html&quot;);" href="javascript:void(0);" rel="external nofollow noreferrer" alt="">详情       </a></div></div><div class="blog-slider__item swiper-slide" style="width: 750px; opacity: 1; transform: translate3d(0px, 0px, 0px); transition-duration: 0ms;"><a class="blog-slider__img" onclick="pjax.loadUrl(&quot;article/41279.html&quot;);" href="javascript:void(0);" rel="external nofollow noreferrer" alt=""><img width="48" height="48" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://pic.hycbook.com/i//hexo/post_cover/蕾姆1.webp" alt="" onerror="this.src=https://unpkg.zhimg.com/akilar-candyassets/image/loading.gif; this.onerror = null;"/></a><div class="blog-slider__content"><span class="blog-slider__code">2022-10-27</span><a class="blog-slider__title" onclick="pjax.loadUrl(&quot;article/41279.html&quot;);" href="javascript:void(0);" rel="external nofollow noreferrer" alt="">重装系统</a><div class="blog-slider__text">重装系统以及一些软件的推荐，包括Chrome插件</div><a class="blog-slider__button" onclick="pjax.loadUrl(&quot;article/41279.html&quot;);" href="javascript:void(0);" rel="external nofollow noreferrer" alt="">详情       </a></div></div><div class="blog-slider__item swiper-slide" style="width: 750px; opacity: 1; transform: translate3d(0px, 0px, 0px); transition-duration: 0ms;"><a class="blog-slider__img" onclick="pjax.loadUrl(&quot;article/63632.html&quot;);" href="javascript:void(0);" rel="external nofollow noreferrer" alt=""><img width="48" height="48" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fn.sinaimg.cn%2Fsinakd20210917ac%2F400%2Fw1200h800%2F20210917%2F7afc-e7154f1cc00b947caba98aa8e82f876b.jpg&amp;refer=http%3A%2F%2Fn.sinaimg.cn&amp;app=2002&amp;size=f9999,10000&amp;q=a80&amp;n=0&amp;g=0n&amp;fmt=auto?sec=1667401636&amp;t=6455153a5a3fa9a6f8e1e73f82cb17b9" alt="" onerror="this.src=https://unpkg.zhimg.com/akilar-candyassets/image/loading.gif; this.onerror = null;"/></a><div class="blog-slider__content"><span class="blog-slider__code">2022-10-27</span><a class="blog-slider__title" onclick="pjax.loadUrl(&quot;article/63632.html&quot;);" href="javascript:void(0);" rel="external nofollow noreferrer" alt="">厦门方特梦幻王国一日攻略</a><div class="blog-slider__text">厦门同安方特梦幻王国游玩攻略</div><a class="blog-slider__button" onclick="pjax.loadUrl(&quot;article/63632.html&quot;);" href="javascript:void(0);" rel="external nofollow noreferrer" alt="">详情       </a></div></div></div><div class="blog-slider__pagination swiper-pagination-clickable swiper-pagination-bullets"></div></div></div>';
+    console.log('已挂载butterfly_swiper')
+    parent_div_git.insertAdjacentHTML("afterbegin",item_html)
+    }
+  var elist = 'undefined'.split(',');
+  var cpage = location.pathname;
+  var epage = '/';
+  var flag = 0;
+
+  for (var i=0;i<elist.length;i++){
+    if (cpage.includes(elist[i])){
+      flag++;
+    }
+  }
+
+  if ((epage ==='all')&&(flag == 0)){
+    butterfly_swiper_injector_config();
+  }
+  else if (epage === cpage){
+    butterfly_swiper_injector_config();
+  }
+  </script><script defer src="https://npm.elemecdn.com/hexo-butterfly-swiper/lib/swiper.min.js"></script><script defer data-pjax src="https://npm.elemecdn.com/hexo-butterfly-swiper/lib/swiper_init.js"></script><script async src="//at.alicdn.com/t/font_2032782_8d5kxvn09md.js"></script><!-- hexo injector body_end end --></body></html>
