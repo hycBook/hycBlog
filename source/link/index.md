@@ -131,6 +131,10 @@ aside: false
       link: https://blog.gmcj0816.top/
       avatar: https://blog.gmcj0816.top/img/SeriousWission_TouXiangPic.jpg
       descr: 如果世界多了精彩，每一位都是创造者，大家都是你的观众
+    - name: Fomalhaut🥝
+      link: https://www.fomal.cc/
+      avatar: https://www.fomal.cc/assets/head.jpg
+      descr: Future is now 🍭🍭🍭
   
 - class_name: 搭建hexo涉及的一些工具
   class_desc: 感谢优秀的工具，帮我更好的实现网站搭建
