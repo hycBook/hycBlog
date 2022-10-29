@@ -8,7 +8,7 @@ subtitle: '一日千里'
 description: '挑战时没有失败<br>放弃时才是失败'
 keywords: server,frontend,backend,hexo
 author: narutohyc
-language: en
+language: zh-CN
 timezone: ''
 
 # URL
@@ -135,7 +135,7 @@ algolia:
   chunkSize: 5000
   indexName: hexo_book
   fields:
-    - content:strip:truncate,0,50000
+    - content:strip
     - excerpt:strip
     - gallery
     - permalink

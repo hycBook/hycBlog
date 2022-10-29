@@ -22,7 +22,6 @@ menu:
 
 # Code Blocks (代碼相關)
 # --------------------------------------
-
 highlight_theme: mac light #  darker / pale night / light / ocean / mac / mac light / 
 highlight_copy: true # copy button
 highlight_lang: true # show the code language
@@ -36,7 +35,7 @@ copy:
   enable: true
   copyright:
     enable: true
-    limit_count: 120
+    limit_count: 200
 
 # social settings (社交圖標設置)
 # formal:
