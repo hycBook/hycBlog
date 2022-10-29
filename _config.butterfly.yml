@@ -901,6 +901,7 @@ inject:
     # - <script src="xxxx"></script>
     - <script defer src="https://npm.elemecdn.com/jquery@latest/dist/jquery.min.js"></script>
     - <script defer data-pjax src="/js/rightMenu.js"></script>
+    - <script data-pjax src="/js/coin.js"></script>
     # 静态资源异步加载 https://blog.imzjw.cn/posts/hexocdn
     - <script defer src="https://npm.elemecdn.com/vue@2.6.11"></script>
     # 引入樱花
@@ -926,10 +927,6 @@ CDN:
 
   # Add version number to CDN, true or false  
   version: false
-
-  coin_css: /css/coin.css
-  coin_js: /js/coin.js
-
 
   # Custom format
   # For example: https://cdn.staticfile.org/${cdnjs_name}/${version}/${min_cdnjs_file}
