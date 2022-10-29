@@ -135,14 +135,9 @@ algolia:
   chunkSize: 5000
   indexName: hexo_book
   fields:
+    - path
+    - title    
     - content:strip
-    - excerpt:strip
-    - gallery
-    - permalink
-    - photos
-    - slug
-    - tags
-    - title
 
 # B站追番配置
 bangumi:
