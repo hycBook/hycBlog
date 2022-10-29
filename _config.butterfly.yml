@@ -134,7 +134,7 @@ cover:
   # display the cover or not (是否顯示文章封面)
   index_enable: true
   aside_enable: true
-  archives_enable: false
+  archives_enable: true
   # the position of cover in home page (封面顯示的位置)
   # left/right/both
   position: both
@@ -211,7 +211,7 @@ post_copyright:
 # Sponsor/reward
 reward:
   enable: true
-  coinAudio: https://assets.akilar.top@1.0.16/audio/coin.mp3
+  coinAudio: https://s1.vika.cn/space/2022/10/29/6db0ad2bccf949f09054b3b206dcc66f?attname=马里奥游戏投币叮当.mp3 # https://assets.akilar.top@1.0.16/audio/coin.mp3
   QR_code:
     - img: https://pic.hycbook.com/i//hexo/qr_codes/hyc_wechat.webp
       link:
