@@ -211,6 +211,7 @@ post_copyright:
 # Sponsor/reward
 reward:
   enable: true
+  coinAudio: https://assets.akilar.top@1.0.16/audio/coin.mp3
   QR_code:
     - img: https://pic.hycbook.com/i//hexo/qr_codes/hyc_wechat.webp
       link:
@@ -900,6 +901,7 @@ inject:
     # - <script src="xxxx"></script>
     - <script defer src="https://npm.elemecdn.com/jquery@latest/dist/jquery.min.js"></script>
     - <script defer data-pjax src="/js/rightMenu.js"></script>
+    - <script defer data-pjax src="/js/coin.js"></script>
     # 静态资源异步加载 https://blog.imzjw.cn/posts/hexocdn
     - <script defer src="https://npm.elemecdn.com/vue@2.6.11"></script>
     # 引入樱花
