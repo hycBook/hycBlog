@@ -52,7 +52,7 @@ social:
 
 # Algolia search
 algolia_search:
-  enable: true
+  enable: false
   hits:
     per_page: 10
   labels:
@@ -62,10 +62,16 @@ algolia_search:
 
 # Local search
 local_search:
-  enable: false
+  enable: true
   preload: false
   CDN:
 
+search:
+  path: https://s1.vika.cn/space/2022/10/30/28af9ae11b1c40d184ae7520ff1ac81e?attname=search.xml
+  field: post
+  content: true
+  template: https://s1.vika.cn/space/2022/10/30/28af9ae11b1c40d184ae7520ff1ac81e?attname=search.xml
+  
 # Math (數學)
 # --------------------------------------
 # About the per_page
