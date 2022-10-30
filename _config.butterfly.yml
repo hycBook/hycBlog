@@ -70,8 +70,8 @@ search:
   path: https://raw.githubusercontent.com/hycBook/hycBlog/gh-pages/search.xml
   field: post
   content: true
-  template: https://raw.githubusercontent.com/hycBook/hycBlog/gh-pages/search.xml
-  
+  template: ./search.xml
+
 # Math (數學)
 # --------------------------------------
 # About the per_page
