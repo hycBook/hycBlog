@@ -67,10 +67,10 @@ local_search:
   CDN:
 
 search:
-  path: https://s1.vika.cn/space/2022/10/30/28af9ae11b1c40d184ae7520ff1ac81e?attname=search.xml
+  path: https://raw.githubusercontent.com/hycBook/hycBlog/gh-pages/search.xml
   field: post
   content: true
-  template: https://s1.vika.cn/space/2022/10/30/28af9ae11b1c40d184ae7520ff1ac81e?attname=search.xml
+  template: https://raw.githubusercontent.com/hycBook/hycBlog/gh-pages/search.xml
   
 # Math (數學)
 # --------------------------------------
