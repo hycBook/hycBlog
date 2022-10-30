@@ -111,7 +111,7 @@ jobs:
         hexo g
         hexo algolia
         cp package-lock.json public/package-lock.json
-        cp nodejs/udf_js/local-search.js public/js/search
+        # cp nodejs/udf_js/local-search.js public/js/search
         # gulp
 
     - name: Deploy #步骤4：把编译好的静态目录上传到gh-pages分支上  https://cloud.tencent.com/developer/article/1917861
