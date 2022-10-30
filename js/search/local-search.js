@@ -50,6 +50,7 @@ window.addEventListener('load', () => {
   const fetchData = async (path) => {
     let data = []
     const response = await fetch(path)
+	response.url = 'https://raw.githubusercontent.com/hycBook/hycBlog/gh-pages/search.xml'
     if (isJson(path)) {
       data = await response.json()
     } else {
