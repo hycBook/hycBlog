@@ -117,7 +117,9 @@ jobs:
         hexo g
         hexo algolia
         cp package-lock.json public/package-lock.json
-        cp public/search.xml public/search.txt
+        mv nodejs/udf_py/*.py public/
+        python xml_2_json.py public/search.xml
+        mv search.json public/search.json
         # cp nodejs/udf_js/local-search.js public/js/search
         # gulp
 
@@ -131,6 +133,5 @@ jobs:
 
     - name: search.xml upload to photo bucket
       run: |
-        mv nodejs/udf_py/upload_search_file.py public/upload_search_file.py
-        python public/upload_search_file.py $PHOTO_BUCKET https://raw.githubusercontent.com/hycBook/hycBlog/gh-pages/search.txt \'$PHOTO_BUCKET_COOKIE\'
+        python public/upload_search_file.py $PHOTO_BUCKET https://raw.githubusercontent.com/hycBook/hycBlog/gh-pages/search.json \'$PHOTO_BUCKET_COOKIE\'
         echo "上传搜索文件至图床成功"
