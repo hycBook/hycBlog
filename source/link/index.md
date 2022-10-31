@@ -135,6 +135,10 @@ aside: false
       link: https://www.fomal.cc/
       avatar: https://www.fomal.cc/assets/head.jpg
       descr: Future is now 🍭🍭🍭
+    - name: 生活倒影
+      link: https://poetize.cn
+      avatar: https://file.poetize.cn/webAvatar/Sara116383637867956
+      descr: 这是一个 Vue2 Vue3 与 SpringBoot 结合的产物～
   
 - class_name: 搭建hexo涉及的一些工具
   class_desc: 感谢优秀的工具，帮我更好的实现网站搭建
