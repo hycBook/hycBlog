@@ -81,4 +81,4 @@ if __name__ == '__main__':
     pic_server.delete_file()
     res = pic_server.upload_file()
     _, new_file_name = os.path.split(res)
-    print(f"上传成功: {res}\n新的文件名为: {new_file_name}")
+    print(f"上传成功, 新的文件名为: {p_save_path}\{new_file_name}")
