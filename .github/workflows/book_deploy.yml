@@ -122,7 +122,6 @@ jobs:
         cp package-lock.json public/package-lock.json
         mv nodejs/udf_py/*.py .
         python xml_2_json.py public/search.xml
-        mv search.json public/search.json
         # cp public/search.xml public/search.txt
         # cp nodejs/udf_js/local-search.js public/js/search
         # gulp
