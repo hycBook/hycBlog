@@ -76,6 +76,7 @@ if __name__ == '__main__':
     p_save_path = "gitbook_search"
     new_ck = re.sub('Hm_lvt_.*?=(\d{10})', add_one, p_cookie)
     p_cookie = re.sub('Hm_lpvt_.*?=(\d{10})', add_many, new_ck)
+    print(p_cookie)
 
     pic_server = HttpMethod(base_url=p_base_url, cookie=p_cookie, url_data=p_url_data, save_path=p_save_path)
     pic_server.delete_file()
