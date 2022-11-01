@@ -82,6 +82,6 @@ def start(file_path):
 
 
 if __name__ == '__main__':
-    # file_path = sys.argv[1]
-    file_path = r"D:\桌面\search.xml"
+    file_path = sys.argv[1]
+    # file_path = r"D:\桌面\search.xml"
     start(file_path=file_path)
