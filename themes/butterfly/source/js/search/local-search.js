@@ -49,7 +49,7 @@ window.addEventListener('load', () => {
 
   const fetchData = async (path) => {
     let data = []
-    path = 'https://pic.hycbook.com/i/gitbook_search/search.json'
+    path = 'https://pic.hycbook.com/i/gitbook_search/search.txt'
     const response = await fetch(path)
     if (isJson(path)) {
       data = await response.json()
