@@ -112,6 +112,7 @@ jobs:
         npm install --save hexo-pdf
 
         pip install Beautifulsoup4
+        pip install lxml
 
         # 执行编译
         hexo clean
