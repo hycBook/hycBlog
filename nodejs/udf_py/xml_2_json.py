@@ -8,84 +8,66 @@
 @Description: 
 @time: 2022/10/31 20:37
 """
-import json
-from typing import Dict
-
-import xml.dom.minidom
+import html
 import sys
+import xml.dom.minidom
+
+from bs4 import BeautifulSoup
 
 
-def json_dump_op(file_name, file: Dict, encoding: str = 'utf-8', ensure_ascii: bool = False, indent: int = 4):
-    """
-    json文件保存
-    :param file_name:
-    :param file:
-    :param encoding:
-    :param ensure_ascii:
-    :param indent:
-    """
-    with open(file_name, 'w', encoding=encoding) as f:
-        f.write(json.dumps(file, ensure_ascii=ensure_ascii, indent=indent))
+def get_text(element, tag_name: str):
+    titles = element.getElementsByTagName(tag_name)[0]
+    return ''.join(child.data for child in titles.childNodes)
 
 
-def get_test(obj, elem: str):
-    titles = obj.getElementsByTagName(elem)[0]
-    texts = [child.data for child in titles.childNodes]
-    return ''.join(texts)
-
-
-def start(file_path):
+def start_run(file_path: str):
     # 使用minidom解析器打开 XML 文档
-    DOMTree = xml.dom.minidom.parse(file_path)
-    collection = DOMTree.documentElement
-    # 在集合中获取所有电影
-    entrys = collection.getElementsByTagName("entry")
+    dom_tree = xml.dom.minidom.parse(file_path)
+    entrys = dom_tree.documentElement.getElementsByTagName("entry")
 
-    newDoc = xml.dom.minidom.Document()
-    rootNode = newDoc.createElement('search')
-    import html
-
-    from bs4 import BeautifulSoup
+    new_doc = xml.dom.minidom.Document()
+    root_node = new_doc.createElement('search')
 
     for entry in entrys:
-        title = get_test(entry, 'title')
-        url = get_test(entry, 'url')
-        content = get_test(entry, 'content')
-        new_entry = newDoc.createElement('entry')
+        # 获取标题、url和内容
+        title = get_text(entry, 'title')
+        url = get_text(entry, 'url')
+        content = get_text(entry, 'content')
 
-        new_title = newDoc.createElement('title')
-        phone_title_value = newDoc.createTextNode(title)
+        new_entry = new_doc.createElement('entry')
+
+        # 添加标题节点
+        new_title = new_doc.createElement('title')
+        phone_title_value = new_doc.createTextNode(title)
         new_title.appendChild(phone_title_value)
-
-        new_url = newDoc.createElement('url')
-        phone_url_value = newDoc.createTextNode(url)
-        new_url.appendChild(phone_url_value)
-
-        new_content = newDoc.createElement('content')
-
-        res = BeautifulSoup(content, 'lxml')
-        phone_content_value = newDoc.createTextNode(res.text)
-        new_content.appendChild(phone_content_value)
-
         new_entry.appendChild(new_title)
+
+        # 添加url节点
+        new_url = new_doc.createElement('url')
+        phone_url_value = new_doc.createTextNode(url)
+        new_url.appendChild(phone_url_value)
         new_entry.appendChild(new_url)
+
+        # 添加内容节点
+        new_content = new_doc.createElement('content')
+        res = BeautifulSoup(content, 'lxml')
+        phone_content_value = new_doc.createTextNode(res.text)
+        new_content.appendChild(phone_content_value)
         new_entry.appendChild(new_content)
-        rootNode.appendChild(new_entry)
 
-    newDoc.appendChild(rootNode)
+        # 添加子节点
+        root_node.appendChild(new_entry)
 
-    ori_str = html.unescape(newDoc.toxml())
-    with open("public/search.txt", "w", encoding="utf-8") as f:
-        newDoc.writexml(f, indent='', addindent='\t', newl='\n', encoding='utf-8')
-    with open(r"public/search.txt", 'r', encoding='utf-8') as f:
-        s = f.read()
+    new_doc.appendChild(root_node)
+    search_text = html.unescape(new_doc.toprettyxml())
+
+    # 结果输出
     with open(r"public/search.txt", 'w', encoding='utf-8') as f:
-        ns = html.unescape(s)
-        f.write(ns)
-    print("xml转json结束")
+        f.write(search_text)
+    print("xml转txt结束")
 
 
 if __name__ == '__main__':
-    file_path = sys.argv[1]
-    # file_path = r"D:\桌面\search.xml"
-    start(file_path=file_path)
+    p_file_path = sys.argv[1]
+    # p_file_path = r"F:\Desktop\search.txt"
+    start_run(file_path=p_file_path)
