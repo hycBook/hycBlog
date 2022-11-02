@@ -12,6 +12,23 @@ import os.path
 import urllib.parse
 import urllib.request
 import sys
+import re
+import time
+import random
+
+time_lst = [1200, 1500, 2000, 2200]
+
+
+def time_stamp_10():
+    return int(time.time())
+
+
+def update_time(match):
+    return f"{match.group()[:-10]}{time_stamp_10()}"
+
+
+def update_time_last(match):
+    return f"{match.group()[:-10]}{time_stamp_10() + time_lst[random.randint(0, 3)]}"
 
 
 class HttpMethod:
@@ -52,33 +69,19 @@ class HttpMethod:
         return response.read().decode('utf-8')
 
 
-import re
-import time
+def start_run(base_url: str, cookie: str, url_data: str, save_path: str):
+    new_ck = re.sub('Hm_lvt_.*?=(\d{10})', update_time, cookie)
+    cookie = re.sub('Hm_lpvt_.*?=(\d{10})', update_time_last, new_ck)
 
-
-# 获取10位的时间戳  精度是秒(s)
-def time_stamp_10():
-    return int(time.time())
-
-
-def add_one(match):
-    val = match.groups()[0]
-    return f"{match.group()[:-10]}{time_stamp_10()}"
-
-
-def add_many(match):
-    val = match.groups()[0]
-    return f"{match.group()[:-10]}{time_stamp_10() + 1500}"
+    pic_server = HttpMethod(base_url=base_url, cookie=cookie, url_data=url_data, save_path=save_path)
+    pic_server.delete_file()
+    res = pic_server.upload_file()
+    _, new_file_name = os.path.split(res)
+    print(f"上传成功, 新的文件名为: {p_save_path}\{new_file_name}")
 
 
 if __name__ == '__main__':
     p_base_url, p_url_data, p_cookie = sys.argv[1], sys.argv[2], sys.argv[3]
     p_save_path = "gitbook_search"
-    new_ck = re.sub('Hm_lvt_.*?=(\d{10})', add_one, p_cookie)
-    p_cookie = re.sub('Hm_lpvt_.*?=(\d{10})', add_many, new_ck)
-
-    pic_server = HttpMethod(base_url=p_base_url, cookie=p_cookie, url_data=p_url_data, save_path=p_save_path)
-    pic_server.delete_file()
-    res = pic_server.upload_file()
-    _, new_file_name = os.path.split(res)
-    print(f"上传成功, 新的文件名为: {p_save_path}\{new_file_name}")
+    start_run(base_url=p_base_url, cookie=p_cookie, url_data=p_url_data, save_path=p_save_path)
+    print("上传结束")
