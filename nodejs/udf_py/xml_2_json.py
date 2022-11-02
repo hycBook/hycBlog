@@ -59,7 +59,7 @@ def start_run(file_path: str):
         root_node.appendChild(new_entry)
 
     new_doc.appendChild(root_node)
-    search_text = html.unescape(new_doc.toprettyxml())
+    search_text = html.unescape(new_doc.toprettyxml(encoding='utf-8'))
 
     # 结果输出
     with open(r"public/search.txt", 'w', encoding='utf-8') as f:
