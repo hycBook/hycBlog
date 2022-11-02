@@ -59,15 +59,16 @@ def start_run(file_path: str):
         root_node.appendChild(new_entry)
 
     new_doc.appendChild(root_node)
-    search_text = html.unescape(new_doc.toprettyxml(encoding='utf-8'))
+    search_text = html.unescape(new_doc.toprettyxml()).replace('<?xml version="1.0" ?>',
+                                                               '<?xml version="1.0" encoding="utf-8"?>')
 
     # 结果输出
-    with open(r"public/search.txt", 'w', encoding='utf-8') as f:
+    with open(r"public\search.txt", 'w', encoding='utf-8') as f:
         f.write(search_text)
     print("xml转txt结束")
 
 
 if __name__ == '__main__':
     p_file_path = sys.argv[1]
-    # p_file_path = r"F:\Desktop\search.txt"
+    # p_file_path = r"D:\桌面\search.xml"
     start_run(file_path=p_file_path)
