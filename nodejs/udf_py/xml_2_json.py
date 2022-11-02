@@ -77,6 +77,11 @@ def start(file_path):
     ori_str = html.unescape(newDoc.toxml())
     with open("public/search.txt", "w", encoding="utf-8") as f:
         newDoc.writexml(f, indent='', addindent='\t', newl='\n', encoding='utf-8')
+    with open(r"public/search.txt", 'r', encoding='utf-8') as f:
+        s = f.read()
+    with open(r"public/search.txt", 'w', encoding='utf-8') as f:
+        ns = html.unescape(s)
+        f.write(ns)
     print("xml转json结束")
 
 
