@@ -63,7 +63,7 @@ def start_run(file_path: str):
                                                                '<?xml version="1.0" encoding="utf-8"?>')
 
     # 结果输出
-    with open(r"public\search.txt", 'w', encoding='utf-8') as f:
+    with open(r"public/search.txt", 'w', encoding='utf-8') as f:
         f.write(search_text)
     print("xml转txt结束")
 
