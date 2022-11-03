@@ -360,3 +360,14 @@ a,img {
 }
 /* 打赏按钮投币彩蛋效果  https://akilar.top/posts/23fdf850/  */
 
+
+/* profile背景 */
+#aside-content>.card-widget.card-info {
+    background: linear-gradient(338deg,#bfb39c,#d1c0ba,#9ac3a2,#d5fbef,#e1f3d7);
+    box-shadow: 0 0 5px #d58d39;
+    position: relative;
+    background-size: 400% 400%;
+    -webkit-animation: Gradient 10s ease infinite;
+    -moz-animation: Gradient 10s ease infinite;
+    animation: Gradient 10s ease infinite!important
+}
