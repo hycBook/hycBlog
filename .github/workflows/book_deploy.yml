@@ -15,7 +15,8 @@ jobs:
       SSH_PRIVATE_KEY: ${{ secrets.CODING_PASSWORD }}
       # 图床参数
       PHOTO_BUCKET: ${{ secrets.PHOTO_BUCKET }}
-      PHOTO_BUCKET_COOKIE: ${{ secrets.PHOTO_BUCKET_COOKIE }}
+      PHOTO_BUCKET_USER_NAME: ${{ secrets.PHOTO_BUCKET_USER_NAME }}
+      PHOTO_BUCKET_PWD: ${{ secrets.PHOTO_BUCKET_PWD }}
 
     steps:
     - name: Checkout source
@@ -136,5 +137,5 @@ jobs:
 
     - name: search.xml upload to photo bucket
       run: |
-        python upload_search_file.py $PHOTO_BUCKET https://raw.githubusercontent.com/hycBook/hycBlog/gh-pages/search.txt \'$PHOTO_BUCKET_COOKIE\'
+        python upload_search_file.py $PHOTO_BUCKET https://raw.githubusercontent.com/hycBook/hycBlog/gh-pages/search.txt $PHOTO_BUCKET_USER_NAME $PHOTO_BUCKET_PWD
         echo "上传搜索文件至图床成功"
