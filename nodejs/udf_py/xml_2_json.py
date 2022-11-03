@@ -55,10 +55,12 @@ def start_run(file_path: str):
 
         # 添加内容节点
         new_content = new_doc.createElement('content')
-        cot = RawText()
-        cot.ownerDocument = new_doc
-        cot.data = BeautifulSoup(content, 'lxml').text
-        new_content.appendChild(cot)
+        # cot = RawText()
+        # cot.ownerDocument = new_doc
+        # cot.data = BeautifulSoup(content, 'lxml').text
+        # new_content.appendChild(cot)
+        phone_content_value = new_doc.createTextNode(BeautifulSoup(content, 'lxml').text)
+        new_content.appendChild(phone_content_value)
         new_entry.appendChild(new_content)
 
         # 添加子节点
