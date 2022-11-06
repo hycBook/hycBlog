@@ -1034,9 +1034,9 @@ swiper:
 # hexo-butterfly-categories-card
 # see https://akilar.top/posts/a9131002/
 categoryBar:
-  enable: true # 开关
+  enable: false # 开关
   priority: 5 #过滤器优先权
-  enable_page: /categories/ # 应用页面
+  enable_page: /  # 应用页面
   layout: # 挂载容器类型
     type: id
     name: recent-posts
