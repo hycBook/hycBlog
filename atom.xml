@@ -6,7 +6,7 @@
   <link href="https://hycbook.com/atom.xml" rel="self"/>
   
   <link href="https://hycbook.com/"/>
-  <updated>2022-11-06T10:49:56.135Z</updated>
+  <updated>2022-11-07T12:16:15.021Z</updated>
   <id>https://hycbook.com/</id>
   
   <author>
@@ -18,10 +18,10 @@
   
   <entry>
     <title>md数学公式和emoji表情</title>
-    <link href="https://hycbook.com/article/21745.html"/>
-    <id>https://hycbook.com/article/21745.html</id>
+    <link href="https://hycbook.com/article/21745"/>
+    <id>https://hycbook.com/article/21745</id>
     <published>2022-11-05T00:02:12.000Z</published>
-    <updated>2022-11-06T10:49:56.135Z</updated>
+    <updated>2022-11-07T12:16:15.021Z</updated>
     
     
     <summary type="html">md数学公式和emoji表情</summary>
@@ -41,10 +41,10 @@
   
   <entry>
     <title>机器学习_线性代数与矩阵论</title>
-    <link href="https://hycbook.com/article/47032.html"/>
-    <id>https://hycbook.com/article/47032.html</id>
+    <link href="https://hycbook.com/article/47032"/>
+    <id>https://hycbook.com/article/47032</id>
     <published>2022-10-11T12:38:22.000Z</published>
-    <updated>2022-11-06T10:49:56.143Z</updated>
+    <updated>2022-11-07T12:16:15.029Z</updated>
     
     
     <summary type="html">机器学习的数学基础入门知识</summary>
@@ -66,10 +66,10 @@
   
   <entry>
     <title>docker基本使用</title>
-    <link href="https://hycbook.com/article/50622.html"/>
-    <id>https://hycbook.com/article/50622.html</id>
+    <link href="https://hycbook.com/article/50622"/>
+    <id>https://hycbook.com/article/50622</id>
     <published>2022-10-09T05:17:57.000Z</published>
-    <updated>2022-11-06T10:49:56.135Z</updated>
+    <updated>2022-11-07T12:16:15.021Z</updated>
     
     
       
@@ -96,10 +96,10 @@
   
   <entry>
     <title>厦门方特梦幻王国一日攻略</title>
-    <link href="https://hycbook.com/article/63632.html"/>
-    <id>https://hycbook.com/article/63632.html</id>
+    <link href="https://hycbook.com/article/63632"/>
+    <id>https://hycbook.com/article/63632</id>
     <published>2022-10-03T14:46:24.000Z</published>
-    <updated>2022-11-06T10:49:56.135Z</updated>
+    <updated>2022-11-07T12:16:15.021Z</updated>
     
     
     <summary type="html">厦门同安方特梦幻王国游玩攻略</summary>
@@ -117,10 +117,10 @@
   
   <entry>
     <title>阿里云部署</title>
-    <link href="https://hycbook.com/article/14386.html"/>
-    <id>https://hycbook.com/article/14386.html</id>
+    <link href="https://hycbook.com/article/14386"/>
+    <id>https://hycbook.com/article/14386</id>
     <published>2022-09-12T02:02:25.000Z</published>
-    <updated>2022-11-06T10:49:56.131Z</updated>
+    <updated>2022-11-07T12:16:15.017Z</updated>
     
     
       
@@ -146,10 +146,10 @@
   
   <entry>
     <title>Linux常用命令</title>
-    <link href="https://hycbook.com/article/48230.html"/>
-    <id>https://hycbook.com/article/48230.html</id>
+    <link href="https://hycbook.com/article/48230"/>
+    <id>https://hycbook.com/article/48230</id>
     <published>2022-09-12T02:02:25.000Z</published>
-    <updated>2022-11-06T10:49:56.131Z</updated>
+    <updated>2022-11-07T12:16:15.017Z</updated>
     
     
       
@@ -172,38 +172,11 @@
   </entry>
   
   <entry>
-    <title>github协作</title>
-    <link href="https://hycbook.com/article/51084.html"/>
-    <id>https://hycbook.com/article/51084.html</id>
-    <published>2022-09-12T02:02:25.000Z</published>
-    <updated>2022-11-06T10:49:56.131Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;hr&gt;
-&lt;h1 id=&quot;github协作&quot;&gt;&lt;a href=&quot;#github协作&quot; class=&quot;headerlink&quot; title=&quot;github协作&quot;&gt;&lt;/a&gt;github协作&lt;/h1&gt;&lt;blockquote&gt;
-&lt;p&gt;&lt;a</summary>
-        
-      
-    
-    
-    
-    <category term="common" scheme="https://hycbook.com/categories/common/"/>
-    
-    
-    <category term="github" scheme="https://hycbook.com/tags/github/"/>
-    
-  </entry>
-  
-  <entry>
     <title>gitbook博客搭建</title>
-    <link href="https://hycbook.com/article/44835.html"/>
-    <id>https://hycbook.com/article/44835.html</id>
+    <link href="https://hycbook.com/article/44835"/>
+    <id>https://hycbook.com/article/44835</id>
     <published>2022-09-12T02:02:25.000Z</published>
-    <updated>2022-11-06T10:49:56.131Z</updated>
+    <updated>2022-11-07T12:16:15.021Z</updated>
     
     
       
@@ -226,11 +199,38 @@
   </entry>
   
   <entry>
-    <title>重装系统</title>
-    <link href="https://hycbook.com/article/41279.html"/>
-    <id>https://hycbook.com/article/41279.html</id>
+    <title>github协作</title>
+    <link href="https://hycbook.com/article/51084"/>
+    <id>https://hycbook.com/article/51084</id>
     <published>2022-09-12T02:02:25.000Z</published>
-    <updated>2022-11-06T10:49:56.131Z</updated>
+    <updated>2022-11-07T12:16:15.021Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;hr&gt;
+&lt;h1 id=&quot;github协作&quot;&gt;&lt;a href=&quot;#github协作&quot; class=&quot;headerlink&quot; title=&quot;github协作&quot;&gt;&lt;/a&gt;github协作&lt;/h1&gt;&lt;blockquote&gt;
+&lt;p&gt;&lt;a</summary>
+        
+      
+    
+    
+    
+    <category term="common" scheme="https://hycbook.com/categories/common/"/>
+    
+    
+    <category term="github" scheme="https://hycbook.com/tags/github/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>重装系统</title>
+    <link href="https://hycbook.com/article/41279"/>
+    <id>https://hycbook.com/article/41279</id>
+    <published>2022-09-12T02:02:25.000Z</published>
+    <updated>2022-11-07T12:16:15.017Z</updated>
     
     
     <summary type="html">重装系统以及一些软件的推荐，包括Chrome插件</summary>
@@ -246,10 +246,10 @@
   
   <entry>
     <title>语法_简单句</title>
-    <link href="https://hycbook.com/article/2509a8a1.html"/>
-    <id>https://hycbook.com/article/2509a8a1.html</id>
+    <link href="https://hycbook.com/article/2509a8a1"/>
+    <id>https://hycbook.com/article/2509a8a1</id>
     <published>2022-09-10T12:46:25.000Z</published>
-    <updated>2022-11-06T10:49:56.135Z</updated>
+    <updated>2022-11-07T12:16:15.021Z</updated>
     
     
       
@@ -272,10 +272,10 @@
   
   <entry>
     <title>语法_并列句</title>
-    <link href="https://hycbook.com/article/d4db6f86.html"/>
-    <id>https://hycbook.com/article/d4db6f86.html</id>
+    <link href="https://hycbook.com/article/d4db6f86"/>
+    <id>https://hycbook.com/article/d4db6f86</id>
     <published>2022-09-10T12:46:25.000Z</published>
-    <updated>2022-11-06T10:49:56.135Z</updated>
+    <updated>2022-11-07T12:16:15.021Z</updated>
     
     
       
@@ -301,10 +301,10 @@
   
   <entry>
     <title>语法_名词性从句</title>
-    <link href="https://hycbook.com/article/be621570.html"/>
-    <id>https://hycbook.com/article/be621570.html</id>
+    <link href="https://hycbook.com/article/be621570"/>
+    <id>https://hycbook.com/article/be621570</id>
     <published>2022-09-10T12:46:25.000Z</published>
-    <updated>2022-11-06T10:49:56.135Z</updated>
+    <updated>2022-11-07T12:16:15.021Z</updated>
     
     
       
@@ -328,10 +328,10 @@
   
   <entry>
     <title>语法_特殊结构</title>
-    <link href="https://hycbook.com/article/b80bb25bce.html"/>
-    <id>https://hycbook.com/article/b80bb25bce.html</id>
+    <link href="https://hycbook.com/article/b80bb25bce"/>
+    <id>https://hycbook.com/article/b80bb25bce</id>
     <published>2022-09-10T12:46:25.000Z</published>
-    <updated>2022-11-06T10:49:56.135Z</updated>
+    <updated>2022-11-07T12:16:15.021Z</updated>
     
     
       
@@ -355,10 +355,10 @@
   
   <entry>
     <title>IDE快捷键</title>
-    <link href="https://hycbook.com/article/7978bafd.html"/>
-    <id>https://hycbook.com/article/7978bafd.html</id>
+    <link href="https://hycbook.com/article/7978bafd"/>
+    <id>https://hycbook.com/article/7978bafd</id>
     <published>2022-09-10T12:46:25.000Z</published>
-    <updated>2022-11-06T10:49:56.135Z</updated>
+    <updated>2022-11-07T12:16:15.021Z</updated>
     
     
       
@@ -380,10 +380,10 @@
   
   <entry>
     <title>JDBC</title>
-    <link href="https://hycbook.com/article/8fe47ff4.html"/>
-    <id>https://hycbook.com/article/8fe47ff4.html</id>
+    <link href="https://hycbook.com/article/8fe47ff4"/>
+    <id>https://hycbook.com/article/8fe47ff4</id>
     <published>2022-09-10T12:46:25.000Z</published>
-    <updated>2022-11-06T10:49:56.135Z</updated>
+    <updated>2022-11-07T12:16:15.021Z</updated>
     
     
       
@@ -404,10 +404,10 @@
   
   <entry>
     <title>JDBC_JDBCTemplate</title>
-    <link href="https://hycbook.com/article/e73474f0.html"/>
-    <id>https://hycbook.com/article/e73474f0.html</id>
+    <link href="https://hycbook.com/article/e73474f0"/>
+    <id>https://hycbook.com/article/e73474f0</id>
     <published>2022-09-10T12:46:25.000Z</published>
-    <updated>2022-11-06T10:49:56.135Z</updated>
+    <updated>2022-11-07T12:16:15.021Z</updated>
     
     
       
@@ -431,10 +431,10 @@
   
   <entry>
     <title>JDBC_JDBC连接池</title>
-    <link href="https://hycbook.com/article/ae528721.html"/>
-    <id>https://hycbook.com/article/ae528721.html</id>
+    <link href="https://hycbook.com/article/ae528721"/>
+    <id>https://hycbook.com/article/ae528721</id>
     <published>2022-09-10T12:46:25.000Z</published>
-    <updated>2022-11-06T10:49:56.135Z</updated>
+    <updated>2022-11-07T12:16:15.021Z</updated>
     
     
       
@@ -459,10 +459,10 @@
   
   <entry>
     <title>Java core programming</title>
-    <link href="https://hycbook.com/article/d13ef431.html"/>
-    <id>https://hycbook.com/article/d13ef431.html</id>
+    <link href="https://hycbook.com/article/d13ef431"/>
+    <id>https://hycbook.com/article/d13ef431</id>
     <published>2022-09-10T12:46:25.000Z</published>
-    <updated>2022-11-06T10:49:56.135Z</updated>
+    <updated>2022-11-07T12:16:15.021Z</updated>
     
     
       
@@ -484,10 +484,10 @@
   
   <entry>
     <title>Java基础</title>
-    <link href="https://hycbook.com/article/f7ede91d.html"/>
-    <id>https://hycbook.com/article/f7ede91d.html</id>
+    <link href="https://hycbook.com/article/f7ede91d"/>
+    <id>https://hycbook.com/article/f7ede91d</id>
     <published>2022-09-10T12:46:25.000Z</published>
-    <updated>2022-11-06T10:49:56.135Z</updated>
+    <updated>2022-11-07T12:16:15.021Z</updated>
     
     
       
@@ -508,10 +508,10 @@
   
   <entry>
     <title>Java基础_反射机制</title>
-    <link href="https://hycbook.com/article/3c274368.html"/>
-    <id>https://hycbook.com/article/3c274368.html</id>
+    <link href="https://hycbook.com/article/3c274368"/>
+    <id>https://hycbook.com/article/3c274368</id>
     <published>2022-09-10T12:46:25.000Z</published>
-    <updated>2022-11-06T10:49:56.135Z</updated>
+    <updated>2022-11-07T12:16:15.021Z</updated>
     
     
       
