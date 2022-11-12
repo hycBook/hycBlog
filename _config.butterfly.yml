@@ -71,7 +71,7 @@ local_search:
     hits_stats: "找到${hits}条结果（用时${time} ms）"
 
 search:
-  path: https://raw.githubusercontent.com/hycBook/hycBlog/gh-pages/search.xml
+  path: https://raw.githubusercontent.com/hycBook/hycBlog/gh-pages/search.xml  # 改了源码，实际读取地址为图床
   field: post
   content: true
   template: ./search.xml
@@ -862,7 +862,7 @@ snackbar:
 
 # https://instant.page/
 # prefetch (預加載)
-instantpage: true
+instantpage: false
 
 # https://github.com/vinta/pangu.js
 # Insert a space between Chinese character and English character (中英文之間添加空格)
