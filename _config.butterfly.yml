@@ -7,17 +7,17 @@
 menu:
   首页: / || icon-fangwu
   文章 || icon-wenzhang1:
-    归档: /archives/ || icon-guidang
-    分类: /categories/ || icon-fenlei
-    标签: /tags/ || icon-biaoqian
+    归档: /archives || icon-guidang
+    分类: /categories || icon-fenlei
+    标签: /tags || icon-biaoqian
   娱乐 || icon-zhifeiji:
-    音乐: /music/ || icon-yinle
-    追番: /bangumis/ || icon-wodezhuifan
-    相册: /gallery/ || icon-xiangce
-    视频: /video/ || icon-shipin
-  留言板: /comments/ || icon-TIFFANYSROOM_huaban
-  友链: /link/ || icon-changyonglianjie
-  关于: /about/ || icon-aixin
+    音乐: /music || icon-yinle
+    追番: /bangumis || icon-wodezhuifan
+    相册: /gallery || icon-xiangce
+    视频: /video || icon-shipin
+  留言板: /comments || icon-TIFFANYSROOM_huaban
+  友链: /link || icon-changyonglianjie
+  关于: /about || icon-aixin
 
 
 # Code Blocks (代碼相關)
