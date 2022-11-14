@@ -10,71 +10,8 @@
     
     
     <url>
-        <loc>https://hycbook.com/link/</loc>
-        <lastmod>2022-11-14T01:00:11.435Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.8</priority>
-    </url>
-    
-    
-    
-    <url>
-        <loc>https://hycbook.com/music/</loc>
-        <lastmod>2022-11-14T01:00:11.435Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.8</priority>
-    </url>
-    
-    
-    
-    <url>
-        <loc>https://hycbook.com/shuoshuo/</loc>
-        <lastmod>2022-11-14T01:00:11.435Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.8</priority>
-    </url>
-    
-    
-    
-    <url>
-        <loc>https://hycbook.com/tags/</loc>
-        <lastmod>2022-11-14T01:00:11.435Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.8</priority>
-    </url>
-    
-    
-    
-    <url>
         <loc>https://hycbook.com/video/</loc>
-        <lastmod>2022-11-14T01:00:11.435Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.8</priority>
-    </url>
-    
-    
-    
-    <url>
-        <loc>https://hycbook.com/gallery/minority/</loc>
-        <lastmod>2022-11-14T01:00:11.435Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.8</priority>
-    </url>
-    
-    
-    
-    <url>
-        <loc>https://hycbook.com/gallery/wallpaper/</loc>
-        <lastmod>2022-11-14T01:00:11.435Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.8</priority>
-    </url>
-    
-    
-    
-    <url>
-        <loc>https://hycbook.com/img/siteicon/README.html</loc>
-        <lastmod>2022-11-14T01:00:11.435Z</lastmod>
+        <lastmod>2022-11-14T02:00:12.861Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
@@ -83,7 +20,7 @@
     
     <url>
         <loc>https://hycbook.com/about/</loc>
-        <lastmod>2022-11-14T01:00:11.431Z</lastmod>
+        <lastmod>2022-11-14T02:00:12.857Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
@@ -92,7 +29,7 @@
     
     <url>
         <loc>https://hycbook.com/bangumis/</loc>
-        <lastmod>2022-11-14T01:00:11.431Z</lastmod>
+        <lastmod>2022-11-14T02:00:12.857Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
@@ -101,7 +38,7 @@
     
     <url>
         <loc>https://hycbook.com/categories/</loc>
-        <lastmod>2022-11-14T01:00:11.431Z</lastmod>
+        <lastmod>2022-11-14T02:00:12.857Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
@@ -110,7 +47,7 @@
     
     <url>
         <loc>https://hycbook.com/comments/</loc>
-        <lastmod>2022-11-14T01:00:11.431Z</lastmod>
+        <lastmod>2022-11-14T02:00:12.857Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
@@ -119,7 +56,43 @@
     
     <url>
         <loc>https://hycbook.com/gallery/</loc>
-        <lastmod>2022-11-14T01:00:11.431Z</lastmod>
+        <lastmod>2022-11-14T02:00:12.857Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    
+    
+    <url>
+        <loc>https://hycbook.com/link/</loc>
+        <lastmod>2022-11-14T02:00:12.857Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    
+    
+    <url>
+        <loc>https://hycbook.com/music/</loc>
+        <lastmod>2022-11-14T02:00:12.857Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    
+    
+    <url>
+        <loc>https://hycbook.com/tags/</loc>
+        <lastmod>2022-11-14T02:00:12.857Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    
+    
+    <url>
+        <loc>https://hycbook.com/shuoshuo/</loc>
+        <lastmod>2022-11-14T02:00:12.857Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
@@ -128,7 +101,34 @@
     
     <url>
         <loc>https://hycbook.com/gallery/marvel/</loc>
-        <lastmod>2022-11-14T01:00:11.431Z</lastmod>
+        <lastmod>2022-11-14T02:00:12.857Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    
+    
+    <url>
+        <loc>https://hycbook.com/gallery/minority/</loc>
+        <lastmod>2022-11-14T02:00:12.857Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    
+    
+    <url>
+        <loc>https://hycbook.com/gallery/wallpaper/</loc>
+        <lastmod>2022-11-14T02:00:12.857Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    
+    
+    <url>
+        <loc>https://hycbook.com/img/siteicon/README.html</loc>
+        <lastmod>2022-11-14T02:00:12.857Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
