@@ -20,6 +20,10 @@ abbrlink: 12117
 # 前置知识
 
 > 笔记整理自：Bilibili站上[shuhuai008](https://space.bilibili.com/97068901)强势手推讲解的[白板推导CRF系列课程](https://www.bilibili.com/video/av34444816/?p=1)，课程质量很高！
+>
+> [条件随机场](https://www.yuque.com/bystander-wg876/yc5f72/ox2qgv)
+>
+> [【NLP】从隐马尔科夫到条件随机场](https://anxiang1836.github.io/2019/11/05/NLP_From_HMM_to_CRF/)
 
 > 分类问题根据输出的类型，可以将其划分为`硬模型`和`软模型`
 
@@ -87,6 +91,8 @@ $$
 > CRF
 
 将MEMM的**有向调整为了无向**，因此此时的归一化变为了全局归一化，解决了`标注偏差问题`
+
+
 
 
 
@@ -268,4 +274,15 @@ $$
 
 
 # CRF
+
+CRF是马尔科夫随机场MRF的特例，它假设马尔科夫随机场中只有𝑋和𝑌两种变量，𝑋一般是给定的，而𝑌一般是在给定𝑋的条件下我们的输出。这样马尔科夫随机场就特化成了条件随机场
+
+* 条件体现在它是判别式模型，计算条件概率
+* 随机场体现在是无向图模型
+
+![条件随机场](https://pic.hycbook.com/i/hexo/bk_resources/machine_learning/条件随机场CRF/条件随机场.webp)
+
+## 概率密度函数
+
+
 

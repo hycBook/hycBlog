@@ -106,6 +106,10 @@ jobs:
         # 增强外挂标签插件  https://anzhiy.cn/posts/7d58.html
         npm install hexo-butterfly-tag-plugins-plus --save
 
+        # 
+        npm install --save hexo-filter-mermaid-diagrams
+        npm install --save hexo-filter-flowchart
+
         # 实现文章输入密码才能浏览
         # npm install hexo-blog-encrypt --save
 
