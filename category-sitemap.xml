@@ -10,49 +10,56 @@
 
     <url>
         <loc>https://hycbook.com/categories/python/</loc>
-        <lastmod>2022-11-17T11:12:30.040Z</lastmod>
+        <lastmod>2022-11-20T03:33:20.009Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
         <loc>https://hycbook.com/categories/math/</loc>
-        <lastmod>2022-11-17T11:12:30.036Z</lastmod>
+        <lastmod>2022-11-20T03:33:20.001Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://hycbook.com/categories/machine-learning/</loc>
+        <lastmod>2022-11-20T03:33:20.001Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
         <loc>https://hycbook.com/categories/java/</loc>
-        <lastmod>2022-11-17T11:12:30.032Z</lastmod>
+        <lastmod>2022-11-20T03:33:20.001Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
         <loc>https://hycbook.com/categories/entertainment/</loc>
-        <lastmod>2022-11-17T11:12:30.028Z</lastmod>
+        <lastmod>2022-11-20T03:33:19.997Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
         <loc>https://hycbook.com/categories/english/</loc>
-        <lastmod>2022-11-17T11:12:30.028Z</lastmod>
+        <lastmod>2022-11-20T03:33:19.997Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
         <loc>https://hycbook.com/categories/common/</loc>
-        <lastmod>2022-11-17T11:12:30.028Z</lastmod>
+        <lastmod>2022-11-20T03:33:19.997Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
         <loc>https://hycbook.com/categories/algorithm/</loc>
-        <lastmod>2022-11-17T11:12:30.024Z</lastmod>
+        <lastmod>2022-11-20T03:33:19.997Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>

@@ -6,7 +6,7 @@
   <link href="https://hycbook.com/atom.xml" rel="self"/>
   
   <link href="https://hycbook.com/"/>
-  <updated>2022-11-17T11:12:30.024Z</updated>
+  <updated>2022-11-20T03:33:20.001Z</updated>
   <id>https://hycbook.com/</id>
   
   <author>
@@ -17,11 +17,32 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>条件随机场CRF</title>
+    <link href="https://hycbook.com/article/12117.html"/>
+    <id>https://hycbook.com/article/12117.html</id>
+    <published>2022-11-19T11:42:10.000Z</published>
+    <updated>2022-11-20T03:33:20.001Z</updated>
+    
+    
+    <summary type="html">机器学习之条件随机场CRF</summary>
+    
+    
+    
+    <category term="machine_learning" scheme="https://hycbook.com/categories/machine-learning/"/>
+    
+    
+    <category term="机器学习" scheme="https://hycbook.com/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
+    
+    <category term="条件随机场CRF" scheme="https://hycbook.com/tags/%E6%9D%A1%E4%BB%B6%E9%9A%8F%E6%9C%BA%E5%9C%BACRF/"/>
+    
+  </entry>
+  
+  <entry>
     <title>贪心算法</title>
     <link href="https://hycbook.com/article/51855.html"/>
     <id>https://hycbook.com/article/51855.html</id>
     <published>2022-11-15T12:12:36.000Z</published>
-    <updated>2022-11-17T11:12:30.024Z</updated>
+    <updated>2022-11-20T03:33:19.997Z</updated>
     
     
     <summary type="html">贪心算法</summary>
@@ -42,7 +63,7 @@
     <link href="https://hycbook.com/article/55046.html"/>
     <id>https://hycbook.com/article/55046.html</id>
     <published>2022-11-15T10:42:36.000Z</published>
-    <updated>2022-11-17T11:12:30.024Z</updated>
+    <updated>2022-11-20T03:33:19.997Z</updated>
     
     
     <summary type="html">动态规划</summary>
@@ -63,7 +84,7 @@
     <link href="https://hycbook.com/article/54551.html"/>
     <id>https://hycbook.com/article/54551.html</id>
     <published>2022-11-15T00:42:36.000Z</published>
-    <updated>2022-11-17T11:12:30.024Z</updated>
+    <updated>2022-11-20T03:33:19.997Z</updated>
     
     
     <summary type="html">递推和递归</summary>
@@ -84,7 +105,7 @@
     <link href="https://hycbook.com/article/60366.html"/>
     <id>https://hycbook.com/article/60366.html</id>
     <published>2022-11-11T23:37:19.000Z</published>
-    <updated>2022-11-17T11:12:30.024Z</updated>
+    <updated>2022-11-20T03:33:19.997Z</updated>
     
     
     <summary type="html">位运算</summary>
@@ -105,7 +126,7 @@
     <link href="https://hycbook.com/article/39101.html"/>
     <id>https://hycbook.com/article/39101.html</id>
     <published>2022-11-11T23:37:19.000Z</published>
-    <updated>2022-11-17T11:12:30.024Z</updated>
+    <updated>2022-11-20T03:33:19.997Z</updated>
     
     
     <summary type="html">算法基础相关背景知识</summary>
@@ -126,7 +147,7 @@
     <link href="https://hycbook.com/article/21745.html"/>
     <id>https://hycbook.com/article/21745.html</id>
     <published>2022-11-05T00:02:12.000Z</published>
-    <updated>2022-11-17T11:12:30.028Z</updated>
+    <updated>2022-11-20T03:33:19.997Z</updated>
     
     
     <summary type="html">md数学公式和emoji表情</summary>
@@ -149,7 +170,7 @@
     <link href="https://hycbook.com/article/47032.html"/>
     <id>https://hycbook.com/article/47032.html</id>
     <published>2022-10-11T12:38:22.000Z</published>
-    <updated>2022-11-17T11:12:30.036Z</updated>
+    <updated>2022-11-20T03:33:20.001Z</updated>
     
     
     <summary type="html">机器学习的数学基础入门知识</summary>
@@ -174,7 +195,7 @@
     <link href="https://hycbook.com/article/50622.html"/>
     <id>https://hycbook.com/article/50622.html</id>
     <published>2022-10-09T05:17:57.000Z</published>
-    <updated>2022-11-17T11:12:30.028Z</updated>
+    <updated>2022-11-20T03:33:19.997Z</updated>
     
     
       
@@ -204,7 +225,7 @@
     <link href="https://hycbook.com/article/63632.html"/>
     <id>https://hycbook.com/article/63632.html</id>
     <published>2022-10-03T14:46:24.000Z</published>
-    <updated>2022-11-17T11:12:30.028Z</updated>
+    <updated>2022-11-20T03:33:19.997Z</updated>
     
     
     <summary type="html">厦门同安方特梦幻王国游玩攻略</summary>
@@ -225,7 +246,7 @@
     <link href="https://hycbook.com/article/14386.html"/>
     <id>https://hycbook.com/article/14386.html</id>
     <published>2022-09-12T02:02:25.000Z</published>
-    <updated>2022-11-17T11:12:30.024Z</updated>
+    <updated>2022-11-20T03:33:19.997Z</updated>
     
     
       
@@ -254,7 +275,7 @@
     <link href="https://hycbook.com/article/48230.html"/>
     <id>https://hycbook.com/article/48230.html</id>
     <published>2022-09-12T02:02:25.000Z</published>
-    <updated>2022-11-17T11:12:30.028Z</updated>
+    <updated>2022-11-20T03:33:19.997Z</updated>
     
     
       
@@ -281,7 +302,7 @@
     <link href="https://hycbook.com/article/51084.html"/>
     <id>https://hycbook.com/article/51084.html</id>
     <published>2022-09-12T02:02:25.000Z</published>
-    <updated>2022-11-17T11:12:30.028Z</updated>
+    <updated>2022-11-20T03:33:19.997Z</updated>
     
     
       
@@ -308,7 +329,7 @@
     <link href="https://hycbook.com/article/44835.html"/>
     <id>https://hycbook.com/article/44835.html</id>
     <published>2022-09-12T02:02:25.000Z</published>
-    <updated>2022-11-17T11:12:30.028Z</updated>
+    <updated>2022-11-20T03:33:19.997Z</updated>
     
     
       
@@ -335,7 +356,7 @@
     <link href="https://hycbook.com/article/41279.html"/>
     <id>https://hycbook.com/article/41279.html</id>
     <published>2022-09-12T02:02:25.000Z</published>
-    <updated>2022-11-17T11:12:30.028Z</updated>
+    <updated>2022-11-20T03:33:19.997Z</updated>
     
     
     <summary type="html">重装系统以及一些软件的推荐，包括Chrome插件</summary>
@@ -354,7 +375,7 @@
     <link href="https://hycbook.com/article/2509a8a1.html"/>
     <id>https://hycbook.com/article/2509a8a1.html</id>
     <published>2022-09-10T12:46:25.000Z</published>
-    <updated>2022-11-17T11:12:30.028Z</updated>
+    <updated>2022-11-20T03:33:19.997Z</updated>
     
     
       
@@ -380,7 +401,7 @@
     <link href="https://hycbook.com/article/d4db6f86.html"/>
     <id>https://hycbook.com/article/d4db6f86.html</id>
     <published>2022-09-10T12:46:25.000Z</published>
-    <updated>2022-11-17T11:12:30.028Z</updated>
+    <updated>2022-11-20T03:33:19.997Z</updated>
     
     
       
@@ -409,7 +430,7 @@
     <link href="https://hycbook.com/article/be621570.html"/>
     <id>https://hycbook.com/article/be621570.html</id>
     <published>2022-09-10T12:46:25.000Z</published>
-    <updated>2022-11-17T11:12:30.028Z</updated>
+    <updated>2022-11-20T03:33:19.997Z</updated>
     
     
       
@@ -436,7 +457,7 @@
     <link href="https://hycbook.com/article/b80bb25bce.html"/>
     <id>https://hycbook.com/article/b80bb25bce.html</id>
     <published>2022-09-10T12:46:25.000Z</published>
-    <updated>2022-11-17T11:12:30.028Z</updated>
+    <updated>2022-11-20T03:33:19.997Z</updated>
     
     
       
@@ -463,7 +484,7 @@
     <link href="https://hycbook.com/article/7978bafd.html"/>
     <id>https://hycbook.com/article/7978bafd.html</id>
     <published>2022-09-10T12:46:25.000Z</published>
-    <updated>2022-11-17T11:12:30.028Z</updated>
+    <updated>2022-11-20T03:33:19.997Z</updated>
     
     
       
@@ -473,30 +494,6 @@
     <summary type="html">&lt;hr&gt;
 &lt;blockquote&gt;
 &lt;p&gt;参考: &lt;a</summary>
-        
-      
-    
-    
-    
-    <category term="java" scheme="https://hycbook.com/categories/java/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>JDBC</title>
-    <link href="https://hycbook.com/article/8fe47ff4.html"/>
-    <id>https://hycbook.com/article/8fe47ff4.html</id>
-    <published>2022-09-10T12:46:25.000Z</published>
-    <updated>2022-11-17T11:12:30.028Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;hr&gt;
-</summary>
         
       
     

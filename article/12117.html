@@ -1,0 +1,630 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>条件随机场CRF | 兼一书虫</title><meta name="keywords" content="机器学习,条件随机场CRF"><meta name="author" content="narutohyc"><meta name="copyright" content="narutohyc"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="机器学习之条件随机场CRF">
+<meta property="og:type" content="article">
+<meta property="og:title" content="条件随机场CRF">
+<meta property="og:url" content="https://hycbook.com/article/12117.html">
+<meta property="og:site_name" content="兼一书虫">
+<meta property="og:description" content="机器学习之条件随机场CRF">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://pic.hycbook.com/i//hexo/post_cover/%E8%95%BE%E5%A7%860.webp">
+<meta property="article:published_time" content="2022-11-19T11:42:10.000Z">
+<meta property="article:modified_time" content="2022-11-20T03:33:20.001Z">
+<meta property="article:author" content="narutohyc">
+<meta property="article:tag" content="机器学习">
+<meta property="article:tag" content="条件随机场CRF">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://pic.hycbook.com/i//hexo/post_cover/%E8%95%BE%E5%A7%860.webp"><link rel="shortcut icon" href="https://pic.hycbook.com/i//hexo/config_imgs/网站图标.webp"><link rel="canonical" href="https://hycbook.com/article/12117"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//hm.baidu.com"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="manifest" href="/manifest.json"/><meta name="msapplication-TileColor" content="#ffccff"/><link rel="apple-touch-icon" sizes="180x180" href="https://pic.hycbook.com/i//hexo/source/img/siteicon/apple-touch-icon.png"/><link rel="icon" type="image/png" sizes="32x32" href="https://pic.hycbook.com/i//hexo/source/img/siteicon/favicon-32x32.png"/><link rel="icon" type="image/png" sizes="16x16" href="https://pic.hycbook.com/i//hexo/source/img/siteicon/favicon-16x16.png"/><link rel="mask-icon" href="https://pic.hycbook.com/i//hexo/source/img/siteicon/safari-pinned-tab.svg" color="#5bbad5"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.min.css" media="print" onload="this.media='all'"><script>var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?68340394dfd808cea9826e8a57f87aa6";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":true,"languages":{"hits_empty":"找不到您查询的内容：${query}"}},
+  translate: {"defaultEncoding":1,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"簡"},
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":400},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '天',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: {"limitCount":200,"languages":{"author":"作者: narutohyc","link":"链接: ","source":"来源: 兼一书虫","info":"著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。"}},
+  lightbox: 'fancybox',
+  Snackbar: {"chs_to_cht":"你已切换为繁体","cht_to_chs":"你已切换为简体","day_to_night":"你已切换为深色模式","night_to_day":"你已切换为浅色模式","bgLight":"#49b1f5","bgDark":"#1f1f1f","position":"top-center"},
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: true,
+  isAnchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '条件随机场CRF',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2022-11-20 11:33:20'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><link rel="stylesheet" href="/css/hyc_udf.css"><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/js-heo@1.0.11/mainColor/heoMainColor.css"><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/js-heo@1.0.11/404/404.css"><!-- hexo injector head_end start --><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Zfour/Butterfly-double-row-display@1.00/cardlistpost.min.css"/>
+<style>#recent-posts > .recent-post-item >.recent-post-info > .article-meta-wrap > .tags:before {content:"\A";
+  white-space: pre;}#recent-posts > .recent-post-item >.recent-post-info > .article-meta-wrap > .tags > .article-meta__separator{display:none}</style>
+<link rel="stylesheet" href="https://npm.elemecdn.com/hexo-butterfly-swiper/lib/swiper.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://npm.elemecdn.com/hexo-butterfly-swiper/lib/swiperstyle.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.cbd.int/hexo-butterfly-tag-plugins-plus@latest/lib/assets/font-awesome-animation.min.css" media="defer" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.cbd.int/hexo-butterfly-tag-plugins-plus@latest/lib/tag_plugins.css" media="defer" onload="this.media='all'"><script src="https://cdn.cbd.int/hexo-butterfly-tag-plugins-plus@latest/lib/assets/carousel-touch.js"></script><!-- hexo injector head_end end --><meta name="generator" content="Hexo 6.3.0"><link rel="alternate" href="/atom.xml" title="兼一书虫" type="application/atom+xml">
+</head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://pic.hycbook.com/i/hexo/person_img/兼一头像.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">89</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">118</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">8</div></a></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-fangwu"></use></svg><span> 首页</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);" rel="external nofollow noreferrer"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-wenzhang1">             </use></svg><span> 文章</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/archives"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-guidang">                   </use></svg><span> 归档</span></a></li><li><a class="site-page child" href="/categories"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-fenlei">                   </use></svg><span> 分类</span></a></li><li><a class="site-page child" href="/tags"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-biaoqian">                   </use></svg><span> 标签</span></a></li></ul></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);" rel="external nofollow noreferrer"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-zhifeiji">             </use></svg><span> 娱乐</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-yinle">                   </use></svg><span> 音乐</span></a></li><li><a class="site-page child" href="/bangumis"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-wodezhuifan">                   </use></svg><span> 追番</span></a></li><li><a class="site-page child" href="/gallery"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-xiangce">                   </use></svg><span> 相册</span></a></li><li><a class="site-page child" href="/video"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-shipin">                   </use></svg><span> 视频</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/comments"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-TIFFANYSROOM_huaban"></use></svg><span> 留言板</span></a></div><div class="menus_item"><a class="site-page" href="/link"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-changyonglianjie"></use></svg><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-aixin"></use></svg><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://pic.hycbook.com/i//hexo/post_imgs/蕾姆0.webp')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">兼一书虫</a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-fangwu"></use></svg><span> 首页</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);" rel="external nofollow noreferrer"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-wenzhang1">             </use></svg><span> 文章</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/archives"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-guidang">                   </use></svg><span> 归档</span></a></li><li><a class="site-page child" href="/categories"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-fenlei">                   </use></svg><span> 分类</span></a></li><li><a class="site-page child" href="/tags"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-biaoqian">                   </use></svg><span> 标签</span></a></li></ul></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);" rel="external nofollow noreferrer"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-zhifeiji">             </use></svg><span> 娱乐</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-yinle">                   </use></svg><span> 音乐</span></a></li><li><a class="site-page child" href="/bangumis"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-wodezhuifan">                   </use></svg><span> 追番</span></a></li><li><a class="site-page child" href="/gallery"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-xiangce">                   </use></svg><span> 相册</span></a></li><li><a class="site-page child" href="/video"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-shipin">                   </use></svg><span> 视频</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/comments"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-TIFFANYSROOM_huaban"></use></svg><span> 留言板</span></a></div><div class="menus_item"><a class="site-page" href="/link"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-changyonglianjie"></use></svg><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-aixin"></use></svg><span> 关于</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">条件随机场CRF</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2022-11-19T11:42:10.000Z" title="发表于 2022-11-19 19:42:10">2022-11-19</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2022-11-20T03:33:20.001Z" title="更新于 2022-11-20 11:33:20">2022-11-20</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/machine-learning/">machine_learning</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">2.3k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>8分钟</span></span><span class="post-meta-separator">|</span><span id="" data-flag-title="条件随机场CRF"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="twikoo_visitors"><i class="fa-solid fa-spinner fa-spin"></i></span></span><span class="post-meta-separator">|</span><span class="post-meta-commentcount"><i class="far fa-comments fa-fw post-meta-icon"></i><span class="post-meta-label">评论数:</span><a href="/article/12117.html#post-comment"><span id="twikoo-count"><i class="fa-solid fa-spinner fa-spin"></i></span></a></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><hr>
+<h1 id="前置知识"><a href="#前置知识" class="headerlink" title="前置知识"></a>前置知识</h1><blockquote>
+<p>笔记整理自：Bilibili站上<a target="_blank" rel="noopener external nofollow noreferrer" href="https://space.bilibili.com/97068901">shuhuai008</a>强势手推讲解的<a target="_blank" rel="noopener external nofollow noreferrer" href="https://www.bilibili.com/video/av34444816/?p=1">白板推导CRF系列课程</a>，课程质量很高！</p>
+<p>分类问题根据输出的类型，可以将其划分为<code>硬模型</code>和<code>软模型</code></p>
+</blockquote>
+<ul>
+<li><p><strong>硬输出</strong>: 输出为0或1</p>
+</li>
+<li><p><strong>软输出</strong>: 引入概率，不直接计算边界，而是计算取各类别的概率</p>
+</li>
+</ul>
+<h2 id="软硬模型"><a href="#软硬模型" class="headerlink" title="软硬模型"></a>软硬模型</h2><h3 id="硬模型"><a href="#硬模型" class="headerlink" title="硬模型"></a>硬模型</h3><blockquote>
+<p>svm支持向量机(最大间隔)</p>
+</blockquote>
+<p>几何角度出发，求的是max margin classifier，式子最终的形式为</p>
+<script type="math/tex; mode=display">
+min (\frac {1}{2} w^Tw) \qquad s.t. \ y_i(w^Tx_i+b) \geq1,i=1,\cdots,N</script><blockquote>
+<p>PLA感知机，可以看作最基本的神经元</p>
+</blockquote>
+<script type="math/tex; mode=display">
+f(w) = sing(w^Tx)</script><blockquote>
+<p>LDA线性判别分析(误分类驱动)</p>
+</blockquote>
+<p>核心思想: 类间大、类内小</p>
+<h3 id="软模型"><a href="#软模型" class="headerlink" title="软模型"></a>软模型</h3><h4 id="概率判别模型"><a href="#概率判别模型" class="headerlink" title="概率判别模型"></a>概率判别模型</h4><blockquote>
+<p>建模核心</p>
+</blockquote>
+<p>是对$P(x,y)$进行建模</p>
+<blockquote>
+<p>例子_逻辑回归(Logistics Regression, LR)，或者也可以叫SoftMax Regression</p>
+<p>例子_最大熵模型(Maximum Entropy Model, MEM)</p>
+</blockquote>
+<p>利用最大熵思想(Maximum Entropy Model)驱动模型，从熵模型来看，LG是熵模型的一个特例</p>
+<p>在最大熵原则下，如果给定均值和方差，那么Gaussian Dist熵最大</p>
+<blockquote>
+<p>例子_最大熵马尔科夫模型(Maximum Entropy Markov Model, MEMM)</p>
+</blockquote>
+<p>结合了MEM和HMM形成了MEMM，图模型可以表达成黄线部分(全局影响)或绿线部分(局部影响)，表达成绿线是为了和HMM对比</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://pic.hycbook.com/i/hexo/bk_resources/machine_learning/条件随机场CRF/最大熵马尔科夫图模型.webp" alt="最大熵马尔科夫图模型"></p>
+<p><strong>潜在问题</strong>: <code>标注偏差问题</code></p>
+<p>标注偏差问题(Label Bias Problem): 原因是因为<code>局部归一化</code>，上图中灰色虚线可以表达为$p(y_2|y_1,x_2)$，这部分要求符合概率分布，因此需要归一化，强制变为概率分布</p>
+<p><strong>与其他模型的关系</strong></p>
+<ul>
+<li><p>与HMM的关系</p>
+<p>HMM直接求联合概率分布，对于标注问题而言，显然不需要求联合概率分布，求条件概率就可以了，因此MEMM比HMM更简单</p>
+<p>打破了HMM的观测独立假设，比如$y_2$的标注不仅和$x_1$有关，也和$x_2$有关，甚至可以说和整个$x$都有关系，这个假设更加合理，观测间不应该是相互独立的</p>
+</li>
+</ul>
+<blockquote>
+<p>CRF</p>
+</blockquote>
+<p>将MEMM的<strong>有向调整为了无向</strong>，因此此时的归一化变为了全局归一化，解决了<code>标注偏差问题</code></p>
+<h4 id="概率生成模型"><a href="#概率生成模型" class="headerlink" title="概率生成模型"></a>概率生成模型</h4><blockquote>
+<p>建模核心</p>
+</blockquote>
+<p>是对$P(y|x)$进行建模</p>
+<blockquote>
+<p>例子_朴素贝叶斯(Naive Bayes, NB)</p>
+</blockquote>
+<p><code>朴素贝叶斯假设</code>公式如下</p>
+<script type="math/tex; mode=display">
+p(x|y=v_0) = \prod _{i=1}^{p}{p(x_i|y=1或0)}</script><p>朴素贝叶斯模型简化为下图:</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://pic.hycbook.com/i/hexo/bk_resources/machine_learning/条件随机场CRF/朴素贝叶斯假设.webp" alt="朴素贝叶斯假设"></p>
+<p>该图可以公式表达为$x_i \bot x_j | y,i \neq j$，意思是在给定$y$的情况下，$x_i$独立于$x_j$</p>
+<p>或者可以解释为$x_j$和$x_j$之间受到$y$的阻隔，因此在给定$y$的情况下，$x_i$独立于$x_j$</p>
+<blockquote>
+<p>例子_隐马尔科夫(Hidden Markov Model, HMM)</p>
+</blockquote>
+<p>朴素贝叶斯中的$y$是分类问题，如果这里把$y$看作是一个标注问题，此时演化为序列预测</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://pic.hycbook.com/i/hexo/bk_resources/machine_learning/条件随机场CRF/朴素贝叶斯到隐马尔科夫.webp" alt="朴素贝叶斯到隐马尔科夫"></p>
+<p><strong>HMM</strong>有两个重要假设</p>
+<p><code>齐次Markov假设</code>：</p>
+<p><code>观测独立假设</code>：公式表达为$x_i \bot x_j | y_i,i \neq j$，意思是在给定$y_i$的情况下，$x_i$独立于$x_j$</p>
+<blockquote>
+<p>例子_高斯混合模型(Gaussian mixture model, GMM)</p>
+</blockquote>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://pic.hycbook.com/i/hexo/bk_resources/machine_learning/条件随机场CRF/高斯混合模型简图.webp" alt="高斯混合模型简图"></p>
+<p>NB-(0/1 变 seq)-&gt; HMM</p>
+<p>GMM-(+times)-&gt; HMM</p>
+<h2 id="概率图模型结构"><a href="#概率图模型结构" class="headerlink" title="概率图模型结构"></a>概率图模型结构</h2><p>D-Separation是一种用来判断变量是否条件独立的图形化方法。换言之，对于一个DAG(有向无环图)E，D-Separation方法可以快速的判断出两个节点之间是否是条件独立的</p>
+<blockquote>
+<p>head-to-head(a-&gt;c&lt;-b)</p>
+</blockquote>
+<pre class="mermaid">
+graph TB
+    A --> C
+    B --> C</pre>
+
+<p>在c未知的条件下，a、b被阻断(blocked)，是独立的。反过来讲，在c已知的条件下，a、b是连通的，不独立。数学表示是</p>
+<script type="math/tex; mode=display">
+\begin{align}
+    P(a,b,c)&= P(a)*P(b)*P(c|a,b) \\
+    \sum_c P(a,b,c)&=\sum_c P(a)*P(b)*P(c|a,b) \\
+    P(a,b)&=P(a)*P(b)
+\end{align}</script><blockquote>
+<p>tail-to-tail</p>
+</blockquote>
+<pre class="mermaid">graph TB
+    C --> A
+    C --> B</pre>
+
+<p>在c给定的条件下，a，b被阻断(blocked)，是独立的。数学表示是</p>
+<script type="math/tex; mode=display">
+\begin{align}
+    P(a,b,c) &= P(c)*P(a|c)*P(b|c)  \\
+    P(a,b|c) &= \frac{P(a,b,c)}{P(c)}  \\
+    将式子1带  & 入到式子2中：\nonumber \\
+    P(a,b|c) &=P(a|c)*P(b|c)
+\end{align}</script><blockquote>
+<p>head-to-tail</p>
+</blockquote>
+<pre class="mermaid">graph LR
+    A --> C --> B</pre>
+
+
+
+<p>在<strong>c给定的条件下，a，b被阻断(blocked)，是独立的</strong>。数学表示是$P(a,b,c)=P(a)P(c|a)P(b|c)$</p>
+<p>化简后可得</p>
+<script type="math/tex; mode=display">
+\begin{align}
+P(a,b|c) &= \frac{P(a,b,c)}{P(c)}  \\
+         &= \frac{P(a)*P(c|a)*P(b|c)}{P(c)}  \\
+         &= \frac{P(a,c)*P(b|c)}{P(c)}  \\
+         &= P(a|c)*P(b|c)
+\end{align}</script><h1 id="演化"><a href="#演化" class="headerlink" title="演化"></a>演化</h1><h2 id="HMM"><a href="#HMM" class="headerlink" title="HMM"></a>HMM</h2><blockquote>
+<p><a target="_blank" rel="noopener external nofollow noreferrer" href="https://oldpan.me/archives/markov-random-field-deeplearning">马尔科夫随机场(MRF)在图像处理中的应用-图像分割、纹理迁移</a></p>
+</blockquote>
+<p>HMM是一个生成模型，可以看成是NB或GMM的泛化</p>
+<p>参数定义为$\lambda = (\pi , A, B)$，其中$\pi$是初始状态分布、$A$是y之间的状态转移矩阵($y<em>t$到$y</em>{t+1}$的概率)、$B$是从$y$发射到$x$的发射矩阵</p>
+<p><strong>HMM有两个重要假设</strong>(非必须，折中的方式，减少计算量)</p>
+<p><code>一阶齐次Markov假设</code>：</p>
+<p>一阶: 含义为$y<em>i$只和$y</em>{i-1}$有关系，或者表述为给定$y<em>{i-1}$的情况下$y_i$和$y</em>{i-2}$是无关的，二阶的话就是给定$y<em>{i-1}$和$y</em>{i-2}$的情况下$y<em>i$和$y</em>{i-3}$是无关的</p>
+<p>齐次: 含义为$y<em>1, \cdots , y_i$每个$y$的概率是是一致，也可以表述为$p(y_t|y</em>{t+1})$和$p(y<em>{t-1}|y</em>{t-2})$是相等的，也就是与时间$t$无关</p>
+<p>术语化表达: $p(y<em>t|y</em>{1:t-1},x<em>{1:t-1}) = p(y_t|y</em>{t-1})$</p>
+<p><code>观测独立假设</code>：公式表达为$x_i \bot x_j | y_i,i \neq j$，意思是在给定$y_i$的情况下，$x_i$独立于$x_j$</p>
+<p>术语化表达: $p(x<em>t|y</em>{1:t-1},x<em>{1:t-1}) = p(x_t|y</em>{t})$</p>
+<p><strong>建模对象</strong>如下</p>
+<script type="math/tex; mode=display">
+p(X,Y| \lambda) = \prod _{t-1}^T{p(x_t, y_t| \lambda)} = \prod _{t-1}^T{p(y_t|y_{t-1}, \lambda)} \prod _{t-1}^T{p(x_t|y_{t}, \lambda)}</script><p>计算复杂度太高，于是引入了前向后向算法</p>
+<h2 id="MEMM"><a href="#MEMM" class="headerlink" title="MEMM"></a>MEMM</h2><p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://pic.hycbook.com/i/hexo/bk_resources/machine_learning/条件随机场CRF/最大熵马尔科夫图模型.webp" alt="最大熵马尔科夫图模型"></p>
+<p>与HMM比较，将$x$变为了$y$的输入，此时给定$y<em>t$的情况下，$x_t$和$x</em>{t-1}$不是相互独立的，从而<strong>打破观测独立性假设</strong></p>
+<p>此时的MEMM建模对象变为了条件概率，为判别模型</p>
+<script type="math/tex; mode=display">
+p(Y|X, \lambda) = \prod _{t=1}^T{p(y_t| y_{t-1}, x_{1:t}, \lambda)}</script><p>在这里，判别式的模型比生成式模型要好</p>
+<p>因为：任务驱动的，在这样的序列标注任务上，在给定一个待标注序列，我们更关注的是标注的是什么，因此，对于这样的任务我们只需要对条件概率建模就足矣了，而去求联合概率分布就将问题复杂化了(计算也复杂化了)</p>
+<p>这里把整个输入$X$分成了2个部分，$X=(x<em>g,x</em>{1:T})$，即对$Y$的影响分成两个部分：全局的影响+局部的影响</p>
+<p>主要缺点是会造成Label Bias Problem，（在John Lafferty论文中，指出了MEMM会造成Label Bias Problem问题）</p>
+<p>看上方灰色框内的局部，可以简单看成是逻辑回归，在这个最小单元我们把它当成一个系统，系统从$y<em>{t−1}$到$y_t$的这样一个转移用数学可以表示成一个函数，是受$y</em>{t−1}$、$y_t$与$x_t$共同作用的一个函数，系统对外是有一定能量的，这个函数被称为<code>Mass Score</code>，而且是大于0的。但是问题出现在：这个Mass Score被局部归一化了。条件概率熵越小，那么对于观测值的考虑越少</p>
+<blockquote>
+<p>为了能够更好地理解它的问题所在，这里举一个比较极端的<a target="_blank" rel="noopener external nofollow noreferrer" href="https://anxiang1836.github.io/2019/11/05/NLP_From_HMM_to_CRF/">例子</a></p>
+</blockquote>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://pic.hycbook.com/i/hexo/bk_resources/machine_learning/条件随机场CRF/LabelBiasProblem.webp" alt="LabelBiasProblem"></p>
+<p>比如，我们训练好了这样的一个模型，现有一个观测序列是rib</p>
+<ol>
+<li>在状态0时，由于$P(4|0)&gt;P(1|0)$，所以我们选择从$0→4$转移路径；</li>
+<li>问题出现在了第二步转移上：由于$P(5|4)=1$，是受到了局部归一化的影响，从4状态转移仅有1条路径选择，其转移的条件概率为1，其所具有的熵值为0</li>
+</ol>
+<p>为什么从4状态向5转移的条件概率为1</p>
+<p>正是因为MEMM在每一步转移的概率都是要做<strong>局部归一化</strong>的，也就是说，从4状态向外转移的所有的情况加和要为1，在这里，仅有1中转移情况，所以$P(5|4)=1$</p>
+<p>在这种情况下，无论观测值为什么，都不会影响$4→5$的转移，但是，这样标注出来的序列$0→4→5→3$，即rob就与客观事实不符了，这也就是问题的所在</p>
+<h2 id="CRF"><a href="#CRF" class="headerlink" title="CRF"></a>CRF</h2><p>所以，为了解决局部归一化的问题，CRF取消了Y序列的转移方向，也就是取消了局部归一化，改变为了<code>全局归一化</code>  </p>
+<h1 id="CRF-1"><a href="#CRF-1" class="headerlink" title="CRF"></a>CRF</h1></article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a target="_blank" rel="noopener external nofollow noreferrer" href="https://github.com/narutohyc">narutohyc</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="https://hycbook.com/article/12117.html">https://hycbook.com/article/12117.html</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="external nofollow noreferrer" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://hycbook.com" target="_blank">兼一书虫</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/">机器学习</a><a class="post-meta__tags" href="/tags/%E6%9D%A1%E4%BB%B6%E9%9A%8F%E6%9C%BA%E5%9C%BACRF/">条件随机场CRF</a></div><div class="post_share"><div class="social-share" data-image="https://pic.hycbook.com/i//hexo/post_cover/蕾姆0.webp" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><link rel="stylesheet" href="/" media="defer" onload="this.media='all'"/><div class="post-reward"><button class="tip-button reward-button"><span class="tip-button__text">打赏</span><div class="coin-wrapper"><div class="coin"><div class="coin__middle"></div><div class="coin__back"></div><div class="coin__front"></div></div></div><div class="reward-main"><ul class="reward-all"><li class="reward-item"><a href="https://pic.hycbook.com/i//hexo/qr_codes/hyc_wechat.webp" rel="external nofollow noreferrer" target="_blank"><img class="post-qr-code-img" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://pic.hycbook.com/i//hexo/qr_codes/hyc_wechat.webp" alt="wechat"/></a><div class="post-qr-code-desc">wechat</div></li><li class="reward-item"><a href="https://pic.hycbook.com/i//hexo/qr_codes/hyc_alipay.webp" rel="external nofollow noreferrer" target="_blank"><img class="post-qr-code-img" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://pic.hycbook.com/i//hexo/qr_codes/hyc_alipay.webp" alt="alipay"/></a><div class="post-qr-code-desc">alipay</div></li></ul></div></button></div><audio id="coinAudio" src="https://s1.vika.cn/space/2022/10/29/6db0ad2bccf949f09054b3b206dcc66f?attname=马里奥游戏投币叮当.mp3"></audio><script defer="defer" src="/"></script><nav class="pagination-post" id="pagination"><div class="prev-post pull-full"><a href="/article/51855.html"><img class="prev-cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://pic.hycbook.com/i//hexo/post_cover/蕾姆4.webp" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">贪心算法</div></div></a></div></nav><hr/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div><div id="comment-switch"><span class="first-comment">Twikoo</span><span class="switch-btn"></span><span class="second-comment">Valine</span></div></div><div class="comment-wrap"><div><div id="twikoo-wrap"></div></div><div><div class="vcomment" id="vcomment"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://pic.hycbook.com/i/hexo/person_img/兼一头像.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">narutohyc</div><div class="author-info__description">挑战时没有失败<br>放弃时才是失败</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">89</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">118</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">8</div></a></div><a id="card-info-btn" target="_blank" rel="noopener external nofollow noreferrer" href="https://github.com/narutohyc"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/narutohyc" rel="external nofollow noreferrer" target="_blank" title="Github"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-github">   </use></svg></a><a class="social-icon" href="mailto:1832044043@qq.com" rel="external nofollow noreferrer" target="_blank" title="Email"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-youjian1">   </use></svg></a><a class="social-icon" href="https://hycbook.com/atom.xml" target="_blank" title="fas fa-rss"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-RSS">   </use></svg></a></div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content is-expand"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%89%8D%E7%BD%AE%E7%9F%A5%E8%AF%86"><span class="toc-number">1.</span> <span class="toc-text">前置知识</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%BD%AF%E7%A1%AC%E6%A8%A1%E5%9E%8B"><span class="toc-number">1.1.</span> <span class="toc-text">软硬模型</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%A1%AC%E6%A8%A1%E5%9E%8B"><span class="toc-number">1.1.1.</span> <span class="toc-text">硬模型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BD%AF%E6%A8%A1%E5%9E%8B"><span class="toc-number">1.1.2.</span> <span class="toc-text">软模型</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%A6%82%E7%8E%87%E5%88%A4%E5%88%AB%E6%A8%A1%E5%9E%8B"><span class="toc-number">1.1.2.1.</span> <span class="toc-text">概率判别模型</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%A6%82%E7%8E%87%E7%94%9F%E6%88%90%E6%A8%A1%E5%9E%8B"><span class="toc-number">1.1.2.2.</span> <span class="toc-text">概率生成模型</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%A6%82%E7%8E%87%E5%9B%BE%E6%A8%A1%E5%9E%8B%E7%BB%93%E6%9E%84"><span class="toc-number">1.2.</span> <span class="toc-text">概率图模型结构</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%BC%94%E5%8C%96"><span class="toc-number">2.</span> <span class="toc-text">演化</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#HMM"><span class="toc-number">2.1.</span> <span class="toc-text">HMM</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#MEMM"><span class="toc-number">2.2.</span> <span class="toc-text">MEMM</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#CRF"><span class="toc-number">2.3.</span> <span class="toc-text">CRF</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#CRF-1"><span class="toc-number">3.</span> <span class="toc-text">CRF</span></a></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/article/54754.html" title="collection模块"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://pic.hycbook.com/i//hexo/post_cover/蕾姆7.webp" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="collection模块"/></a><div class="content"><a class="title" href="/article/54754.html" title="collection模块">collection模块</a><time datetime="2022-11-20T03:33:20.009Z" title="更新于 2022-11-20 11:33:20">2022-11-20</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/article/12909.html" title="logging模块"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://pic.hycbook.com/i//hexo/post_cover/蕾姆8.webp" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="logging模块"/></a><div class="content"><a class="title" href="/article/12909.html" title="logging模块">logging模块</a><time datetime="2022-11-20T03:33:20.009Z" title="更新于 2022-11-20 11:33:20">2022-11-20</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/article/4071.html" title="枚举类Enum"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://pic.hycbook.com/i//hexo/post_cover/蕾姆12.webp" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="枚举类Enum"/></a><div class="content"><a class="title" href="/article/4071.html" title="枚举类Enum">枚举类Enum</a><time datetime="2022-11-20T03:33:20.005Z" title="更新于 2022-11-20 11:33:20">2022-11-20</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/article/62278.html" title="pandas小记"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://pic.hycbook.com/i/hexo/post_cover/蕾姆2.webp" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="pandas小记"/></a><div class="content"><a class="title" href="/article/62278.html" title="pandas小记">pandas小记</a><time datetime="2022-11-20T03:33:20.005Z" title="更新于 2022-11-20 11:33:20">2022-11-20</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/article/30791.html" title="numpy小记"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://pic.hycbook.com/i/hexo/post_cover/蕾姆3.webp" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="numpy小记"/></a><div class="content"><a class="title" href="/article/30791.html" title="numpy小记">numpy小记</a><time datetime="2022-11-20T03:33:20.005Z" title="更新于 2022-11-20 11:33:20">2022-11-20</time></div></div></div></div></div></div></main><footer id="footer" style="background-image: url('https://pic.hycbook.com/i/hexo/config_imgs/footer_bg.webp')"><div id="footer-wrap"><div class="copyright">&copy;2022 By narutohyc</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener external nofollow noreferrer" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener external nofollow noreferrer" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div><div class="footer_custom_text"><p><a target="_blank" href="https://hexo.io/" rel="external nofollow noreferrer"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://img.shields.io/badge/Frame-Hexo-blue?style=flat&logo=hexo" title="博客框架为Hexo"></a>&nbsp;<a target="_blank" href="https://demo.jerryc.me/" rel="external nofollow noreferrer"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://img.shields.io/badge/Theme-Butterfly-6513df?style=flat&logo=bitdefender" title="主题采用butterfly"></a>&nbsp;<a target="_blank" href="https://vercel.com/ " rel="external nofollow noreferrer"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://img.shields.io/badge/Hosted-Vervel-brightgreen?style=flat&logo=Vercel" title="本站采用双线部署，默认线路托管于Vercel"></a>&nbsp;<a target="_blank" href="https://github.com/" rel="external nofollow noreferrer"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://img.shields.io/badge/Source-Github-d021d6?style=flat&logo=GitHub" title="本站项目由Gtihub托管"></a></p><a target="_blank" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=35020502000647" rel="external nofollow noreferrer"><img style="position:relative;top:4px" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://pic.hycbook.com/i//hexo/config_imgs//备案图标.webp" alt="ICP"/>闽公网安备35020502000647号  </a><a href="https://beian.miit.gov.cn/" rel="external nofollow noreferrer" target="_blank">闽ICP备2022013843号-1</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="translateLink" type="button" title="简繁转换">简</button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="is-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据库加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div id="local-search-results"></div></div></div><div id="search-mask"></div></div><div id="rightMenu"><div class="rightMenu-group rightMenu-small"><div class="rightMenu-item" id="menu-backward"><i class="fa-solid fa-arrow-left"></i></div><div class="rightMenu-item" id="menu-forward"><i class="fa-solid fa-arrow-right"></i></div><div class="rightMenu-item" id="menu-refresh"><i class="fa-solid fa-arrow-rotate-right"></i></div><div class="rightMenu-item" id="menu-home"><i class="fa-solid fa-house"></i></div></div><div class="rightMenu-group rightMenu-line rightMenuOther"><a class="rightMenu-item menu-link" href="/archives/"><i class="fa-solid fa-archive"></i><span>文章归档</span></a><a class="rightMenu-item menu-link" href="/categories/"><i class="fa-solid fa-folder-open"></i><span>文章分类</span></a><a class="rightMenu-item menu-link" href="/tags/"><i class="fa-solid fa-tags"></i><span>文章标签</span></a></div><div class="rightMenu-group rightMenu-line rightMenuNormal"><a class="rightMenu-item menu-link" id="menu-radompage" href="/random/index.html"><i class="fa-solid fa-shoe-prints"></i><span>随便逛逛</span></a><div class="rightMenu-item" id="menu-translate"><i class="fa-solid fa-earth-asia"></i><span>繁简切换</span></div><div class="rightMenu-item" id="menu-darkmode"><i class="fa-solid fa-moon"></i><span>切换模式</span></div></div></div><div id="rightmenu-mask"></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/js/tw_cn.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.min.js"></script><script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload/dist/lazyload.iife.min.js"></script><script src="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.js"></script><script src="/js/search/local-search.js"></script><div class="js-pjax"><script>if (!window.MathJax) {
+  window.MathJax = {
+    tex: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"]],
+      tags: 'ams'
+    },
+    chtml: {
+      scale: 1.2
+    },
+    options: {
+      renderActions: {
+        findScript: [10, doc => {
+          for (const node of document.querySelectorAll('script[type^="math/tex"]')) {
+            const display = !!node.type.match(/; *mode=display/)
+            const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display)
+            const text = document.createTextNode('')
+            node.parentNode.replaceChild(text, node)
+            math.start = {node: text, delim: '', n: 0}
+            math.end = {node: text, delim: '', n: 0}
+            doc.math.push(math)
+          }
+        }, ''],
+        insertScript: [200, () => {
+          document.querySelectorAll('mjx-container:not\([display]\)').forEach(node => {
+            const target = node.parentNode
+            if (target.nodeName.toLowerCase() === 'li') {
+              target.parentNode.classList.add('has-jax')
+            } else {
+              target.classList.add('has-jax')
+            }
+          });
+        }, '', false]
+      }
+    }
+  }
+  
+  const script = document.createElement('script')
+  script.src = 'https://cdn.jsdelivr.net/npm/mathjax/es5/tex-mml-chtml.min.js'
+  script.id = 'MathJax-script'
+  script.async = true
+  document.head.appendChild(script)
+} else {
+  MathJax.startup.document.state(0)
+  MathJax.texReset()
+  MathJax.typeset()
+}</script><script>(() => {
+  const $mermaidWrap = document.querySelectorAll('#article-container .mermaid-wrap')
+  if ($mermaidWrap.length) {
+    window.runMermaid = () => {
+      window.loadMermaid = true
+      const theme = document.documentElement.getAttribute('data-theme') === 'dark' ? '' : ''
+
+      Array.from($mermaidWrap).forEach((item, index) => {
+        const mermaidSrc = item.firstElementChild
+        const mermaidThemeConfig = '%%{init:{ \'theme\':\'' + theme + '\'}}%%\n'
+        const mermaidID = 'mermaid-' + index
+        const mermaidDefinition = mermaidThemeConfig + mermaidSrc.textContent
+        mermaid.mermaidAPI.render(mermaidID, mermaidDefinition, (svgCode) => {
+          mermaidSrc.insertAdjacentHTML('afterend', svgCode)
+        })
+      })
+    }
+
+    const loadMermaid = () => {
+      window.loadMermaid ? runMermaid() : getScript('https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js').then(runMermaid)
+    }
+
+    window.pjax ? loadMermaid() : document.addEventListener('DOMContentLoaded', loadMermaid)
+  }
+})()</script><script>(()=>{
+  const init = () => {
+    twikoo.init(Object.assign({
+      el: '#twikoo-wrap',
+      envId: 'https://vercel.hycbook.com',
+      region: '',
+      onCommentLoaded: function () {
+        btf.loadLightbox(document.querySelectorAll('#twikoo .tk-content img:not(.tk-owo-emotion)'))
+      }
+    }, null))
+  }
+
+  const getCount = () => {
+    const countELement = document.getElementById('twikoo-count')
+    if(!countELement) return
+    twikoo.getCommentsCount({
+      envId: 'https://vercel.hycbook.com',
+      region: '',
+      urls: [window.location.pathname],
+      includeReply: false
+    }).then(function (res) {
+      countELement.innerText = res[0].count
+    }).catch(function (err) {
+      console.error(err);
+    });
+  }
+
+  const runFn = () => {
+    init()
+    GLOBAL_CONFIG_SITE.isPost && getCount()
+  }
+
+  const loadTwikoo = () => {
+    if (typeof twikoo === 'object') {
+      setTimeout(runFn,0)
+      return
+    } 
+    getScript('https://cdn.jsdelivr.net/npm/twikoo/dist/twikoo.all.min.js').then(runFn)
+  }
+
+  if ('Twikoo' === 'Twikoo' || !false) {
+    if (false) btf.loadComment(document.getElementById('twikoo-wrap'), loadTwikoo)
+    else loadTwikoo()
+  } else {
+    window.loadOtherComment = () => {
+      loadTwikoo()
+    }
+  }
+})()</script><script>function loadValine () {
+  function initValine () {
+    const valine = new Valine(Object.assign({
+      el: '#vcomment',
+      appId: 'ncn88uooQf0IO2rrGE7Vniwp-gzGzoHsz',
+      appKey: 'Yghpzg1QfBMFJ0MxxHubVzKL',
+      avatar: 'monsterid',
+      serverURLs: '',
+      emojiMaps: "",
+      path: window.location.pathname,
+      visitor: true
+    }, null))
+  }
+
+  if (typeof Valine === 'function') initValine() 
+  else getScript('https://cdn.jsdelivr.net/npm/valine/dist/Valine.min.js').then(initValine)
+}
+
+if ('Twikoo' === 'Valine' || !false) {
+  if (false) btf.loadComment(document.getElementById('vcomment'),loadValine)
+  else setTimeout(loadValine, 0)
+} else {
+  function loadOtherComment () {
+    loadValine()
+  }
+}</script></div><script defer src="https://npm.elemecdn.com/jquery@latest/dist/jquery.min.js"></script><script defer data-pjax src="/js/rightMenu.js"></script><script data-pjax src="/js/coin.js"></script><script defer src="https://npm.elemecdn.com/vue@2.6.11"></script><script defer src="https://yremp.live/wp-content/uploads/resource/js/sakura.js"></script><script async src="//at.alicdn.com/t/c/font_3670467_a0sijt8frxo.js"></script><script defer src="/live2d-widget/autoload.js"></script><script id="canvas_nest" defer="defer" color="0,0,255" opacity="0.7" zIndex="-1" count="120" mobile="false" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/canvas-nest.min.js"></script><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/activate-power-mode.min.js"></script><script>POWERMODE.colorful = true;
+POWERMODE.shake = false;
+POWERMODE.mobile = false;
+document.body.addEventListener('input', POWERMODE);
+</script><script id="click-heart" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/click-heart.min.js" async="async" mobile="true"></script><script>window.$crisp = [];
+window.CRISP_WEBSITE_ID = "561b80db-3f0f-45cb-b3b1-aae7355939e6";
+(function () {
+  d = document;
+  s = d.createElement("script");
+  s.src = "https://client.crisp.chat/l.js";
+  s.async = 1;
+  d.getElementsByTagName("head")[0].appendChild(s);
+})();
+$crisp.push(["safe", true])
+
+if (false) {
+  $crisp.push(["do", "chat:hide"])
+  $crisp.push(["on", "chat:closed", function() {
+    $crisp.push(["do", "chat:hide"])
+  }])
+  var chatBtnFn = () => {
+    var chatBtn = document.getElementById("chat_btn")
+    chatBtn.addEventListener("click", function(){
+      $crisp.push(["do", "chat:show"])
+      $crisp.push(["do", "chat:open"])
+
+    });
+  }
+  chatBtnFn()
+} else {
+  if (false) {
+    function chatBtnHide () {
+      $crisp.push(["do", "chat:hide"])
+    }
+    function chatBtnShow () {
+      $crisp.push(["do", "chat:show"])
+    }
+  }
+}</script><script src="https://cdn.jsdelivr.net/npm/pjax/pjax.min.js"></script><script>let pjaxSelectors = ["head > title","#config-diff","#body-wrap","#rightside-config-hide","#rightside-config-show",".js-pjax"]
+
+var pjax = new Pjax({
+  elements: 'a:not([target="_blank"])',
+  selectors: pjaxSelectors,
+  cacheBust: false,
+  analytics: false,
+  scrollRestoration: false
+})
+
+document.addEventListener('pjax:send', function () {
+
+  // removeEventListener scroll 
+  window.tocScrollFn && window.removeEventListener('scroll', window.tocScrollFn)
+  window.scrollCollect && window.removeEventListener('scroll', scrollCollect)
+
+  typeof preloader === 'object' && preloader.initLoading()
+  document.getElementById('rightside').style.cssText = "opacity: ''; transform: ''"
+  
+  if (window.aplayers) {
+    for (let i = 0; i < window.aplayers.length; i++) {
+      if (!window.aplayers[i].options.fixed) {
+        window.aplayers[i].destroy()
+      }
+    }
+  }
+
+  typeof typed === 'object' && typed.destroy()
+
+  //reset readmode
+  const $bodyClassList = document.body.classList
+  $bodyClassList.contains('read-mode') && $bodyClassList.remove('read-mode')
+
+  typeof disqusjs === 'object' && disqusjs.destroy()
+})
+
+document.addEventListener('pjax:complete', function () {
+  window.refreshFn()
+
+  document.querySelectorAll('script[data-pjax]').forEach(item => {
+    const newScript = document.createElement('script')
+    const content = item.text || item.textContent || item.innerHTML || ""
+    Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+    newScript.appendChild(document.createTextNode(content))
+    item.parentNode.replaceChild(newScript, item)
+  })
+
+  GLOBAL_CONFIG.islazyload && window.lazyLoadInstance.update()
+
+  typeof chatBtnFn === 'function' && chatBtnFn()
+  typeof panguInit === 'function' && panguInit()
+
+  // google analytics
+  typeof gtag === 'function' && gtag('config', '', {'page_path': window.location.pathname});
+
+  // baidu analytics
+  typeof _hmt === 'object' && _hmt.push(['_trackPageview',window.location.pathname]);
+
+  typeof loadMeting === 'function' && document.getElementsByClassName('aplayer').length && loadMeting()
+
+  // prismjs
+  typeof Prism === 'object' && Prism.highlightAll()
+
+  typeof preloader === 'object' && preloader.endLoading()
+})
+
+document.addEventListener('pjax:error', (e) => {
+  if (e.request.status === 404) {
+    pjax.loadUrl('/404.html')
+  }
+})</script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><div class="app-refresh" id="app-refresh" style="position: fixed;top: -2.2rem;left: 0;right: 0;z-index: 99999;padding: 0 1rem;font-size: 15px;height: 2.2rem;transition: all 0.3s ease;"><div class="app-refresh-wrap" style=" display: flex;color: #fff;height: 100%;align-items: center;justify-content: center;"><label>✨ 兼一书虫上新啦！ 👉</label><a href="javascript:void(0)" rel="external nofollow noreferrer" onclick="location.reload()"><span style="color: #fff;text-decoration: underline;cursor: pointer;">🍭查看新品🍬</span></a></div></div><script>if ('serviceWorker' in navigator) {
+  if (navigator.serviceWorker.controller) {
+    navigator.serviceWorker.addEventListener('controllerchange', function() {
+      showNotification()
+    })
+  }
+  window.addEventListener('load', function() {
+    navigator.serviceWorker.register('/sw.js')
+  })
+}
+
+function showNotification() {
+  if (GLOBAL_CONFIG.Snackbar) {
+    var snackbarBg =
+      document.documentElement.getAttribute('data-theme') === 'light' ?
+      GLOBAL_CONFIG.Snackbar.bgLight :
+      GLOBAL_CONFIG.Snackbar.bgDark
+    var snackbarPos = GLOBAL_CONFIG.Snackbar.position
+    Snackbar.show({
+      text: '✨ 兼一书虫上新啦！ 👉',
+      backgroundColor: snackbarBg,
+      duration: 500000,
+      pos: snackbarPos,
+      actionText: '🍭查看新品🍬',
+      actionTextColor: '#fff',
+      onActionClick: function(e) {
+        location.reload()
+      },
+    })
+  } else {
+    var showBg =
+      document.documentElement.getAttribute('data-theme') === 'light' ?
+      '#49b1f5' :
+      '#1f1f1f'
+    var cssText = `top: 0; background: ${showBg};`
+    document.getElementById('app-refresh')
+      .style.cssText = cssText
+  }
+}</script></div><!-- hexo injector body_end start --><script data-pjax>
+  function butterfly_swiper_injector_config(){
+    var parent_div_git = document.getElementById('recent-posts');
+    var item_html = '<div class="recent-post-item" style="height: auto;width: 100%"><div class="blog-slider swiper-container-fade swiper-container-horizontal" id="swiper_container"><div class="blog-slider__wrp swiper-wrapper" style="transition-duration: 0ms;"><div class="blog-slider__item swiper-slide" style="width: 750px; opacity: 1; transform: translate3d(0px, 0px, 0px); transition-duration: 0ms;"><a class="blog-slider__img" onclick="pjax.loadUrl(&quot;article/13105.html&quot;);" href="javascript:void(0);" rel="external nofollow noreferrer" alt=""><img width="48" height="48" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://pic.hycbook.com/i//hexo/post_cover/蕾姆10.webp" alt="" onerror="this.src=https://unpkg.zhimg.com/akilar-candyassets/image/loading.gif; this.onerror = null;"/></a><div class="blog-slider__content"><span class="blog-slider__code">2022-11-20</span><a class="blog-slider__title" onclick="pjax.loadUrl(&quot;article/13105.html&quot;);" href="javascript:void(0);" rel="external nofollow noreferrer" alt="">正则表达式学习</a><div class="blog-slider__text">python正则表达式的学习记录</div><a class="blog-slider__button" onclick="pjax.loadUrl(&quot;article/13105.html&quot;);" href="javascript:void(0);" rel="external nofollow noreferrer" alt="">详情       </a></div></div><div class="blog-slider__item swiper-slide" style="width: 750px; opacity: 1; transform: translate3d(0px, 0px, 0px); transition-duration: 0ms;"><a class="blog-slider__img" onclick="pjax.loadUrl(&quot;article/10706.html&quot;);" href="javascript:void(0);" rel="external nofollow noreferrer" alt=""><img width="48" height="48" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://pic.hycbook.com/i/hexo/post_cover/蕾姆0.webp" alt="" onerror="this.src=https://unpkg.zhimg.com/akilar-candyassets/image/loading.gif; this.onerror = null;"/></a><div class="blog-slider__content"><span class="blog-slider__code">2022-11-20</span><a class="blog-slider__title" onclick="pjax.loadUrl(&quot;article/10706.html&quot;);" href="javascript:void(0);" rel="external nofollow noreferrer" alt="">机器学习_一元函数微积分</a><div class="blog-slider__text">机器学习的数学基础入门知识</div><a class="blog-slider__button" onclick="pjax.loadUrl(&quot;article/10706.html&quot;);" href="javascript:void(0);" rel="external nofollow noreferrer" alt="">详情       </a></div></div><div class="blog-slider__item swiper-slide" style="width: 750px; opacity: 1; transform: translate3d(0px, 0px, 0px); transition-duration: 0ms;"><a class="blog-slider__img" onclick="pjax.loadUrl(&quot;article/47032.html&quot;);" href="javascript:void(0);" rel="external nofollow noreferrer" alt=""><img width="48" height="48" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://pic.hycbook.com/i/hexo/post_cover/蕾姆1.webp" alt="" onerror="this.src=https://unpkg.zhimg.com/akilar-candyassets/image/loading.gif; this.onerror = null;"/></a><div class="blog-slider__content"><span class="blog-slider__code">2022-11-20</span><a class="blog-slider__title" onclick="pjax.loadUrl(&quot;article/47032.html&quot;);" href="javascript:void(0);" rel="external nofollow noreferrer" alt="">机器学习_线性代数与矩阵论</a><div class="blog-slider__text">机器学习的数学基础入门知识</div><a class="blog-slider__button" onclick="pjax.loadUrl(&quot;article/47032.html&quot;);" href="javascript:void(0);" rel="external nofollow noreferrer" alt="">详情       </a></div></div><div class="blog-slider__item swiper-slide" style="width: 750px; opacity: 1; transform: translate3d(0px, 0px, 0px); transition-duration: 0ms;"><a class="blog-slider__img" onclick="pjax.loadUrl(&quot;article/21745.html&quot;);" href="javascript:void(0);" rel="external nofollow noreferrer" alt=""><img width="48" height="48" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://pic.hycbook.com/i//hexo/post_cover/蕾姆6.webp" alt="" onerror="this.src=https://unpkg.zhimg.com/akilar-candyassets/image/loading.gif; this.onerror = null;"/></a><div class="blog-slider__content"><span class="blog-slider__code">2022-11-20</span><a class="blog-slider__title" onclick="pjax.loadUrl(&quot;article/21745.html&quot;);" href="javascript:void(0);" rel="external nofollow noreferrer" alt="">md数学公式和emoji表情</a><div class="blog-slider__text">md数学公式和emoji表情</div><a class="blog-slider__button" onclick="pjax.loadUrl(&quot;article/21745.html&quot;);" href="javascript:void(0);" rel="external nofollow noreferrer" alt="">详情       </a></div></div><div class="blog-slider__item swiper-slide" style="width: 750px; opacity: 1; transform: translate3d(0px, 0px, 0px); transition-duration: 0ms;"><a class="blog-slider__img" onclick="pjax.loadUrl(&quot;article/45122.html&quot;);" href="javascript:void(0);" rel="external nofollow noreferrer" alt=""><img width="48" height="48" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://pic.hycbook.com/i//hexo/post_cover/蕾姆4.webp" alt="" onerror="this.src=https://unpkg.zhimg.com/akilar-candyassets/image/loading.gif; this.onerror = null;"/></a><div class="blog-slider__content"><span class="blog-slider__code">2022-11-20</span><a class="blog-slider__title" onclick="pjax.loadUrl(&quot;article/45122.html&quot;);" href="javascript:void(0);" rel="external nofollow noreferrer" alt="">python装饰器</a><div class="blog-slider__text">python装饰器学习以及函数式编程的库介绍</div><a class="blog-slider__button" onclick="pjax.loadUrl(&quot;article/45122.html&quot;);" href="javascript:void(0);" rel="external nofollow noreferrer" alt="">详情       </a></div></div><div class="blog-slider__item swiper-slide" style="width: 750px; opacity: 1; transform: translate3d(0px, 0px, 0px); transition-duration: 0ms;"><a class="blog-slider__img" onclick="pjax.loadUrl(&quot;article/12909.html&quot;);" href="javascript:void(0);" rel="external nofollow noreferrer" alt=""><img width="48" height="48" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://pic.hycbook.com/i//hexo/post_cover/蕾姆8.webp" alt="" onerror="this.src=https://unpkg.zhimg.com/akilar-candyassets/image/loading.gif; this.onerror = null;"/></a><div class="blog-slider__content"><span class="blog-slider__code">2022-11-20</span><a class="blog-slider__title" onclick="pjax.loadUrl(&quot;article/12909.html&quot;);" href="javascript:void(0);" rel="external nofollow noreferrer" alt="">logging模块</a><div class="blog-slider__text">python日志文件配置使用方法</div><a class="blog-slider__button" onclick="pjax.loadUrl(&quot;article/12909.html&quot;);" href="javascript:void(0);" rel="external nofollow noreferrer" alt="">详情       </a></div></div><div class="blog-slider__item swiper-slide" style="width: 750px; opacity: 1; transform: translate3d(0px, 0px, 0px); transition-duration: 0ms;"><a class="blog-slider__img" onclick="pjax.loadUrl(&quot;article/41279.html&quot;);" href="javascript:void(0);" rel="external nofollow noreferrer" alt=""><img width="48" height="48" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://pic.hycbook.com/i//hexo/post_cover/蕾姆1.webp" alt="" onerror="this.src=https://unpkg.zhimg.com/akilar-candyassets/image/loading.gif; this.onerror = null;"/></a><div class="blog-slider__content"><span class="blog-slider__code">2022-11-20</span><a class="blog-slider__title" onclick="pjax.loadUrl(&quot;article/41279.html&quot;);" href="javascript:void(0);" rel="external nofollow noreferrer" alt="">重装系统</a><div class="blog-slider__text">重装系统以及一些软件的推荐，包括Chrome插件</div><a class="blog-slider__button" onclick="pjax.loadUrl(&quot;article/41279.html&quot;);" href="javascript:void(0);" rel="external nofollow noreferrer" alt="">详情       </a></div></div><div class="blog-slider__item swiper-slide" style="width: 750px; opacity: 1; transform: translate3d(0px, 0px, 0px); transition-duration: 0ms;"><a class="blog-slider__img" onclick="pjax.loadUrl(&quot;article/63632.html&quot;);" href="javascript:void(0);" rel="external nofollow noreferrer" alt=""><img width="48" height="48" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fn.sinaimg.cn%2Fsinakd20210917ac%2F400%2Fw1200h800%2F20210917%2F7afc-e7154f1cc00b947caba98aa8e82f876b.jpg&amp;refer=http%3A%2F%2Fn.sinaimg.cn&amp;app=2002&amp;size=f9999,10000&amp;q=a80&amp;n=0&amp;g=0n&amp;fmt=auto?sec=1667401636&amp;t=6455153a5a3fa9a6f8e1e73f82cb17b9" alt="" onerror="this.src=https://unpkg.zhimg.com/akilar-candyassets/image/loading.gif; this.onerror = null;"/></a><div class="blog-slider__content"><span class="blog-slider__code">2022-11-20</span><a class="blog-slider__title" onclick="pjax.loadUrl(&quot;article/63632.html&quot;);" href="javascript:void(0);" rel="external nofollow noreferrer" alt="">厦门方特梦幻王国一日攻略</a><div class="blog-slider__text">厦门同安方特梦幻王国游玩攻略</div><a class="blog-slider__button" onclick="pjax.loadUrl(&quot;article/63632.html&quot;);" href="javascript:void(0);" rel="external nofollow noreferrer" alt="">详情       </a></div></div></div><div class="blog-slider__pagination swiper-pagination-clickable swiper-pagination-bullets"></div></div></div>';
+    console.log('已挂载butterfly_swiper')
+    parent_div_git.insertAdjacentHTML("afterbegin",item_html)
+    }
+  var elist = 'undefined'.split(',');
+  var cpage = location.pathname;
+  var epage = '/';
+  var flag = 0;
+
+  for (var i=0;i<elist.length;i++){
+    if (cpage.includes(elist[i])){
+      flag++;
+    }
+  }
+
+  if ((epage ==='all')&&(flag == 0)){
+    butterfly_swiper_injector_config();
+  }
+  else if (epage === cpage){
+    butterfly_swiper_injector_config();
+  }
+  </script><script defer src="https://npm.elemecdn.com/hexo-butterfly-swiper/lib/swiper.min.js"></script><script defer data-pjax src="https://npm.elemecdn.com/hexo-butterfly-swiper/lib/swiper_init.js"></script><script async src="//at.alicdn.com/t/font_2032782_8d5kxvn09md.js"></script><!-- hexo injector body_end end --></body></html>
