@@ -26,7 +26,7 @@
     "hexo-filter-flowchart": "^1.0.4",
     "hexo-filter-mermaid-diagrams": "^1.0.5",
     "hexo-filter-nofollow": "^2.0.2",
-    "hexo-generator-archive": "^1.0.0",
+    "hexo-generator-archive": "^2.0.0",
     "hexo-generator-category": "^1.0.0",
     "hexo-generator-index": "^2.0.0",
     "hexo-generator-search": "^2.4.3",
