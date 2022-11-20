@@ -139,6 +139,10 @@ aside: false
       link: https://poetize.cn
       avatar: https://file.poetize.cn/webAvatar/Sara116383637867956
       descr: 这是一个 Vue2 Vue3 与 SpringBoot 结合的产物～
+    - name: Mycpen
+      link: https://cpen.top/
+      avatar: https://image.cpen.top/image/avatar.jpg
+      descr: 这是一个有趣的博客  
   
 - class_name: 搭建hexo涉及的一些工具
   class_desc: 感谢优秀的工具，帮我更好的实现网站搭建

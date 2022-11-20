@@ -23,6 +23,8 @@
     "hexo-butterfly-swiper": "^1.0.12",
     "hexo-butterfly-tag-plugins-plus": "^1.0.17",
     "hexo-deployer-git": "^3.0.0",
+    "hexo-filter-flowchart": "^1.0.4",
+    "hexo-filter-mermaid-diagrams": "^1.0.5",
     "hexo-filter-nofollow": "^2.0.2",
     "hexo-generator-archive": "^1.0.0",
     "hexo-generator-category": "^1.0.0",
