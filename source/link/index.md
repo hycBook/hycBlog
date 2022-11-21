@@ -19,7 +19,6 @@ aside: false
       link: https://butterfly.js.org/
       avatar: https://butterfly.js.org/img/avatar.png
       descr: 今日事,今日毕
-
 - class_name: hexo相关网站
   class_desc: 用于构建hexo博客后台支持的一些网站
   link_list:
@@ -71,7 +70,6 @@ aside: false
       link: https://console.leancloud.cn/
       avatar: https://console.leancloud.cn/favicon.ico
       descr: 针对移动应用的一站式云端服务,专注于为应用开发者提供工具和平台
-  
 - class_name: 网站
   class_desc: 值得推荐的网站
   link_list:
@@ -91,7 +89,6 @@ aside: false
       link: https://www.iconfont.cn/
       avatar: https://img.alicdn.com/imgextra/i2/O1CN01FF1t1g1Q3PDWpSm4b_!!6000000001920-55-tps-508-135.svg
       descr: 国内功能很强大且图标内容很丰富的矢量图标库
-  
 - class_name: hexo网站
   class_desc: 基于hexo搭建的优秀网站
   link_list:
@@ -142,8 +139,11 @@ aside: false
     - name: Mycpen
       link: https://cpen.top/
       avatar: https://image.cpen.top/image/avatar.jpg
-      descr: 这是一个有趣的博客  
-  
+      descr: 这是一个有趣的博客
+    - name: 努力搬砖的小易
+      link: http://xiaoyiblog.fun
+      avatar: https://myblogphoto-1313051656.cos.ap-guangzhou.myqcloud.com/avatar/1b4d050c7866c14679709b4d8aec0cd4.jpg
+      descr: 记录前端技术的成长之路
 - class_name: 搭建hexo涉及的一些工具
   class_desc: 感谢优秀的工具，帮我更好的实现网站搭建
   link_list:
@@ -160,7 +160,6 @@ aside: false
       avatar: https://realfavicongenerator.net/realfavicongenerator_brand.png?v=2
       descr: 全平台的WEB APP图标设计，用于生成PWA使用的manifest
       {% endflink %}
-
 
 
 ---
