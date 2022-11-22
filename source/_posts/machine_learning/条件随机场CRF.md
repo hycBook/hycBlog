@@ -218,6 +218,52 @@ $$
 
 
 
+## 前后向算法
+
+```python
+import numpy as np
+
+
+def cal_step(pa, pb, state, last):
+    pa = np.array(pa)
+    pb = np.array(pb)
+    res = []
+    for idx, s in enumerate(np.array(pb)[:, state]):
+        tmp = sum([last[i] * a for i, a in enumerate(pa[:, idx])]) * s
+        res.append(round(tmp, 4))
+    return res
+
+
+def cal_forward(pa, pb, ppi, po):
+    """ 前向算法 """
+    # 初始化状态
+    init_state = [round(p * pb[idx][0], 4) for idx, p in enumerate(ppi)]
+    print(init_state)
+
+    state = init_state
+    for step in range(1, len(po)):
+        state = cal_step(pa=pa, pb=pb, state=po[step], last=state)
+        print(state)
+
+    print(round(sum(state), 4))
+
+
+if __name__ == '__main__':
+    pi = [0.2, 0.4, 0.4]
+    B = [[0.5, 0.5], [0.4, 0.6], [0.7, 0.3], ]
+    A = [[0.5, 0.2, 0.3], [0.3, 0.5, 0.2], [0.2, 0.3, 0.5], ]
+    # 红 白 红
+    O = [0, 1, 0]
+
+    cal_forward(pa=A, pb=B, ppi=pi, po=O)
+    print("结束")
+
+```
+
+
+
+
+
 # 演化
 
 ## HMM
