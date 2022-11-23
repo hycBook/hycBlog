@@ -110,7 +110,7 @@ aside: false
       descr: 一个爱折腾的Java开发工程师
     - name: Akilarの糖果屋
       link: https://akilar.top/
-      avatar: https://akilar.top/img/siteicon/favicon.png
+      avatar: https://npm.elemecdn.com/akilar-friends@latest/avatar/akilar.top.jpg
       descr: 期待您的光临！
     - name: 小冰博客
       link: https://zfe.space/
@@ -134,7 +134,7 @@ aside: false
       descr: Future is now 🍭🍭🍭
     - name: 生活倒影
       link: https://poetize.cn
-      avatar: https://file.poetize.cn/webAvatar/Sara116383637867956
+      avatar: https://s1.ax1x.com/2022/11/10/z9E7X4.jpg
       descr: 这是一个 Vue2 Vue3 与 SpringBoot 结合的产物～
     - name: Mycpen
       link: https://cpen.top/

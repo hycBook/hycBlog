@@ -10,6 +10,7 @@ tags:
   - 隐马尔可夫模型HMM
 mathjax: true
 description: 机器学习之隐马尔可夫模型HMM
+abbrlink: 4987
 ---
 
 ---
@@ -49,11 +50,12 @@ $$
 
 2. `齐次马尔可夫假设`(假设1)
    $$
-   P(x_1, \cdots , x_{t}, z_t=q_i, z_{t+1}=q_j | \lambda) \\
-   
+   \begin{align}
+   & P(x_1, \cdots , x_{t}, z_t=q_i, z_{t+1}=q_j | \lambda) 
    = P(z_{t+1}=q_j | x_1, \cdots , x_t, z_t=q_i , \lambda) P(x_1, \cdots , x_t, z_t =q_i | \lambda) 
    \\
-   = P(z_{t+1} = q_j | z_t=q_i) P(x_1, \cdots , x_t, z_t=q_i | \lambda) = a_{ij} \alpha _{t}(i)
+   &= P(z_{t+1} = q_j | z_t=q_i) P(x_1, \cdots , x_t, z_t=q_i | \lambda) = a_{ij} \alpha _{t}(i)
+   \end{align}
    $$
    
 3. `观测独立性假设`(假设2)
@@ -121,13 +123,16 @@ HMM的基本问题一共有三个:
 
 🌱假设有4个盒子，每个盒子里面有不同数量的红、白两种颜色的球，具体如下表
 
-![img](res/隐马尔可夫模型HMM/v2-fec4d6fc5042da745cb9735fb42af790_b.jpg)
+| 盒子编号 | 1    | 2    | 3    | 4    |
+| -------- | ---- | ---- | ---- | ---- |
+| 红球数   | 5    | 3    | 6    | 8    |
+| 白球数   | 5    | 7    | 4    | 2    |
 
 现在从这些盒子中抽取$T$个球，每次抽取后记录颜色，再放回原盒子，
 
 序列如下图所示
 
-![img](res/隐马尔可夫模型HMM/v2-d7a0a527a28521cdd6dc4e539e613517_720w.jpeg)
+![img](https://pic.hycbook.com/i//hexo/bk_resources/machine_learning/隐马尔可夫模型HMM/HMM模型.webp)
 
 其中$z_i$代表第$i$个`隐序列值`，$q_i$代表第$i$个`隐状态`，$x_i$代表第$i$个`观测序列值`，注意
 
@@ -146,9 +151,7 @@ HMM的基本问题一共有三个:
 $$
 \alpha _t(i) = P(x_1, x_2, \cdots , x_t , z_t =q_i | \lambda)
 $$
-也就是下图中标记的那一部分，$ \alpha _t (i) $表示的是在$t$时刻，隐状态为$q_i$的概率
-
-![img](res/隐马尔可夫模型HMM/v2-f307367eb57dab7b76f3290782d4f42e_720w.jpeg)
+也就是上图中标记的那一部分，$ \alpha _t (i) $表示的是在$t$时刻，隐状态为$q_i$的概率
 
 > 前向概率初值
 
@@ -178,15 +181,16 @@ $$
 $$
 其中$N$表示的是`状态数量`，比如盒子中只有红球和白球，即状态集合为$\{白球, 红球\}$，此时$N=2$
 
-由前向概率$ \alpha _t (i) $推导可以得到$ \alpha _{t+1} (j) $
+由前向概率$$ \alpha _t (i) $$推导可以得到$$ \alpha _{t+1} (j) $$
 $$
 \alpha _{t+1}(j) = P(x_1, x_2, \cdots , x_{t+1} , z_{t+1} =q_j | \lambda)
 $$
 引入变量$z_t=q_i$，注意($t+1$时刻$=$$z_t$所有状态求和)，所以有
 $$
-\alpha _{t+1}(j) = \sum _{i=1}^{N}{P(x_1, \cdots , x_{t+1}, z_t=q_i, z_{t+1}=q_j | \lambda)} = \\
-
-\sum _{i=1}^{N}{P(x_{t+1} | x_1, \cdots , x_{t}, z_t=q_i, z_{t+1}=q_j , \lambda)} P(x_1, \cdots , x_{t}, z_t=q_i, z_{t+1}=q_j | \lambda)
+\begin{align}
+& \alpha _{t+1}(j) = \sum _{i=1}^{N}{P(x_1, \cdots , x_{t+1}, z_t=q_i, z_{t+1}=q_j | \lambda)} \\
+&= \sum _{i=1}^{N}{P(x_{t+1} | x_1, \cdots , x_{t}, z_t=q_i, z_{t+1}=q_j , \lambda)} P(x_1, \cdots , x_{t}, z_t=q_i, z_{t+1}=q_j | \lambda)
+\end{align}
 $$
 找到了$t$到$t+1$时刻的递推公式，分别看下公式的两个部分
 
@@ -197,9 +201,11 @@ $$
 
 2. 后半部分根据`齐次马尔可夫假设`
    $$
-   P(x_1, \cdots , x_{t}, z_t=q_i, z_{t+1}=q_j | \lambda) \\
-   = P(z_{t+1}=q_j | x_1, \cdots , x_t, z_t=q_i , \lambda) P(x_1, \cdots , x_t, z_t =q_i | \lambda) \\
-   = P(z_{t+1} = q_j | z_t=q_i) P(x_1, \cdots , x_t, z_t=q_i | \lambda) = a_{ij} \alpha _{t}(i)
+   \begin{align}
+   & P(x_1, \cdots , x_{t}, z_t=q_i, z_{t+1}=q_j | \lambda) \\
+   & = P(z_{t+1}=q_j | x_1, \cdots , x_t, z_t=q_i , \lambda) P(x_1, \cdots , x_t, z_t =q_i | \lambda) \\
+   & = P(z_{t+1} = q_j | z_t=q_i) P(x_1, \cdots , x_t, z_t=q_i | \lambda) = a_{ij} \alpha _{t}(i)
+   \end{align}
    $$
 
 将上述结果代入$\alpha _{t+1}(j)$可以得到
@@ -225,7 +231,7 @@ $$
 
 也就是下图中标记的那一部分，$ \beta _t (i) $表示的是在$t$时刻，隐状态为$q_i$的概率
 
-![img](res/隐马尔可夫模型HMM/v2-d39e1c71e535f8e344e9ed659e010e41_b.jpg)
+![img](https://pic.hycbook.com/i//hexo/bk_resources/machine_learning/隐马尔可夫模型HMM/HMM后向算法.webp)
 
 > 后向概率初值，定义为1
 
@@ -238,28 +244,29 @@ $$
 $$
 然后来看上式和要计算的概率$ P(X| \lambda ) $之间的关系
 $$
-P(X| \lambda ) = P(x_1, x_2, \cdots , x_T | \lambda) \\
-= \sum _{i=1}^{N}{P(x_1, x_2, \cdots , x_T, z_1=q_i | \lambda)} \\
-= \sum _{i=1}^{N}{P(x_1 | x_2, \cdots , x_T, z_1=q_i , \lambda)P(x_2, \cdots , x_T, z_1=q_i | \lambda)} \\
-= \sum _{i=1}^{N}{P(x_1 | z_1=q_i) P(z_1=q_i | \lambda) P(x_T, x_{T-1}, \cdots, x_2 | z_1=q_i, \lambda)} \\
-= \sum _{i=1}^{N}{b_i(x_1) \pi _i \beta _1(i)}
+\begin{align}
+& P(X| \lambda ) = P(x_1, x_2, \cdots , x_T | \lambda) = \sum _{i=1}^{N}{P(x_1, x_2, \cdots , x_T, z_1=q_i | \lambda)} \\
+& = \sum _{i=1}^{N}{P(x_1 | x_2, \cdots , x_T, z_1=q_i , \lambda)P(x_2, \cdots , x_T, z_1=q_i | \lambda)} \\
+& = \sum _{i=1}^{N}{P(x_1 | z_1=q_i) P(z_1=q_i | \lambda) P(x_T, x_{T-1}, \cdots, x_2 | z_1=q_i, \lambda)}  = \sum _{i=1}^{N}{b_i(x_1) \pi _i \beta _1(i)}
+\end{align}
 $$
 上面$b_i(x_1) \pi _i$也就是$ \alpha _1(i) $的定义，实际上，对于任意时刻$ t $，存在以下等式
 $$
 P(X | \lambda) = \sum _{i=1}^{N}{\alpha _t(i) \beta _t(i)}
 $$
-接着，假设已知所有的$\beta _{t+1}$，来推导$\beta _{t}$
+接着，假设已知所有的$$\beta _{t+1}$$，来推导$$\beta _{t}$$
 $$
-\beta _{t}(i) = P(X_T, \cdots , x_{t+1} | z_t=q_i , \lambda) \\
-= \sum _{j=1}^{N}{P(x_T, \cdots , x_{t+1}, z_{t+1} =q_j | z_t=q_i , \lambda)} \\
-= \sum _{j=1}^{N}{P(x_T, \cdots , x_{t+1} | z_{t+1} =q_j , z_t=q_i , \lambda) P(z_{t+1} = q_j | z_t =q_i , \lambda)}
+\begin{align}
+& \beta _{t}(i) = P(X_T, \cdots , x_{t+1} | z_t=q_i , \lambda) = \sum _{j=1}^{N}{P(x_T, \cdots , x_{t+1}, z_{t+1} =q_j | z_t=q_i , \lambda)} \\
+& = \sum _{j=1}^{N}{P(x_T, \cdots , x_{t+1} | z_{t+1} =q_j , z_t=q_i , \lambda) P(z_{t+1} = q_j | z_t =q_i , \lambda)}
+\end{align}
 $$
 观察上式，后部分实际上就是$\alpha _{ij}$，而前半部分，根据前向概率中的`观测独立性假设`，$z_t$与$x_1, \cdots ,x_T$都是无关的，即相互独立，可以省去，因此第二部分可以变为
 $$
-P(x_T, \cdots , x_{t+1} | z_{t+1} =q_j , z_t=q_i , \lambda)  \\
-= P(x_T, \cdots , x_{t+1} | z_{t+1}=q_j , \lambda) \\
-= P(x_{t+1} | x_T, \cdots , x_{t+2}, z_{t+1}=q_j) P(x_T, \cdots , x_{t+2} | z_{t+1}=q_j , \lambda) \\
-= b_j(x_{t+1}) \beta _{t+1} (j)
+\begin{align}
+& P(x_T, \cdots , x_{t+1} | z_{t+1} =q_j , z_t=q_i , \lambda) = P(x_T, \cdots , x_{t+1} | z_{t+1}=q_j , \lambda) \\
+& = P(x_{t+1} | x_T, \cdots , x_{t+2}, z_{t+1}=q_j) P(x_T, \cdots , x_{t+2} | z_{t+1}=q_j , \lambda) = b_j(x_{t+1}) \beta _{t+1} (j)
+\end{align}
 $$
 将结论代入$\beta _t{i}$得到
 $$
