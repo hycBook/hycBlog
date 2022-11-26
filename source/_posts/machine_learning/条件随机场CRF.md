@@ -218,53 +218,17 @@ $$
 
 
 
-## 前后向算法
-
-```python
-import numpy as np
-
-
-def cal_step(pa, pb, state, last):
-    pa = np.array(pa)
-    pb = np.array(pb)
-    res = []
-    for idx, s in enumerate(np.array(pb)[:, state]):
-        tmp = sum([last[i] * a for i, a in enumerate(pa[:, idx])]) * s
-        res.append(round(tmp, 4))
-    return res
-
-
-def cal_forward(pa, pb, ppi, po):
-    """ 前向算法 """
-    # 初始化状态
-    init_state = [round(p * pb[idx][0], 4) for idx, p in enumerate(ppi)]
-    print(init_state)
-
-    state = init_state
-    for step in range(1, len(po)):
-        state = cal_step(pa=pa, pb=pb, state=po[step], last=state)
-        print(state)
-
-    print(round(sum(state), 4))
-
-
-if __name__ == '__main__':
-    pi = [0.2, 0.4, 0.4]
-    B = [[0.5, 0.5], [0.4, 0.6], [0.7, 0.3], ]
-    A = [[0.5, 0.2, 0.3], [0.3, 0.5, 0.2], [0.2, 0.3, 0.5], ]
-    # 红 白 红
-    O = [0, 1, 0]
-
-    cal_forward(pa=A, pb=B, ppi=pi, po=O)
-    print("结束")
-
-```
-
-
-
-
-
 # 演化
+
+以下是从朴素贝叶斯到CRF的演变
+
+![CRF演变](https://pic.hycbook.com/i/ hexo/bk_resources/machine_learning/条件随机场CRF/CRF演变.webp)
+
+朴素贝叶斯的序列形态(或者说引入时间)就变成了HMM模型，朴素贝叶斯的观察独立假设，这里仍存在，同时HMM还多了一阶马尔科夫假设
+
+从HMM到MEMM，主要是改变了观测变量为输入，此时$x_2$不仅受$y_2$的影响，也会受到$y_1$的影响，从而打破了观测独立假设，但由于$x_2,y_1,y_2$需要做局部归一化，因此会产生`标注偏差问题`
+
+CRF的就能解决标注偏差问题，它将$y$之间的顺序，改为了无向图，这意味着，$y$之间的归一化是全局的，因此解决了`标注偏差问题`
 
 ## HMM
 
