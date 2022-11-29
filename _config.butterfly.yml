@@ -155,7 +155,7 @@ cover:
 # Replace Broken Images (替換無法顯示的圖片)
 error_img:
   flink: /img/friend_404.gif
-  post_page: /img/404.jpg
+  post_page: https://pic.hycbook.com/i/hexo/config_imgs/404.svg
 
 # A simple 404 page
 error_404:
