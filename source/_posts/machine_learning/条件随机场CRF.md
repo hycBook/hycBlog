@@ -222,7 +222,7 @@ $$
 
 以下是从朴素贝叶斯到CRF的演变，阴影高亮部分是每次改变的地方
 
-![CRF演变](https://pic.hycbook.com/i/ hexo/bk_resources/machine_learning/条件随机场CRF/CRF演变.webp)
+![CRF演变](https://pic.hycbook.com/i/hexo/bk_resources/machine_learning/条件随机场CRF/CRF演变.webp)
 
 朴素贝叶斯的序列形态(或者说引入时间)就变成了HMM模型，朴素贝叶斯的观察独立假设，这里仍存在，同时HMM还多了一阶马尔科夫假设
 
