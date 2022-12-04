@@ -144,6 +144,12 @@ aside: false
       link: http://xiaoyiblog.fun
       avatar: https://myblogphoto-1313051656.cos.ap-guangzhou.myqcloud.com/avatar/1b4d050c7866c14679709b4d8aec0cd4.jpg
       descr: 记录前端技术的成长之路
+    - name: 呆鱼
+      link: https://daiyu-233.top/
+      avatar: https://daiyu-233.top/img/avatar.png
+      descr: 命运之所以称为命运，正是因为它无可改变。
+      
+      
 - class_name: 搭建hexo涉及的一些工具
   class_desc: 感谢优秀的工具，帮我更好的实现网站搭建
   link_list:
